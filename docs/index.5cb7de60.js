@@ -947,10 +947,11 @@ var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
 var _app = require("./App");
 var _appDefault = parcelHelpers.interopDefault(_app);
+var _indexCss = require("./css/index.css");
 _reactDomDefault.default.render(/*#__PURE__*/ _jsxRuntime.jsx(_appDefault.default, {
     __source: {
         fileName: "src/index.js",
-        lineNumber: 5
+        lineNumber: 6
     },
     __self: undefined
 }), document.querySelector("#root"));
@@ -960,7 +961,7 @@ _reactDomDefault.default.render(/*#__PURE__*/ _jsxRuntime.jsx(_appDefault.defaul
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./App":"hiuDj","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"8xIwr":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./App":"hiuDj","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","./css/index.css":"b8bHR"}],"8xIwr":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-jsx-runtime.development.js');
 
@@ -22730,29 +22731,43 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _indexCss = require("./css/index.css");
+var _logoPng = require("./media/logo.png");
+var _logoPngDefault = parcelHelpers.interopDefault(_logoPng);
 const App = ()=>{
+    //&#8209; is a non-line-breaking dash
     return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         __source: {
             fileName: "src/App.js",
-            lineNumber: 5
+            lineNumber: 9
         },
         __self: undefined,
         children: [
             /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                 __source: {
                     fileName: "src/App.js",
-                    lineNumber: 6
+                    lineNumber: 10
                 },
                 __self: undefined,
-                children: "Intercollegiate Yu-Gi-Oh!"
+                children: "Intercollegiate Yu‑Gi‑Oh!"
             }),
             /*#__PURE__*/ _jsxRuntime.jsx("h2", {
                 __source: {
                     fileName: "src/App.js",
-                    lineNumber: 7
+                    lineNumber: 11
                 },
                 __self: undefined,
                 children: " Website coming soon!"
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                className: "logoPic",
+                src: _logoPngDefault.default,
+                alt: "Logo",
+                __source: {
+                    fileName: "src/App.js",
+                    lineNumber: 12
+                },
+                __self: undefined
             })
         ]
     }));
@@ -22767,7 +22782,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"JacNc":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./css/index.css":"b8bHR","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","./media/logo.png":"f0nsi"}],"b8bHR":[function() {},{}],"JacNc":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -22919,6 +22934,44 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"fNmB3"}]},["2rAXy","8Ye98","6cF5V"], "6cF5V", "parcelRequire3545")
+},{"react-refresh/runtime":"fNmB3"}],"f0nsi":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('cBz4w') + "logo.9592a62c.png";
+
+},{"./helpers/bundle-url":"8YnfL"}],"8YnfL":[function(require,module,exports) {
+"use strict";
+var bundleURL = {
+};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"b8bHR":[function() {},{}]},["2rAXy","8Ye98","6cF5V"], "6cF5V", "parcelRequire3545")
 
 //# sourceMappingURL=index.5cb7de60.js.map
