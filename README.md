@@ -1,5 +1,3 @@
-# react-parcel-template
+# Intercollegiate Yu-Gi-Oh! Website
 
-A template for creating repos with react, parcel, and GitHub Pages.
-
-Once this repo gets cloned, the URL under "build" in package.json should be replaced with the correct one.
+A website for the Intercollegiate Yu-Gi-Oh Championships
