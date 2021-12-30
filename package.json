@@ -4,7 +4,7 @@
   "description": "The website for Intercollegiate Yu-Gi-Oh!",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --public-url https://intercollegiateyugioh.com; rm -rf docs; mv dist docs;",
+    "build": "parcel build index.html --public-url https://intercollegiateyugioh.com; rm -rf docs; mv dist docs; cp CNAME docs/CNAME;",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ramiro Steinmann Petrasso",
