@@ -1,6 +1,7 @@
 import React from "react";
 import './css/index.css';
 import logo from './media/logo.png';
+import { Header } from "./Header.js";
 
 const App = () => {
 
