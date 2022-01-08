@@ -1,5 +1,6 @@
 import React from 'react';
 import {  Link } from "react-router-dom";
+import './css/index.css';
 /*
 
 li {
@@ -9,7 +10,7 @@ li {
 export const Header = () => {
       
     return (
-        <div>
+        <div className='Header'>
           <li>
             <Link to="/link1">link1</Link>
           </li>
