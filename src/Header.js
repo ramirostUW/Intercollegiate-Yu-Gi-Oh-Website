@@ -1,12 +1,7 @@
 import React from 'react';
 import {  Link } from "react-router-dom";
 import './css/index.css';
-/*
 
-li {
-  display: inline;
-}
-*/
 export const Header = () => {
       
     return (

@@ -1,21 +1,22 @@
 import React from "react";
 import './css/index.css';
-import logo from './media/logo.png';
+import { Switch, Route, Redirect } from "react-router-dom";
 import { Header } from "./Header.js";
+import { Home } from "./Home.js";
+import { Link1 } from "./Link1.js";
 
 const App = () => {
 
-//&#8209; is a non-line-breaking dash
   return (
     <div>
       <Header />
       <div className="OffsetTheHeader"></div>
-      <h1>Intercollegiate Yu&#8209;Gi&#8209;Oh!</h1>
-      <h2> Website coming soon!</h2>
-	  <img className={"logoPic"} src={logo} alt="Logo" />
+      <Home />
     </div>
   );
 
 };
+
+
 
 export default App;
