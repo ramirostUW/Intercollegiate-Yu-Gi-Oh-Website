@@ -22787,108 +22787,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./css/index.css":"b8bHR","./Header.js":"chhae","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","./Home.js":"cUQUH","./Link1.js":"g9BZU","react-router-dom":"kjA5T"}],"b8bHR":[function() {},{}],"chhae":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$804f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$804f.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Header", ()=>Header
-);
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactRouterDom = require("react-router-dom");
-var _indexCss = require("./css/index.css");
-const Header = ()=>{
-    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-        className: "Header",
-        __source: {
-            fileName: "src/Header.js",
-            lineNumber: 8
-        },
-        __self: undefined,
-        children: [
-            /*#__PURE__*/ _jsxRuntime.jsx("li", {
-                __source: {
-                    fileName: "src/Header.js",
-                    lineNumber: 9
-                },
-                __self: undefined,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                    to: "/link1",
-                    __source: {
-                        fileName: "src/Header.js",
-                        lineNumber: 10
-                    },
-                    __self: undefined,
-                    children: "link1"
-                })
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx("li", {
-                __source: {
-                    fileName: "src/Header.js",
-                    lineNumber: 12
-                },
-                __self: undefined,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                    to: "/link2",
-                    __source: {
-                        fileName: "src/Header.js",
-                        lineNumber: 13
-                    },
-                    __self: undefined,
-                    children: "link2"
-                })
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx("li", {
-                __source: {
-                    fileName: "src/Header.js",
-                    lineNumber: 15
-                },
-                __self: undefined,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                    to: "/link3",
-                    __source: {
-                        fileName: "src/Header.js",
-                        lineNumber: 16
-                    },
-                    __self: undefined,
-                    children: "link3"
-                })
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx("li", {
-                __source: {
-                    fileName: "src/Header.js",
-                    lineNumber: 18
-                },
-                __self: undefined,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                    to: "/link4",
-                    __source: {
-                        fileName: "src/Header.js",
-                        lineNumber: 19
-                    },
-                    __self: undefined,
-                    children: "link4"
-                })
-            })
-        ]
-    }));
-};
-_c = Header;
-var _c;
-$RefreshReg$(_c, "Header");
-
-  $parcel$ReactRefreshHelpers$804f.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-router-dom":"kjA5T","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","./css/index.css":"b8bHR"}],"kjA5T":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./css/index.css":"b8bHR","react-router-dom":"kjA5T","./Header.js":"chhae","./Home.js":"cUQUH","./Link1.js":"g9BZU","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"b8bHR":[function() {},{}],"kjA5T":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MemoryRouter", ()=>_reactRouter.MemoryRouter
@@ -24610,7 +24509,108 @@ const normalizeSearch = (search)=>!search || search === "?" ? "" : search.starts
 const normalizeHash = (hash)=>!hash || hash === "#" ? "" : hash.startsWith("#") ? hash : "#" + hash
 ; ///////////////////////////////////////////////////////////////////////////////
 
-},{"react":"6TuXu","history":"34V7X","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"5V79J":[function(require,module,exports) {
+},{"react":"6TuXu","history":"34V7X","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"chhae":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$804f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$804f.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Header", ()=>Header
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _indexCss = require("./css/index.css");
+const Header = ()=>{
+    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+        className: "Header",
+        __source: {
+            fileName: "src/Header.js",
+            lineNumber: 8
+        },
+        __self: undefined,
+        children: [
+            /*#__PURE__*/ _jsxRuntime.jsx("li", {
+                __source: {
+                    fileName: "src/Header.js",
+                    lineNumber: 9
+                },
+                __self: undefined,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                    to: "/link1",
+                    __source: {
+                        fileName: "src/Header.js",
+                        lineNumber: 10
+                    },
+                    __self: undefined,
+                    children: "link1"
+                })
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx("li", {
+                __source: {
+                    fileName: "src/Header.js",
+                    lineNumber: 12
+                },
+                __self: undefined,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                    to: "/link2",
+                    __source: {
+                        fileName: "src/Header.js",
+                        lineNumber: 13
+                    },
+                    __self: undefined,
+                    children: "link2"
+                })
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx("li", {
+                __source: {
+                    fileName: "src/Header.js",
+                    lineNumber: 15
+                },
+                __self: undefined,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                    to: "/link3",
+                    __source: {
+                        fileName: "src/Header.js",
+                        lineNumber: 16
+                    },
+                    __self: undefined,
+                    children: "link3"
+                })
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx("li", {
+                __source: {
+                    fileName: "src/Header.js",
+                    lineNumber: 18
+                },
+                __self: undefined,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                    to: "/link4",
+                    __source: {
+                        fileName: "src/Header.js",
+                        lineNumber: 19
+                    },
+                    __self: undefined,
+                    children: "link4"
+                })
+            })
+        ]
+    }));
+};
+_c = Header;
+var _c;
+$RefreshReg$(_c, "Header");
+
+  $parcel$ReactRefreshHelpers$804f.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-router-dom":"kjA5T","./css/index.css":"b8bHR","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"b8bHR":[function() {},{}],"5V79J":[function(require,module,exports) {
 "use strict";
 var Refresh = require('react-refresh/runtime');
 function debounce(func, delay) {
@@ -24730,7 +24730,7 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"fNmB3"}],"b8bHR":[function() {},{}],"cUQUH":[function(require,module,exports) {
+},{"react-refresh/runtime":"fNmB3"}],"cUQUH":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$d00d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
