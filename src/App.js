@@ -9,7 +9,6 @@ export function App() {
   return (
     <div>
       <Header />
-      <div className="OffsetTheHeader"></div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="Link1" element={<Link1 />} />

@@ -24529,13 +24529,6 @@ function App() {
                 lineNumber: 11,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                className: "OffsetTheHeader"
-            }, void 0, false, {
-                fileName: "src/App.js",
-                lineNumber: 12,
-                columnNumber: 7
-            }, this),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Routes, {
                 children: [
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -24544,7 +24537,7 @@ function App() {
                         }, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/App.js",
-                        lineNumber: 14,
+                        lineNumber: 13,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -24553,7 +24546,7 @@ function App() {
                         }, void 0, false, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/App.js",
-                        lineNumber: 15,
+                        lineNumber: 14,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -24574,13 +24567,13 @@ function App() {
                         }, void 0, true, void 0, void 0)
                     }, void 0, false, {
                         fileName: "src/App.js",
-                        lineNumber: 16,
+                        lineNumber: 15,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/App.js",
-                lineNumber: 13,
+                lineNumber: 12,
                 columnNumber: 7
             }, this)
         ]
@@ -24617,75 +24610,128 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
 var _indexCss = require("./css/index.css");
 const Header = ()=>{
+    const OFFSET_HEADER = true;
+    let divStyling = {
+        boxSizing: "border-box",
+        display: "flex",
+        justifyContent: "center",
+        padding: "0.7em",
+        marginBottom: "1em",
+        backgroundColor: "rgb(14, 21, 43)",
+        position: "fixed",
+        top: "0",
+        left: "0",
+        right: "0"
+    };
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-        className: "Header",
         children: [
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                    to: "/link1",
-                    children: "link1"
-                }, void 0, false, {
-                    fileName: "src/Header.js",
-                    lineNumber: 10,
-                    columnNumber: 13
-                }, undefined)
+            OFFSET_HEADER && /*#__PURE__*/ _jsxDevRuntime.jsxDEV(HeaderOffset, {
             }, void 0, false, {
                 fileName: "src/Header.js",
-                lineNumber: 9,
-                columnNumber: 11
+                lineNumber: 23,
+                columnNumber: 25
             }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                    to: "/link2",
-                    children: "link2"
-                }, void 0, false, {
-                    fileName: "src/Header.js",
-                    lineNumber: 13,
-                    columnNumber: 13
-                }, undefined)
-            }, void 0, false, {
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                style: divStyling,
+                className: "Header",
+                children: [
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(StyledLink, {
+                        to: "/link1",
+                        children: "link1"
+                    }, void 0, false, {
+                        fileName: "src/Header.js",
+                        lineNumber: 25,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(StyledLink, {
+                        to: "/link2",
+                        children: "link2"
+                    }, void 0, false, {
+                        fileName: "src/Header.js",
+                        lineNumber: 26,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(StyledLink, {
+                        to: "/link3",
+                        children: "link3"
+                    }, void 0, false, {
+                        fileName: "src/Header.js",
+                        lineNumber: 27,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(StyledLink, {
+                        to: "/link4",
+                        children: "link4"
+                    }, void 0, false, {
+                        fileName: "src/Header.js",
+                        lineNumber: 28,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
                 fileName: "src/Header.js",
-                lineNumber: 12,
-                columnNumber: 11
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                    to: "/link3",
-                    children: "link3"
-                }, void 0, false, {
-                    fileName: "src/Header.js",
-                    lineNumber: 16,
-                    columnNumber: 13
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/Header.js",
-                lineNumber: 15,
-                columnNumber: 11
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                    to: "/link4",
-                    children: "link4"
-                }, void 0, false, {
-                    fileName: "src/Header.js",
-                    lineNumber: 19,
-                    columnNumber: 13
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/Header.js",
-                lineNumber: 18,
-                columnNumber: 11
+                lineNumber: 24,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Header.js",
-        lineNumber: 8,
-        columnNumber: 9
+        lineNumber: 22,
+        columnNumber: 5
     }, undefined));
 };
 _c = Header;
-var _c;
+function StyledLink(props) {
+    let liStyling = {
+        paddingLeft: "1em",
+        paddingRight: "1em",
+        listStyleType: "none"
+    };
+    let LinkStyling = {
+        color: "rgb(78, 133, 133)"
+    };
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+        style: liStyling,
+        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+            to: props.to,
+            style: LinkStyling,
+            children: props.children
+        }, void 0, false, {
+            fileName: "src/Header.js",
+            lineNumber: 47,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "src/Header.js",
+        lineNumber: 46,
+        columnNumber: 5
+    }, this));
+}
+_c1 = StyledLink;
+function HeaderOffset(props) {
+    let offsetStyling = {
+        boxSizing: "border-box",
+        display: "flex",
+        justifyContent: "center",
+        padding: "0.7em",
+        marginBottom: "1em",
+        top: "0",
+        left: "0",
+        right: "0"
+    };
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+        style: offsetStyling
+    }, void 0, false, {
+        fileName: "src/Header.js",
+        lineNumber: 64,
+        columnNumber: 5
+    }, this));
+}
+_c2 = HeaderOffset;
+var _c, _c1, _c2;
 $RefreshReg$(_c, "Header");
+$RefreshReg$(_c1, "StyledLink");
+$RefreshReg$(_c2, "HeaderOffset");
 
   $parcel$ReactRefreshHelpers$43c4.postlude(module);
 } finally {
