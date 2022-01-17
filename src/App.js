@@ -1,22 +1,31 @@
-import React from "react";
-import './css/index.css';
-import { Switch, Route, Redirect } from "react-router-dom";
-import { Header } from "./Header.js";
-import { Home } from "./Home.js";
-import { Link1 } from "./Link1.js";
+// App.js
+import * as React from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import { Header } from "./Header";
+import { Home } from "./Home";
+import { Link1 } from "./Link1";
 
-const App = () => {
-
+export function App() {
   return (
     <div>
       <Header />
       <div className="OffsetTheHeader"></div>
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="Link1" element={<Link1 />} />
+        <Route path="*" 
+        element={
+          <main>
+            <h1>404 Error</h1>
+            <p>There's nothing here!</p>
+            <Link to="/">Return to home page</Link>
+          </main>
+        }
+    />
+      </Routes>
     </div>
   );
-
-};
-
+}
 
 
 export default App;

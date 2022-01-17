@@ -1,6 +1,6 @@
 import React from "react";
 import './css/index.css';
-import logo from './media/logo.png';
+import { Link } from "react-router-dom";
 
 export const Link1 = () => {
 
@@ -8,6 +8,7 @@ export const Link1 = () => {
   return (
     <div>
       <h1>Link1</h1>
+      <Link to="/">Return to home page</Link>
     </div>
   );
 };

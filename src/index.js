@@ -1,7 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
-import './css/index.css';
-import { HashRouter } from "react-router-dom";
+import {HashRouter as Router} from 'react-router-dom'
+import { App } from "./App";
 
-ReactDOM.render(<HashRouter><App /></HashRouter>, document.querySelector("#root"));
+const app = document.getElementById("app");
+ReactDOM.render(
+    <React.StrictMode>
+        <Router><App /></Router>
+    </React.StrictMode>,
+app);
