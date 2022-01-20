@@ -22,10 +22,9 @@ export const Header = () => {
     <div>
       {OFFSET_HEADER && <HeaderOffset />}
       <div style={divStyling} className='Header'>
-        <StyledLink to="/link1">link1</StyledLink>
-        <StyledLink to="/link2">link2</StyledLink>
-        <StyledLink to="/link3">link3</StyledLink>
-        <StyledLink to="/link4">link4</StyledLink>
+        <StyledLink to="/link1">2021 Intercollegiate Tournament</StyledLink>
+        <StyledLink to="/link2">2019 Intercollegiate Tournament</StyledLink>
+        <StyledLink to="/link3">Competetiors</StyledLink>
       </div>
     </div>
   );
