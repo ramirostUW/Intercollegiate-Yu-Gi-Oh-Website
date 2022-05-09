@@ -1,60 +1,45 @@
-import React from 'react';
-import { Link } from "react-router-dom";
-import './css/index.css';
+import React from "react";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import { LinkContainer } from "react-router-bootstrap";
+
 
 export const Header = () => {
-  const OFFSET_HEADER = true;
-
-
-  let divStyling = {
-    boxSizing: "border-box",
-    display: "flex",
-    justifyContent: "center",
-    padding: "0.7em",
-    marginBottom: "1em",
-    backgroundColor: "rgb(14, 21, 43)",
-    position: "fixed",
-    top: "0",
-    left: "0",
-    right: "0"
-  }
   return (
     <div>
-      {OFFSET_HEADER && <HeaderOffset />}
-      <div style={divStyling} className='Header'>
-        <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="/link1">2021 Intercollegiate Tournament</StyledLink>
-        <StyledLink to="/link2">2019 Intercollegiate Tournament</StyledLink>
-        <StyledLink to="/link3">Competitors</StyledLink>
-      </div>
+      <HeaderOffset />
+      <Navbar className="nav header" fixed="top" expand="lg" variant="dark">
+        <LinkContainer to="/">
+          <Navbar.Brand>Intercollegiate YGO</Navbar.Brand>
+        </LinkContainer>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <LinkContainer to="/">
+              <Nav.Link>Home</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/link1">
+              <Nav.Link>2021 Intercollegiate Tournament</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/link2">
+              <Nav.Link>2019 Intercollegiate Tournament</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/link3">
+              <Nav.Link>Competitors</Nav.Link>
+            </LinkContainer>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     </div>
   );
 };
-
-
-
-function StyledLink(props) {
-  let liStyling = {
-    paddingLeft: "1em",
-    paddingRight: "1em",
-    listStyleType: "none"
-  }
-  let LinkStyling = {
-    color: "rgb(78, 133, 133)"
-  }
-  return (
-    <li style={liStyling}>
-      <Link to={props.to} style={LinkStyling}>{props.children}</Link>
-    </li>
-  );
-}
 
 function HeaderOffset(props) {
   let offsetStyling = {
     boxSizing: "border-box",
     display: "flex",
     justifyContent: "center",
-    padding: "0.7em",
+    padding: "1.5em",
     marginBottom: "1em",
     top: "0",
     left: "0",

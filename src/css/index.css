@@ -1,7 +1,7 @@
 body {
   font-family: 'IBM Plex Sans', sans-serif;
   color: white !important;
-  background-color: black;
+  background-color: black !important;
 }
 
 h1 {
@@ -31,4 +31,8 @@ a:hover {
   width: 70%;
   margin: auto;
   display: block;
+}
+
+.header {
+  background-color: #0e2f44;
 }
