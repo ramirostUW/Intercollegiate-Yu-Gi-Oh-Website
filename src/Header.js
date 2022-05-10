@@ -2,17 +2,17 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { LinkContainer } from "react-router-bootstrap";
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 export const Header = () => {
   return (
     <div>
       <HeaderOffset />
       <Navbar className="nav header" fixed="top" expand="lg" variant="dark">
         <LinkContainer to="/">
-          <Navbar.Brand>Intercollegiate YGO</Navbar.Brand>
+          <Navbar.Brand>Intercollegiate YGO <FontAwesomeIcon icon="coffee" /></Navbar.Brand>
         </LinkContainer>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav"><FontAwesomeIcon icon={faBars} /></Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <LinkContainer to="/">
