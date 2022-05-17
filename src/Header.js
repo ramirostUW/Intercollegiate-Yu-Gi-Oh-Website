@@ -24,7 +24,7 @@ export const Header = () => {
             <LinkContainer to="/tournament2021">
               <Nav.Link>2021 Intercollegiate Tournament</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/link3">
+            <LinkContainer to="/Competitors">
               <Nav.Link>Competitors</Nav.Link>
             </LinkContainer>
           </Nav>
