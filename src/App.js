@@ -4,7 +4,8 @@ import { Routes, Route, Link } from "react-router-dom";
 import { Header } from "./Header";
 import { NavBar } from "./NavBar";
 import { Home } from "./Home";
-import { Link1 } from "./Link1";
+import { Tournament2019 } from "./tournament2019";
+import { Tournament2021 } from "./tournament2021";
 
 export function App() {
   return (
@@ -12,7 +13,8 @@ export function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="Link1" element={<Link1 />} />
+        <Route path="Tournament2019" element={<Tournament2019 />} />
+        <Route path="Tournament2021" element={<Tournament2021 />} />
         <Route path="*" 
         element={
           <main>

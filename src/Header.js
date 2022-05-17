@@ -18,11 +18,11 @@ export const Header = () => {
             <LinkContainer to="/">
               <Nav.Link>Home</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/link1">
-              <Nav.Link>2021 Intercollegiate Tournament</Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/link2">
+            <LinkContainer to="/tournament2019">
               <Nav.Link>2019 Intercollegiate Tournament</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/tournament2021">
+              <Nav.Link>2021 Intercollegiate Tournament</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/link3">
               <Nav.Link>Competitors</Nav.Link>

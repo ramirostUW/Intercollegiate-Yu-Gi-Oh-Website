@@ -37,3 +37,8 @@ a:hover {
 .header {
   background-color: #0e2f44;
 }
+
+ul {
+  display: table;
+  margin: 0 auto;
+}
