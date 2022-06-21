@@ -1,0 +1,30 @@
+.navbar {
+    background-color: #00ADB5;
+    display: flex;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/*
+CSS Overriding of react-boostrap nav from
+https://stackoverflow.com/questions/66298345/not-able-to-change-color-of-navlink-react-bootstrap
+*/
+
+.active{
+    background-color: #1E2022;
+    color: #EEEEEE;
+}
+
+.link {
+    color: #FFFFFF;
+    display: block;
+    font-family: 'Helvetica-Black-SemiBold', sans-serif;
+    padding: 0.8rem;
+}
+
+.link:hover {
+    color: #EEEEEE;
+}
+
+
+

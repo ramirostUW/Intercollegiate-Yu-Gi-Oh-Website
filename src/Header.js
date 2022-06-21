@@ -1,34 +1,46 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import './css/Header.css';
 import { LinkContainer } from "react-router-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import logo from './media/logo.png';
+
 export const Header = () => {
   return (
-    <div>
+    <div className="navbar-container">
       <HeaderOffset />
-      <Navbar className="nav header" fixed="top" expand="lg" variant="dark">
-        <LinkContainer to="/">
-          <Navbar.Brand>Intercollegiate YGO <FontAwesomeIcon icon="coffee" /></Navbar.Brand>
-        </LinkContainer>
+      <Navbar className="navbar" fixed="top" expand="lg">
         <Navbar.Toggle aria-controls="basic-navbar-nav"><FontAwesomeIcon icon={faBars} /></Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
+          <Nav id="links">
             <LinkContainer to="/">
-              <Nav.Link>Home</Nav.Link>
+              <Nav.Link activeClassName="active" bsPrefix="link">Home </Nav.Link>
             </LinkContainer>
             <LinkContainer to="/tournament2019">
-              <Nav.Link>2019 Intercollegiate Tournament</Nav.Link>
+              <Nav.Link activeClassName="active" bsPrefix="link">2019 Intercollegiate Tournament</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/tournament2021">
-              <Nav.Link>2021 Intercollegiate Tournament</Nav.Link>
+              <Nav.Link activeClassName="active" bsPrefix="link">2021 Intercollegiate Tournament</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/Competitors">
-              <Nav.Link>Competitors</Nav.Link>
+              <Nav.Link activeClassName="active" bsPrefix="link">Competitors</Nav.Link>
             </LinkContainer>
           </Nav>
         </Navbar.Collapse>
+
+        <LinkContainer to="/">
+          <Navbar.Brand>
+            <img
+              src={logo}
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+              alt="Intercollegiate Yugioh logo"
+            />
+          </Navbar.Brand>
+        </LinkContainer>
       </Navbar>
     </div>
   );

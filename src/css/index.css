@@ -1,8 +1,8 @@
 
 body {
-  font-family: 'IBM Plex Sans', sans-serif;
-  color: white !important;
-  background-color: black !important;
+  font-family: 'Helvetica-Black-SemiBold', sans-serif;
+  color: #EEEEEE !important;
+  background-color: #1E2022 !important;
 }
 
 h1 {
@@ -19,24 +19,12 @@ h2 {
   font-size:3vw;
 }
 
-a {
-  color: #27283F;
-  text-decoration: none !important;
-}
-
-a:hover {
-  color: #17B2B5 !important;
-}
-
 .logoPic {
   width: 70%;
   margin: auto;
   display: block;
 }
 
-.header {
-  background-color: #0e2f44;
-}
 
 ul {
   display: table;
