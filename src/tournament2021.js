@@ -24,7 +24,7 @@ export const Tournament2021 = () => {
 
   //&#8209; is a non-line-breaking dash
   return (
-    <div>
+    <div id="tournament2021">
       <h1>2021 Intercollegiate Championship</h1>
       <h2>Tournament Statistics:</h2>
       <Tiles data={dataF} />

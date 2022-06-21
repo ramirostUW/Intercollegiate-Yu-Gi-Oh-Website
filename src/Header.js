@@ -9,7 +9,7 @@ import logo from './media/logo.png';
 
 export const Header = () => {
   return (
-    <div className="navbar-container">
+    <div id="header">
       <HeaderOffset />
       <Navbar className="navbar" fixed="top" expand="lg">
         <Navbar.Toggle aria-controls="basic-navbar-nav"><FontAwesomeIcon icon={faBars} /></Navbar.Toggle>

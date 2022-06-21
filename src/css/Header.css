@@ -7,7 +7,8 @@
 
 /*
 CSS Overriding of react-boostrap nav from
-https://stackoverflow.com/questions/66298345/not-able-to-change-color-of-navlink-react-bootstrap
+change active class: https://stackoverflow.com/questions/61314053/react-bootstrap-custom-nav-link-active-style-is-not-working
+change color based on active: https://stackoverflow.com/questions/66298345/not-able-to-change-color-of-navlink-react-bootstrap
 */
 
 .active{
