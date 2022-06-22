@@ -21,7 +21,6 @@ export function App() {
   let location = useLocation();
 
   React.useEffect(() => {
-    console.log(location.pathname);
     setCurrentPage(pages.findIndex((e) => e === location.pathname));
   }, [location])
 
@@ -57,7 +56,8 @@ export function App() {
 
       if (nextPage !== currentPage) {
         setTouchStart(touchEnd);
-        navigate(pages.at(nextPage));
+        //location.
+        navigate(pages.at(nextPage), {state: true});
         setCurrentPage(nextPage);
       }
     }

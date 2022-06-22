@@ -6,6 +6,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import logo from './media/logo.png';
+import {NavLink} from "react-bootstrap";
 
 export const Header = () => {
   return (
@@ -16,16 +17,16 @@ export const Header = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav id="links">
             <LinkContainer to="/">
-              <Nav.Link activeClassName="active" bsPrefix="link">Home </Nav.Link>
+              <NavLink activeClassName="active" bsPrefix="link">Home </NavLink>
             </LinkContainer>
             <LinkContainer to="/tournament2019">
-              <Nav.Link activeClassName="active" bsPrefix="link">2019 Intercollegiate Tournament</Nav.Link>
+              <NavLink activeClassName="active" bsPrefix="link">2019 Intercollegiate Tournament</NavLink>
             </LinkContainer>
             <LinkContainer to="/tournament2021">
-              <Nav.Link activeClassName="active" bsPrefix="link">2021 Intercollegiate Tournament</Nav.Link>
+              <NavLink activeClassName="active" bsPrefix="link">2021 Intercollegiate Tournament</NavLink>
             </LinkContainer>
             <LinkContainer to="/Competitors">
-              <Nav.Link activeClassName="active" bsPrefix="link">Competitors</Nav.Link>
+              <NavLink activeClassName="active" bsPrefix="link">Competitors</NavLink>
             </LinkContainer>
           </Nav>
         </Navbar.Collapse>
