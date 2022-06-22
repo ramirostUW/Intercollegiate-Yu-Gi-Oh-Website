@@ -11,7 +11,7 @@ change active class: https://stackoverflow.com/questions/61314053/react-bootstra
 change color based on active: https://stackoverflow.com/questions/66298345/not-able-to-change-color-of-navlink-react-bootstrap
 */
 
-.active{
+.active-page {
     background-color: #1E2022;
     color: #EEEEEE;
 }

@@ -9,6 +9,7 @@ import logo from './media/logo.png';
 import {NavLink} from "react-bootstrap";
 
 export const Header = () => {
+
   return (
     <div id="header">
       <HeaderOffset />
@@ -16,17 +17,17 @@ export const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav"><FontAwesomeIcon icon={faBars} /></Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav id="links">
-            <LinkContainer to="/">
-              <NavLink activeClassName="active" bsPrefix="link">Home </NavLink>
+            <LinkContainer activeClassName="active-page" to="/">
+              <NavLink  bsPrefix="link" >Home </NavLink>
             </LinkContainer>
-            <LinkContainer to="/tournament2019">
-              <NavLink activeClassName="active" bsPrefix="link">2019 Intercollegiate Tournament</NavLink>
+            <LinkContainer activeClassName="active-page" to="/tournament2019">
+              <NavLink bsPrefix="link">2019 Intercollegiate Tournament</NavLink>
             </LinkContainer>
-            <LinkContainer to="/tournament2021">
-              <NavLink activeClassName="active" bsPrefix="link">2021 Intercollegiate Tournament</NavLink>
+            <LinkContainer activeClassName="active-page" to="/tournament2021">
+              <NavLink bsPrefix="link">2021 Intercollegiate Tournament</NavLink>
             </LinkContainer>
-            <LinkContainer to="/Competitors">
-              <NavLink activeClassName="active" bsPrefix="link">Competitors</NavLink>
+            <LinkContainer activeClassName="active-page" to="/Competitors">
+              <NavLink bsPrefix="link">Competitors</NavLink>
             </LinkContainer>
           </Nav>
         </Navbar.Collapse>
