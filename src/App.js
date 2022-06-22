@@ -1,7 +1,6 @@
 // App.js
 import * as React from "react";
 import { Routes, Route, Link, useLocation, useNavigate } from "react-router-dom";
-import { Header } from "./Header";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import './css/Header.css';
@@ -16,8 +15,6 @@ import Nav from "react-bootstrap/Nav";
 import {LinkContainer} from "react-router-bootstrap";
 import {NavLink} from "react-bootstrap";
 import logo from "./media/logo.png";
-
-
 
 export function App() {
   const [touchStart, setTouchStart] = React.useState(0);
@@ -73,10 +70,8 @@ export function App() {
   }
 
   return (
-    <div onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleMoveEnd}
-      onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMoveEnd}>
+    <div>
       <div id="header">
-        <HeaderOffset />
         <Navbar className="navbar" fixed="top" expand="lg">
           <Navbar.Toggle aria-controls="basic-navbar-nav"><FontAwesomeIcon icon={faBars} /></Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
@@ -109,39 +104,26 @@ export function App() {
           </LinkContainer>
         </Navbar>
       </div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="Tournament2019" element={<Tournament2019 />} />
-        <Route path="Tournament2021" element={<Tournament2021 />} />
-        <Route path="Competitors" element={<Competitors />} />
-        <Route path="*" 
-        element={
-          <main>
-            <h1>404 Error</h1>
-            <p>There's nothing here!</p>
-            <Link to="/">Return to home page</Link>
-          </main>
-        }
-    />
-      </Routes>
+      <div id="current-page" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleMoveEnd}
+           onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMoveEnd}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="Tournament2019" element={<Tournament2019 />} />
+          <Route path="Tournament2021" element={<Tournament2021 />} />
+          <Route path="Competitors" element={<Competitors />} />
+          <Route path="*"
+          element={
+            <main>
+              <h1>404 Error</h1>
+              <p>There's nothing here!</p>
+              <Link to="/">Return to home page</Link>
+            </main>
+          }
+          />
+        </Routes>
+      </div>
     </div>
   );
-}
-
-function HeaderOffset(props) {
-  let offsetStyling = {
-    boxSizing: "border-box",
-    display: "flex",
-    justifyContent: "center",
-    padding: "1.5em",
-    marginBottom: "1em",
-    top: "0",
-    left: "0",
-    right: "0"
-  }
-  return (
-      <div style={offsetStyling}></div>
-  )
 }
 
 export default App;
