@@ -1,6 +1,6 @@
 // App.js
 import * as React from "react";
-import { Routes, Route, Link, useLocation, useNavigate } from "react-router-dom";
+import {Routes, Route, Link, useLocation, useNavigate, Navigate} from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import './css/Header.css';
@@ -131,12 +131,16 @@ export function App() {
       </BrowserView>
       <div id="current-page" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleMoveEnd}
             style={{transform: `translateX(${touchDistance}px)`}} >
+        <BrowserView>
+          <h1>This is rendered only in browser</h1>
+        </BrowserView>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/tournament2019" element={<Tournament2019 />} />
-          <Route path="/tournament2021" element={<Tournament2021 />} />
-          <Route path="/Competitors" element={<Competitors />} />
-          <Route path="/*"
+          <Route path="tournament2019" element={<Tournament2019 />} />
+          <Route path="/tournament2019" element={<Navigate to="tournament2019" />} />
+          <Route path="tournament2021" element={<Tournament2021 />} />
+          <Route path="Competitors" element={<Competitors />} />
+          <Route path="*"
                  element={
                    <main>
                      <h1>404 Error</h1>

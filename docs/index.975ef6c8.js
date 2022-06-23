@@ -31255,68 +31255,93 @@ function App() {
                 style: {
                     transform: `translateX(${touchDistance}px)`
                 },
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _home.Home), {}, void 0, false, void 0, void 0)
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactDeviceDetect.BrowserView), {
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                            children: "This is rendered only in browser"
                         }, void 0, false, {
                             fileName: "src/App.js",
                             lineNumber: 135,
                             columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/tournament2019",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _tournament2019.Tournament2019), {}, void 0, false, void 0, void 0)
-                        }, void 0, false, {
-                            fileName: "src/App.js",
-                            lineNumber: 136,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/tournament2021",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _tournament2021.Tournament2021), {}, void 0, false, void 0, void 0)
-                        }, void 0, false, {
-                            fileName: "src/App.js",
-                            lineNumber: 137,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/Competitors",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _competitors.Competitors), {}, void 0, false, void 0, void 0)
-                        }, void 0, false, {
-                            fileName: "src/App.js",
-                            lineNumber: 138,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/*",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("main", {
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                                        children: "404 Error"
-                                    }, void 0, false, void 0, void 0),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                        children: "There's nothing here!"
-                                    }, void 0, false, void 0, void 0),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                        to: "/",
-                                        children: "Return to home page"
-                                    }, void 0, false, void 0, void 0)
-                                ]
-                            }, void 0, true, void 0, void 0)
-                        }, void 0, false, {
-                            fileName: "src/App.js",
-                            lineNumber: 139,
-                            columnNumber: 11
                         }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/App.js",
-                    lineNumber: 134,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
+                    }, void 0, false, {
+                        fileName: "src/App.js",
+                        lineNumber: 134,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                                path: "/",
+                                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _home.Home), {}, void 0, false, void 0, void 0)
+                            }, void 0, false, {
+                                fileName: "src/App.js",
+                                lineNumber: 138,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                                path: "tournament2019",
+                                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _tournament2019.Tournament2019), {}, void 0, false, void 0, void 0)
+                            }, void 0, false, {
+                                fileName: "src/App.js",
+                                lineNumber: 139,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                                path: "/tournament2019",
+                                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
+                                    to: "tournament2019"
+                                }, void 0, false, void 0, void 0)
+                            }, void 0, false, {
+                                fileName: "src/App.js",
+                                lineNumber: 140,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                                path: "tournament2021",
+                                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _tournament2021.Tournament2021), {}, void 0, false, void 0, void 0)
+                            }, void 0, false, {
+                                fileName: "src/App.js",
+                                lineNumber: 141,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                                path: "Competitors",
+                                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _competitors.Competitors), {}, void 0, false, void 0, void 0)
+                            }, void 0, false, {
+                                fileName: "src/App.js",
+                                lineNumber: 142,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                                path: "*",
+                                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("main", {
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                                            children: "404 Error"
+                                        }, void 0, false, void 0, void 0),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            children: "There's nothing here!"
+                                        }, void 0, false, void 0, void 0),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                            to: "/",
+                                            children: "Return to home page"
+                                        }, void 0, false, void 0, void 0)
+                                    ]
+                                }, void 0, true, void 0, void 0)
+                            }, void 0, false, {
+                                fileName: "src/App.js",
+                                lineNumber: 143,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/App.js",
+                        lineNumber: 137,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "src/App.js",
                 lineNumber: 132,
                 columnNumber: 7
