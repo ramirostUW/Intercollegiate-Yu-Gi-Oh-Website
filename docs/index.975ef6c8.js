@@ -12257,7 +12257,7 @@ function App() {
     const [swiping, setSwiping] = _react.useState(false);
     const [touchStart, setTouchStart] = _react.useState(0);
     const [touchDistance, setTouchDistance] = _react.useState(0);
-    const MIN_TOUCH_DISTANCE = 75;
+    const MIN_TOUCH_DISTANCE = 100;
     const [currentPage, setCurrentPage] = _react.useState(0);
     const pages = [
         "/",
@@ -12281,7 +12281,7 @@ function App() {
     }
     function handleTouchMove(e) {
         const currentTouchDistance = e.targetTouches[0].clientX - touchStart;
-        if (swiping && currentTouchDistance > 15) setTouchDistance(currentTouchDistance);
+        if (swiping && Math.abs(currentTouchDistance) > 15) setTouchDistance(currentTouchDistance);
     }
     function handleMoveEnd() {
         setSwiping(false);

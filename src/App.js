@@ -21,7 +21,7 @@ export function App() {
   const [swiping, setSwiping] = React.useState(false);
   const [touchStart, setTouchStart] = React.useState(0);
   const [touchDistance, setTouchDistance] = React.useState(0);
-  const MIN_TOUCH_DISTANCE = 75;
+  const MIN_TOUCH_DISTANCE = 100;
   const [currentPage, setCurrentPage] = React.useState(0);
   const pages = ["/", "/tournament2019", "/tournament2021", "/Competitors"];
   // useNavigate code: https://stackoverflow.com/questions/68613526/react-router-dom-usehistory-not-working
@@ -43,7 +43,7 @@ export function App() {
 
   function handleTouchMove(e) {
     const currentTouchDistance = e.targetTouches[0].clientX - touchStart;
-    if (swiping && currentTouchDistance > 15) {
+    if (swiping && Math.abs(currentTouchDistance) > 15) {
       setTouchDistance(currentTouchDistance);
     }
   }
