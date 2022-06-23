@@ -2,8 +2,10 @@
     background-color: #00ADB5;
     display: flex;
     padding-top: 0;
+    padding-left: 0;
     padding-bottom: 0;
 }
+
 
 #current-page {
     padding-top: 4em;

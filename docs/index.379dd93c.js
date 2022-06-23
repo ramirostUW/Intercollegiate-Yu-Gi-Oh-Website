@@ -29400,7 +29400,6 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 // App.js
 var _react = require("react");
 var _reactRouterDom = require("react-router-dom");
-var _header = require("./Header");
 var _navbar = require("react-bootstrap/Navbar");
 var _navbarDefault = parcelHelpers.interopDefault(_navbar);
 var _nav = require("react-bootstrap/Nav");
@@ -29416,6 +29415,7 @@ var _reactRouterBootstrap = require("react-router-bootstrap");
 var _reactBootstrap = require("react-bootstrap");
 var _logoPng = require("./media/logo.png");
 var _logoPngDefault = parcelHelpers.interopDefault(_logoPng);
+var _reactTransitionGroup = require("react-transition-group");
 var _s = $RefreshSig$();
 function App() {
     _s();
@@ -29432,6 +29432,13 @@ function App() {
     // useLocation code: https://stackoverflow.com/questions/45373742/detect-route-change-with-react-router
     let navigate = _reactRouterDom.useNavigate();
     let location = _reactRouterDom.useLocation();
+    // track if the page path did change so when can re-render the routes to apply animation
+    const currentKey = location.pathname.split("/")[1] || "/";
+    //Specify the duration of the animation (on enter and on exit)
+    const timeout = {
+        enter: 800,
+        exit: 400
+    };
     _react.useEffect(()=>{
         setCurrentPage(pages.findIndex((e)=>e === location.pathname
         ));
@@ -29468,226 +29475,243 @@ function App() {
         }
     }
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-        onTouchStart: handleTouchStart,
-        onTouchMove: handleTouchMove,
-        onTouchEnd: handleMoveEnd,
-        onMouseDown: handleMouseDown,
-        onMouseMove: handleMouseMove,
-        onMouseUp: handleMoveEnd,
         children: [
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                 id: "header",
-                children: [
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(HeaderOffset, {
-                    }, void 0, false, {
-                        fileName: "src/App.js",
-                        lineNumber: 79,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarDefault.default, {
-                        className: "navbar",
-                        fixed: "top",
-                        expand: "lg",
-                        children: [
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarDefault.default.Toggle, {
-                                "aria-controls": "basic-navbar-nav",
-                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactFontawesome.FontAwesomeIcon, {
-                                    icon: _freeSolidSvgIcons.faBars
-                                }, void 0, false, {
-                                    fileName: "src/App.js",
-                                    lineNumber: 81,
-                                    columnNumber: 59
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "src/App.js",
-                                lineNumber: 81,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarDefault.default.Collapse, {
-                                id: "basic-navbar-nav",
-                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navDefault.default, {
-                                    id: "links",
-                                    children: [
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterBootstrap.LinkContainer, {
-                                            activeClassName: "active-page",
-                                            to: "/",
-                                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavLink, {
-                                                bsPrefix: "link",
-                                                children: "Home "
-                                            }, void 0, false, {
-                                                fileName: "src/App.js",
-                                                lineNumber: 85,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "src/App.js",
-                                            lineNumber: 84,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterBootstrap.LinkContainer, {
-                                            activeClassName: "active-page",
-                                            to: "/tournament2019",
-                                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavLink, {
-                                                bsPrefix: "link",
-                                                children: "2019 Intercollegiate Tournament"
-                                            }, void 0, false, {
-                                                fileName: "src/App.js",
-                                                lineNumber: 88,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "src/App.js",
-                                            lineNumber: 87,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterBootstrap.LinkContainer, {
-                                            activeClassName: "active-page",
-                                            to: "/tournament2021",
-                                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavLink, {
-                                                bsPrefix: "link",
-                                                children: "2021 Intercollegiate Tournament"
-                                            }, void 0, false, {
-                                                fileName: "src/App.js",
-                                                lineNumber: 91,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "src/App.js",
-                                            lineNumber: 90,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterBootstrap.LinkContainer, {
-                                            activeClassName: "active-page",
-                                            to: "/Competitors",
-                                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavLink, {
-                                                bsPrefix: "link",
-                                                children: "Competitors"
-                                            }, void 0, false, {
-                                                fileName: "src/App.js",
-                                                lineNumber: 94,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "src/App.js",
-                                            lineNumber: 93,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/App.js",
-                                    lineNumber: 83,
-                                    columnNumber: 13
-                                }, this)
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarDefault.default, {
+                    className: "navbar",
+                    fixed: "top",
+                    expand: "lg",
+                    children: [
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarDefault.default.Toggle, {
+                            "aria-controls": "basic-navbar-nav",
+                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactFontawesome.FontAwesomeIcon, {
+                                icon: _freeSolidSvgIcons.faBars
                             }, void 0, false, {
                                 fileName: "src/App.js",
                                 lineNumber: 82,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterBootstrap.LinkContainer, {
-                                to: "/",
-                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarDefault.default.Brand, {
-                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {
-                                        src: _logoPngDefault.default,
-                                        width: "30",
-                                        height: "30",
-                                        className: "d-inline-block align-top",
-                                        alt: "Intercollegiate Yugioh logo"
+                                columnNumber: 59
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "src/App.js",
+                            lineNumber: 82,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarDefault.default.Collapse, {
+                            id: "basic-navbar-nav",
+                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navDefault.default, {
+                                id: "links",
+                                children: [
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterBootstrap.LinkContainer, {
+                                        activeClassName: "active-page",
+                                        to: "/",
+                                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavLink, {
+                                            bsPrefix: "link",
+                                            children: "Home "
+                                        }, void 0, false, {
+                                            fileName: "src/App.js",
+                                            lineNumber: 86,
+                                            columnNumber: 17
+                                        }, this)
                                     }, void 0, false, {
                                         fileName: "src/App.js",
-                                        lineNumber: 101,
+                                        lineNumber: 85,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterBootstrap.LinkContainer, {
+                                        activeClassName: "active-page",
+                                        to: "/tournament2019",
+                                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavLink, {
+                                            bsPrefix: "link",
+                                            children: "2019 Intercollegiate Tournament"
+                                        }, void 0, false, {
+                                            fileName: "src/App.js",
+                                            lineNumber: 89,
+                                            columnNumber: 17
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "src/App.js",
+                                        lineNumber: 88,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterBootstrap.LinkContainer, {
+                                        activeClassName: "active-page",
+                                        to: "/tournament2021",
+                                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavLink, {
+                                            bsPrefix: "link",
+                                            children: "2021 Intercollegiate Tournament"
+                                        }, void 0, false, {
+                                            fileName: "src/App.js",
+                                            lineNumber: 92,
+                                            columnNumber: 17
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "src/App.js",
+                                        lineNumber: 91,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterBootstrap.LinkContainer, {
+                                        activeClassName: "active-page",
+                                        to: "/Competitors",
+                                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavLink, {
+                                            bsPrefix: "link",
+                                            children: "Competitors"
+                                        }, void 0, false, {
+                                            fileName: "src/App.js",
+                                            lineNumber: 95,
+                                            columnNumber: 17
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "src/App.js",
+                                        lineNumber: 94,
                                         columnNumber: 15
                                     }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/App.js",
+                                lineNumber: 84,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "src/App.js",
+                            lineNumber: 83,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterBootstrap.LinkContainer, {
+                            to: "/",
+                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarDefault.default.Brand, {
+                                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {
+                                    src: _logoPngDefault.default,
+                                    width: "30",
+                                    height: "30",
+                                    className: "d-inline-block align-top",
+                                    alt: "Intercollegiate Yugioh logo"
                                 }, void 0, false, {
                                     fileName: "src/App.js",
-                                    lineNumber: 100,
-                                    columnNumber: 13
+                                    lineNumber: 102,
+                                    columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "src/App.js",
-                                lineNumber: 99,
-                                columnNumber: 11
+                                lineNumber: 101,
+                                columnNumber: 13
                             }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/App.js",
-                        lineNumber: 80,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
+                        }, void 0, false, {
+                            fileName: "src/App.js",
+                            lineNumber: 100,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/App.js",
+                    lineNumber: 81,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 78,
+                lineNumber: 80,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Routes, {
-                children: [
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
-                        path: "/",
-                        element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_home.Home, {
-                        }, void 0, false, void 0, void 0)
-                    }, void 0, false, {
-                        fileName: "src/App.js",
-                        lineNumber: 113,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
-                        path: "Tournament2019",
-                        element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_tournament2019.Tournament2019, {
-                        }, void 0, false, void 0, void 0)
-                    }, void 0, false, {
-                        fileName: "src/App.js",
-                        lineNumber: 114,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
-                        path: "Tournament2021",
-                        element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_tournament2021.Tournament2021, {
-                        }, void 0, false, void 0, void 0)
-                    }, void 0, false, {
-                        fileName: "src/App.js",
-                        lineNumber: 115,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
-                        path: "Competitors",
-                        element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_competitors.Competitors, {
-                        }, void 0, false, void 0, void 0)
-                    }, void 0, false, {
-                        fileName: "src/App.js",
-                        lineNumber: 116,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
-                        path: "*",
-                        element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("main", {
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactTransitionGroup.TransitionGroup, {
+                component: "div",
+                className: "App",
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactTransitionGroup.CSSTransition, {
+                    timeout: timeout,
+                    classNames: "pageSlider",
+                    mountOnEnter: false,
+                    unmountOnExit: true,
+                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                        id: "current-page",
+                        onTouchStart: handleTouchStart,
+                        onTouchMove: handleTouchMove,
+                        onTouchEnd: handleMoveEnd,
+                        onMouseDown: handleMouseDown,
+                        onMouseMove: handleMouseMove,
+                        onMouseUp: handleMoveEnd,
+                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Routes, {
                             children: [
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
-                                    children: "404 Error"
-                                }, void 0, false, void 0, void 0),
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
-                                    children: "There's nothing here!"
-                                }, void 0, false, void 0, void 0),
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                                    to: "/",
-                                    children: "Return to home page"
-                                }, void 0, false, void 0, void 0)
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                                    path: "/",
+                                    element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_home.Home, {
+                                    }, void 0, false, void 0, void 0)
+                                }, void 0, false, {
+                                    fileName: "src/App.js",
+                                    lineNumber: 124,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                                    path: "Tournament2019",
+                                    element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_tournament2019.Tournament2019, {
+                                    }, void 0, false, void 0, void 0)
+                                }, void 0, false, {
+                                    fileName: "src/App.js",
+                                    lineNumber: 125,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                                    path: "Tournament2021",
+                                    element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_tournament2021.Tournament2021, {
+                                    }, void 0, false, void 0, void 0)
+                                }, void 0, false, {
+                                    fileName: "src/App.js",
+                                    lineNumber: 126,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                                    path: "Competitors",
+                                    element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_competitors.Competitors, {
+                                    }, void 0, false, void 0, void 0)
+                                }, void 0, false, {
+                                    fileName: "src/App.js",
+                                    lineNumber: 127,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                                    path: "*",
+                                    element: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("main", {
+                                        children: [
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
+                                                children: "404 Error"
+                                            }, void 0, false, void 0, void 0),
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
+                                                children: "There's nothing here!"
+                                            }, void 0, false, void 0, void 0),
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                                to: "/",
+                                                children: "Return to home page"
+                                            }, void 0, false, void 0, void 0)
+                                        ]
+                                    }, void 0, true, void 0, void 0)
+                                }, void 0, false, {
+                                    fileName: "src/App.js",
+                                    lineNumber: 128,
+                                    columnNumber: 15
+                                }, this)
                             ]
-                        }, void 0, true, void 0, void 0)
+                        }, void 0, true, {
+                            fileName: "src/App.js",
+                            lineNumber: 123,
+                            columnNumber: 13
+                        }, this)
                     }, void 0, false, {
                         fileName: "src/App.js",
-                        lineNumber: 117,
-                        columnNumber: 9
+                        lineNumber: 121,
+                        columnNumber: 11
                     }, this)
-                ]
-            }, void 0, true, {
+                }, currentKey, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 114,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 112,
+                lineNumber: 113,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/App.js",
-        lineNumber: 76,
+        lineNumber: 79,
         columnNumber: 5
     }, this));
 }
@@ -29698,46 +29722,744 @@ _s(App, "zQDpH2boLtvVGVDHnMk+bVrVGYQ=", false, function() {
     ];
 });
 _c = App;
-function HeaderOffset(props) {
-    let offsetStyling = {
-        boxSizing: "border-box",
-        display: "flex",
-        justifyContent: "center",
-        padding: "1.5em",
-        marginBottom: "1em",
-        top: "0",
-        left: "0",
-        right: "0"
-    };
-    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-        style: offsetStyling
-    }, void 0, false, {
-        fileName: "src/App.js",
-        lineNumber: 143,
-        columnNumber: 7
-    }, this));
-}
-_c1 = HeaderOffset;
 exports.default = App;
-var _c, _c1;
+var _c;
 $RefreshReg$(_c, "App");
-$RefreshReg$(_c1, "HeaderOffset");
 
   $parcel$ReactRefreshHelpers$9846.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"3jZUD","react":"4mchR","react-router-dom":"16kZP","./Header":"abXsY","./Home":"6SbGv","./tournament2019":"e10rr","./tournament2021":"jQUnR","./Competitors":"4B8YP","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","react-bootstrap/Navbar":"6tJ6F","react-bootstrap/Nav":"3TTuV","./css/Header.css":"hd9hc","@fortawesome/react-fontawesome":"55Qlg","@fortawesome/free-solid-svg-icons":"A45Nk","react-router-bootstrap":"f8Da9","react-bootstrap":"9qMdX","./media/logo.png":"9oUsZ"}],"abXsY":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$43c4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react/jsx-dev-runtime":"3jZUD","react":"4mchR","react-router-dom":"16kZP","./Home":"6SbGv","./tournament2019":"e10rr","./tournament2021":"jQUnR","./Competitors":"4B8YP","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","react-bootstrap/Navbar":"6tJ6F","react-bootstrap/Nav":"3TTuV","./css/Header.css":"hd9hc","react-router-bootstrap":"f8Da9","react-bootstrap":"9qMdX","./media/logo.png":"9oUsZ","@fortawesome/react-fontawesome":"55Qlg","@fortawesome/free-solid-svg-icons":"A45Nk","react-transition-group":"krQpC"}],"6SbGv":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$dec9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$43c4.prelude(module);
+$parcel$ReactRefreshHelpers$dec9.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Header", ()=>Header
+parcelHelpers.export(exports, "Home", ()=>Home
+);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _indexCss = require("./css/index.css");
+var _logoPng = require("./media/logo.png");
+var _logoPngDefault = parcelHelpers.interopDefault(_logoPng);
+const Home = ()=>{
+    //&#8209; is a non-line-breaking dash
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+        id: "home",
+        children: [
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
+                children: "Intercollegiate Yu‑Gi‑Oh!"
+            }, void 0, false, {
+                fileName: "src/Home.js",
+                lineNumber: 10,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
+                children: " Website coming soon!"
+            }, void 0, false, {
+                fileName: "src/Home.js",
+                lineNumber: 11,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {
+                className: "logoPic",
+                src: _logoPngDefault.default,
+                alt: "Logo"
+            }, void 0, false, {
+                fileName: "src/Home.js",
+                lineNumber: 12,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Home.js",
+        lineNumber: 9,
+        columnNumber: 5
+    }, undefined));
+};
+_c = Home;
+var _c;
+$RefreshReg$(_c, "Home");
+
+  $parcel$ReactRefreshHelpers$dec9.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"3jZUD","react":"4mchR","./css/index.css":"jlefm","./media/logo.png":"9oUsZ","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"jlefm":[function() {},{}],"9oUsZ":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('hjDlF') + "logo.61123e9a.png" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"chiK4"}],"chiK4":[function(require,module,exports) {
+"use strict";
+var bundleURL = {
+};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"9pz13":[function(require,module,exports) {
+"use strict";
+var Refresh = require('react-refresh/runtime');
+function debounce(func, delay) {
+    var args1;
+    var timeout = undefined;
+    return function(args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(function() {
+            timeout = undefined;
+            func.call(null, args);
+        }, delay);
+    };
+}
+var enqueueUpdate = debounce(function() {
+    Refresh.performReactRefresh();
+}, 30); // Everthing below is either adapted or copied from
+// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
+// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
+module.exports.prelude = function(module) {
+    window.$RefreshReg$ = function(type, id) {
+        Refresh.register(type, module.id + ' ' + id);
+    };
+    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
+};
+module.exports.postlude = function(module) {
+    if (isReactRefreshBoundary(module.exports)) {
+        registerExportsForReactRefresh(module);
+        if (module.hot) {
+            module.hot.dispose(function(data) {
+                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
+                data.prevExports = module.exports;
+            });
+            module.hot.accept(function(getParents) {
+                var prevExports = module.hot.data.prevExports;
+                var nextExports = module.exports; // Since we just executed the code for it, it's possible
+                // that the new exports make it ineligible for being a boundary.
+                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
+                // with the previous exports.
+                // For example, if you add/remove/change exports, we'll want
+                // to re-execute the importing modules, and force those components
+                // to re-render. Similarly, if you convert a class component
+                // to a function, we want to invalidate the boundary.
+                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
+                if (isNoLongerABoundary || didInvalidate) {
+                    // We'll be conservative. The only case in which we won't do a full
+                    // reload is if all parent modules are also refresh boundaries.
+                    // In that case we'll add them to the current queue.
+                    var parents = getParents();
+                    if (parents.length === 0) {
+                        // Looks like we bubbled to the root. Can't recover from that.
+                        window.location.reload();
+                        return;
+                    }
+                    return parents;
+                }
+                enqueueUpdate();
+            });
+        }
+    }
+};
+function isReactRefreshBoundary(exports) {
+    if (Refresh.isLikelyComponentType(exports)) return true;
+    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
+    return false;
+    var hasExports = false;
+    var areAllExportsComponents = true;
+    let isESM = '__esModule' in exports;
+    for(var key in exports){
+        hasExports = true;
+        if (key === '__esModule') continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
+        return false;
+        var exportValue = exports[key];
+        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
+    }
+    return hasExports && areAllExportsComponents;
+}
+function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
+    var prevSignature = getRefreshBoundarySignature(prevExports);
+    var nextSignature = getRefreshBoundarySignature(nextExports);
+    if (prevSignature.length !== nextSignature.length) return true;
+    for(var i = 0; i < nextSignature.length; i++){
+        if (prevSignature[i] !== nextSignature[i]) return true;
+    }
+    return false;
+} // When this signature changes, it's unsafe to stop at this refresh boundary.
+function getRefreshBoundarySignature(exports) {
+    var signature = [];
+    signature.push(Refresh.getFamilyByType(exports));
+    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return signature;
+    let isESM = '__esModule' in exports;
+    for(var key in exports){
+        if (key === '__esModule') continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        signature.push(key);
+        signature.push(Refresh.getFamilyByType(exportValue));
+    }
+    return signature;
+}
+function registerExportsForReactRefresh(module) {
+    var exports = module.exports, id = module.id;
+    Refresh.register(exports, id + ' %exports%');
+    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return;
+    let isESM = '__esModule' in exports;
+    for(var key in exports){
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        Refresh.register(exportValue, id + ' %exports% ' + key);
+    }
+}
+
+},{"react-refresh/runtime":"aeH4U"}],"e10rr":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$7fdd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$7fdd.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Tournament2019", ()=>Tournament2019
+);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _indexCss = require("./css/index.css");
+var _reactRouterDom = require("react-router-dom");
+var _fastFactTiles = require("./fastFactTiles");
+const Tournament2019 = ()=>{
+    let dataF = [
+        {
+            "title": "7",
+            "text": "Total teams"
+        },
+        {
+            "title": "35",
+            "text": "participants"
+        },
+        {
+            "title": "1500",
+            "text": "Viewers on Twitch"
+        },
+        {
+            "title": "$2000",
+            "text": "In Prize Support"
+        }
+    ];
+    //&#8209; is a non-line-breaking dash
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+        id: "tournament2019",
+        children: [
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
+                children: "2019 Intercollegiate Championship"
+            }, void 0, false, {
+                fileName: "src/tournament2019.js",
+                lineNumber: 28,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
+                children: "Tournament Statistics:"
+            }, void 0, false, {
+                fileName: "src/tournament2019.js",
+                lineNumber: 29,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_fastFactTiles.Tiles, {
+                data: dataF
+            }, void 0, false, {
+                fileName: "src/tournament2019.js",
+                lineNumber: 30,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
+                children: "Description:"
+            }, void 0, false, {
+                fileName: "src/tournament2019.js",
+                lineNumber: 31,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
+                children: "The 2019 Intercollegiate Championship was the inaugural tournament, organized and hosted by Club Yu-Gi-Ohio from Ohio State University. It was held on October 19th, 2019 in OSU's Recreation and Physical Activity Center (RPAC)."
+            }, void 0, false, {
+                fileName: "src/tournament2019.js",
+                lineNumber: 32,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
+                children: "List of Sponsors"
+            }, void 0, false, {
+                fileName: "src/tournament2019.js",
+                lineNumber: 37,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("ul", {
+                children: [
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                        children: "No Limit Gaming "
+                    }, void 0, false, {
+                        fileName: "src/tournament2019.js",
+                        lineNumber: 39,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                        children: "Pixel Palace Games"
+                    }, void 0, false, {
+                        fileName: "src/tournament2019.js",
+                        lineNumber: 40,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                        children: "Heroes and Games"
+                    }, void 0, false, {
+                        fileName: "src/tournament2019.js",
+                        lineNumber: 41,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                        children: "Worthy Financial"
+                    }, void 0, false, {
+                        fileName: "src/tournament2019.js",
+                        lineNumber: 42,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/tournament2019.js",
+                lineNumber: 38,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
+                children: "Rules and Procedures"
+            }, void 0, false, {
+                fileName: "src/tournament2019.js",
+                lineNumber: 44,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
+                children: [
+                    "This Event followed the Monday, July 15th, 2019 Yu-Gi-Oh TCG Banlist. All standard Konami Tournament Rules and Procedures in effect at that moment applied, with exception of allowing digital tracking of life points (although paper records would take priority in the event of disputes). Additionally, instead of being an individual player tournament, the tournament was played in teams of 5, with each school getting the chance to submit up to 2 teams. Each team would designate each player with a letter from A to E. Each of the 5 players would then participate in different tournament brackets with other players of the same letter, known as “Heats” (All Player A's would play in Heat A, all Player B's in Heat B, and so on). Each Heat played 3 rounds of Swiss, and the top 4 teams with the highest points moved on to Single Elimination Top Cut.",
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {
+                    }, void 0, false, {
+                        fileName: "src/tournament2019.js",
+                        lineNumber: 58,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/tournament2019.js",
+                lineNumber: 45,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
+                children: "Results"
+            }, void 0, false, {
+                fileName: "src/tournament2019.js",
+                lineNumber: 60,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("ul", {
+                children: [
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                        children: "Champions: Ohio State University (Team Scarlet)"
+                    }, void 0, false, {
+                        fileName: "src/tournament2019.js",
+                        lineNumber: 62,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                        children: "2nd Place: Indiana University Bloomington (Team IU)"
+                    }, void 0, false, {
+                        fileName: "src/tournament2019.js",
+                        lineNumber: 63,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                        children: "Semi-finalists: Miami University (Team MUGO)"
+                    }, void 0, false, {
+                        fileName: "src/tournament2019.js",
+                        lineNumber: 64,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                        children: "Semi-finalists: Kent State University (Team KSU)"
+                    }, void 0, false, {
+                        fileName: "src/tournament2019.js",
+                        lineNumber: 65,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/tournament2019.js",
+                lineNumber: 61,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                to: "/",
+                children: "Return to home page"
+            }, void 0, false, {
+                fileName: "src/tournament2019.js",
+                lineNumber: 67,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/tournament2019.js",
+        lineNumber: 27,
+        columnNumber: 5
+    }, undefined));
+};
+_c = Tournament2019;
+var _c;
+$RefreshReg$(_c, "Tournament2019");
+
+  $parcel$ReactRefreshHelpers$7fdd.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"3jZUD","react":"4mchR","./css/index.css":"jlefm","react-router-dom":"16kZP","./fastFactTiles":"eCrFx","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"jlefm":[function() {},{}],"eCrFx":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$aca5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$aca5.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Tiles", ()=>Tiles
+);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Tiles = (props)=>{
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+        id: "features",
+        className: "text-center",
+        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+            className: "container",
+            children: [
+                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "col-md-10 col-md-offset-1 section-title"
+                }, void 0, false, {
+                    fileName: "src/fastFactTiles.js",
+                    lineNumber: 5,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                    className: "row justify-content-center",
+                    children: props.data ? props.data.map((d, i)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                            className: "col-xs-6 col-md-3",
+                            children: [
+                                ' ',
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h3", {
+                                    style: {
+                                        color: "blue",
+                                        fontSize: 78
+                                    },
+                                    children: d.title
+                                }, void 0, false, {
+                                    fileName: "src/fastFactTiles.js",
+                                    lineNumber: 12,
+                                    columnNumber: 19
+                                }, undefined),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
+                                    style: {
+                                        fontSize: 18
+                                    },
+                                    children: d.text
+                                }, void 0, false, {
+                                    fileName: "src/fastFactTiles.js",
+                                    lineNumber: 16,
+                                    columnNumber: 19
+                                }, undefined)
+                            ]
+                        }, `${d.title}-${i}`, true, {
+                            fileName: "src/fastFactTiles.js",
+                            lineNumber: 10,
+                            columnNumber: 17
+                        }, undefined)
+                    ) : 'Loading...'
+                }, void 0, false, {
+                    fileName: "src/fastFactTiles.js",
+                    lineNumber: 7,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/fastFactTiles.js",
+            lineNumber: 4,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/fastFactTiles.js",
+        lineNumber: 3,
+        columnNumber: 5
+    }, undefined));
+};
+_c = Tiles;
+var _c;
+$RefreshReg$(_c, "Tiles");
+
+  $parcel$ReactRefreshHelpers$aca5.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"3jZUD","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"jQUnR":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$5036 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$5036.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Tournament2021", ()=>Tournament2021
+);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _indexCss = require("./css/index.css");
+var _reactRouterDom = require("react-router-dom");
+var _fastFactTiles = require("./fastFactTiles");
+const Tournament2021 = ()=>{
+    let dataF = [
+        {
+            "title": "15",
+            "text": "Total teams"
+        },
+        {
+            "title": "45",
+            "text": "participants"
+        },
+        {
+            "title": "2000",
+            "text": "Viewers on Twitch"
+        },
+        {
+            "title": "$1050",
+            "text": "In Prize Support"
+        }
+    ];
+    //&#8209; is a non-line-breaking dash
+    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+        id: "tournament2021",
+        children: [
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
+                children: "2021 Intercollegiate Championship"
+            }, void 0, false, {
+                fileName: "src/tournament2021.js",
+                lineNumber: 28,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
+                children: "Tournament Statistics:"
+            }, void 0, false, {
+                fileName: "src/tournament2021.js",
+                lineNumber: 29,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_fastFactTiles.Tiles, {
+                data: dataF
+            }, void 0, false, {
+                fileName: "src/tournament2021.js",
+                lineNumber: 30,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
+                children: "Description:"
+            }, void 0, false, {
+                fileName: "src/tournament2021.js",
+                lineNumber: 31,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
+                children: "The 2021 Intercollegiate Championship was the second tournament, organized and hosted by Club Yu-Gi-Ohio from Ohio State University and following the inaugural 2019 championship, as well as replacing the 2020 event that was canceled due to the COVID-19 pandemic. It was held online (due to the ongoing pandemic) on October 16th, 2021."
+            }, void 0, false, {
+                fileName: "src/tournament2021.js",
+                lineNumber: 32,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
+                children: "List of Sponsors"
+            }, void 0, false, {
+                fileName: "src/tournament2021.js",
+                lineNumber: 38,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("ul", {
+                children: [
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                        children: "No Limit Gaming"
+                    }, void 0, false, {
+                        fileName: "src/tournament2021.js",
+                        lineNumber: 40,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                        children: "Refined Gaming"
+                    }, void 0, false, {
+                        fileName: "src/tournament2021.js",
+                        lineNumber: 41,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                        children: "TCG-Con"
+                    }, void 0, false, {
+                        fileName: "src/tournament2021.js",
+                        lineNumber: 42,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                        children: "Heroes and Games"
+                    }, void 0, false, {
+                        fileName: "src/tournament2021.js",
+                        lineNumber: 43,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/tournament2021.js",
+                lineNumber: 39,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
+                children: "Rules and Procedures"
+            }, void 0, false, {
+                fileName: "src/tournament2021.js",
+                lineNumber: 45,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
+                children: [
+                    "This Event followed the October 1st, 2021 Yu-Gi-Oh TCG Banlist. All standard Konami Tournament Rules and Procedures in effect at that moment applied. The event served as a soft reboot of the Championship by transitioning to Konami's official 3v3 ruleset, with each school having the option of submitting up to 3 teams each (for a maximum of 9 players).",
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {
+                    }, void 0, false, {
+                        fileName: "src/tournament2021.js",
+                        lineNumber: 52,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/tournament2021.js",
+                lineNumber: 46,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
+                children: "Results"
+            }, void 0, false, {
+                fileName: "src/tournament2021.js",
+                lineNumber: 54,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("ul", {
+                children: [
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                        children: "Champions: Ohio State University (Team Scarlet)"
+                    }, void 0, false, {
+                        fileName: "src/tournament2021.js",
+                        lineNumber: 56,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                        children: "2nd Place: University of Washington (Team Beetron 2 - Electric Boogaloo)"
+                    }, void 0, false, {
+                        fileName: "src/tournament2021.js",
+                        lineNumber: 57,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                        children: "Semi-finalists: Kent State University (Team Blue)"
+                    }, void 0, false, {
+                        fileName: "src/tournament2021.js",
+                        lineNumber: 58,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
+                        children: "Semi-finalists: Miami University (Team MUGO)"
+                    }, void 0, false, {
+                        fileName: "src/tournament2021.js",
+                        lineNumber: 59,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/tournament2021.js",
+                lineNumber: 55,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                to: "/",
+                children: "Return to home page"
+            }, void 0, false, {
+                fileName: "src/tournament2021.js",
+                lineNumber: 61,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/tournament2021.js",
+        lineNumber: 27,
+        columnNumber: 5
+    }, undefined));
+};
+_c = Tournament2021;
+var _c;
+$RefreshReg$(_c, "Tournament2021");
+
+  $parcel$ReactRefreshHelpers$5036.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"3jZUD","react":"4mchR","./css/index.css":"jlefm","react-router-dom":"16kZP","./fastFactTiles":"eCrFx","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"jlefm":[function() {},{}],"4B8YP":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$f025 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$f025.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Competitors", ()=>Competitors
 );
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
@@ -29746,190 +30468,35 @@ var _navbar = require("react-bootstrap/Navbar");
 var _navbarDefault = parcelHelpers.interopDefault(_navbar);
 var _nav = require("react-bootstrap/Nav");
 var _navDefault = parcelHelpers.interopDefault(_nav);
-var _headerCss = require("./css/Header.css");
 var _reactRouterBootstrap = require("react-router-bootstrap");
 var _reactFontawesome = require("@fortawesome/react-fontawesome");
 var _freeSolidSvgIcons = require("@fortawesome/free-solid-svg-icons");
-var _logoPng = require("./media/logo.png");
-var _logoPngDefault = parcelHelpers.interopDefault(_logoPng);
-var _reactBootstrap = require("react-bootstrap");
-const Header = ()=>{
+const Competitors = ()=>{
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-        id: "header",
-        children: [
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(HeaderOffset, {
-            }, void 0, false, {
-                fileName: "src/Header.js",
-                lineNumber: 15,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarDefault.default, {
-                className: "navbar",
-                fixed: "top",
-                expand: "lg",
-                children: [
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarDefault.default.Toggle, {
-                        "aria-controls": "basic-navbar-nav",
-                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactFontawesome.FontAwesomeIcon, {
-                            icon: _freeSolidSvgIcons.faBars
-                        }, void 0, false, {
-                            fileName: "src/Header.js",
-                            lineNumber: 17,
-                            columnNumber: 57
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/Header.js",
-                        lineNumber: 17,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarDefault.default.Collapse, {
-                        id: "basic-navbar-nav",
-                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navDefault.default, {
-                            id: "links",
-                            children: [
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterBootstrap.LinkContainer, {
-                                    activeClassName: "active-page",
-                                    to: "/",
-                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavLink, {
-                                        bsPrefix: "link",
-                                        children: "Home "
-                                    }, void 0, false, {
-                                        fileName: "src/Header.js",
-                                        lineNumber: 21,
-                                        columnNumber: 15
-                                    }, undefined)
-                                }, void 0, false, {
-                                    fileName: "src/Header.js",
-                                    lineNumber: 20,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterBootstrap.LinkContainer, {
-                                    activeClassName: "active-page",
-                                    to: "/tournament2019",
-                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavLink, {
-                                        bsPrefix: "link",
-                                        children: "2019 Intercollegiate Tournament"
-                                    }, void 0, false, {
-                                        fileName: "src/Header.js",
-                                        lineNumber: 24,
-                                        columnNumber: 15
-                                    }, undefined)
-                                }, void 0, false, {
-                                    fileName: "src/Header.js",
-                                    lineNumber: 23,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterBootstrap.LinkContainer, {
-                                    activeClassName: "active-page",
-                                    to: "/tournament2021",
-                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavLink, {
-                                        bsPrefix: "link",
-                                        children: "2021 Intercollegiate Tournament"
-                                    }, void 0, false, {
-                                        fileName: "src/Header.js",
-                                        lineNumber: 27,
-                                        columnNumber: 15
-                                    }, undefined)
-                                }, void 0, false, {
-                                    fileName: "src/Header.js",
-                                    lineNumber: 26,
-                                    columnNumber: 13
-                                }, undefined),
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterBootstrap.LinkContainer, {
-                                    activeClassName: "active-page",
-                                    to: "/Competitors",
-                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavLink, {
-                                        bsPrefix: "link",
-                                        children: "Competitors"
-                                    }, void 0, false, {
-                                        fileName: "src/Header.js",
-                                        lineNumber: 30,
-                                        columnNumber: 15
-                                    }, undefined)
-                                }, void 0, false, {
-                                    fileName: "src/Header.js",
-                                    lineNumber: 29,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/Header.js",
-                            lineNumber: 19,
-                            columnNumber: 11
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/Header.js",
-                        lineNumber: 18,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterBootstrap.LinkContainer, {
-                        to: "/",
-                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarDefault.default.Brand, {
-                            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {
-                                src: _logoPngDefault.default,
-                                width: "30",
-                                height: "30",
-                                className: "d-inline-block align-top",
-                                alt: "Intercollegiate Yugioh logo"
-                            }, void 0, false, {
-                                fileName: "src/Header.js",
-                                lineNumber: 37,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/Header.js",
-                            lineNumber: 36,
-                            columnNumber: 11
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/Header.js",
-                        lineNumber: 35,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/Header.js",
-                lineNumber: 16,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/Header.js",
-        lineNumber: 14,
+        id: "competitors",
+        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
+            children: "Competitors comp"
+        }, void 0, false, {
+            fileName: "src/Competitors.js",
+            lineNumber: 10,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/Competitors.js",
+        lineNumber: 9,
         columnNumber: 5
     }, undefined));
 };
-_c = Header;
-function HeaderOffset(props) {
-    let offsetStyling = {
-        boxSizing: "border-box",
-        display: "flex",
-        justifyContent: "center",
-        padding: "1.5em",
-        marginBottom: "1em",
-        top: "0",
-        left: "0",
-        right: "0"
-    };
-    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-        style: offsetStyling
-    }, void 0, false, {
-        fileName: "src/Header.js",
-        lineNumber: 63,
-        columnNumber: 5
-    }, this));
-}
-_c1 = HeaderOffset;
-var _c, _c1;
-$RefreshReg$(_c, "Header");
-$RefreshReg$(_c1, "HeaderOffset");
+_c = Competitors;
+var _c;
+$RefreshReg$(_c, "Competitors");
 
-  $parcel$ReactRefreshHelpers$43c4.postlude(module);
+  $parcel$ReactRefreshHelpers$f025.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"3jZUD","react":"4mchR","react-bootstrap/Navbar":"6tJ6F","react-bootstrap/Nav":"3TTuV","react-router-bootstrap":"f8Da9","@fortawesome/react-fontawesome":"55Qlg","@fortawesome/free-solid-svg-icons":"A45Nk","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","./css/Header.css":"hd9hc","./media/logo.png":"9oUsZ","react-bootstrap":"9qMdX"}],"6tJ6F":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"3jZUD","react":"4mchR","react-bootstrap/Navbar":"6tJ6F","react-bootstrap/Nav":"3TTuV","react-router-bootstrap":"f8Da9","@fortawesome/react-fontawesome":"55Qlg","@fortawesome/free-solid-svg-icons":"A45Nk","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"6tJ6F":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -62192,165 +62759,7 @@ var _iconsCache = {
     faZ: faZ
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"9pz13":[function(require,module,exports) {
-"use strict";
-var Refresh = require('react-refresh/runtime');
-function debounce(func, delay) {
-    var args1;
-    var timeout = undefined;
-    return function(args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(function() {
-            timeout = undefined;
-            func.call(null, args);
-        }, delay);
-    };
-}
-var enqueueUpdate = debounce(function() {
-    Refresh.performReactRefresh();
-}, 30); // Everthing below is either adapted or copied from
-// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
-// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
-module.exports.prelude = function(module) {
-    window.$RefreshReg$ = function(type, id) {
-        Refresh.register(type, module.id + ' ' + id);
-    };
-    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
-};
-module.exports.postlude = function(module) {
-    if (isReactRefreshBoundary(module.exports)) {
-        registerExportsForReactRefresh(module);
-        if (module.hot) {
-            module.hot.dispose(function(data) {
-                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
-                data.prevExports = module.exports;
-            });
-            module.hot.accept(function(getParents) {
-                var prevExports = module.hot.data.prevExports;
-                var nextExports = module.exports; // Since we just executed the code for it, it's possible
-                // that the new exports make it ineligible for being a boundary.
-                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
-                // with the previous exports.
-                // For example, if you add/remove/change exports, we'll want
-                // to re-execute the importing modules, and force those components
-                // to re-render. Similarly, if you convert a class component
-                // to a function, we want to invalidate the boundary.
-                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
-                if (isNoLongerABoundary || didInvalidate) {
-                    // We'll be conservative. The only case in which we won't do a full
-                    // reload is if all parent modules are also refresh boundaries.
-                    // In that case we'll add them to the current queue.
-                    var parents = getParents();
-                    if (parents.length === 0) {
-                        // Looks like we bubbled to the root. Can't recover from that.
-                        window.location.reload();
-                        return;
-                    }
-                    return parents;
-                }
-                enqueueUpdate();
-            });
-        }
-    }
-};
-function isReactRefreshBoundary(exports) {
-    if (Refresh.isLikelyComponentType(exports)) return true;
-    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
-    return false;
-    var hasExports = false;
-    var areAllExportsComponents = true;
-    let isESM = '__esModule' in exports;
-    for(var key in exports){
-        hasExports = true;
-        if (key === '__esModule') continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
-        return false;
-        var exportValue = exports[key];
-        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
-    }
-    return hasExports && areAllExportsComponents;
-}
-function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
-    var prevSignature = getRefreshBoundarySignature(prevExports);
-    var nextSignature = getRefreshBoundarySignature(nextExports);
-    if (prevSignature.length !== nextSignature.length) return true;
-    for(var i = 0; i < nextSignature.length; i++){
-        if (prevSignature[i] !== nextSignature[i]) return true;
-    }
-    return false;
-} // When this signature changes, it's unsafe to stop at this refresh boundary.
-function getRefreshBoundarySignature(exports) {
-    var signature = [];
-    signature.push(Refresh.getFamilyByType(exports));
-    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return signature;
-    let isESM = '__esModule' in exports;
-    for(var key in exports){
-        if (key === '__esModule') continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        signature.push(key);
-        signature.push(Refresh.getFamilyByType(exportValue));
-    }
-    return signature;
-}
-function registerExportsForReactRefresh(module) {
-    var exports = module.exports, id = module.id;
-    Refresh.register(exports, id + ' %exports%');
-    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return;
-    let isESM = '__esModule' in exports;
-    for(var key in exports){
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        Refresh.register(exportValue, id + ' %exports% ' + key);
-    }
-}
-
-},{"react-refresh/runtime":"aeH4U"}],"hd9hc":[function() {},{}],"9oUsZ":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('hjDlF') + "logo.61123e9a.png" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"chiK4"}],"chiK4":[function(require,module,exports) {
-"use strict";
-var bundleURL = {
-};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return '/';
-}
-function getBaseURL(url) {
-    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
-    if (!matches) throw new Error('Origin not found');
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"9qMdX":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"hd9hc":[function() {},{}],"9qMdX":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Accordion", ()=>_accordionDefault.default
@@ -70368,613 +70777,665 @@ Tooltip.defaultProps = defaultProps;
 Tooltip.displayName = 'Tooltip';
 exports.default = Tooltip;
 
-},{"classnames":"2cVcN","react":"4mchR","./ThemeProvider":"oG7Uz","./helpers":"4wQJ9","react/jsx-runtime":"6Ds2u","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"6SbGv":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$dec9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$dec9.prelude(module);
-
-try {
+},{"classnames":"2cVcN","react":"4mchR","./ThemeProvider":"oG7Uz","./helpers":"4wQJ9","react/jsx-runtime":"6Ds2u","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"krQpC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Home", ()=>Home
+parcelHelpers.export(exports, "CSSTransition", ()=>_csstransitionDefault.default
 );
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
+parcelHelpers.export(exports, "ReplaceTransition", ()=>_replaceTransitionDefault.default
+);
+parcelHelpers.export(exports, "SwitchTransition", ()=>_switchTransitionDefault.default
+);
+parcelHelpers.export(exports, "TransitionGroup", ()=>_transitionGroupDefault.default
+);
+parcelHelpers.export(exports, "Transition", ()=>_transitionDefault.default
+);
+parcelHelpers.export(exports, "config", ()=>_configDefault.default
+);
+var _csstransition = require("./CSSTransition");
+var _csstransitionDefault = parcelHelpers.interopDefault(_csstransition);
+var _replaceTransition = require("./ReplaceTransition");
+var _replaceTransitionDefault = parcelHelpers.interopDefault(_replaceTransition);
+var _switchTransition = require("./SwitchTransition");
+var _switchTransitionDefault = parcelHelpers.interopDefault(_switchTransition);
+var _transitionGroup = require("./TransitionGroup");
+var _transitionGroupDefault = parcelHelpers.interopDefault(_transitionGroup);
+var _transition = require("./Transition");
+var _transitionDefault = parcelHelpers.interopDefault(_transition);
+var _config = require("./config");
+var _configDefault = parcelHelpers.interopDefault(_config);
+
+},{"./CSSTransition":"kRxVk","./ReplaceTransition":false,"./SwitchTransition":false,"./TransitionGroup":"9a09l","./Transition":"5xmpQ","./config":"33G8w","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"kRxVk":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
+var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _addClass = require("dom-helpers/addClass");
+var _addClassDefault = parcelHelpers.interopDefault(_addClass);
+var _removeClass = require("dom-helpers/removeClass");
+var _removeClassDefault = parcelHelpers.interopDefault(_removeClass);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _indexCss = require("./css/index.css");
-var _logoPng = require("./media/logo.png");
-var _logoPngDefault = parcelHelpers.interopDefault(_logoPng);
-const Home = ()=>{
-    //&#8209; is a non-line-breaking dash
-    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-        id: "home",
-        children: [
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
-                children: "Intercollegiate Yu‑Gi‑Oh!"
-            }, void 0, false, {
-                fileName: "src/Home.js",
-                lineNumber: 10,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
-                children: " Website coming soon!"
-            }, void 0, false, {
-                fileName: "src/Home.js",
-                lineNumber: 11,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {
-                className: "logoPic",
-                src: _logoPngDefault.default,
-                alt: "Logo"
-            }, void 0, false, {
-                fileName: "src/Home.js",
-                lineNumber: 12,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/Home.js",
-        lineNumber: 9,
-        columnNumber: 5
-    }, undefined));
+var _transition = require("./Transition");
+var _transitionDefault = parcelHelpers.interopDefault(_transition);
+var _propTypes1 = require("./utils/PropTypes");
+var _addClass1 = function addClass(node, classes) {
+    return node && classes && classes.split(' ').forEach(function(c) {
+        return _addClassDefault.default(node, c);
+    });
 };
-_c = Home;
-var _c;
-$RefreshReg$(_c, "Home");
-
-  $parcel$ReactRefreshHelpers$dec9.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"3jZUD","react":"4mchR","./css/index.css":"jlefm","./media/logo.png":"9oUsZ","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"jlefm":[function() {},{}],"e10rr":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$7fdd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$7fdd.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Tournament2019", ()=>Tournament2019
-);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _indexCss = require("./css/index.css");
-var _reactRouterDom = require("react-router-dom");
-var _fastFactTiles = require("./fastFactTiles");
-const Tournament2019 = ()=>{
-    let dataF = [
-        {
-            "title": "7",
-            "text": "Total teams"
-        },
-        {
-            "title": "35",
-            "text": "participants"
-        },
-        {
-            "title": "1500",
-            "text": "Viewers on Twitch"
-        },
-        {
-            "title": "$2000",
-            "text": "In Prize Support"
+var removeClass = function removeClass(node, classes) {
+    return node && classes && classes.split(' ').forEach(function(c) {
+        return _removeClassDefault.default(node, c);
+    });
+};
+/**
+ * A transition component inspired by the excellent
+ * [ng-animate](https://docs.angularjs.org/api/ngAnimate) library, you should
+ * use it if you're using CSS transitions or animations. It's built upon the
+ * [`Transition`](https://reactcommunity.org/react-transition-group/transition)
+ * component, so it inherits all of its props.
+ *
+ * `CSSTransition` applies a pair of class names during the `appear`, `enter`,
+ * and `exit` states of the transition. The first class is applied and then a
+ * second `*-active` class in order to activate the CSS transition. After the
+ * transition, matching `*-done` class names are applied to persist the
+ * transition state.
+ *
+ * ```jsx
+ * function App() {
+ *   const [inProp, setInProp] = useState(false);
+ *   return (
+ *     <div>
+ *       <CSSTransition in={inProp} timeout={200} classNames="my-node">
+ *         <div>
+ *           {"I'll receive my-node-* classes"}
+ *         </div>
+ *       </CSSTransition>
+ *       <button type="button" onClick={() => setInProp(true)}>
+ *         Click to Enter
+ *       </button>
+ *     </div>
+ *   );
+ * }
+ * ```
+ *
+ * When the `in` prop is set to `true`, the child component will first receive
+ * the class `example-enter`, then the `example-enter-active` will be added in
+ * the next tick. `CSSTransition` [forces a
+ * reflow](https://github.com/reactjs/react-transition-group/blob/5007303e729a74be66a21c3e2205e4916821524b/src/CSSTransition.js#L208-L215)
+ * between before adding the `example-enter-active`. This is an important trick
+ * because it allows us to transition between `example-enter` and
+ * `example-enter-active` even though they were added immediately one after
+ * another. Most notably, this is what makes it possible for us to animate
+ * _appearance_.
+ *
+ * ```css
+ * .my-node-enter {
+ *   opacity: 0;
+ * }
+ * .my-node-enter-active {
+ *   opacity: 1;
+ *   transition: opacity 200ms;
+ * }
+ * .my-node-exit {
+ *   opacity: 1;
+ * }
+ * .my-node-exit-active {
+ *   opacity: 0;
+ *   transition: opacity 200ms;
+ * }
+ * ```
+ *
+ * `*-active` classes represent which styles you want to animate **to**, so it's
+ * important to add `transition` declaration only to them, otherwise transitions
+ * might not behave as intended! This might not be obvious when the transitions
+ * are symmetrical, i.e. when `*-enter-active` is the same as `*-exit`, like in
+ * the example above (minus `transition`), but it becomes apparent in more
+ * complex transitions.
+ *
+ * **Note**: If you're using the
+ * [`appear`](http://reactcommunity.org/react-transition-group/transition#Transition-prop-appear)
+ * prop, make sure to define styles for `.appear-*` classes as well.
+ */ var CSSTransition = /*#__PURE__*/ function(_React$Component) {
+    _inheritsLooseDefault.default(CSSTransition1, _React$Component);
+    function CSSTransition1() {
+        var _this;
+        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++)args[_key] = arguments[_key];
+        _this = _React$Component.call.apply(_React$Component, [
+            this
+        ].concat(args)) || this;
+        _this.appliedClasses = {
+            appear: {
+            },
+            enter: {
+            },
+            exit: {
+            }
+        };
+        _this.onEnter = function(maybeNode, maybeAppearing) {
+            var _this$resolveArgument = _this.resolveArguments(maybeNode, maybeAppearing), node = _this$resolveArgument[0], appearing = _this$resolveArgument[1];
+            _this.removeClasses(node, 'exit');
+            _this.addClass(node, appearing ? 'appear' : 'enter', 'base');
+            if (_this.props.onEnter) _this.props.onEnter(maybeNode, maybeAppearing);
+        };
+        _this.onEntering = function(maybeNode, maybeAppearing) {
+            var _this$resolveArgument2 = _this.resolveArguments(maybeNode, maybeAppearing), node = _this$resolveArgument2[0], appearing = _this$resolveArgument2[1];
+            var type = appearing ? 'appear' : 'enter';
+            _this.addClass(node, type, 'active');
+            if (_this.props.onEntering) _this.props.onEntering(maybeNode, maybeAppearing);
+        };
+        _this.onEntered = function(maybeNode, maybeAppearing) {
+            var _this$resolveArgument3 = _this.resolveArguments(maybeNode, maybeAppearing), node = _this$resolveArgument3[0], appearing = _this$resolveArgument3[1];
+            var type = appearing ? 'appear' : 'enter';
+            _this.removeClasses(node, type);
+            _this.addClass(node, type, 'done');
+            if (_this.props.onEntered) _this.props.onEntered(maybeNode, maybeAppearing);
+        };
+        _this.onExit = function(maybeNode) {
+            var _this$resolveArgument4 = _this.resolveArguments(maybeNode), node = _this$resolveArgument4[0];
+            _this.removeClasses(node, 'appear');
+            _this.removeClasses(node, 'enter');
+            _this.addClass(node, 'exit', 'base');
+            if (_this.props.onExit) _this.props.onExit(maybeNode);
+        };
+        _this.onExiting = function(maybeNode) {
+            var _this$resolveArgument5 = _this.resolveArguments(maybeNode), node = _this$resolveArgument5[0];
+            _this.addClass(node, 'exit', 'active');
+            if (_this.props.onExiting) _this.props.onExiting(maybeNode);
+        };
+        _this.onExited = function(maybeNode) {
+            var _this$resolveArgument6 = _this.resolveArguments(maybeNode), node = _this$resolveArgument6[0];
+            _this.removeClasses(node, 'exit');
+            _this.addClass(node, 'exit', 'done');
+            if (_this.props.onExited) _this.props.onExited(maybeNode);
+        };
+        _this.resolveArguments = function(maybeNode, maybeAppearing) {
+            return _this.props.nodeRef ? [
+                _this.props.nodeRef.current,
+                maybeNode
+            ] // here `maybeNode` is actually `appearing`
+             : [
+                maybeNode,
+                maybeAppearing
+            ];
+        };
+        _this.getClassNames = function(type) {
+            var classNames = _this.props.classNames;
+            var isStringClassNames = typeof classNames === 'string';
+            var prefix = isStringClassNames && classNames ? classNames + "-" : '';
+            var baseClassName = isStringClassNames ? "" + prefix + type : classNames[type];
+            var activeClassName = isStringClassNames ? baseClassName + "-active" : classNames[type + "Active"];
+            var doneClassName = isStringClassNames ? baseClassName + "-done" : classNames[type + "Done"];
+            return {
+                baseClassName: baseClassName,
+                activeClassName: activeClassName,
+                doneClassName: doneClassName
+            };
+        };
+        return _this;
+    }
+    var _proto = CSSTransition1.prototype;
+    _proto.addClass = function addClass(node, type, phase) {
+        var className = this.getClassNames(type)[phase + "ClassName"];
+        var _this$getClassNames = this.getClassNames('enter'), doneClassName = _this$getClassNames.doneClassName;
+        if (type === 'appear' && phase === 'done' && doneClassName) className += " " + doneClassName;
+         // This is to force a repaint,
+        // which is necessary in order to transition styles when adding a class name.
+        if (phase === 'active') /* eslint-disable no-unused-expressions */ node && node.scrollTop;
+        if (className) {
+            this.appliedClasses[type][phase] = className;
+            _addClass1(node, className);
         }
-    ];
-    //&#8209; is a non-line-breaking dash
-    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-        id: "tournament2019",
-        children: [
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
-                children: "2019 Intercollegiate Championship"
-            }, void 0, false, {
-                fileName: "src/tournament2019.js",
-                lineNumber: 28,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
-                children: "Tournament Statistics:"
-            }, void 0, false, {
-                fileName: "src/tournament2019.js",
-                lineNumber: 29,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_fastFactTiles.Tiles, {
-                data: dataF
-            }, void 0, false, {
-                fileName: "src/tournament2019.js",
-                lineNumber: 30,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
-                children: "Description:"
-            }, void 0, false, {
-                fileName: "src/tournament2019.js",
-                lineNumber: 31,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
-                children: "The 2019 Intercollegiate Championship was the inaugural tournament, organized and hosted by Club Yu-Gi-Ohio from Ohio State University. It was held on October 19th, 2019 in OSU's Recreation and Physical Activity Center (RPAC)."
-            }, void 0, false, {
-                fileName: "src/tournament2019.js",
-                lineNumber: 32,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
-                children: "List of Sponsors"
-            }, void 0, false, {
-                fileName: "src/tournament2019.js",
-                lineNumber: 37,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("ul", {
-                children: [
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                        children: "No Limit Gaming "
-                    }, void 0, false, {
-                        fileName: "src/tournament2019.js",
-                        lineNumber: 39,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                        children: "Pixel Palace Games"
-                    }, void 0, false, {
-                        fileName: "src/tournament2019.js",
-                        lineNumber: 40,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                        children: "Heroes and Games"
-                    }, void 0, false, {
-                        fileName: "src/tournament2019.js",
-                        lineNumber: 41,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                        children: "Worthy Financial"
-                    }, void 0, false, {
-                        fileName: "src/tournament2019.js",
-                        lineNumber: 42,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/tournament2019.js",
-                lineNumber: 38,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
-                children: "Rules and Procedures"
-            }, void 0, false, {
-                fileName: "src/tournament2019.js",
-                lineNumber: 44,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
-                children: [
-                    "This Event followed the Monday, July 15th, 2019 Yu-Gi-Oh TCG Banlist. All standard Konami Tournament Rules and Procedures in effect at that moment applied, with exception of allowing digital tracking of life points (although paper records would take priority in the event of disputes). Additionally, instead of being an individual player tournament, the tournament was played in teams of 5, with each school getting the chance to submit up to 2 teams. Each team would designate each player with a letter from A to E. Each of the 5 players would then participate in different tournament brackets with other players of the same letter, known as “Heats” (All Player A's would play in Heat A, all Player B's in Heat B, and so on). Each Heat played 3 rounds of Swiss, and the top 4 teams with the highest points moved on to Single Elimination Top Cut.",
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {
-                    }, void 0, false, {
-                        fileName: "src/tournament2019.js",
-                        lineNumber: 58,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/tournament2019.js",
-                lineNumber: 45,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
-                children: "Results"
-            }, void 0, false, {
-                fileName: "src/tournament2019.js",
-                lineNumber: 60,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("ul", {
-                children: [
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                        children: "Champions: Ohio State University (Team Scarlet)"
-                    }, void 0, false, {
-                        fileName: "src/tournament2019.js",
-                        lineNumber: 62,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                        children: "2nd Place: Indiana University Bloomington (Team IU)"
-                    }, void 0, false, {
-                        fileName: "src/tournament2019.js",
-                        lineNumber: 63,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                        children: "Semi-finalists: Miami University (Team MUGO)"
-                    }, void 0, false, {
-                        fileName: "src/tournament2019.js",
-                        lineNumber: 64,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                        children: "Semi-finalists: Kent State University (Team KSU)"
-                    }, void 0, false, {
-                        fileName: "src/tournament2019.js",
-                        lineNumber: 65,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/tournament2019.js",
-                lineNumber: 61,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                to: "/",
-                children: "Return to home page"
-            }, void 0, false, {
-                fileName: "src/tournament2019.js",
-                lineNumber: 67,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/tournament2019.js",
-        lineNumber: 27,
-        columnNumber: 5
-    }, undefined));
+    };
+    _proto.removeClasses = function removeClasses(node, type) {
+        var _this$appliedClasses$ = this.appliedClasses[type], baseClassName = _this$appliedClasses$.base, activeClassName = _this$appliedClasses$.active, doneClassName = _this$appliedClasses$.done;
+        this.appliedClasses[type] = {
+        };
+        if (baseClassName) removeClass(node, baseClassName);
+        if (activeClassName) removeClass(node, activeClassName);
+        if (doneClassName) removeClass(node, doneClassName);
+    };
+    _proto.render = function render() {
+        var _this$props = this.props, _ = _this$props.classNames, props = _objectWithoutPropertiesLooseDefault.default(_this$props, [
+            "classNames"
+        ]);
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_transitionDefault.default, _extendsDefault.default({
+        }, props, {
+            onEnter: this.onEnter,
+            onEntered: this.onEntered,
+            onEntering: this.onEntering,
+            onExit: this.onExit,
+            onExiting: this.onExiting,
+            onExited: this.onExited
+        })));
+    };
+    return CSSTransition1;
+}(_reactDefault.default.Component);
+CSSTransition.defaultProps = {
+    classNames: ''
 };
-_c = Tournament2019;
-var _c;
-$RefreshReg$(_c, "Tournament2019");
+CSSTransition.propTypes = _extendsDefault.default({
+}, _transitionDefault.default.propTypes, {
+    /**
+   * The animation classNames applied to the component as it appears, enters,
+   * exits or has finished the transition. A single name can be provided, which
+   * will be suffixed for each stage, e.g. `classNames="fade"` applies:
+   *
+   * - `fade-appear`, `fade-appear-active`, `fade-appear-done`
+   * - `fade-enter`, `fade-enter-active`, `fade-enter-done`
+   * - `fade-exit`, `fade-exit-active`, `fade-exit-done`
+   *
+   * A few details to note about how these classes are applied:
+   *
+   * 1. They are _joined_ with the ones that are already defined on the child
+   *    component, so if you want to add some base styles, you can use
+   *    `className` without worrying that it will be overridden.
+   *
+   * 2. If the transition component mounts with `in={false}`, no classes are
+   *    applied yet. You might be expecting `*-exit-done`, but if you think
+   *    about it, a component cannot finish exiting if it hasn't entered yet.
+   *
+   * 2. `fade-appear-done` and `fade-enter-done` will _both_ be applied. This
+   *    allows you to define different behavior for when appearing is done and
+   *    when regular entering is done, using selectors like
+   *    `.fade-enter-done:not(.fade-appear-done)`. For example, you could apply
+   *    an epic entrance animation when element first appears in the DOM using
+   *    [Animate.css](https://daneden.github.io/animate.css/). Otherwise you can
+   *    simply use `fade-enter-done` for defining both cases.
+   *
+   * Each individual classNames can also be specified independently like:
+   *
+   * ```js
+   * classNames={{
+   *  appear: 'my-appear',
+   *  appearActive: 'my-active-appear',
+   *  appearDone: 'my-done-appear',
+   *  enter: 'my-enter',
+   *  enterActive: 'my-active-enter',
+   *  enterDone: 'my-done-enter',
+   *  exit: 'my-exit',
+   *  exitActive: 'my-active-exit',
+   *  exitDone: 'my-done-exit',
+   * }}
+   * ```
+   *
+   * If you want to set these classes using CSS Modules:
+   *
+   * ```js
+   * import styles from './styles.css';
+   * ```
+   *
+   * you might want to use camelCase in your CSS file, that way could simply
+   * spread them instead of listing them one by one:
+   *
+   * ```js
+   * classNames={{ ...styles }}
+   * ```
+   *
+   * @type {string | {
+   *  appear?: string,
+   *  appearActive?: string,
+   *  appearDone?: string,
+   *  enter?: string,
+   *  enterActive?: string,
+   *  enterDone?: string,
+   *  exit?: string,
+   *  exitActive?: string,
+   *  exitDone?: string,
+   * }}
+   */ classNames: _propTypes1.classNamesShape,
+    /**
+   * A `<Transition>` callback fired immediately after the 'enter' or 'appear' class is
+   * applied.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+   *
+   * @type Function(node: HtmlElement, isAppearing: bool)
+   */ onEnter: _propTypesDefault.default.func,
+    /**
+   * A `<Transition>` callback fired immediately after the 'enter-active' or
+   * 'appear-active' class is applied.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+   *
+   * @type Function(node: HtmlElement, isAppearing: bool)
+   */ onEntering: _propTypesDefault.default.func,
+    /**
+   * A `<Transition>` callback fired immediately after the 'enter' or
+   * 'appear' classes are **removed** and the `done` class is added to the DOM node.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
+   *
+   * @type Function(node: HtmlElement, isAppearing: bool)
+   */ onEntered: _propTypesDefault.default.func,
+    /**
+   * A `<Transition>` callback fired immediately after the 'exit' class is
+   * applied.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed
+   *
+   * @type Function(node: HtmlElement)
+   */ onExit: _propTypesDefault.default.func,
+    /**
+   * A `<Transition>` callback fired immediately after the 'exit-active' is applied.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed
+   *
+   * @type Function(node: HtmlElement)
+   */ onExiting: _propTypesDefault.default.func,
+    /**
+   * A `<Transition>` callback fired immediately after the 'exit' classes
+   * are **removed** and the `exit-done` class is added to the DOM node.
+   *
+   * **Note**: when `nodeRef` prop is passed, `node` is not passed
+   *
+   * @type Function(node: HtmlElement)
+   */ onExited: _propTypesDefault.default.func
+});
+exports.default = CSSTransition;
 
-  $parcel$ReactRefreshHelpers$7fdd.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"3jZUD","react":"4mchR","./css/index.css":"jlefm","react-router-dom":"16kZP","./fastFactTiles":"eCrFx","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"jlefm":[function() {},{}],"eCrFx":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$aca5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$aca5.prelude(module);
-
-try {
+},{"@babel/runtime/helpers/esm/extends":"5inYT","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"9unNO","@babel/runtime/helpers/esm/inheritsLoose":"6cZja","prop-types":"2bysO","dom-helpers/addClass":"l4YUz","dom-helpers/removeClass":"hVmiH","react":"4mchR","./Transition":"5xmpQ","./utils/PropTypes":"kLICv","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"9a09l":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Tiles", ()=>Tiles
-);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Tiles = (props)=>{
-    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-        id: "features",
-        className: "text-center",
-        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-            className: "container",
-            children: [
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                    className: "col-md-10 col-md-offset-1 section-title"
-                }, void 0, false, {
-                    fileName: "src/fastFactTiles.js",
-                    lineNumber: 5,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                    className: "row justify-content-center",
-                    children: props.data ? props.data.map((d, i)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                            className: "col-xs-6 col-md-3",
-                            children: [
-                                ' ',
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h3", {
-                                    style: {
-                                        color: "blue",
-                                        fontSize: 78
-                                    },
-                                    children: d.title
-                                }, void 0, false, {
-                                    fileName: "src/fastFactTiles.js",
-                                    lineNumber: 12,
-                                    columnNumber: 19
-                                }, undefined),
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
-                                    style: {
-                                        fontSize: 18
-                                    },
-                                    children: d.text
-                                }, void 0, false, {
-                                    fileName: "src/fastFactTiles.js",
-                                    lineNumber: 16,
-                                    columnNumber: 19
-                                }, undefined)
-                            ]
-                        }, `${d.title}-${i}`, true, {
-                            fileName: "src/fastFactTiles.js",
-                            lineNumber: 10,
-                            columnNumber: 17
-                        }, undefined)
-                    ) : 'Loading...'
-                }, void 0, false, {
-                    fileName: "src/fastFactTiles.js",
-                    lineNumber: 7,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/fastFactTiles.js",
-            lineNumber: 4,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/fastFactTiles.js",
-        lineNumber: 3,
-        columnNumber: 5
-    }, undefined));
-};
-_c = Tiles;
-var _c;
-$RefreshReg$(_c, "Tiles");
-
-  $parcel$ReactRefreshHelpers$aca5.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"3jZUD","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"jQUnR":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$5036 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$5036.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Tournament2021", ()=>Tournament2021
-);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _assertThisInitialized = require("@babel/runtime/helpers/esm/assertThisInitialized");
+var _assertThisInitializedDefault = parcelHelpers.interopDefault(_assertThisInitialized);
+var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
+var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _indexCss = require("./css/index.css");
-var _reactRouterDom = require("react-router-dom");
-var _fastFactTiles = require("./fastFactTiles");
-const Tournament2021 = ()=>{
-    let dataF = [
-        {
-            "title": "15",
-            "text": "Total teams"
-        },
-        {
-            "title": "45",
-            "text": "participants"
-        },
-        {
-            "title": "2000",
-            "text": "Viewers on Twitch"
-        },
-        {
-            "title": "$1050",
-            "text": "In Prize Support"
+var _transitionGroupContext = require("./TransitionGroupContext");
+var _transitionGroupContextDefault = parcelHelpers.interopDefault(_transitionGroupContext);
+var _childMapping = require("./utils/ChildMapping");
+var values = Object.values || function(obj) {
+    return Object.keys(obj).map(function(k) {
+        return obj[k];
+    });
+};
+var defaultProps = {
+    component: 'div',
+    childFactory: function childFactory(child) {
+        return child;
+    }
+};
+/**
+ * The `<TransitionGroup>` component manages a set of transition components
+ * (`<Transition>` and `<CSSTransition>`) in a list. Like with the transition
+ * components, `<TransitionGroup>` is a state machine for managing the mounting
+ * and unmounting of components over time.
+ *
+ * Consider the example below. As items are removed or added to the TodoList the
+ * `in` prop is toggled automatically by the `<TransitionGroup>`.
+ *
+ * Note that `<TransitionGroup>`  does not define any animation behavior!
+ * Exactly _how_ a list item animates is up to the individual transition
+ * component. This means you can mix and match animations across different list
+ * items.
+ */ var TransitionGroup = /*#__PURE__*/ function(_React$Component) {
+    _inheritsLooseDefault.default(TransitionGroup1, _React$Component);
+    function TransitionGroup1(props, context) {
+        var _this;
+        _this = _React$Component.call(this, props, context) || this;
+        var handleExited = _this.handleExited.bind(_assertThisInitializedDefault.default(_this)); // Initial children should all be entering, dependent on appear
+        _this.state = {
+            contextValue: {
+                isMounting: true
+            },
+            handleExited: handleExited,
+            firstRender: true
+        };
+        return _this;
+    }
+    var _proto = TransitionGroup1.prototype;
+    _proto.componentDidMount = function componentDidMount() {
+        this.mounted = true;
+        this.setState({
+            contextValue: {
+                isMounting: false
+            }
+        });
+    };
+    _proto.componentWillUnmount = function componentWillUnmount() {
+        this.mounted = false;
+    };
+    TransitionGroup1.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, _ref) {
+        var prevChildMapping = _ref.children, handleExited = _ref.handleExited, firstRender = _ref.firstRender;
+        return {
+            children: firstRender ? _childMapping.getInitialChildMapping(nextProps, handleExited) : _childMapping.getNextChildMapping(nextProps, prevChildMapping, handleExited),
+            firstRender: false
+        };
+    } // node is `undefined` when user provided `nodeRef` prop
+    ;
+    _proto.handleExited = function handleExited(child, node) {
+        var currentChildMapping = _childMapping.getChildMapping(this.props.children);
+        if (child.key in currentChildMapping) return;
+        if (child.props.onExited) child.props.onExited(node);
+        if (this.mounted) this.setState(function(state) {
+            var children = _extendsDefault.default({
+            }, state.children);
+            delete children[child.key];
+            return {
+                children: children
+            };
+        });
+    };
+    _proto.render = function render() {
+        var _this$props = this.props, Component = _this$props.component, childFactory = _this$props.childFactory, props = _objectWithoutPropertiesLooseDefault.default(_this$props, [
+            "component",
+            "childFactory"
+        ]);
+        var contextValue = this.state.contextValue;
+        var children = values(this.state.children).map(childFactory);
+        delete props.appear;
+        delete props.enter;
+        delete props.exit;
+        if (Component === null) return(/*#__PURE__*/ _reactDefault.default.createElement(_transitionGroupContextDefault.default.Provider, {
+            value: contextValue
+        }, children));
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_transitionGroupContextDefault.default.Provider, {
+            value: contextValue
+        }, /*#__PURE__*/ _reactDefault.default.createElement(Component, props, children)));
+    };
+    return TransitionGroup1;
+}(_reactDefault.default.Component);
+TransitionGroup.propTypes = {
+    /**
+   * `<TransitionGroup>` renders a `<div>` by default. You can change this
+   * behavior by providing a `component` prop.
+   * If you use React v16+ and would like to avoid a wrapping `<div>` element
+   * you can pass in `component={null}`. This is useful if the wrapping div
+   * borks your css styles.
+   */ component: _propTypesDefault.default.any,
+    /**
+   * A set of `<Transition>` components, that are toggled `in` and out as they
+   * leave. the `<TransitionGroup>` will inject specific transition props, so
+   * remember to spread them through if you are wrapping the `<Transition>` as
+   * with our `<Fade>` example.
+   *
+   * While this component is meant for multiple `Transition` or `CSSTransition`
+   * children, sometimes you may want to have a single transition child with
+   * content that you want to be transitioned out and in when you change it
+   * (e.g. routes, images etc.) In that case you can change the `key` prop of
+   * the transition child as you change its content, this will cause
+   * `TransitionGroup` to transition the child out and back in.
+   */ children: _propTypesDefault.default.node,
+    /**
+   * A convenience prop that enables or disables appear animations
+   * for all children. Note that specifying this will override any defaults set
+   * on individual children Transitions.
+   */ appear: _propTypesDefault.default.bool,
+    /**
+   * A convenience prop that enables or disables enter animations
+   * for all children. Note that specifying this will override any defaults set
+   * on individual children Transitions.
+   */ enter: _propTypesDefault.default.bool,
+    /**
+   * A convenience prop that enables or disables exit animations
+   * for all children. Note that specifying this will override any defaults set
+   * on individual children Transitions.
+   */ exit: _propTypesDefault.default.bool,
+    /**
+   * You may need to apply reactive updates to a child as it is exiting.
+   * This is generally done by using `cloneElement` however in the case of an exiting
+   * child the element has already been removed and not accessible to the consumer.
+   *
+   * If you do need to update a child as it leaves you can provide a `childFactory`
+   * to wrap every child, even the ones that are leaving.
+   *
+   * @type Function(child: ReactElement) -> ReactElement
+   */ childFactory: _propTypesDefault.default.func
+};
+TransitionGroup.defaultProps = defaultProps;
+exports.default = TransitionGroup;
+
+},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"9unNO","@babel/runtime/helpers/esm/extends":"5inYT","@babel/runtime/helpers/esm/assertThisInitialized":"8lK6L","@babel/runtime/helpers/esm/inheritsLoose":"6cZja","prop-types":"2bysO","react":"4mchR","./TransitionGroupContext":"frJY2","./utils/ChildMapping":"chZVO","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"8lK6L":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function _assertThisInitialized(self) {
+    if (self === void 0) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    return self;
+}
+exports.default = _assertThisInitialized;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"chZVO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+/**
+ * Given `this.props.children`, return an object mapping key to child.
+ *
+ * @param {*} children `this.props.children`
+ * @return {object} Mapping of key to child
+ */ parcelHelpers.export(exports, "getChildMapping", ()=>getChildMapping
+);
+/**
+ * When you're adding or removing children some may be added or removed in the
+ * same render pass. We want to show *both* since we want to simultaneously
+ * animate elements in and out. This function takes a previous set of keys
+ * and a new set of keys and merges them with its best guess of the correct
+ * ordering. In the future we may expose some of the utilities in
+ * ReactMultiChild to make this easy, but for now React itself does not
+ * directly have this concept of the union of prevChildren and nextChildren
+ * so we implement it here.
+ *
+ * @param {object} prev prev children as returned from
+ * `ReactTransitionChildMapping.getChildMapping()`.
+ * @param {object} next next children as returned from
+ * `ReactTransitionChildMapping.getChildMapping()`.
+ * @return {object} a key set that contains all keys in `prev` and all keys
+ * in `next` in a reasonable order.
+ */ parcelHelpers.export(exports, "mergeChildMappings", ()=>mergeChildMappings
+);
+parcelHelpers.export(exports, "getInitialChildMapping", ()=>getInitialChildMapping
+);
+parcelHelpers.export(exports, "getNextChildMapping", ()=>getNextChildMapping
+);
+var _react = require("react");
+function getChildMapping(children, mapFn) {
+    var mapper = function mapper(child) {
+        return mapFn && _react.isValidElement(child) ? mapFn(child) : child;
+    };
+    var result = Object.create(null);
+    if (children) _react.Children.map(children, function(c) {
+        return c;
+    }).forEach(function(child) {
+        // run the map function here instead so that the key is the computed one
+        result[child.key] = mapper(child);
+    });
+    return result;
+}
+function mergeChildMappings(prev, next) {
+    prev = prev || {
+    };
+    next = next || {
+    };
+    function getValueForKey(key) {
+        return key in next ? next[key] : prev[key];
+    } // For each key of `next`, the list of keys to insert before that key in
+    // the combined list
+    var nextKeysPending = Object.create(null);
+    var pendingKeys = [];
+    for(var prevKey in prev){
+        if (prevKey in next) {
+            if (pendingKeys.length) {
+                nextKeysPending[prevKey] = pendingKeys;
+                pendingKeys = [];
+            }
+        } else pendingKeys.push(prevKey);
+    }
+    var i;
+    var childMapping = {
+    };
+    for(var nextKey in next){
+        if (nextKeysPending[nextKey]) for(i = 0; i < nextKeysPending[nextKey].length; i++){
+            var pendingNextKey = nextKeysPending[nextKey][i];
+            childMapping[nextKeysPending[nextKey][i]] = getValueForKey(pendingNextKey);
         }
-    ];
-    //&#8209; is a non-line-breaking dash
-    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-        id: "tournament2021",
-        children: [
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h1", {
-                children: "2021 Intercollegiate Championship"
-            }, void 0, false, {
-                fileName: "src/tournament2021.js",
-                lineNumber: 28,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
-                children: "Tournament Statistics:"
-            }, void 0, false, {
-                fileName: "src/tournament2021.js",
-                lineNumber: 29,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_fastFactTiles.Tiles, {
-                data: dataF
-            }, void 0, false, {
-                fileName: "src/tournament2021.js",
-                lineNumber: 30,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
-                children: "Description:"
-            }, void 0, false, {
-                fileName: "src/tournament2021.js",
-                lineNumber: 31,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
-                children: "The 2021 Intercollegiate Championship was the second tournament, organized and hosted by Club Yu-Gi-Ohio from Ohio State University and following the inaugural 2019 championship, as well as replacing the 2020 event that was canceled due to the COVID-19 pandemic. It was held online (due to the ongoing pandemic) on October 16th, 2021."
-            }, void 0, false, {
-                fileName: "src/tournament2021.js",
-                lineNumber: 32,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
-                children: "List of Sponsors"
-            }, void 0, false, {
-                fileName: "src/tournament2021.js",
-                lineNumber: 38,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("ul", {
-                children: [
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                        children: "No Limit Gaming"
-                    }, void 0, false, {
-                        fileName: "src/tournament2021.js",
-                        lineNumber: 40,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                        children: "Refined Gaming"
-                    }, void 0, false, {
-                        fileName: "src/tournament2021.js",
-                        lineNumber: 41,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                        children: "TCG-Con"
-                    }, void 0, false, {
-                        fileName: "src/tournament2021.js",
-                        lineNumber: 42,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                        children: "Heroes and Games"
-                    }, void 0, false, {
-                        fileName: "src/tournament2021.js",
-                        lineNumber: 43,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/tournament2021.js",
-                lineNumber: 39,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
-                children: "Rules and Procedures"
-            }, void 0, false, {
-                fileName: "src/tournament2021.js",
-                lineNumber: 45,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
-                children: [
-                    "This Event followed the October 1st, 2021 Yu-Gi-Oh TCG Banlist. All standard Konami Tournament Rules and Procedures in effect at that moment applied. The event served as a soft reboot of the Championship by transitioning to Konami's official 3v3 ruleset, with each school having the option of submitting up to 3 teams each (for a maximum of 9 players).",
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {
-                    }, void 0, false, {
-                        fileName: "src/tournament2021.js",
-                        lineNumber: 52,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/tournament2021.js",
-                lineNumber: 46,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
-                children: "Results"
-            }, void 0, false, {
-                fileName: "src/tournament2021.js",
-                lineNumber: 54,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("ul", {
-                children: [
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                        children: "Champions: Ohio State University (Team Scarlet)"
-                    }, void 0, false, {
-                        fileName: "src/tournament2021.js",
-                        lineNumber: 56,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                        children: "2nd Place: University of Washington (Team Beetron 2 - Electric Boogaloo)"
-                    }, void 0, false, {
-                        fileName: "src/tournament2021.js",
-                        lineNumber: 57,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                        children: "Semi-finalists: Kent State University (Team Blue)"
-                    }, void 0, false, {
-                        fileName: "src/tournament2021.js",
-                        lineNumber: 58,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("li", {
-                        children: "Semi-finalists: Miami University (Team MUGO)"
-                    }, void 0, false, {
-                        fileName: "src/tournament2021.js",
-                        lineNumber: 59,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/tournament2021.js",
-                lineNumber: 55,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                to: "/",
-                children: "Return to home page"
-            }, void 0, false, {
-                fileName: "src/tournament2021.js",
-                lineNumber: 61,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/tournament2021.js",
-        lineNumber: 27,
-        columnNumber: 5
-    }, undefined));
-};
-_c = Tournament2021;
-var _c;
-$RefreshReg$(_c, "Tournament2021");
-
-  $parcel$ReactRefreshHelpers$5036.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
+        childMapping[nextKey] = getValueForKey(nextKey);
+    } // Finally, add the keys which didn't appear before any key in `next`
+    for(i = 0; i < pendingKeys.length; i++)childMapping[pendingKeys[i]] = getValueForKey(pendingKeys[i]);
+    return childMapping;
 }
-},{"react/jsx-dev-runtime":"3jZUD","react":"4mchR","./css/index.css":"jlefm","react-router-dom":"16kZP","./fastFactTiles":"eCrFx","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"jlefm":[function() {},{}],"4B8YP":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$f025 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$f025.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Competitors", ()=>Competitors
-);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _navbar = require("react-bootstrap/Navbar");
-var _navbarDefault = parcelHelpers.interopDefault(_navbar);
-var _nav = require("react-bootstrap/Nav");
-var _navDefault = parcelHelpers.interopDefault(_nav);
-var _reactRouterBootstrap = require("react-router-bootstrap");
-var _reactFontawesome = require("@fortawesome/react-fontawesome");
-var _freeSolidSvgIcons = require("@fortawesome/free-solid-svg-icons");
-const Competitors = ()=>{
-    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-        id: "competitors",
-        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
-            children: "Competitors comp"
-        }, void 0, false, {
-            fileName: "src/Competitors.js",
-            lineNumber: 10,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/Competitors.js",
-        lineNumber: 9,
-        columnNumber: 5
-    }, undefined));
-};
-_c = Competitors;
-var _c;
-$RefreshReg$(_c, "Competitors");
-
-  $parcel$ReactRefreshHelpers$f025.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
+function getProp(child, prop, props) {
+    return props[prop] != null ? props[prop] : child.props[prop];
 }
-},{"react/jsx-dev-runtime":"3jZUD","react":"4mchR","react-bootstrap/Navbar":"6tJ6F","react-bootstrap/Nav":"3TTuV","react-router-bootstrap":"f8Da9","@fortawesome/react-fontawesome":"55Qlg","@fortawesome/free-solid-svg-icons":"A45Nk","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"hd9hc":[function() {},{}]},["emU3S","j1F46","hD4hw"], "hD4hw", "parcelRequire3545")
+function getInitialChildMapping(props, onExited) {
+    return getChildMapping(props.children, function(child) {
+        return _react.cloneElement(child, {
+            onExited: onExited.bind(null, child),
+            in: true,
+            appear: getProp(child, 'appear', props),
+            enter: getProp(child, 'enter', props),
+            exit: getProp(child, 'exit', props)
+        });
+    });
+}
+function getNextChildMapping(nextProps, prevChildMapping, onExited) {
+    var nextChildMapping = getChildMapping(nextProps.children);
+    var children = mergeChildMappings(prevChildMapping, nextChildMapping);
+    Object.keys(children).forEach(function(key) {
+        var child = children[key];
+        if (!_react.isValidElement(child)) return;
+        var hasPrev = key in prevChildMapping;
+        var hasNext = key in nextChildMapping;
+        var prevChild = prevChildMapping[key];
+        var isLeaving = _react.isValidElement(prevChild) && !prevChild.props.in; // item is new (entering)
+        if (hasNext && (!hasPrev || isLeaving)) // console.log('entering', key)
+        children[key] = _react.cloneElement(child, {
+            onExited: onExited.bind(null, child),
+            in: true,
+            exit: getProp(child, 'exit', nextProps),
+            enter: getProp(child, 'enter', nextProps)
+        });
+        else if (!hasNext && hasPrev && !isLeaving) // item is old (exiting)
+        // console.log('leaving', key)
+        children[key] = _react.cloneElement(child, {
+            in: false
+        });
+        else if (hasNext && hasPrev && _react.isValidElement(prevChild)) // item hasn't changed transition states
+        // copy over the last transition props;
+        // console.log('unchanged', key)
+        children[key] = _react.cloneElement(child, {
+            onExited: onExited.bind(null, child),
+            in: prevChild.props.in,
+            exit: getProp(child, 'exit', nextProps),
+            enter: getProp(child, 'enter', nextProps)
+        });
+    });
+    return children;
+}
+
+},{"react":"4mchR","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}]},["emU3S","j1F46","hD4hw"], "hD4hw", "parcelRequire3545")
 
 //# sourceMappingURL=index.379dd93c.js.map

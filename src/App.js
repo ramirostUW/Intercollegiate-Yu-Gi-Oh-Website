@@ -15,16 +15,20 @@ import Nav from "react-bootstrap/Nav";
 import {LinkContainer} from "react-router-bootstrap";
 import {NavLink} from "react-bootstrap";
 import logo from "./media/logo.png";
+import {Transition, TransitionGroup} from "react-transition-group";
 
 export function App() {
+  const [swiping, setSwiping] = React.useState(false);
   const [touchStart, setTouchStart] = React.useState(0);
-  const [touchEnd, setTouchEnd] = React.useState(0);
+  const [touchDistance, setTouchDistance] = React.useState(0);
   const [currentPage, setCurrentPage] = React.useState(0);
   const pages = ["/", "/tournament2019", "/tournament2021", "/Competitors"];
   // useNavigate code: https://stackoverflow.com/questions/68613526/react-router-dom-usehistory-not-working
   // useLocation code: https://stackoverflow.com/questions/45373742/detect-route-change-with-react-router
+  // Translate code: https://javascript.plainenglish.io/how-to-make-a-simple-custom-drag-to-move-component-in-react-f67d5c99f925
   let navigate = useNavigate();
   let location = useLocation();
+
 
   React.useEffect(() => {
     setCurrentPage(pages.findIndex((e) => e === location.pathname));
@@ -32,37 +36,43 @@ export function App() {
 
   function handleTouchStart(e) {
     setTouchStart(e.targetTouches[0].clientX);
+    setSwiping(true);
   }
 
   function handleMouseDown(e) {
     setTouchStart(e.clientX);
+    setSwiping(true);
   }
 
   function handleTouchMove(e) {
-    setTouchEnd(e.targetTouches[0].clientX);
+    if (swiping) {
+      setTouchDistance(e.targetTouches[0].clientX - touchStart);
+    }
   }
 
   function handleMouseMove(e) {
-    setTouchEnd(e.clientX);
+    if (swiping) {
+      setTouchDistance(e.clientX - touchStart);
+    }
   }
 
   function handleMoveEnd() {
+    setSwiping(false);
+    setTouchDistance(0);
     // If user swiped
-    if (Math.abs(touchEnd - touchStart) > 50) {
+    if (Math.abs(touchDistance) > 50) {
       let nextPage = currentPage;
 
       // right swipe
-      if (touchEnd - touchStart > 50 && currentPage < pages.length - 1) {
-        ++nextPage;
+      if (touchDistance > 50) {
+        nextPage = (nextPage + 1) % pages.length;
 
       // left swipe
-      } else if (touchEnd - touchStart < -50 && currentPage > 0) {
-        --nextPage;
+      } else if (touchDistance < -50) {
+        nextPage = (nextPage - 1) % pages.length;
       }
 
       if (nextPage !== currentPage) {
-        setTouchStart(touchEnd);
-        //location.
         navigate(pages.at(nextPage), {state: true});
         setCurrentPage(nextPage);
       }
@@ -104,24 +114,25 @@ export function App() {
           </LinkContainer>
         </Navbar>
       </div>
-      <div id="current-page" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleMoveEnd}
-           onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMoveEnd}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="Tournament2019" element={<Tournament2019 />} />
-          <Route path="Tournament2021" element={<Tournament2021 />} />
-          <Route path="Competitors" element={<Competitors />} />
-          <Route path="*"
-          element={
-            <main>
-              <h1>404 Error</h1>
-              <p>There's nothing here!</p>
-              <Link to="/">Return to home page</Link>
-            </main>
-          }
-          />
-        </Routes>
-      </div>
+        <div id="current-page" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleMoveEnd}
+             onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMoveEnd}
+              style={{transform: `translateX(${touchDistance}px)`}} >
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="Tournament2019" element={<Tournament2019 />} />
+            <Route path="Tournament2021" element={<Tournament2021 />} />
+            <Route path="Competitors" element={<Competitors />} />
+            <Route path="*"
+                   element={
+                     <main>
+                       <h1>404 Error</h1>
+                       <p>There's nothing here!</p>
+                       <Link to="/">Return to home page</Link>
+                     </main>
+                   }
+            />
+          </Routes>
+        </div>
     </div>
   );
 }
