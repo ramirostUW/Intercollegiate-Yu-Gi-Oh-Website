@@ -2909,92 +2909,22 @@ var _clientDefault = parcelHelpers.interopDefault(_client);
 var _reactRouterDom = require("react-router-dom");
 var _bootstrapMinCss = require("./bootstrap.min.css");
 var _app = require("./App");
-var _home = require("./Home");
-var _tournament2019 = require("./tournament2019");
-var _tournament2021 = require("./tournament2021");
-var _competitors = require("./Competitors");
 const root = (0, _clientDefault.default).createRoot(document.getElementById("app"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactDefault.default).StrictMode, {
-    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                    path: "/",
-                    element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _app.App), {}, void 0, false, void 0, void 0)
-                }, void 0, false, {
-                    fileName: "src/index.js",
-                    lineNumber: 18,
-                    columnNumber: 17
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                    path: "tournament2019",
-                    element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _tournament2019.Tournament2019), {}, void 0, false, void 0, void 0)
-                }, void 0, false, {
-                    fileName: "src/index.js",
-                    lineNumber: 19,
-                    columnNumber: 17
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                    path: "/tournament2019",
-                    element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
-                        to: "tournament2019"
-                    }, void 0, false, void 0, void 0)
-                }, void 0, false, {
-                    fileName: "src/index.js",
-                    lineNumber: 20,
-                    columnNumber: 17
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                    path: "tournament2021",
-                    element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _tournament2021.Tournament2021), {}, void 0, false, void 0, void 0)
-                }, void 0, false, {
-                    fileName: "src/index.js",
-                    lineNumber: 21,
-                    columnNumber: 17
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                    path: "Competitors",
-                    element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _competitors.Competitors), {}, void 0, false, void 0, void 0)
-                }, void 0, false, {
-                    fileName: "src/index.js",
-                    lineNumber: 22,
-                    columnNumber: 17
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                    path: "*",
-                    element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("main", {
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                                children: "404 Error"
-                            }, void 0, false, void 0, void 0),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                children: "There's nothing here!"
-                            }, void 0, false, void 0, void 0),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                to: "/",
-                                children: "Return to home page"
-                            }, void 0, false, void 0, void 0)
-                        ]
-                    }, void 0, true, void 0, void 0)
-                }, void 0, false, {
-                    fileName: "src/index.js",
-                    lineNumber: 23,
-                    columnNumber: 17
-                }, undefined)
-            ]
-        }, void 0, true, {
+    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.HashRouter), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _app.App), {}, void 0, false, {
             fileName: "src/index.js",
-            lineNumber: 17,
+            lineNumber: 13,
             columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "src/index.js",
-        lineNumber: 16,
+        lineNumber: 12,
         columnNumber: 9
     }, undefined)
 }, void 0, false, {
     fileName: "src/index.js",
-    lineNumber: 15,
+    lineNumber: 11,
     columnNumber: 5
 }, undefined));
 
@@ -3003,7 +2933,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactDefault.default).
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","panic-overlay":"JKYwb","react":"21dqq","react-router-dom":"fdOAw","./bootstrap.min.css":"7ja23","./App":"2kQhy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-dom/client":"lOjBx","./Home":"fGRvi","./tournament2019":"lijUD","./tournament2021":"etMVE","./Competitors":"lCZjh"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","panic-overlay":"JKYwb","react":"21dqq","react-router-dom":"fdOAw","./bootstrap.min.css":"7ja23","./App":"2kQhy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-dom/client":"lOjBx"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("./cjs/react-jsx-dev-runtime.development.js");
 
