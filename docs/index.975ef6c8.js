@@ -31039,7 +31039,7 @@ var _reactRouterBootstrap = require("react-router-bootstrap");
 var _reactBootstrap = require("react-bootstrap");
 var _logoPng = require("./media/logo.png");
 var _logoPngDefault = parcelHelpers.interopDefault(_logoPng);
-var _reactTransitionGroup = require("react-transition-group");
+var _reactDeviceDetect = require("react-device-detect");
 var _s = $RefreshSig$();
 function App() {
     _s();
@@ -31067,15 +31067,8 @@ function App() {
         setTouchStart(e.targetTouches[0].clientX);
         setSwiping(true);
     }
-    function handleMouseDown(e) {
-        setTouchStart(e.clientX);
-        setSwiping(true);
-    }
     function handleTouchMove(e) {
         if (swiping) setTouchDistance(e.targetTouches[0].clientX - touchStart);
-    }
-    function handleMouseMove(e) {
-        if (swiping) setTouchDistance(e.clientX - touchStart);
     }
     function handleMoveEnd() {
         setSwiping(false);
@@ -31094,142 +31087,164 @@ function App() {
             }
         }
     }
+    /*
+  // Mouse swipe functionality currently disabled,
+  // add onMouseDown and onMouseMove to browser's div
+
+  function handleMouseDown(e) {
+    setTouchStart(e.clientX);
+    setSwiping(true);
+  }
+
+  function handleMouseMove(e) {
+    if (swiping) {
+      setTouchDistance(e.clientX - touchStart);
+    }
+  }*/ function isTouchDevice() {
+        return "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+    }
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                id: "header",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {
-                    className: "navbar",
-                    fixed: "top",
-                    expand: "lg",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default).Toggle, {
-                            "aria-controls": "basic-navbar-nav",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactFontawesome.FontAwesomeIcon), {
-                                icon: (0, _freeSolidSvgIcons.faBars)
-                            }, void 0, false, {
-                                fileName: "src/App.js",
-                                lineNumber: 86,
-                                columnNumber: 59
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "src/App.js",
-                            lineNumber: 86,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default).Collapse, {
-                            id: "basic-navbar-nav",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default), {
-                                id: "links",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterBootstrap.LinkContainer), {
-                                        activeClassName: "active-page",
-                                        to: "/",
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavLink), {
-                                            bsPrefix: "link",
-                                            children: "Home "
-                                        }, void 0, false, {
-                                            fileName: "src/App.js",
-                                            lineNumber: 90,
-                                            columnNumber: 17
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "src/App.js",
-                                        lineNumber: 89,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterBootstrap.LinkContainer), {
-                                        activeClassName: "active-page",
-                                        to: "/tournament2019",
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavLink), {
-                                            bsPrefix: "link",
-                                            children: "2019 Intercollegiate Tournament"
-                                        }, void 0, false, {
-                                            fileName: "src/App.js",
-                                            lineNumber: 93,
-                                            columnNumber: 17
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "src/App.js",
-                                        lineNumber: 92,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterBootstrap.LinkContainer), {
-                                        activeClassName: "active-page",
-                                        to: "/tournament2021",
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavLink), {
-                                            bsPrefix: "link",
-                                            children: "2021 Intercollegiate Tournament"
-                                        }, void 0, false, {
-                                            fileName: "src/App.js",
-                                            lineNumber: 96,
-                                            columnNumber: 17
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "src/App.js",
-                                        lineNumber: 95,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterBootstrap.LinkContainer), {
-                                        activeClassName: "active-page",
-                                        to: "/Competitors",
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavLink), {
-                                            bsPrefix: "link",
-                                            children: "Competitors"
-                                        }, void 0, false, {
-                                            fileName: "src/App.js",
-                                            lineNumber: 99,
-                                            columnNumber: 17
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "src/App.js",
-                                        lineNumber: 98,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/App.js",
-                                lineNumber: 88,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "src/App.js",
-                            lineNumber: 87,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterBootstrap.LinkContainer), {
-                            to: "/",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default).Brand, {
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                    src: (0, _logoPngDefault.default),
-                                    width: "30",
-                                    height: "30",
-                                    className: "d-inline-block align-top",
-                                    alt: "Intercollegiate Yugioh logo"
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactDeviceDetect.BrowserView), {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    id: "header",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {
+                        className: "navbar",
+                        fixed: "top",
+                        expand: "lg",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default).Toggle, {
+                                "aria-controls": "basic-navbar-nav",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactFontawesome.FontAwesomeIcon), {
+                                    icon: (0, _freeSolidSvgIcons.faBars)
                                 }, void 0, false, {
                                     fileName: "src/App.js",
-                                    lineNumber: 106,
+                                    lineNumber: 100,
+                                    columnNumber: 61
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "src/App.js",
+                                lineNumber: 100,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default).Collapse, {
+                                id: "basic-navbar-nav",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default), {
+                                    id: "links",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterBootstrap.LinkContainer), {
+                                            activeClassName: "active-page",
+                                            to: "/",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavLink), {
+                                                bsPrefix: "link",
+                                                children: "Home "
+                                            }, void 0, false, {
+                                                fileName: "src/App.js",
+                                                lineNumber: 104,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/App.js",
+                                            lineNumber: 103,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterBootstrap.LinkContainer), {
+                                            activeClassName: "active-page",
+                                            to: "/tournament2019",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavLink), {
+                                                bsPrefix: "link",
+                                                children: "2019 Intercollegiate Tournament"
+                                            }, void 0, false, {
+                                                fileName: "src/App.js",
+                                                lineNumber: 107,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/App.js",
+                                            lineNumber: 106,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterBootstrap.LinkContainer), {
+                                            activeClassName: "active-page",
+                                            to: "/tournament2021",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavLink), {
+                                                bsPrefix: "link",
+                                                children: "2021 Intercollegiate Tournament"
+                                            }, void 0, false, {
+                                                fileName: "src/App.js",
+                                                lineNumber: 110,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/App.js",
+                                            lineNumber: 109,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterBootstrap.LinkContainer), {
+                                            activeClassName: "active-page",
+                                            to: "/Competitors",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavLink), {
+                                                bsPrefix: "link",
+                                                children: "Competitors"
+                                            }, void 0, false, {
+                                                fileName: "src/App.js",
+                                                lineNumber: 113,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/App.js",
+                                            lineNumber: 112,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/App.js",
+                                    lineNumber: 102,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "src/App.js",
-                                lineNumber: 105,
+                                lineNumber: 101,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterBootstrap.LinkContainer), {
+                                to: "/",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default).Brand, {
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                        src: (0, _logoPngDefault.default),
+                                        width: "30",
+                                        height: "30",
+                                        className: "d-inline-block align-top",
+                                        alt: "Intercollegiate Yugioh logo"
+                                    }, void 0, false, {
+                                        fileName: "src/App.js",
+                                        lineNumber: 120,
+                                        columnNumber: 17
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "src/App.js",
+                                    lineNumber: 119,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "src/App.js",
+                                lineNumber: 118,
                                 columnNumber: 13
                             }, this)
-                        }, void 0, false, {
-                            fileName: "src/App.js",
-                            lineNumber: 104,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/App.js",
+                        lineNumber: 99,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
                     fileName: "src/App.js",
-                    lineNumber: 85,
+                    lineNumber: 98,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 84,
+                lineNumber: 97,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -31237,9 +31252,6 @@ function App() {
                 onTouchStart: handleTouchStart,
                 onTouchMove: handleTouchMove,
                 onTouchEnd: handleMoveEnd,
-                onMouseDown: handleMouseDown,
-                onMouseMove: handleMouseMove,
-                onMouseUp: handleMoveEnd,
                 style: {
                     transform: `translateX(${touchDistance}px)`
                 },
@@ -31250,35 +31262,35 @@ function App() {
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _home.Home), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 121,
-                            columnNumber: 13
+                            lineNumber: 135,
+                            columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "Tournament2019",
+                            path: "/tournament2019",
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _tournament2019.Tournament2019), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 122,
-                            columnNumber: 13
+                            lineNumber: 136,
+                            columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "Tournament2021",
+                            path: "/tournament2021",
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _tournament2021.Tournament2021), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 123,
-                            columnNumber: 13
+                            lineNumber: 137,
+                            columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "Competitors",
+                            path: "/Competitors",
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _competitors.Competitors), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 124,
-                            columnNumber: 13
+                            lineNumber: 138,
+                            columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "*",
+                            path: "/*",
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("main", {
                                 children: [
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
@@ -31295,24 +31307,24 @@ function App() {
                             }, void 0, true, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 125,
-                            columnNumber: 13
+                            lineNumber: 139,
+                            columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/App.js",
-                    lineNumber: 120,
-                    columnNumber: 11
+                    lineNumber: 134,
+                    columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 117,
-                columnNumber: 9
+                lineNumber: 132,
+                columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/App.js",
-        lineNumber: 83,
+        lineNumber: 96,
         columnNumber: 5
     }, this);
 }
@@ -31332,7 +31344,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"fdOAw","react-bootstrap/Navbar":"1mHjo","react-bootstrap/Nav":"cXyL2","./css/Header.css":"bug4k","./Home":"fGRvi","./tournament2019":"lijUD","./tournament2021":"etMVE","./Competitors":"lCZjh","@fortawesome/react-fontawesome":"clIT3","@fortawesome/free-solid-svg-icons":"iNxAT","react-router-bootstrap":"4cns9","react-bootstrap":"3AD9A","./media/logo.png":"j9td8","react-transition-group":"fZSkB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"1mHjo":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"fdOAw","react-bootstrap/Navbar":"1mHjo","react-bootstrap/Nav":"cXyL2","./css/Header.css":"bug4k","./Home":"fGRvi","./tournament2019":"lijUD","./tournament2021":"etMVE","./Competitors":"lCZjh","@fortawesome/react-fontawesome":"clIT3","@fortawesome/free-solid-svg-icons":"iNxAT","react-router-bootstrap":"4cns9","react-bootstrap":"3AD9A","./media/logo.png":"j9td8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-device-detect":"ldsxW"}],"1mHjo":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -62350,645 +62362,3062 @@ var _toggleButtonGroupDefault = parcelHelpers.interopDefault(_toggleButtonGroup)
 var _tooltip = require("./Tooltip");
 var _tooltipDefault = parcelHelpers.interopDefault(_tooltip);
 
-},{"./Accordion":false,"./AccordionContext":false,"./AccordionCollapse":false,"./AccordionButton":false,"./Alert":false,"./Anchor":false,"./Badge":false,"./Breadcrumb":false,"./BreadcrumbItem":false,"./Button":false,"./ButtonGroup":false,"./ButtonToolbar":false,"./Card":false,"./CardImg":false,"./CardGroup":false,"./Carousel":false,"./CarouselItem":false,"./CloseButton":"1wmVl","./Col":false,"./Collapse":"acuzI","./Dropdown":false,"./DropdownButton":false,"./Fade":"aH18S","./Form":false,"./FormControl":false,"./FormCheck":false,"./FormFloating":false,"./FloatingLabel":false,"./FormGroup":false,"./FormLabel":false,"./FormText":false,"./FormSelect":false,"./Container":false,"./Image":false,"./Figure":false,"./InputGroup":false,"./ListGroup":false,"./ListGroupItem":false,"./Modal":false,"./ModalBody":false,"./ModalDialog":false,"./ModalHeader":false,"./ModalFooter":false,"./ModalTitle":false,"./Nav":"cXyL2","./Navbar":"1mHjo","./NavbarBrand":"iOo4v","./NavDropdown":false,"./NavItem":"ew05W","./NavLink":"7geL8","./Offcanvas":"eC3RS","./OffcanvasHeader":"a6xAh","./OffcanvasTitle":"77qdX","./OffcanvasBody":"fX7Bo","./Overlay":false,"./OverlayTrigger":false,"./PageItem":false,"./Pagination":false,"./Placeholder":false,"./PlaceholderButton":false,"./Popover":false,"./PopoverHeader":false,"./PopoverBody":false,"./ProgressBar":false,"./Ratio":false,"./Row":false,"./Spinner":false,"./SplitButton":false,"./SSRProvider":false,"./Stack":false,"./Tab":false,"./TabContainer":false,"./TabContent":false,"./Table":false,"./TabPane":false,"./Tabs":false,"./ThemeProvider":"dVixI","./Toast":false,"./ToastBody":false,"./ToastHeader":false,"./ToastContainer":false,"./ToggleButton":false,"./ToggleButtonGroup":false,"./Tooltip":false,"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fZSkB":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "CSSTransition", ()=>(0, _csstransitionDefault.default));
-parcelHelpers.export(exports, "ReplaceTransition", ()=>(0, _replaceTransitionDefault.default));
-parcelHelpers.export(exports, "SwitchTransition", ()=>(0, _switchTransitionDefault.default));
-parcelHelpers.export(exports, "TransitionGroup", ()=>(0, _transitionGroupDefault.default));
-parcelHelpers.export(exports, "Transition", ()=>(0, _transitionDefault.default));
-parcelHelpers.export(exports, "config", ()=>(0, _configDefault.default));
-var _csstransition = require("./CSSTransition");
-var _csstransitionDefault = parcelHelpers.interopDefault(_csstransition);
-var _replaceTransition = require("./ReplaceTransition");
-var _replaceTransitionDefault = parcelHelpers.interopDefault(_replaceTransition);
-var _switchTransition = require("./SwitchTransition");
-var _switchTransitionDefault = parcelHelpers.interopDefault(_switchTransition);
-var _transitionGroup = require("./TransitionGroup");
-var _transitionGroupDefault = parcelHelpers.interopDefault(_transitionGroup);
-var _transition = require("./Transition");
-var _transitionDefault = parcelHelpers.interopDefault(_transition);
-var _config = require("./config");
-var _configDefault = parcelHelpers.interopDefault(_config);
-
-},{"./CSSTransition":"a3gKf","./ReplaceTransition":false,"./SwitchTransition":false,"./TransitionGroup":"5mvFs","./Transition":"cKsrS","./config":"cepoZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"a3gKf":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
-var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _addClass = require("dom-helpers/addClass");
-var _addClassDefault = parcelHelpers.interopDefault(_addClass);
-var _removeClass = require("dom-helpers/removeClass");
-var _removeClassDefault = parcelHelpers.interopDefault(_removeClass);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _transition = require("./Transition");
-var _transitionDefault = parcelHelpers.interopDefault(_transition);
-var _propTypes1 = require("./utils/PropTypes");
-var _addClass1 = function addClass(node, classes) {
-    return node && classes && classes.split(" ").forEach(function(c) {
-        return (0, _addClassDefault.default)(node, c);
-    });
+},{"./Accordion":false,"./AccordionContext":false,"./AccordionCollapse":false,"./AccordionButton":false,"./Alert":false,"./Anchor":false,"./Badge":false,"./Breadcrumb":false,"./BreadcrumbItem":false,"./Button":false,"./ButtonGroup":false,"./ButtonToolbar":false,"./Card":false,"./CardImg":false,"./CardGroup":false,"./Carousel":false,"./CarouselItem":false,"./CloseButton":"1wmVl","./Col":false,"./Collapse":"acuzI","./Dropdown":false,"./DropdownButton":false,"./Fade":"aH18S","./Form":false,"./FormControl":false,"./FormCheck":false,"./FormFloating":false,"./FloatingLabel":false,"./FormGroup":false,"./FormLabel":false,"./FormText":false,"./FormSelect":false,"./Container":false,"./Image":false,"./Figure":false,"./InputGroup":false,"./ListGroup":false,"./ListGroupItem":false,"./Modal":false,"./ModalBody":false,"./ModalDialog":false,"./ModalHeader":false,"./ModalFooter":false,"./ModalTitle":false,"./Nav":"cXyL2","./Navbar":"1mHjo","./NavbarBrand":"iOo4v","./NavDropdown":false,"./NavItem":"ew05W","./NavLink":"7geL8","./Offcanvas":"eC3RS","./OffcanvasHeader":"a6xAh","./OffcanvasTitle":"77qdX","./OffcanvasBody":"fX7Bo","./Overlay":false,"./OverlayTrigger":false,"./PageItem":false,"./Pagination":false,"./Placeholder":false,"./PlaceholderButton":false,"./Popover":false,"./PopoverHeader":false,"./PopoverBody":false,"./ProgressBar":false,"./Ratio":false,"./Row":false,"./Spinner":false,"./SplitButton":false,"./SSRProvider":false,"./Stack":false,"./Tab":false,"./TabContainer":false,"./TabContent":false,"./Table":false,"./TabPane":false,"./Tabs":false,"./ThemeProvider":"dVixI","./Toast":false,"./ToastBody":false,"./ToastHeader":false,"./ToastContainer":false,"./ToggleButton":false,"./ToggleButtonGroup":false,"./Tooltip":false,"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ldsxW":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+function _interopDefault(ex) {
+    return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
+}
+var React = require("react");
+var React__default = _interopDefault(React);
+var UAParser = require("ua-parser-js/dist/ua-parser.min");
+var ClientUAInstance = new UAParser();
+var browser = ClientUAInstance.getBrowser();
+var cpu = ClientUAInstance.getCPU();
+var device = ClientUAInstance.getDevice();
+var engine = ClientUAInstance.getEngine();
+var os = ClientUAInstance.getOS();
+var ua = ClientUAInstance.getUA();
+var setUa = function setUa(userAgentString) {
+    return ClientUAInstance.setUA(userAgentString);
 };
-var removeClass = function removeClass(node, classes) {
-    return node && classes && classes.split(" ").forEach(function(c) {
-        return (0, _removeClassDefault.default)(node, c);
-    });
-};
-/**
- * A transition component inspired by the excellent
- * [ng-animate](https://docs.angularjs.org/api/ngAnimate) library, you should
- * use it if you're using CSS transitions or animations. It's built upon the
- * [`Transition`](https://reactcommunity.org/react-transition-group/transition)
- * component, so it inherits all of its props.
- *
- * `CSSTransition` applies a pair of class names during the `appear`, `enter`,
- * and `exit` states of the transition. The first class is applied and then a
- * second `*-active` class in order to activate the CSS transition. After the
- * transition, matching `*-done` class names are applied to persist the
- * transition state.
- *
- * ```jsx
- * function App() {
- *   const [inProp, setInProp] = useState(false);
- *   return (
- *     <div>
- *       <CSSTransition in={inProp} timeout={200} classNames="my-node">
- *         <div>
- *           {"I'll receive my-node-* classes"}
- *         </div>
- *       </CSSTransition>
- *       <button type="button" onClick={() => setInProp(true)}>
- *         Click to Enter
- *       </button>
- *     </div>
- *   );
- * }
- * ```
- *
- * When the `in` prop is set to `true`, the child component will first receive
- * the class `example-enter`, then the `example-enter-active` will be added in
- * the next tick. `CSSTransition` [forces a
- * reflow](https://github.com/reactjs/react-transition-group/blob/5007303e729a74be66a21c3e2205e4916821524b/src/CSSTransition.js#L208-L215)
- * between before adding the `example-enter-active`. This is an important trick
- * because it allows us to transition between `example-enter` and
- * `example-enter-active` even though they were added immediately one after
- * another. Most notably, this is what makes it possible for us to animate
- * _appearance_.
- *
- * ```css
- * .my-node-enter {
- *   opacity: 0;
- * }
- * .my-node-enter-active {
- *   opacity: 1;
- *   transition: opacity 200ms;
- * }
- * .my-node-exit {
- *   opacity: 1;
- * }
- * .my-node-exit-active {
- *   opacity: 0;
- *   transition: opacity 200ms;
- * }
- * ```
- *
- * `*-active` classes represent which styles you want to animate **to**, so it's
- * important to add `transition` declaration only to them, otherwise transitions
- * might not behave as intended! This might not be obvious when the transitions
- * are symmetrical, i.e. when `*-enter-active` is the same as `*-exit`, like in
- * the example above (minus `transition`), but it becomes apparent in more
- * complex transitions.
- *
- * **Note**: If you're using the
- * [`appear`](http://reactcommunity.org/react-transition-group/transition#Transition-prop-appear)
- * prop, make sure to define styles for `.appear-*` classes as well.
- */ var CSSTransition = /*#__PURE__*/ function(_React$Component) {
-    (0, _inheritsLooseDefault.default)(CSSTransition1, _React$Component);
-    function CSSTransition1() {
-        var _this;
-        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++)args[_key] = arguments[_key];
-        _this = _React$Component.call.apply(_React$Component, [
-            this
-        ].concat(args)) || this;
-        _this.appliedClasses = {
-            appear: {},
-            enter: {},
-            exit: {}
-        };
-        _this.onEnter = function(maybeNode, maybeAppearing) {
-            var _this$resolveArgument = _this.resolveArguments(maybeNode, maybeAppearing), node = _this$resolveArgument[0], appearing = _this$resolveArgument[1];
-            _this.removeClasses(node, "exit");
-            _this.addClass(node, appearing ? "appear" : "enter", "base");
-            if (_this.props.onEnter) _this.props.onEnter(maybeNode, maybeAppearing);
-        };
-        _this.onEntering = function(maybeNode, maybeAppearing) {
-            var _this$resolveArgument2 = _this.resolveArguments(maybeNode, maybeAppearing), node = _this$resolveArgument2[0], appearing = _this$resolveArgument2[1];
-            var type = appearing ? "appear" : "enter";
-            _this.addClass(node, type, "active");
-            if (_this.props.onEntering) _this.props.onEntering(maybeNode, maybeAppearing);
-        };
-        _this.onEntered = function(maybeNode, maybeAppearing) {
-            var _this$resolveArgument3 = _this.resolveArguments(maybeNode, maybeAppearing), node = _this$resolveArgument3[0], appearing = _this$resolveArgument3[1];
-            var type = appearing ? "appear" : "enter";
-            _this.removeClasses(node, type);
-            _this.addClass(node, type, "done");
-            if (_this.props.onEntered) _this.props.onEntered(maybeNode, maybeAppearing);
-        };
-        _this.onExit = function(maybeNode) {
-            var _this$resolveArgument4 = _this.resolveArguments(maybeNode), node = _this$resolveArgument4[0];
-            _this.removeClasses(node, "appear");
-            _this.removeClasses(node, "enter");
-            _this.addClass(node, "exit", "base");
-            if (_this.props.onExit) _this.props.onExit(maybeNode);
-        };
-        _this.onExiting = function(maybeNode) {
-            var _this$resolveArgument5 = _this.resolveArguments(maybeNode), node = _this$resolveArgument5[0];
-            _this.addClass(node, "exit", "active");
-            if (_this.props.onExiting) _this.props.onExiting(maybeNode);
-        };
-        _this.onExited = function(maybeNode) {
-            var _this$resolveArgument6 = _this.resolveArguments(maybeNode), node = _this$resolveArgument6[0];
-            _this.removeClasses(node, "exit");
-            _this.addClass(node, "exit", "done");
-            if (_this.props.onExited) _this.props.onExited(maybeNode);
-        };
-        _this.resolveArguments = function(maybeNode, maybeAppearing) {
-            return _this.props.nodeRef ? [
-                _this.props.nodeRef.current,
-                maybeNode
-            ] // here `maybeNode` is actually `appearing`
-             : [
-                maybeNode,
-                maybeAppearing
-            ];
-        };
-        _this.getClassNames = function(type) {
-            var classNames = _this.props.classNames;
-            var isStringClassNames = typeof classNames === "string";
-            var prefix = isStringClassNames && classNames ? classNames + "-" : "";
-            var baseClassName = isStringClassNames ? "" + prefix + type : classNames[type];
-            var activeClassName = isStringClassNames ? baseClassName + "-active" : classNames[type + "Active"];
-            var doneClassName = isStringClassNames ? baseClassName + "-done" : classNames[type + "Done"];
-            return {
-                baseClassName: baseClassName,
-                activeClassName: activeClassName,
-                doneClassName: doneClassName
-            };
-        };
-        return _this;
+var parseUserAgent = function parseUserAgent(userAgent) {
+    if (!userAgent) {
+        console.error("No userAgent string was provided");
+        return;
     }
-    var _proto = CSSTransition1.prototype;
-    _proto.addClass = function addClass(node, type, phase) {
-        var className = this.getClassNames(type)[phase + "ClassName"];
-        var _this$getClassNames = this.getClassNames("enter"), doneClassName = _this$getClassNames.doneClassName;
-        if (type === "appear" && phase === "done" && doneClassName) className += " " + doneClassName;
-         // This is to force a repaint,
-        // which is necessary in order to transition styles when adding a class name.
-        if (phase === "active") /* eslint-disable no-unused-expressions */ node && node.scrollTop;
-        if (className) {
-            this.appliedClasses[type][phase] = className;
-            _addClass1(node, className);
+    var UserAgentInstance = new UAParser(userAgent);
+    return {
+        UA: UserAgentInstance,
+        browser: UserAgentInstance.getBrowser(),
+        cpu: UserAgentInstance.getCPU(),
+        device: UserAgentInstance.getDevice(),
+        engine: UserAgentInstance.getEngine(),
+        os: UserAgentInstance.getOS(),
+        ua: UserAgentInstance.getUA(),
+        setUserAgent: function setUserAgent(userAgentString) {
+            return UserAgentInstance.setUA(userAgentString);
         }
     };
-    _proto.removeClasses = function removeClasses(node, type) {
-        var _this$appliedClasses$ = this.appliedClasses[type], baseClassName = _this$appliedClasses$.base, activeClassName = _this$appliedClasses$.active, doneClassName = _this$appliedClasses$.done;
-        this.appliedClasses[type] = {};
-        if (baseClassName) removeClass(node, baseClassName);
-        if (activeClassName) removeClass(node, activeClassName);
-        if (doneClassName) removeClass(node, doneClassName);
-    };
-    _proto.render = function render() {
-        var _this$props = this.props, _ = _this$props.classNames, props = (0, _objectWithoutPropertiesLooseDefault.default)(_this$props, [
-            "classNames"
-        ]);
-        return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _transitionDefault.default), (0, _extendsDefault.default)({}, props, {
-            onEnter: this.onEnter,
-            onEntered: this.onEntered,
-            onEntering: this.onEntering,
-            onExit: this.onExit,
-            onExiting: this.onExiting,
-            onExited: this.onExited
-        }));
-    };
-    return CSSTransition1;
-}((0, _reactDefault.default).Component);
-CSSTransition.defaultProps = {
-    classNames: ""
 };
-CSSTransition.propTypes = (0, _extendsDefault.default)({}, (0, _transitionDefault.default).propTypes, {
-    /**
-   * The animation classNames applied to the component as it appears, enters,
-   * exits or has finished the transition. A single name can be provided, which
-   * will be suffixed for each stage, e.g. `classNames="fade"` applies:
-   *
-   * - `fade-appear`, `fade-appear-active`, `fade-appear-done`
-   * - `fade-enter`, `fade-enter-active`, `fade-enter-done`
-   * - `fade-exit`, `fade-exit-active`, `fade-exit-done`
-   *
-   * A few details to note about how these classes are applied:
-   *
-   * 1. They are _joined_ with the ones that are already defined on the child
-   *    component, so if you want to add some base styles, you can use
-   *    `className` without worrying that it will be overridden.
-   *
-   * 2. If the transition component mounts with `in={false}`, no classes are
-   *    applied yet. You might be expecting `*-exit-done`, but if you think
-   *    about it, a component cannot finish exiting if it hasn't entered yet.
-   *
-   * 2. `fade-appear-done` and `fade-enter-done` will _both_ be applied. This
-   *    allows you to define different behavior for when appearing is done and
-   *    when regular entering is done, using selectors like
-   *    `.fade-enter-done:not(.fade-appear-done)`. For example, you could apply
-   *    an epic entrance animation when element first appears in the DOM using
-   *    [Animate.css](https://daneden.github.io/animate.css/). Otherwise you can
-   *    simply use `fade-enter-done` for defining both cases.
-   *
-   * Each individual classNames can also be specified independently like:
-   *
-   * ```js
-   * classNames={{
-   *  appear: 'my-appear',
-   *  appearActive: 'my-active-appear',
-   *  appearDone: 'my-done-appear',
-   *  enter: 'my-enter',
-   *  enterActive: 'my-active-enter',
-   *  enterDone: 'my-done-enter',
-   *  exit: 'my-exit',
-   *  exitActive: 'my-active-exit',
-   *  exitDone: 'my-done-exit',
-   * }}
-   * ```
-   *
-   * If you want to set these classes using CSS Modules:
-   *
-   * ```js
-   * import styles from './styles.css';
-   * ```
-   *
-   * you might want to use camelCase in your CSS file, that way could simply
-   * spread them instead of listing them one by one:
-   *
-   * ```js
-   * classNames={{ ...styles }}
-   * ```
-   *
-   * @type {string | {
-   *  appear?: string,
-   *  appearActive?: string,
-   *  appearDone?: string,
-   *  enter?: string,
-   *  enterActive?: string,
-   *  enterDone?: string,
-   *  exit?: string,
-   *  exitActive?: string,
-   *  exitDone?: string,
-   * }}
-   */ classNames: (0, _propTypes1.classNamesShape),
-    /**
-   * A `<Transition>` callback fired immediately after the 'enter' or 'appear' class is
-   * applied.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool)
-   */ onEnter: (0, _propTypesDefault.default).func,
-    /**
-   * A `<Transition>` callback fired immediately after the 'enter-active' or
-   * 'appear-active' class is applied.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool)
-   */ onEntering: (0, _propTypesDefault.default).func,
-    /**
-   * A `<Transition>` callback fired immediately after the 'enter' or
-   * 'appear' classes are **removed** and the `done` class is added to the DOM node.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed.
-   *
-   * @type Function(node: HtmlElement, isAppearing: bool)
-   */ onEntered: (0, _propTypesDefault.default).func,
-    /**
-   * A `<Transition>` callback fired immediately after the 'exit' class is
-   * applied.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed
-   *
-   * @type Function(node: HtmlElement)
-   */ onExit: (0, _propTypesDefault.default).func,
-    /**
-   * A `<Transition>` callback fired immediately after the 'exit-active' is applied.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed
-   *
-   * @type Function(node: HtmlElement)
-   */ onExiting: (0, _propTypesDefault.default).func,
-    /**
-   * A `<Transition>` callback fired immediately after the 'exit' classes
-   * are **removed** and the `exit-done` class is added to the DOM node.
-   *
-   * **Note**: when `nodeRef` prop is passed, `node` is not passed
-   *
-   * @type Function(node: HtmlElement)
-   */ onExited: (0, _propTypesDefault.default).func
+var UAHelper = /*#__PURE__*/ Object.freeze({
+    ClientUAInstance: ClientUAInstance,
+    browser: browser,
+    cpu: cpu,
+    device: device,
+    engine: engine,
+    os: os,
+    ua: ua,
+    setUa: setUa,
+    parseUserAgent: parseUserAgent
 });
-exports.default = CSSTransition;
-
-},{"@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/inheritsLoose":"9u2Z8","prop-types":"7wKI2","dom-helpers/addClass":"7dIIz","dom-helpers/removeClass":"66hgg","react":"21dqq","./Transition":"cKsrS","./utils/PropTypes":"9Zqaa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5mvFs":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
-var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
-var _extends = require("@babel/runtime/helpers/esm/extends");
-var _extendsDefault = parcelHelpers.interopDefault(_extends);
-var _assertThisInitialized = require("@babel/runtime/helpers/esm/assertThisInitialized");
-var _assertThisInitializedDefault = parcelHelpers.interopDefault(_assertThisInitialized);
-var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
-var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _transitionGroupContext = require("./TransitionGroupContext");
-var _transitionGroupContextDefault = parcelHelpers.interopDefault(_transitionGroupContext);
-var _childMapping = require("./utils/ChildMapping");
-var values = Object.values || function(obj) {
-    return Object.keys(obj).map(function(k) {
-        return obj[k];
+function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+    if (Object.getOwnPropertySymbols) {
+        var symbols = Object.getOwnPropertySymbols(object);
+        if (enumerableOnly) symbols = symbols.filter(function(sym) {
+            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+        });
+        keys.push.apply(keys, symbols);
+    }
+    return keys;
+}
+function _objectSpread2(target) {
+    for(var i = 1; i < arguments.length; i++){
+        var source = arguments[i] != null ? arguments[i] : {};
+        if (i % 2) ownKeys(Object(source), true).forEach(function(key) {
+            _defineProperty(target, key, source[key]);
+        });
+        else if (Object.getOwnPropertyDescriptors) Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+        else ownKeys(Object(source)).forEach(function(key) {
+            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+    }
+    return target;
+}
+function _typeof(obj1) {
+    "@babel/helpers - typeof";
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") _typeof = function(obj) {
+        return typeof obj;
+    };
+    else _typeof = function(obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+    return _typeof(obj1);
+}
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
+}
+function _defineProperties(target, props) {
+    for(var i = 0; i < props.length; i++){
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+    }
+}
+function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+}
+function _defineProperty(obj, key, value) {
+    if (key in obj) Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
     });
-};
-var defaultProps = {
-    component: "div",
-    childFactory: function childFactory(child) {
-        return child;
+    else obj[key] = value;
+    return obj;
+}
+function _extends() {
+    _extends = Object.assign || function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return _extends.apply(this, arguments);
+}
+function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) throw new TypeError("Super expression must either be null or a function");
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+        constructor: {
+            value: subClass,
+            writable: true,
+            configurable: true
+        }
+    });
+    if (superClass) _setPrototypeOf(subClass, superClass);
+}
+function _getPrototypeOf(o1) {
+    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+        return o.__proto__ || Object.getPrototypeOf(o);
+    };
+    return _getPrototypeOf(o1);
+}
+function _setPrototypeOf(o2, p1) {
+    _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+        o.__proto__ = p;
+        return o;
+    };
+    return _setPrototypeOf(o2, p1);
+}
+function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for(i = 0; i < sourceKeys.length; i++){
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
     }
-};
-/**
- * The `<TransitionGroup>` component manages a set of transition components
- * (`<Transition>` and `<CSSTransition>`) in a list. Like with the transition
- * components, `<TransitionGroup>` is a state machine for managing the mounting
- * and unmounting of components over time.
- *
- * Consider the example below. As items are removed or added to the TodoList the
- * `in` prop is toggled automatically by the `<TransitionGroup>`.
- *
- * Note that `<TransitionGroup>`  does not define any animation behavior!
- * Exactly _how_ a list item animates is up to the individual transition
- * component. This means you can mix and match animations across different list
- * items.
- */ var TransitionGroup = /*#__PURE__*/ function(_React$Component) {
-    (0, _inheritsLooseDefault.default)(TransitionGroup1, _React$Component);
-    function TransitionGroup1(props, context) {
-        var _this;
-        _this = _React$Component.call(this, props, context) || this;
-        var handleExited = _this.handleExited.bind((0, _assertThisInitializedDefault.default)(_this)); // Initial children should all be entering, dependent on appear
-        _this.state = {
-            contextValue: {
-                isMounting: true
-            },
-            handleExited: handleExited,
-            firstRender: true
-        };
-        return _this;
+    return target;
+}
+function _objectWithoutProperties(source, excluded) {
+    if (source == null) return {};
+    var target = _objectWithoutPropertiesLoose(source, excluded);
+    var key, i;
+    if (Object.getOwnPropertySymbols) {
+        var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+        for(i = 0; i < sourceSymbolKeys.length; i++){
+            key = sourceSymbolKeys[i];
+            if (excluded.indexOf(key) >= 0) continue;
+            if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+            target[key] = source[key];
+        }
     }
-    var _proto = TransitionGroup1.prototype;
-    _proto.componentDidMount = function componentDidMount() {
-        this.mounted = true;
-        this.setState({
-            contextValue: {
-                isMounting: false
-            }
-        });
-    };
-    _proto.componentWillUnmount = function componentWillUnmount() {
-        this.mounted = false;
-    };
-    TransitionGroup1.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, _ref) {
-        var prevChildMapping = _ref.children, handleExited = _ref.handleExited, firstRender = _ref.firstRender;
-        return {
-            children: firstRender ? (0, _childMapping.getInitialChildMapping)(nextProps, handleExited) : (0, _childMapping.getNextChildMapping)(nextProps, prevChildMapping, handleExited),
-            firstRender: false
-        };
-    } // node is `undefined` when user provided `nodeRef` prop
-    ;
-    _proto.handleExited = function handleExited(child, node) {
-        var currentChildMapping = (0, _childMapping.getChildMapping)(this.props.children);
-        if (child.key in currentChildMapping) return;
-        if (child.props.onExited) child.props.onExited(node);
-        if (this.mounted) this.setState(function(state) {
-            var children = (0, _extendsDefault.default)({}, state.children);
-            delete children[child.key];
-            return {
-                children: children
-            };
-        });
-    };
-    _proto.render = function render() {
-        var _this$props = this.props, Component = _this$props.component, childFactory = _this$props.childFactory, props = (0, _objectWithoutPropertiesLooseDefault.default)(_this$props, [
-            "component",
-            "childFactory"
-        ]);
-        var contextValue = this.state.contextValue;
-        var children = values(this.state.children).map(childFactory);
-        delete props.appear;
-        delete props.enter;
-        delete props.exit;
-        if (Component === null) return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _transitionGroupContextDefault.default).Provider, {
-            value: contextValue
-        }, children);
-        return /*#__PURE__*/ (0, _reactDefault.default).createElement((0, _transitionGroupContextDefault.default).Provider, {
-            value: contextValue
-        }, /*#__PURE__*/ (0, _reactDefault.default).createElement(Component, props, children));
-    };
-    return TransitionGroup1;
-}((0, _reactDefault.default).Component);
-TransitionGroup.propTypes = {
-    /**
-   * `<TransitionGroup>` renders a `<div>` by default. You can change this
-   * behavior by providing a `component` prop.
-   * If you use React v16+ and would like to avoid a wrapping `<div>` element
-   * you can pass in `component={null}`. This is useful if the wrapping div
-   * borks your css styles.
-   */ component: (0, _propTypesDefault.default).any,
-    /**
-   * A set of `<Transition>` components, that are toggled `in` and out as they
-   * leave. the `<TransitionGroup>` will inject specific transition props, so
-   * remember to spread them through if you are wrapping the `<Transition>` as
-   * with our `<Fade>` example.
-   *
-   * While this component is meant for multiple `Transition` or `CSSTransition`
-   * children, sometimes you may want to have a single transition child with
-   * content that you want to be transitioned out and in when you change it
-   * (e.g. routes, images etc.) In that case you can change the `key` prop of
-   * the transition child as you change its content, this will cause
-   * `TransitionGroup` to transition the child out and back in.
-   */ children: (0, _propTypesDefault.default).node,
-    /**
-   * A convenience prop that enables or disables appear animations
-   * for all children. Note that specifying this will override any defaults set
-   * on individual children Transitions.
-   */ appear: (0, _propTypesDefault.default).bool,
-    /**
-   * A convenience prop that enables or disables enter animations
-   * for all children. Note that specifying this will override any defaults set
-   * on individual children Transitions.
-   */ enter: (0, _propTypesDefault.default).bool,
-    /**
-   * A convenience prop that enables or disables exit animations
-   * for all children. Note that specifying this will override any defaults set
-   * on individual children Transitions.
-   */ exit: (0, _propTypesDefault.default).bool,
-    /**
-   * You may need to apply reactive updates to a child as it is exiting.
-   * This is generally done by using `cloneElement` however in the case of an exiting
-   * child the element has already been removed and not accessible to the consumer.
-   *
-   * If you do need to update a child as it leaves you can provide a `childFactory`
-   * to wrap every child, even the ones that are leaving.
-   *
-   * @type Function(child: ReactElement) -> ReactElement
-   */ childFactory: (0, _propTypesDefault.default).func
-};
-TransitionGroup.defaultProps = defaultProps;
-exports.default = TransitionGroup;
-
-},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"adHgr","@babel/runtime/helpers/esm/extends":"fTBFS","@babel/runtime/helpers/esm/assertThisInitialized":"iy3su","@babel/runtime/helpers/esm/inheritsLoose":"9u2Z8","prop-types":"7wKI2","react":"21dqq","./TransitionGroupContext":"47LXo","./utils/ChildMapping":"8k6ul","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iy3su":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
+    return target;
+}
 function _assertThisInitialized(self) {
     if (self === void 0) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
     return self;
 }
-exports.default = _assertThisInitialized;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8k6ul":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-/**
- * Given `this.props.children`, return an object mapping key to child.
- *
- * @param {*} children `this.props.children`
- * @return {object} Mapping of key to child
- */ parcelHelpers.export(exports, "getChildMapping", ()=>getChildMapping);
-/**
- * When you're adding or removing children some may be added or removed in the
- * same render pass. We want to show *both* since we want to simultaneously
- * animate elements in and out. This function takes a previous set of keys
- * and a new set of keys and merges them with its best guess of the correct
- * ordering. In the future we may expose some of the utilities in
- * ReactMultiChild to make this easy, but for now React itself does not
- * directly have this concept of the union of prevChildren and nextChildren
- * so we implement it here.
- *
- * @param {object} prev prev children as returned from
- * `ReactTransitionChildMapping.getChildMapping()`.
- * @param {object} next next children as returned from
- * `ReactTransitionChildMapping.getChildMapping()`.
- * @return {object} a key set that contains all keys in `prev` and all keys
- * in `next` in a reasonable order.
- */ parcelHelpers.export(exports, "mergeChildMappings", ()=>mergeChildMappings);
-parcelHelpers.export(exports, "getInitialChildMapping", ()=>getInitialChildMapping);
-parcelHelpers.export(exports, "getNextChildMapping", ()=>getNextChildMapping);
-var _react = require("react");
-function getChildMapping(children, mapFn) {
-    var mapper = function mapper(child) {
-        return mapFn && (0, _react.isValidElement)(child) ? mapFn(child) : child;
-    };
-    var result = Object.create(null);
-    if (children) (0, _react.Children).map(children, function(c) {
-        return c;
-    }).forEach(function(child) {
-        // run the map function here instead so that the key is the computed one
-        result[child.key] = mapper(child);
-    });
-    return result;
+function _possibleConstructorReturn(self, call) {
+    if (call && (typeof call === "object" || typeof call === "function")) return call;
+    else if (call !== void 0) throw new TypeError("Derived constructors may only return object or undefined");
+    return _assertThisInitialized(self);
 }
-function mergeChildMappings(prev, next) {
-    prev = prev || {};
-    next = next || {};
-    function getValueForKey(key) {
-        return key in next ? next[key] : prev[key];
-    } // For each key of `next`, the list of keys to insert before that key in
-    // the combined list
-    var nextKeysPending = Object.create(null);
-    var pendingKeys = [];
-    for(var prevKey in prev){
-        if (prevKey in next) {
-            if (pendingKeys.length) {
-                nextKeysPending[prevKey] = pendingKeys;
-                pendingKeys = [];
-            }
-        } else pendingKeys.push(prevKey);
-    }
-    var i;
-    var childMapping = {};
-    for(var nextKey in next){
-        if (nextKeysPending[nextKey]) for(i = 0; i < nextKeysPending[nextKey].length; i++){
-            var pendingNextKey = nextKeysPending[nextKey][i];
-            childMapping[nextKeysPending[nextKey][i]] = getValueForKey(pendingNextKey);
+function _slicedToArray(arr, i) {
+    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+}
+function _arrayWithHoles(arr) {
+    if (Array.isArray(arr)) return arr;
+}
+function _iterableToArrayLimit(arr, i) {
+    var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+    if (_i == null) return;
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _s, _e;
+    try {
+        for(_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true){
+            _arr.push(_s.value);
+            if (i && _arr.length === i) break;
         }
-        childMapping[nextKey] = getValueForKey(nextKey);
-    } // Finally, add the keys which didn't appear before any key in `next`
-    for(i = 0; i < pendingKeys.length; i++)childMapping[pendingKeys[i]] = getValueForKey(pendingKeys[i]);
-    return childMapping;
+    } catch (err) {
+        _d = true;
+        _e = err;
+    } finally{
+        try {
+            if (!_n && _i["return"] != null) _i["return"]();
+        } finally{
+            if (_d) throw _e;
+        }
+    }
+    return _arr;
 }
-function getProp(child, prop, props) {
-    return props[prop] != null ? props[prop] : child.props[prop];
+function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
 }
-function getInitialChildMapping(props, onExited) {
-    return getChildMapping(props.children, function(child) {
-        return (0, _react.cloneElement)(child, {
-            onExited: onExited.bind(null, child),
-            in: true,
-            appear: getProp(child, "appear", props),
-            enter: getProp(child, "enter", props),
-            exit: getProp(child, "exit", props)
-        });
+function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+    for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
+    return arr2;
+}
+function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+var DeviceTypes = {
+    Mobile: "mobile",
+    Tablet: "tablet",
+    SmartTv: "smarttv",
+    Console: "console",
+    Wearable: "wearable",
+    Embedded: "embedded",
+    Browser: undefined
+};
+var BrowserTypes = {
+    Chrome: "Chrome",
+    Firefox: "Firefox",
+    Opera: "Opera",
+    Yandex: "Yandex",
+    Safari: "Safari",
+    InternetExplorer: "Internet Explorer",
+    Edge: "Edge",
+    Chromium: "Chromium",
+    Ie: "IE",
+    MobileSafari: "Mobile Safari",
+    EdgeChromium: "Edge Chromium",
+    MIUI: "MIUI Browser",
+    SamsungBrowser: "Samsung Browser"
+};
+var OsTypes = {
+    IOS: "iOS",
+    Android: "Android",
+    WindowsPhone: "Windows Phone",
+    Windows: "Windows",
+    MAC_OS: "Mac OS"
+};
+var InitialDeviceTypes = {
+    isMobile: false,
+    isTablet: false,
+    isBrowser: false,
+    isSmartTV: false,
+    isConsole: false,
+    isWearable: false
+};
+var checkDeviceType = function checkDeviceType(type) {
+    switch(type){
+        case DeviceTypes.Mobile:
+            return {
+                isMobile: true
+            };
+        case DeviceTypes.Tablet:
+            return {
+                isTablet: true
+            };
+        case DeviceTypes.SmartTv:
+            return {
+                isSmartTV: true
+            };
+        case DeviceTypes.Console:
+            return {
+                isConsole: true
+            };
+        case DeviceTypes.Wearable:
+            return {
+                isWearable: true
+            };
+        case DeviceTypes.Browser:
+            return {
+                isBrowser: true
+            };
+        case DeviceTypes.Embedded:
+            return {
+                isEmbedded: true
+            };
+        default:
+            return InitialDeviceTypes;
+    }
+};
+var setUserAgent = function setUserAgent(userAgent) {
+    return setUa(userAgent);
+};
+var setDefaults = function setDefaults(p) {
+    var d = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "none";
+    return p ? p : d;
+};
+var getNavigatorInstance = function getNavigatorInstance() {
+    if (typeof window !== "undefined") {
+        if (window.navigator || navigator) return window.navigator || navigator;
+    }
+    return false;
+};
+var isIOS13Check = function isIOS13Check(type) {
+    var nav = getNavigatorInstance();
+    return nav && nav.platform && (nav.platform.indexOf(type) !== -1 || nav.platform === "MacIntel" && nav.maxTouchPoints > 1 && !window.MSStream);
+};
+var browserPayload = function browserPayload(isBrowser1, browser1, engine1, os1, ua1) {
+    return {
+        isBrowser: isBrowser1,
+        browserMajorVersion: setDefaults(browser1.major),
+        browserFullVersion: setDefaults(browser1.version),
+        browserName: setDefaults(browser1.name),
+        engineName: setDefaults(engine1.name),
+        engineVersion: setDefaults(engine1.version),
+        osName: setDefaults(os1.name),
+        osVersion: setDefaults(os1.version),
+        userAgent: setDefaults(ua1)
+    };
+};
+var mobilePayload = function mobilePayload(type, device1, os2, ua2) {
+    return _objectSpread2({}, type, {
+        vendor: setDefaults(device1.vendor),
+        model: setDefaults(device1.model),
+        os: setDefaults(os2.name),
+        osVersion: setDefaults(os2.version),
+        ua: setDefaults(ua2)
     });
+};
+var smartTvPayload = function smartTvPayload(isSmartTV1, engine2, os3, ua3) {
+    return {
+        isSmartTV: isSmartTV1,
+        engineName: setDefaults(engine2.name),
+        engineVersion: setDefaults(engine2.version),
+        osName: setDefaults(os3.name),
+        osVersion: setDefaults(os3.version),
+        userAgent: setDefaults(ua3)
+    };
+};
+var consolePayload = function consolePayload(isConsole1, engine3, os4, ua4) {
+    return {
+        isConsole: isConsole1,
+        engineName: setDefaults(engine3.name),
+        engineVersion: setDefaults(engine3.version),
+        osName: setDefaults(os4.name),
+        osVersion: setDefaults(os4.version),
+        userAgent: setDefaults(ua4)
+    };
+};
+var wearablePayload = function wearablePayload(isWearable1, engine4, os5, ua5) {
+    return {
+        isWearable: isWearable1,
+        engineName: setDefaults(engine4.name),
+        engineVersion: setDefaults(engine4.version),
+        osName: setDefaults(os5.name),
+        osVersion: setDefaults(os5.version),
+        userAgent: setDefaults(ua5)
+    };
+};
+var embeddedPayload = function embeddedPayload(isEmbedded1, device2, engine5, os6, ua6) {
+    return {
+        isEmbedded: isEmbedded1,
+        vendor: setDefaults(device2.vendor),
+        model: setDefaults(device2.model),
+        engineName: setDefaults(engine5.name),
+        engineVersion: setDefaults(engine5.version),
+        osName: setDefaults(os6.name),
+        osVersion: setDefaults(os6.version),
+        userAgent: setDefaults(ua6)
+    };
+};
+function deviceDetect(userAgent) {
+    var _ref = userAgent ? parseUserAgent(userAgent) : UAHelper, device3 = _ref.device, browser2 = _ref.browser, engine6 = _ref.engine, os7 = _ref.os, ua7 = _ref.ua;
+    var type = checkDeviceType(device3.type);
+    var isBrowser2 = type.isBrowser, isMobile1 = type.isMobile, isTablet1 = type.isTablet, isSmartTV2 = type.isSmartTV, isConsole2 = type.isConsole, isWearable2 = type.isWearable, isEmbedded2 = type.isEmbedded;
+    if (isBrowser2) return browserPayload(isBrowser2, browser2, engine6, os7, ua7);
+    if (isSmartTV2) return smartTvPayload(isSmartTV2, engine6, os7, ua7);
+    if (isConsole2) return consolePayload(isConsole2, engine6, os7, ua7);
+    if (isMobile1) return mobilePayload(type, device3, os7, ua7);
+    if (isTablet1) return mobilePayload(type, device3, os7, ua7);
+    if (isWearable2) return wearablePayload(isWearable2, engine6, os7, ua7);
+    if (isEmbedded2) return embeddedPayload(isEmbedded2, device3, engine6, os7, ua7);
 }
-function getNextChildMapping(nextProps, prevChildMapping, onExited) {
-    var nextChildMapping = getChildMapping(nextProps.children);
-    var children = mergeChildMappings(prevChildMapping, nextChildMapping);
-    Object.keys(children).forEach(function(key) {
-        var child = children[key];
-        if (!(0, _react.isValidElement)(child)) return;
-        var hasPrev = key in prevChildMapping;
-        var hasNext = key in nextChildMapping;
-        var prevChild = prevChildMapping[key];
-        var isLeaving = (0, _react.isValidElement)(prevChild) && !prevChild.props.in; // item is new (entering)
-        if (hasNext && (!hasPrev || isLeaving)) // console.log('entering', key)
-        children[key] = (0, _react.cloneElement)(child, {
-            onExited: onExited.bind(null, child),
-            in: true,
-            exit: getProp(child, "exit", nextProps),
-            enter: getProp(child, "enter", nextProps)
-        });
-        else if (!hasNext && hasPrev && !isLeaving) // item is old (exiting)
-        // console.log('leaving', key)
-        children[key] = (0, _react.cloneElement)(child, {
-            in: false
-        });
-        else if (hasNext && hasPrev && (0, _react.isValidElement)(prevChild)) // item hasn't changed transition states
-        // copy over the last transition props;
-        // console.log('unchanged', key)
-        children[key] = (0, _react.cloneElement)(child, {
-            onExited: onExited.bind(null, child),
-            in: prevChild.props.in,
-            exit: getProp(child, "exit", nextProps),
-            enter: getProp(child, "enter", nextProps)
-        });
+var isMobileType = function isMobileType(_ref) {
+    var type = _ref.type;
+    return type === DeviceTypes.Mobile;
+};
+var isTabletType = function isTabletType(_ref2) {
+    var type = _ref2.type;
+    return type === DeviceTypes.Tablet;
+};
+var isMobileAndTabletType = function isMobileAndTabletType(_ref3) {
+    var type = _ref3.type;
+    return type === DeviceTypes.Mobile || type === DeviceTypes.Tablet;
+};
+var isSmartTVType = function isSmartTVType(_ref4) {
+    var type = _ref4.type;
+    return type === DeviceTypes.SmartTv;
+};
+var isBrowserType = function isBrowserType(_ref5) {
+    var type = _ref5.type;
+    return type === DeviceTypes.Browser;
+};
+var isWearableType = function isWearableType(_ref6) {
+    var type = _ref6.type;
+    return type === DeviceTypes.Wearable;
+};
+var isConsoleType = function isConsoleType(_ref7) {
+    var type = _ref7.type;
+    return type === DeviceTypes.Console;
+};
+var isEmbeddedType = function isEmbeddedType(_ref8) {
+    var type = _ref8.type;
+    return type === DeviceTypes.Embedded;
+};
+var getMobileVendor = function getMobileVendor(_ref9) {
+    var vendor = _ref9.vendor;
+    return setDefaults(vendor);
+};
+var getMobileModel = function getMobileModel(_ref10) {
+    var model = _ref10.model;
+    return setDefaults(model);
+};
+var getDeviceType = function getDeviceType(_ref11) {
+    var type = _ref11.type;
+    return setDefaults(type, "browser");
+}; // os types
+var isAndroidType = function isAndroidType(_ref12) {
+    var name = _ref12.name;
+    return name === OsTypes.Android;
+};
+var isWindowsType = function isWindowsType(_ref13) {
+    var name = _ref13.name;
+    return name === OsTypes.Windows;
+};
+var isMacOsType = function isMacOsType(_ref14) {
+    var name = _ref14.name;
+    return name === OsTypes.MAC_OS;
+};
+var isWinPhoneType = function isWinPhoneType(_ref15) {
+    var name = _ref15.name;
+    return name === OsTypes.WindowsPhone;
+};
+var isIOSType = function isIOSType(_ref16) {
+    var name = _ref16.name;
+    return name === OsTypes.IOS;
+};
+var getOsVersion = function getOsVersion(_ref17) {
+    var version = _ref17.version;
+    return setDefaults(version);
+};
+var getOsName = function getOsName(_ref18) {
+    var name = _ref18.name;
+    return setDefaults(name);
+}; // browser types
+var isChromeType = function isChromeType(_ref19) {
+    var name = _ref19.name;
+    return name === BrowserTypes.Chrome;
+};
+var isFirefoxType = function isFirefoxType(_ref20) {
+    var name = _ref20.name;
+    return name === BrowserTypes.Firefox;
+};
+var isChromiumType = function isChromiumType(_ref21) {
+    var name = _ref21.name;
+    return name === BrowserTypes.Chromium;
+};
+var isEdgeType = function isEdgeType(_ref22) {
+    var name = _ref22.name;
+    return name === BrowserTypes.Edge;
+};
+var isYandexType = function isYandexType(_ref23) {
+    var name = _ref23.name;
+    return name === BrowserTypes.Yandex;
+};
+var isSafariType = function isSafariType(_ref24) {
+    var name = _ref24.name;
+    return name === BrowserTypes.Safari || name === BrowserTypes.MobileSafari;
+};
+var isMobileSafariType = function isMobileSafariType(_ref25) {
+    var name = _ref25.name;
+    return name === BrowserTypes.MobileSafari;
+};
+var isOperaType = function isOperaType(_ref26) {
+    var name = _ref26.name;
+    return name === BrowserTypes.Opera;
+};
+var isIEType = function isIEType(_ref27) {
+    var name = _ref27.name;
+    return name === BrowserTypes.InternetExplorer || name === BrowserTypes.Ie;
+};
+var isMIUIType = function isMIUIType(_ref28) {
+    var name = _ref28.name;
+    return name === BrowserTypes.MIUI;
+};
+var isSamsungBrowserType = function isSamsungBrowserType(_ref29) {
+    var name = _ref29.name;
+    return name === BrowserTypes.SamsungBrowser;
+};
+var getBrowserFullVersion = function getBrowserFullVersion(_ref30) {
+    var version = _ref30.version;
+    return setDefaults(version);
+};
+var getBrowserVersion = function getBrowserVersion(_ref31) {
+    var major = _ref31.major;
+    return setDefaults(major);
+};
+var getBrowserName = function getBrowserName(_ref32) {
+    var name = _ref32.name;
+    return setDefaults(name);
+}; // engine types
+var getEngineName = function getEngineName(_ref33) {
+    var name = _ref33.name;
+    return setDefaults(name);
+};
+var getEngineVersion = function getEngineVersion(_ref34) {
+    var version = _ref34.version;
+    return setDefaults(version);
+};
+var isElectronType = function isElectronType() {
+    var nav = getNavigatorInstance();
+    var ua8 = nav && nav.userAgent && nav.userAgent.toLowerCase();
+    return typeof ua8 === "string" ? /electron/.test(ua8) : false;
+};
+var isEdgeChromiumType = function isEdgeChromiumType(ua9) {
+    return typeof ua9 === "string" && ua9.indexOf("Edg/") !== -1;
+};
+var getIOS13 = function getIOS13() {
+    var nav = getNavigatorInstance();
+    return nav && (/iPad|iPhone|iPod/.test(nav.platform) || nav.platform === "MacIntel" && nav.maxTouchPoints > 1) && !window.MSStream;
+};
+var getIPad13 = function getIPad13() {
+    return isIOS13Check("iPad");
+};
+var getIphone13 = function getIphone13() {
+    return isIOS13Check("iPhone");
+};
+var getIPod13 = function getIPod13() {
+    return isIOS13Check("iPod");
+};
+var getUseragent = function getUseragent(userAg) {
+    return setDefaults(userAg);
+};
+function buildSelectorsObject(options) {
+    var _ref = options ? options : UAHelper, device4 = _ref.device, browser3 = _ref.browser, os8 = _ref.os, engine7 = _ref.engine, ua10 = _ref.ua;
+    return {
+        isSmartTV: isSmartTVType(device4),
+        isConsole: isConsoleType(device4),
+        isWearable: isWearableType(device4),
+        isEmbedded: isEmbeddedType(device4),
+        isMobileSafari: isMobileSafariType(browser3) || getIPad13(),
+        isChromium: isChromiumType(browser3),
+        isMobile: isMobileAndTabletType(device4) || getIPad13(),
+        isMobileOnly: isMobileType(device4),
+        isTablet: isTabletType(device4) || getIPad13(),
+        isBrowser: isBrowserType(device4),
+        isDesktop: isBrowserType(device4),
+        isAndroid: isAndroidType(os8),
+        isWinPhone: isWinPhoneType(os8),
+        isIOS: isIOSType(os8) || getIPad13(),
+        isChrome: isChromeType(browser3),
+        isFirefox: isFirefoxType(browser3),
+        isSafari: isSafariType(browser3),
+        isOpera: isOperaType(browser3),
+        isIE: isIEType(browser3),
+        osVersion: getOsVersion(os8),
+        osName: getOsName(os8),
+        fullBrowserVersion: getBrowserFullVersion(browser3),
+        browserVersion: getBrowserVersion(browser3),
+        browserName: getBrowserName(browser3),
+        mobileVendor: getMobileVendor(device4),
+        mobileModel: getMobileModel(device4),
+        engineName: getEngineName(engine7),
+        engineVersion: getEngineVersion(engine7),
+        getUA: getUseragent(ua10),
+        isEdge: isEdgeType(browser3) || isEdgeChromiumType(ua10),
+        isYandex: isYandexType(browser3),
+        deviceType: getDeviceType(device4),
+        isIOS13: getIOS13(),
+        isIPad13: getIPad13(),
+        isIPhone13: getIphone13(),
+        isIPod13: getIPod13(),
+        isElectron: isElectronType(),
+        isEdgeChromium: isEdgeChromiumType(ua10),
+        isLegacyEdge: isEdgeType(browser3) && !isEdgeChromiumType(ua10),
+        isWindows: isWindowsType(os8),
+        isMacOs: isMacOsType(os8),
+        isMIUI: isMIUIType(browser3),
+        isSamsungBrowser: isSamsungBrowserType(browser3)
+    };
+}
+var isSmartTV = isSmartTVType(device);
+var isConsole = isConsoleType(device);
+var isWearable = isWearableType(device);
+var isEmbedded = isEmbeddedType(device);
+var isMobileSafari = isMobileSafariType(browser) || getIPad13();
+var isChromium = isChromiumType(browser);
+var isMobile = isMobileAndTabletType(device) || getIPad13();
+var isMobileOnly = isMobileType(device);
+var isTablet = isTabletType(device) || getIPad13();
+var isBrowser = isBrowserType(device);
+var isDesktop = isBrowserType(device);
+var isAndroid = isAndroidType(os);
+var isWinPhone = isWinPhoneType(os);
+var isIOS = isIOSType(os) || getIPad13();
+var isChrome = isChromeType(browser);
+var isFirefox = isFirefoxType(browser);
+var isSafari = isSafariType(browser);
+var isOpera = isOperaType(browser);
+var isIE = isIEType(browser);
+var osVersion = getOsVersion(os);
+var osName = getOsName(os);
+var fullBrowserVersion = getBrowserFullVersion(browser);
+var browserVersion = getBrowserVersion(browser);
+var browserName = getBrowserName(browser);
+var mobileVendor = getMobileVendor(device);
+var mobileModel = getMobileModel(device);
+var engineName = getEngineName(engine);
+var engineVersion = getEngineVersion(engine);
+var getUA = getUseragent(ua);
+var isEdge = isEdgeType(browser) || isEdgeChromiumType(ua);
+var isYandex = isYandexType(browser);
+var deviceType = getDeviceType(device);
+var isIOS13 = getIOS13();
+var isIPad13 = getIPad13();
+var isIPhone13 = getIphone13();
+var isIPod13 = getIPod13();
+var isElectron = isElectronType();
+var isEdgeChromium = isEdgeChromiumType(ua);
+var isLegacyEdge = isEdgeType(browser) && !isEdgeChromiumType(ua);
+var isWindows = isWindowsType(os);
+var isMacOs = isMacOsType(os);
+var isMIUI = isMIUIType(browser);
+var isSamsungBrowser = isSamsungBrowserType(browser);
+var getSelectorsByUserAgent = function getSelectorsByUserAgent(userAgent) {
+    if (!userAgent || typeof userAgent !== "string") {
+        console.error("No valid user agent string was provided");
+        return;
+    }
+    var _UAHelper$parseUserAg = parseUserAgent(userAgent), device5 = _UAHelper$parseUserAg.device, browser4 = _UAHelper$parseUserAg.browser, os9 = _UAHelper$parseUserAg.os, engine8 = _UAHelper$parseUserAg.engine, ua11 = _UAHelper$parseUserAg.ua;
+    return buildSelectorsObject({
+        device: device5,
+        browser: browser4,
+        os: os9,
+        engine: engine8,
+        ua: ua11
     });
-    return children;
+};
+var AndroidView = function AndroidView(_ref) {
+    var renderWithFragment = _ref.renderWithFragment, children = _ref.children, props = _objectWithoutProperties(_ref, [
+        "renderWithFragment",
+        "children"
+    ]);
+    return isAndroid ? renderWithFragment ? React__default.createElement(React.Fragment, null, children) : React__default.createElement("div", props, children) : null;
+};
+var BrowserView = function BrowserView(_ref2) {
+    var renderWithFragment = _ref2.renderWithFragment, children = _ref2.children, props = _objectWithoutProperties(_ref2, [
+        "renderWithFragment",
+        "children"
+    ]);
+    return isBrowser ? renderWithFragment ? React__default.createElement(React.Fragment, null, children) : React__default.createElement("div", props, children) : null;
+};
+var IEView = function IEView(_ref3) {
+    var renderWithFragment = _ref3.renderWithFragment, children = _ref3.children, props = _objectWithoutProperties(_ref3, [
+        "renderWithFragment",
+        "children"
+    ]);
+    return isIE ? renderWithFragment ? React__default.createElement(React.Fragment, null, children) : React__default.createElement("div", props, children) : null;
+};
+var IOSView = function IOSView(_ref4) {
+    var renderWithFragment = _ref4.renderWithFragment, children = _ref4.children, props = _objectWithoutProperties(_ref4, [
+        "renderWithFragment",
+        "children"
+    ]);
+    return isIOS ? renderWithFragment ? React__default.createElement(React.Fragment, null, children) : React__default.createElement("div", props, children) : null;
+};
+var MobileView = function MobileView(_ref5) {
+    var renderWithFragment = _ref5.renderWithFragment, children = _ref5.children, props = _objectWithoutProperties(_ref5, [
+        "renderWithFragment",
+        "children"
+    ]);
+    return isMobile ? renderWithFragment ? React__default.createElement(React.Fragment, null, children) : React__default.createElement("div", props, children) : null;
+};
+var TabletView = function TabletView(_ref6) {
+    var renderWithFragment = _ref6.renderWithFragment, children = _ref6.children, props = _objectWithoutProperties(_ref6, [
+        "renderWithFragment",
+        "children"
+    ]);
+    return isTablet ? renderWithFragment ? React__default.createElement(React.Fragment, null, children) : React__default.createElement("div", props, children) : null;
+};
+var WinPhoneView = function WinPhoneView(_ref7) {
+    var renderWithFragment = _ref7.renderWithFragment, children = _ref7.children, props = _objectWithoutProperties(_ref7, [
+        "renderWithFragment",
+        "children"
+    ]);
+    return isWinPhone ? renderWithFragment ? React__default.createElement(React.Fragment, null, children) : React__default.createElement("div", props, children) : null;
+};
+var MobileOnlyView = function MobileOnlyView(_ref8) {
+    var renderWithFragment = _ref8.renderWithFragment, children = _ref8.children, viewClassName = _ref8.viewClassName, style = _ref8.style, props = _objectWithoutProperties(_ref8, [
+        "renderWithFragment",
+        "children",
+        "viewClassName",
+        "style"
+    ]);
+    return isMobileOnly ? renderWithFragment ? React__default.createElement(React.Fragment, null, children) : React__default.createElement("div", props, children) : null;
+};
+var SmartTVView = function SmartTVView(_ref9) {
+    var renderWithFragment = _ref9.renderWithFragment, children = _ref9.children, props = _objectWithoutProperties(_ref9, [
+        "renderWithFragment",
+        "children"
+    ]);
+    return isSmartTV ? renderWithFragment ? React__default.createElement(React.Fragment, null, children) : React__default.createElement("div", props, children) : null;
+};
+var ConsoleView = function ConsoleView(_ref10) {
+    var renderWithFragment = _ref10.renderWithFragment, children = _ref10.children, props = _objectWithoutProperties(_ref10, [
+        "renderWithFragment",
+        "children"
+    ]);
+    return isConsole ? renderWithFragment ? React__default.createElement(React.Fragment, null, children) : React__default.createElement("div", props, children) : null;
+};
+var WearableView = function WearableView(_ref11) {
+    var renderWithFragment = _ref11.renderWithFragment, children = _ref11.children, props = _objectWithoutProperties(_ref11, [
+        "renderWithFragment",
+        "children"
+    ]);
+    return isWearable ? renderWithFragment ? React__default.createElement(React.Fragment, null, children) : React__default.createElement("div", props, children) : null;
+};
+var CustomView = function CustomView(_ref12) {
+    var renderWithFragment = _ref12.renderWithFragment, children = _ref12.children, viewClassName = _ref12.viewClassName, style = _ref12.style, condition = _ref12.condition, props = _objectWithoutProperties(_ref12, [
+        "renderWithFragment",
+        "children",
+        "viewClassName",
+        "style",
+        "condition"
+    ]);
+    return condition ? renderWithFragment ? React__default.createElement(React.Fragment, null, children) : React__default.createElement("div", props, children) : null;
+};
+function withOrientationChange(WrappedComponent) {
+    return /*#__PURE__*/ function(_React$Component) {
+        _inherits(_class, _React$Component);
+        function _class(props) {
+            var _this;
+            _classCallCheck(this, _class);
+            _this = _possibleConstructorReturn(this, _getPrototypeOf(_class).call(this, props));
+            _this.isEventListenerAdded = false;
+            _this.handleOrientationChange = _this.handleOrientationChange.bind(_assertThisInitialized(_this));
+            _this.onOrientationChange = _this.onOrientationChange.bind(_assertThisInitialized(_this));
+            _this.onPageLoad = _this.onPageLoad.bind(_assertThisInitialized(_this));
+            _this.state = {
+                isLandscape: false,
+                isPortrait: false
+            };
+            return _this;
+        }
+        _createClass(_class, [
+            {
+                key: "handleOrientationChange",
+                value: function handleOrientationChange() {
+                    if (!this.isEventListenerAdded) this.isEventListenerAdded = true;
+                    var orientation = window.innerWidth > window.innerHeight ? 90 : 0;
+                    this.setState({
+                        isPortrait: orientation === 0,
+                        isLandscape: orientation === 90
+                    });
+                }
+            },
+            {
+                key: "onOrientationChange",
+                value: function onOrientationChange() {
+                    this.handleOrientationChange();
+                }
+            },
+            {
+                key: "onPageLoad",
+                value: function onPageLoad() {
+                    this.handleOrientationChange();
+                }
+            },
+            {
+                key: "componentDidMount",
+                value: function componentDidMount() {
+                    if ((typeof window === "undefined" ? "undefined" : _typeof(window)) !== undefined && isMobile) {
+                        if (!this.isEventListenerAdded) {
+                            this.handleOrientationChange();
+                            window.addEventListener("load", this.onPageLoad, false);
+                        } else window.removeEventListener("load", this.onPageLoad, false);
+                        window.addEventListener("resize", this.onOrientationChange, false);
+                    }
+                }
+            },
+            {
+                key: "componentWillUnmount",
+                value: function componentWillUnmount() {
+                    window.removeEventListener("resize", this.onOrientationChange, false);
+                }
+            },
+            {
+                key: "render",
+                value: function render() {
+                    return React__default.createElement(WrappedComponent, _extends({}, this.props, {
+                        isLandscape: this.state.isLandscape,
+                        isPortrait: this.state.isPortrait
+                    }));
+                }
+            }
+        ]);
+        return _class;
+    }(React__default.Component);
 }
+function useMobileOrientation() {
+    var _useState = React.useState(function() {
+        var orientation = window.innerWidth > window.innerHeight ? 90 : 0;
+        return {
+            isPortrait: orientation === 0,
+            isLandscape: orientation === 90,
+            orientation: orientation === 0 ? "portrait" : "landscape"
+        };
+    }), _useState2 = _slicedToArray(_useState, 2), state = _useState2[0], setState = _useState2[1];
+    var handleOrientationChange = React.useCallback(function() {
+        var orientation = window.innerWidth > window.innerHeight ? 90 : 0;
+        var next = {
+            isPortrait: orientation === 0,
+            isLandscape: orientation === 90,
+            orientation: orientation === 0 ? "portrait" : "landscape"
+        };
+        state.orientation !== next.orientation && setState(next);
+    }, [
+        state.orientation
+    ]);
+    React.useEffect(function() {
+        if ((typeof window === "undefined" ? "undefined" : _typeof(window)) !== undefined && isMobile) {
+            handleOrientationChange();
+            window.addEventListener("load", handleOrientationChange, false);
+            window.addEventListener("resize", handleOrientationChange, false);
+        }
+        return function() {
+            window.removeEventListener("resize", handleOrientationChange, false);
+            window.removeEventListener("load", handleOrientationChange, false);
+        };
+    }, [
+        handleOrientationChange
+    ]);
+    return state;
+}
+function useDeviceData(userAgent) {
+    var hookUserAgent = userAgent ? userAgent : window.navigator.userAgent;
+    return parseUserAgent(hookUserAgent);
+}
+function useDeviceSelectors(userAgent) {
+    var hookUserAgent = userAgent ? userAgent : window.navigator.userAgent;
+    var deviceData = useDeviceData(hookUserAgent);
+    var selectors = buildSelectorsObject(deviceData);
+    return [
+        selectors,
+        deviceData
+    ];
+}
+exports.AndroidView = AndroidView;
+exports.BrowserTypes = BrowserTypes;
+exports.BrowserView = BrowserView;
+exports.ConsoleView = ConsoleView;
+exports.CustomView = CustomView;
+exports.IEView = IEView;
+exports.IOSView = IOSView;
+exports.MobileOnlyView = MobileOnlyView;
+exports.MobileView = MobileView;
+exports.OsTypes = OsTypes;
+exports.SmartTVView = SmartTVView;
+exports.TabletView = TabletView;
+exports.WearableView = WearableView;
+exports.WinPhoneView = WinPhoneView;
+exports.browserName = browserName;
+exports.browserVersion = browserVersion;
+exports.deviceDetect = deviceDetect;
+exports.deviceType = deviceType;
+exports.engineName = engineName;
+exports.engineVersion = engineVersion;
+exports.fullBrowserVersion = fullBrowserVersion;
+exports.getSelectorsByUserAgent = getSelectorsByUserAgent;
+exports.getUA = getUA;
+exports.isAndroid = isAndroid;
+exports.isBrowser = isBrowser;
+exports.isChrome = isChrome;
+exports.isChromium = isChromium;
+exports.isConsole = isConsole;
+exports.isDesktop = isDesktop;
+exports.isEdge = isEdge;
+exports.isEdgeChromium = isEdgeChromium;
+exports.isElectron = isElectron;
+exports.isEmbedded = isEmbedded;
+exports.isFirefox = isFirefox;
+exports.isIE = isIE;
+exports.isIOS = isIOS;
+exports.isIOS13 = isIOS13;
+exports.isIPad13 = isIPad13;
+exports.isIPhone13 = isIPhone13;
+exports.isIPod13 = isIPod13;
+exports.isLegacyEdge = isLegacyEdge;
+exports.isMIUI = isMIUI;
+exports.isMacOs = isMacOs;
+exports.isMobile = isMobile;
+exports.isMobileOnly = isMobileOnly;
+exports.isMobileSafari = isMobileSafari;
+exports.isOpera = isOpera;
+exports.isSafari = isSafari;
+exports.isSamsungBrowser = isSamsungBrowser;
+exports.isSmartTV = isSmartTV;
+exports.isTablet = isTablet;
+exports.isWearable = isWearable;
+exports.isWinPhone = isWinPhone;
+exports.isWindows = isWindows;
+exports.isYandex = isYandex;
+exports.mobileModel = mobileModel;
+exports.mobileVendor = mobileVendor;
+exports.osName = osName;
+exports.osVersion = osVersion;
+exports.parseUserAgent = parseUserAgent;
+exports.setUserAgent = setUserAgent;
+exports.useDeviceData = useDeviceData;
+exports.useDeviceSelectors = useDeviceSelectors;
+exports.useMobileOrientation = useMobileOrientation;
+exports.withOrientationChange = withOrientationChange;
 
-},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["1xC6H","ShInH","8lqZg"], "8lqZg", "parcelRequire3545")
+},{"react":"21dqq","ua-parser-js/dist/ua-parser.min":"lt8ds"}],"lt8ds":[function(require,module,exports) {
+/* UAParser.js v1.0.2
+   Copyright © 2012-2021 Faisal Salman <f@faisalman.com>
+   MIT License */ (function(window, undefined) {
+    "use strict";
+    var LIBVERSION = "1.0.2", EMPTY = "", UNKNOWN = "?", FUNC_TYPE = "function", UNDEF_TYPE = "undefined", OBJ_TYPE = "object", STR_TYPE = "string", MAJOR = "major", MODEL = "model", NAME = "name", TYPE = "type", VENDOR = "vendor", VERSION = "version", ARCHITECTURE = "architecture", CONSOLE = "console", MOBILE = "mobile", TABLET = "tablet", SMARTTV = "smarttv", WEARABLE = "wearable", EMBEDDED = "embedded", UA_MAX_LENGTH = 255;
+    var AMAZON = "Amazon", APPLE = "Apple", ASUS = "ASUS", BLACKBERRY = "BlackBerry", BROWSER = "Browser", CHROME = "Chrome", EDGE = "Edge", FIREFOX = "Firefox", GOOGLE = "Google", HUAWEI = "Huawei", LG = "LG", MICROSOFT = "Microsoft", MOTOROLA = "Motorola", OPERA = "Opera", SAMSUNG = "Samsung", SONY = "Sony", XIAOMI = "Xiaomi", ZEBRA = "Zebra", FACEBOOK = "Facebook";
+    var extend = function(regexes, extensions) {
+        var mergedRegexes = {};
+        for(var i in regexes)if (extensions[i] && extensions[i].length % 2 === 0) mergedRegexes[i] = extensions[i].concat(regexes[i]);
+        else mergedRegexes[i] = regexes[i];
+        return mergedRegexes;
+    }, enumerize = function(arr) {
+        var enums = {};
+        for(var i = 0; i < arr.length; i++)enums[arr[i].toUpperCase()] = arr[i];
+        return enums;
+    }, has = function(str1, str2) {
+        return typeof str1 === STR_TYPE ? lowerize(str2).indexOf(lowerize(str1)) !== -1 : false;
+    }, lowerize = function(str) {
+        return str.toLowerCase();
+    }, majorize = function(version) {
+        return typeof version === STR_TYPE ? version.replace(/[^\d\.]/g, EMPTY).split(".")[0] : undefined;
+    }, trim = function(str, len) {
+        if (typeof str === STR_TYPE) {
+            str = str.replace(/^\s\s*/, EMPTY).replace(/\s\s*$/, EMPTY);
+            return typeof len === UNDEF_TYPE ? str : str.substring(0, UA_MAX_LENGTH);
+        }
+    };
+    var rgxMapper = function(ua, arrays) {
+        var i = 0, j, k, p, q, matches, match;
+        while(i < arrays.length && !matches){
+            var regex = arrays[i], props = arrays[i + 1];
+            j = k = 0;
+            while(j < regex.length && !matches){
+                matches = regex[j++].exec(ua);
+                if (!!matches) for(p = 0; p < props.length; p++){
+                    match = matches[++k];
+                    q = props[p];
+                    if (typeof q === OBJ_TYPE && q.length > 0) {
+                        if (q.length === 2) {
+                            if (typeof q[1] == FUNC_TYPE) this[q[0]] = q[1].call(this, match);
+                            else this[q[0]] = q[1];
+                        } else if (q.length === 3) {
+                            if (typeof q[1] === FUNC_TYPE && !(q[1].exec && q[1].test)) this[q[0]] = match ? q[1].call(this, match, q[2]) : undefined;
+                            else this[q[0]] = match ? match.replace(q[1], q[2]) : undefined;
+                        } else if (q.length === 4) this[q[0]] = match ? q[3].call(this, match.replace(q[1], q[2])) : undefined;
+                    } else this[q] = match ? match : undefined;
+                }
+            }
+            i += 2;
+        }
+    }, strMapper = function(str, map) {
+        for(var i in map){
+            if (typeof map[i] === OBJ_TYPE && map[i].length > 0) for(var j = 0; j < map[i].length; j++){
+                if (has(map[i][j], str)) return i === UNKNOWN ? undefined : i;
+            }
+            else if (has(map[i], str)) return i === UNKNOWN ? undefined : i;
+        }
+        return str;
+    };
+    var oldSafariMap = {
+        "1.0": "/8",
+        1.2: "/1",
+        1.3: "/3",
+        "2.0": "/412",
+        "2.0.2": "/416",
+        "2.0.3": "/417",
+        "2.0.4": "/419",
+        "?": "/"
+    }, windowsVersionMap = {
+        ME: "4.90",
+        "NT 3.11": "NT3.51",
+        "NT 4.0": "NT4.0",
+        2e3: "NT 5.0",
+        XP: [
+            "NT 5.1",
+            "NT 5.2"
+        ],
+        Vista: "NT 6.0",
+        7: "NT 6.1",
+        8: "NT 6.2",
+        8.1: "NT 6.3",
+        10: [
+            "NT 6.4",
+            "NT 10.0"
+        ],
+        RT: "ARM"
+    };
+    var regexes1 = {
+        browser: [
+            [
+                /\b(?:crmo|crios)\/([\w\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    "Chrome"
+                ]
+            ],
+            [
+                /edg(?:e|ios|a)?\/([\w\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    "Edge"
+                ]
+            ],
+            [
+                /(opera mini)\/([-\w\.]+)/i,
+                /(opera [mobiletab]{3,6})\b.+version\/([-\w\.]+)/i,
+                /(opera)(?:.+version\/|[\/ ]+)([\w\.]+)/i
+            ],
+            [
+                NAME,
+                VERSION
+            ],
+            [
+                /opios[\/ ]+([\w\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    OPERA + " Mini"
+                ]
+            ],
+            [
+                /\bopr\/([\w\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    OPERA
+                ]
+            ],
+            [
+                /(kindle)\/([\w\.]+)/i,
+                /(lunascape|maxthon|netfront|jasmine|blazer)[\/ ]?([\w\.]*)/i,
+                /(avant |iemobile|slim)(?:browser)?[\/ ]?([\w\.]*)/i,
+                /(ba?idubrowser)[\/ ]?([\w\.]+)/i,
+                /(?:ms|\()(ie) ([\w\.]+)/i,
+                /(flock|rockmelt|midori|epiphany|silk|skyfire|ovibrowser|bolt|iron|vivaldi|iridium|phantomjs|bowser|quark|qupzilla|falkon|rekonq|puffin|brave|whale|qqbrowserlite|qq)\/([-\w\.]+)/i,
+                /(weibo)__([\d\.]+)/i
+            ],
+            [
+                NAME,
+                VERSION
+            ],
+            [
+                /(?:\buc? ?browser|(?:juc.+)ucweb)[\/ ]?([\w\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    "UC" + BROWSER
+                ]
+            ],
+            [
+                /\bqbcore\/([\w\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    "WeChat(Win) Desktop"
+                ]
+            ],
+            [
+                /micromessenger\/([\w\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    "WeChat"
+                ]
+            ],
+            [
+                /konqueror\/([\w\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    "Konqueror"
+                ]
+            ],
+            [
+                /trident.+rv[: ]([\w\.]{1,9})\b.+like gecko/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    "IE"
+                ]
+            ],
+            [
+                /yabrowser\/([\w\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    "Yandex"
+                ]
+            ],
+            [
+                /(avast|avg)\/([\w\.]+)/i
+            ],
+            [
+                [
+                    NAME,
+                    /(.+)/,
+                    "$1 Secure " + BROWSER
+                ],
+                VERSION
+            ],
+            [
+                /\bfocus\/([\w\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    FIREFOX + " Focus"
+                ]
+            ],
+            [
+                /\bopt\/([\w\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    OPERA + " Touch"
+                ]
+            ],
+            [
+                /coc_coc\w+\/([\w\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    "Coc Coc"
+                ]
+            ],
+            [
+                /dolfin\/([\w\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    "Dolphin"
+                ]
+            ],
+            [
+                /coast\/([\w\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    OPERA + " Coast"
+                ]
+            ],
+            [
+                /miuibrowser\/([\w\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    "MIUI " + BROWSER
+                ]
+            ],
+            [
+                /fxios\/([-\w\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    FIREFOX
+                ]
+            ],
+            [
+                /\bqihu|(qi?ho?o?|360)browser/i
+            ],
+            [
+                [
+                    NAME,
+                    "360 " + BROWSER
+                ]
+            ],
+            [
+                /(oculus|samsung|sailfish)browser\/([\w\.]+)/i
+            ],
+            [
+                [
+                    NAME,
+                    /(.+)/,
+                    "$1 " + BROWSER
+                ],
+                VERSION
+            ],
+            [
+                /(comodo_dragon)\/([\w\.]+)/i
+            ],
+            [
+                [
+                    NAME,
+                    /_/g,
+                    " "
+                ],
+                VERSION
+            ],
+            [
+                /(electron)\/([\w\.]+) safari/i,
+                /(tesla)(?: qtcarbrowser|\/(20\d\d\.[-\w\.]+))/i,
+                /m?(qqbrowser|baiduboxapp|2345Explorer)[\/ ]?([\w\.]+)/i
+            ],
+            [
+                NAME,
+                VERSION
+            ],
+            [
+                /(metasr)[\/ ]?([\w\.]+)/i,
+                /(lbbrowser)/i
+            ],
+            [
+                NAME
+            ],
+            [
+                /((?:fban\/fbios|fb_iab\/fb4a)(?!.+fbav)|;fbav\/([\w\.]+);)/i
+            ],
+            [
+                [
+                    NAME,
+                    FACEBOOK
+                ],
+                VERSION
+            ],
+            [
+                /safari (line)\/([\w\.]+)/i,
+                /\b(line)\/([\w\.]+)\/iab/i,
+                /(chromium|instagram)[\/ ]([-\w\.]+)/i
+            ],
+            [
+                NAME,
+                VERSION
+            ],
+            [
+                /\bgsa\/([\w\.]+) .*safari\//i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    "GSA"
+                ]
+            ],
+            [
+                /headlesschrome(?:\/([\w\.]+)| )/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    CHROME + " Headless"
+                ]
+            ],
+            [
+                / wv\).+(chrome)\/([\w\.]+)/i
+            ],
+            [
+                [
+                    NAME,
+                    CHROME + " WebView"
+                ],
+                VERSION
+            ],
+            [
+                /droid.+ version\/([\w\.]+)\b.+(?:mobile safari|safari)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    "Android " + BROWSER
+                ]
+            ],
+            [
+                /(chrome|omniweb|arora|[tizenoka]{5} ?browser)\/v?([\w\.]+)/i
+            ],
+            [
+                NAME,
+                VERSION
+            ],
+            [
+                /version\/([\w\.]+) .*mobile\/\w+ (safari)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    "Mobile Safari"
+                ]
+            ],
+            [
+                /version\/([\w\.]+) .*(mobile ?safari|safari)/i
+            ],
+            [
+                VERSION,
+                NAME
+            ],
+            [
+                /webkit.+?(mobile ?safari|safari)(\/[\w\.]+)/i
+            ],
+            [
+                NAME,
+                [
+                    VERSION,
+                    strMapper,
+                    oldSafariMap
+                ]
+            ],
+            [
+                /(webkit|khtml)\/([\w\.]+)/i
+            ],
+            [
+                NAME,
+                VERSION
+            ],
+            [
+                /(navigator|netscape\d?)\/([-\w\.]+)/i
+            ],
+            [
+                [
+                    NAME,
+                    "Netscape"
+                ],
+                VERSION
+            ],
+            [
+                /mobile vr; rv:([\w\.]+)\).+firefox/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    FIREFOX + " Reality"
+                ]
+            ],
+            [
+                /ekiohf.+(flow)\/([\w\.]+)/i,
+                /(swiftfox)/i,
+                /(icedragon|iceweasel|camino|chimera|fennec|maemo browser|minimo|conkeror|klar)[\/ ]?([\w\.\+]+)/i,
+                /(seamonkey|k-meleon|icecat|iceape|firebird|phoenix|palemoon|basilisk|waterfox)\/([-\w\.]+)$/i,
+                /(firefox)\/([\w\.]+)/i,
+                /(mozilla)\/([\w\.]+) .+rv\:.+gecko\/\d+/i,
+                /(polaris|lynx|dillo|icab|doris|amaya|w3m|netsurf|sleipnir|obigo|mosaic|(?:go|ice|up)[\. ]?browser)[-\/ ]?v?([\w\.]+)/i,
+                /(links) \(([\w\.]+)/i
+            ],
+            [
+                NAME,
+                VERSION
+            ]
+        ],
+        cpu: [
+            [
+                /(?:(amd|x(?:(?:86|64)[-_])?|wow|win)64)[;\)]/i
+            ],
+            [
+                [
+                    ARCHITECTURE,
+                    "amd64"
+                ]
+            ],
+            [
+                /(ia32(?=;))/i
+            ],
+            [
+                [
+                    ARCHITECTURE,
+                    lowerize
+                ]
+            ],
+            [
+                /((?:i[346]|x)86)[;\)]/i
+            ],
+            [
+                [
+                    ARCHITECTURE,
+                    "ia32"
+                ]
+            ],
+            [
+                /\b(aarch64|arm(v?8e?l?|_?64))\b/i
+            ],
+            [
+                [
+                    ARCHITECTURE,
+                    "arm64"
+                ]
+            ],
+            [
+                /\b(arm(?:v[67])?ht?n?[fl]p?)\b/i
+            ],
+            [
+                [
+                    ARCHITECTURE,
+                    "armhf"
+                ]
+            ],
+            [
+                /windows (ce|mobile); ppc;/i
+            ],
+            [
+                [
+                    ARCHITECTURE,
+                    "arm"
+                ]
+            ],
+            [
+                /((?:ppc|powerpc)(?:64)?)(?: mac|;|\))/i
+            ],
+            [
+                [
+                    ARCHITECTURE,
+                    /ower/,
+                    EMPTY,
+                    lowerize
+                ]
+            ],
+            [
+                /(sun4\w)[;\)]/i
+            ],
+            [
+                [
+                    ARCHITECTURE,
+                    "sparc"
+                ]
+            ],
+            [
+                /((?:avr32|ia64(?=;))|68k(?=\))|\barm(?=v(?:[1-7]|[5-7]1)l?|;|eabi)|(?=atmel )avr|(?:irix|mips|sparc)(?:64)?\b|pa-risc)/i
+            ],
+            [
+                [
+                    ARCHITECTURE,
+                    lowerize
+                ]
+            ]
+        ],
+        device: [
+            [
+                /\b(sch-i[89]0\d|shw-m380s|sm-[pt]\w{2,4}|gt-[pn]\d{2,4}|sgh-t8[56]9|nexus 10)/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    SAMSUNG
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /\b((?:s[cgp]h|gt|sm)-\w+|galaxy nexus)/i,
+                /samsung[- ]([-\w]+)/i,
+                /sec-(sgh\w+)/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    SAMSUNG
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /\((ip(?:hone|od)[\w ]*);/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    APPLE
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /\((ipad);[-\w\),; ]+apple/i,
+                /applecoremedia\/[\w\.]+ \((ipad)/i,
+                /\b(ipad)\d\d?,\d\d?[;\]].+ios/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    APPLE
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /\b((?:ag[rs][23]?|bah2?|sht?|btv)-a?[lw]\d{2})\b(?!.+d\/s)/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    HUAWEI
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /(?:huawei|honor)([-\w ]+)[;\)]/i,
+                /\b(nexus 6p|\w{2,4}-[atu]?[ln][01259x][012359][an]?)\b(?!.+d\/s)/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    HUAWEI
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /\b(poco[\w ]+)(?: bui|\))/i,
+                /\b; (\w+) build\/hm\1/i,
+                /\b(hm[-_ ]?note?[_ ]?(?:\d\w)?) bui/i,
+                /\b(redmi[\-_ ]?(?:note|k)?[\w_ ]+)(?: bui|\))/i,
+                /\b(mi[-_ ]?(?:a\d|one|one[_ ]plus|note lte|max)?[_ ]?(?:\d?\w?)[_ ]?(?:plus|se|lite)?)(?: bui|\))/i
+            ],
+            [
+                [
+                    MODEL,
+                    /_/g,
+                    " "
+                ],
+                [
+                    VENDOR,
+                    XIAOMI
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /\b(mi[-_ ]?(?:pad)(?:[\w_ ]+))(?: bui|\))/i
+            ],
+            [
+                [
+                    MODEL,
+                    /_/g,
+                    " "
+                ],
+                [
+                    VENDOR,
+                    XIAOMI
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /; (\w+) bui.+ oppo/i,
+                /\b(cph[12]\d{3}|p(?:af|c[al]|d\w|e[ar])[mt]\d0|x9007|a101op)\b/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "OPPO"
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /vivo (\w+)(?: bui|\))/i,
+                /\b(v[12]\d{3}\w?[at])(?: bui|;)/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Vivo"
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /\b(rmx[12]\d{3})(?: bui|;|\))/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Realme"
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /\b(milestone|droid(?:[2-4x]| (?:bionic|x2|pro|razr))?:?( 4g)?)\b[\w ]+build\//i,
+                /\bmot(?:orola)?[- ](\w*)/i,
+                /((?:moto[\w\(\) ]+|xt\d{3,4}|nexus 6)(?= bui|\)))/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    MOTOROLA
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /\b(mz60\d|xoom[2 ]{0,2}) build\//i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    MOTOROLA
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /((?=lg)?[vl]k\-?\d{3}) bui| 3\.[-\w; ]{10}lg?-([06cv9]{3,4})/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    LG
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /(lm(?:-?f100[nv]?|-[\w\.]+)(?= bui|\))|nexus [45])/i,
+                /\blg[-e;\/ ]+((?!browser|netcast|android tv)\w+)/i,
+                /\blg-?([\d\w]+) bui/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    LG
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /(ideatab[-\w ]+)/i,
+                /lenovo ?(s[56]000[-\w]+|tab(?:[\w ]+)|yt[-\d\w]{6}|tb[-\d\w]{6})/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Lenovo"
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /(?:maemo|nokia).*(n900|lumia \d+)/i,
+                /nokia[-_ ]?([-\w\.]*)/i
+            ],
+            [
+                [
+                    MODEL,
+                    /_/g,
+                    " "
+                ],
+                [
+                    VENDOR,
+                    "Nokia"
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /(pixel c)\b/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    GOOGLE
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /droid.+; (pixel[\daxl ]{0,6})(?: bui|\))/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    GOOGLE
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /droid.+ ([c-g]\d{4}|so[-gl]\w+|xq-a\w[4-7][12])(?= bui|\).+chrome\/(?![1-6]{0,1}\d\.))/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    SONY
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /sony tablet [ps]/i,
+                /\b(?:sony)?sgp\w+(?: bui|\))/i
+            ],
+            [
+                [
+                    MODEL,
+                    "Xperia Tablet"
+                ],
+                [
+                    VENDOR,
+                    SONY
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                / (kb2005|in20[12]5|be20[12][59])\b/i,
+                /(?:one)?(?:plus)? (a\d0\d\d)(?: b|\))/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "OnePlus"
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /(alexa)webm/i,
+                /(kf[a-z]{2}wi)( bui|\))/i,
+                /(kf[a-z]+)( bui|\)).+silk\//i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    AMAZON
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /((?:sd|kf)[0349hijorstuw]+)( bui|\)).+silk\//i
+            ],
+            [
+                [
+                    MODEL,
+                    /(.+)/g,
+                    "Fire Phone $1"
+                ],
+                [
+                    VENDOR,
+                    AMAZON
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /(playbook);[-\w\),; ]+(rim)/i
+            ],
+            [
+                MODEL,
+                VENDOR,
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /\b((?:bb[a-f]|st[hv])100-\d)/i,
+                /\(bb10; (\w+)/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    BLACKBERRY
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /(?:\b|asus_)(transfo[prime ]{4,10} \w+|eeepc|slider \w+|nexus 7|padfone|p00[cj])/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    ASUS
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                / (z[bes]6[027][012][km][ls]|zenfone \d\w?)\b/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    ASUS
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /(nexus 9)/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "HTC"
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /(htc)[-;_ ]{1,2}([\w ]+(?=\)| bui)|\w+)/i,
+                /(zte)[- ]([\w ]+?)(?: bui|\/|\))/i,
+                /(alcatel|geeksphone|nexian|panasonic|sony)[-_ ]?([-\w]*)/i
+            ],
+            [
+                VENDOR,
+                [
+                    MODEL,
+                    /_/g,
+                    " "
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /droid.+; ([ab][1-7]-?[0178a]\d\d?)/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Acer"
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /droid.+; (m[1-5] note) bui/i,
+                /\bmz-([-\w]{2,})/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Meizu"
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /\b(sh-?[altvz]?\d\d[a-ekm]?)/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Sharp"
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /(blackberry|benq|palm(?=\-)|sonyericsson|acer|asus|dell|meizu|motorola|polytron)[-_ ]?([-\w]*)/i,
+                /(hp) ([\w ]+\w)/i,
+                /(asus)-?(\w+)/i,
+                /(microsoft); (lumia[\w ]+)/i,
+                /(lenovo)[-_ ]?([-\w]+)/i,
+                /(jolla)/i,
+                /(oppo) ?([\w ]+) bui/i
+            ],
+            [
+                VENDOR,
+                MODEL,
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /(archos) (gamepad2?)/i,
+                /(hp).+(touchpad(?!.+tablet)|tablet)/i,
+                /(kindle)\/([\w\.]+)/i,
+                /(nook)[\w ]+build\/(\w+)/i,
+                /(dell) (strea[kpr\d ]*[\dko])/i,
+                /(le[- ]+pan)[- ]+(\w{1,9}) bui/i,
+                /(trinity)[- ]*(t\d{3}) bui/i,
+                /(gigaset)[- ]+(q\w{1,9}) bui/i,
+                /(vodafone) ([\w ]+)(?:\)| bui)/i
+            ],
+            [
+                VENDOR,
+                MODEL,
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /(surface duo)/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    MICROSOFT
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /droid [\d\.]+; (fp\du?)(?: b|\))/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Fairphone"
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /(u304aa)/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "AT&T"
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /\bsie-(\w*)/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Siemens"
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /\b(rct\w+) b/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "RCA"
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /\b(venue[\d ]{2,7}) b/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Dell"
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /\b(q(?:mv|ta)\w+) b/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Verizon"
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /\b(?:barnes[& ]+noble |bn[rt])([\w\+ ]*) b/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Barnes & Noble"
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /\b(tm\d{3}\w+) b/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "NuVision"
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /\b(k88) b/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "ZTE"
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /\b(nx\d{3}j) b/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "ZTE"
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /\b(gen\d{3}) b.+49h/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Swiss"
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /\b(zur\d{3}) b/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Swiss"
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /\b((zeki)?tb.*\b) b/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Zeki"
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /\b([yr]\d{2}) b/i,
+                /\b(dragon[- ]+touch |dt)(\w{5}) b/i
+            ],
+            [
+                [
+                    VENDOR,
+                    "Dragon Touch"
+                ],
+                MODEL,
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /\b(ns-?\w{0,9}) b/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Insignia"
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /\b((nxa|next)-?\w{0,9}) b/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "NextBook"
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /\b(xtreme\_)?(v(1[045]|2[015]|[3469]0|7[05])) b/i
+            ],
+            [
+                [
+                    VENDOR,
+                    "Voice"
+                ],
+                MODEL,
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /\b(lvtel\-)?(v1[12]) b/i
+            ],
+            [
+                [
+                    VENDOR,
+                    "LvTel"
+                ],
+                MODEL,
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /\b(ph-1) /i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Essential"
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /\b(v(100md|700na|7011|917g).*\b) b/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Envizen"
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /\b(trio[-\w\. ]+) b/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "MachSpeed"
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /\btu_(1491) b/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Rotor"
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /(shield[\w ]+) b/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Nvidia"
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /(sprint) (\w+)/i
+            ],
+            [
+                VENDOR,
+                MODEL,
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /(kin\.[onetw]{3})/i
+            ],
+            [
+                [
+                    MODEL,
+                    /\./g,
+                    " "
+                ],
+                [
+                    VENDOR,
+                    MICROSOFT
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /droid.+; (cc6666?|et5[16]|mc[239][23]x?|vc8[03]x?)\)/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    ZEBRA
+                ],
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /droid.+; (ec30|ps20|tc[2-8]\d[kx])\)/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    ZEBRA
+                ],
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /(ouya)/i,
+                /(nintendo) ([wids3utch]+)/i
+            ],
+            [
+                VENDOR,
+                MODEL,
+                [
+                    TYPE,
+                    CONSOLE
+                ]
+            ],
+            [
+                /droid.+; (shield) bui/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Nvidia"
+                ],
+                [
+                    TYPE,
+                    CONSOLE
+                ]
+            ],
+            [
+                /(playstation [345portablevi]+)/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    SONY
+                ],
+                [
+                    TYPE,
+                    CONSOLE
+                ]
+            ],
+            [
+                /\b(xbox(?: one)?(?!; xbox))[\); ]/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    MICROSOFT
+                ],
+                [
+                    TYPE,
+                    CONSOLE
+                ]
+            ],
+            [
+                /smart-tv.+(samsung)/i
+            ],
+            [
+                VENDOR,
+                [
+                    TYPE,
+                    SMARTTV
+                ]
+            ],
+            [
+                /hbbtv.+maple;(\d+)/i
+            ],
+            [
+                [
+                    MODEL,
+                    /^/,
+                    "SmartTV"
+                ],
+                [
+                    VENDOR,
+                    SAMSUNG
+                ],
+                [
+                    TYPE,
+                    SMARTTV
+                ]
+            ],
+            [
+                /(nux; netcast.+smarttv|lg (netcast\.tv-201\d|android tv))/i
+            ],
+            [
+                [
+                    VENDOR,
+                    LG
+                ],
+                [
+                    TYPE,
+                    SMARTTV
+                ]
+            ],
+            [
+                /(apple) ?tv/i
+            ],
+            [
+                VENDOR,
+                [
+                    MODEL,
+                    APPLE + " TV"
+                ],
+                [
+                    TYPE,
+                    SMARTTV
+                ]
+            ],
+            [
+                /crkey/i
+            ],
+            [
+                [
+                    MODEL,
+                    CHROME + "cast"
+                ],
+                [
+                    VENDOR,
+                    GOOGLE
+                ],
+                [
+                    TYPE,
+                    SMARTTV
+                ]
+            ],
+            [
+                /droid.+aft(\w)( bui|\))/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    AMAZON
+                ],
+                [
+                    TYPE,
+                    SMARTTV
+                ]
+            ],
+            [
+                /\(dtv[\);].+(aquos)/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Sharp"
+                ],
+                [
+                    TYPE,
+                    SMARTTV
+                ]
+            ],
+            [
+                /\b(roku)[\dx]*[\)\/]((?:dvp-)?[\d\.]*)/i,
+                /hbbtv\/\d+\.\d+\.\d+ +\([\w ]*; *(\w[^;]*);([^;]*)/i
+            ],
+            [
+                [
+                    VENDOR,
+                    trim
+                ],
+                [
+                    MODEL,
+                    trim
+                ],
+                [
+                    TYPE,
+                    SMARTTV
+                ]
+            ],
+            [
+                /\b(android tv|smart[- ]?tv|opera tv|tv; rv:)\b/i
+            ],
+            [
+                [
+                    TYPE,
+                    SMARTTV
+                ]
+            ],
+            [
+                /((pebble))app/i
+            ],
+            [
+                VENDOR,
+                MODEL,
+                [
+                    TYPE,
+                    WEARABLE
+                ]
+            ],
+            [
+                /droid.+; (glass) \d/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    GOOGLE
+                ],
+                [
+                    TYPE,
+                    WEARABLE
+                ]
+            ],
+            [
+                /droid.+; (wt63?0{2,3})\)/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    ZEBRA
+                ],
+                [
+                    TYPE,
+                    WEARABLE
+                ]
+            ],
+            [
+                /(quest( 2)?)/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    FACEBOOK
+                ],
+                [
+                    TYPE,
+                    WEARABLE
+                ]
+            ],
+            [
+                /(tesla)(?: qtcarbrowser|\/[-\w\.]+)/i
+            ],
+            [
+                VENDOR,
+                [
+                    TYPE,
+                    EMBEDDED
+                ]
+            ],
+            [
+                /droid .+?; ([^;]+?)(?: bui|\) applew).+? mobile safari/i
+            ],
+            [
+                MODEL,
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /droid .+?; ([^;]+?)(?: bui|\) applew).+?(?! mobile) safari/i
+            ],
+            [
+                MODEL,
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /\b((tablet|tab)[;\/]|focus\/\d(?!.+mobile))/i
+            ],
+            [
+                [
+                    TYPE,
+                    TABLET
+                ]
+            ],
+            [
+                /(phone|mobile(?:[;\/]| safari)|pda(?=.+windows ce))/i
+            ],
+            [
+                [
+                    TYPE,
+                    MOBILE
+                ]
+            ],
+            [
+                /(android[-\w\. ]{0,9});.+buil/i
+            ],
+            [
+                MODEL,
+                [
+                    VENDOR,
+                    "Generic"
+                ]
+            ]
+        ],
+        engine: [
+            [
+                /windows.+ edge\/([\w\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    EDGE + "HTML"
+                ]
+            ],
+            [
+                /webkit\/537\.36.+chrome\/(?!27)([\w\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    "Blink"
+                ]
+            ],
+            [
+                /(presto)\/([\w\.]+)/i,
+                /(webkit|trident|netfront|netsurf|amaya|lynx|w3m|goanna)\/([\w\.]+)/i,
+                /ekioh(flow)\/([\w\.]+)/i,
+                /(khtml|tasman|links)[\/ ]\(?([\w\.]+)/i,
+                /(icab)[\/ ]([23]\.[\d\.]+)/i
+            ],
+            [
+                NAME,
+                VERSION
+            ],
+            [
+                /rv\:([\w\.]{1,9})\b.+(gecko)/i
+            ],
+            [
+                VERSION,
+                NAME
+            ]
+        ],
+        os: [
+            [
+                /microsoft (windows) (vista|xp)/i
+            ],
+            [
+                NAME,
+                VERSION
+            ],
+            [
+                /(windows) nt 6\.2; (arm)/i,
+                /(windows (?:phone(?: os)?|mobile))[\/ ]?([\d\.\w ]*)/i,
+                /(windows)[\/ ]?([ntce\d\. ]+\w)(?!.+xbox)/i
+            ],
+            [
+                NAME,
+                [
+                    VERSION,
+                    strMapper,
+                    windowsVersionMap
+                ]
+            ],
+            [
+                /(win(?=3|9|n)|win 9x )([nt\d\.]+)/i
+            ],
+            [
+                [
+                    NAME,
+                    "Windows"
+                ],
+                [
+                    VERSION,
+                    strMapper,
+                    windowsVersionMap
+                ]
+            ],
+            [
+                /ip[honead]{2,4}\b(?:.*os ([\w]+) like mac|; opera)/i,
+                /cfnetwork\/.+darwin/i
+            ],
+            [
+                [
+                    VERSION,
+                    /_/g,
+                    "."
+                ],
+                [
+                    NAME,
+                    "iOS"
+                ]
+            ],
+            [
+                /(mac os x) ?([\w\. ]*)/i,
+                /(macintosh|mac_powerpc\b)(?!.+haiku)/i
+            ],
+            [
+                [
+                    NAME,
+                    "Mac OS"
+                ],
+                [
+                    VERSION,
+                    /_/g,
+                    "."
+                ]
+            ],
+            [
+                /droid ([\w\.]+)\b.+(android[- ]x86)/i
+            ],
+            [
+                VERSION,
+                NAME
+            ],
+            [
+                /(android|webos|qnx|bada|rim tablet os|maemo|meego|sailfish)[-\/ ]?([\w\.]*)/i,
+                /(blackberry)\w*\/([\w\.]*)/i,
+                /(tizen|kaios)[\/ ]([\w\.]+)/i,
+                /\((series40);/i
+            ],
+            [
+                NAME,
+                VERSION
+            ],
+            [
+                /\(bb(10);/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    BLACKBERRY
+                ]
+            ],
+            [
+                /(?:symbian ?os|symbos|s60(?=;)|series60)[-\/ ]?([\w\.]*)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    "Symbian"
+                ]
+            ],
+            [
+                /mozilla\/[\d\.]+ \((?:mobile|tablet|tv|mobile; [\w ]+); rv:.+ gecko\/([\w\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    FIREFOX + " OS"
+                ]
+            ],
+            [
+                /web0s;.+rt(tv)/i,
+                /\b(?:hp)?wos(?:browser)?\/([\w\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    "webOS"
+                ]
+            ],
+            [
+                /crkey\/([\d\.]+)/i
+            ],
+            [
+                VERSION,
+                [
+                    NAME,
+                    CHROME + "cast"
+                ]
+            ],
+            [
+                /(cros) [\w]+ ([\w\.]+\w)/i
+            ],
+            [
+                [
+                    NAME,
+                    "Chromium OS"
+                ],
+                VERSION
+            ],
+            [
+                /(nintendo|playstation) ([wids345portablevuch]+)/i,
+                /(xbox); +xbox ([^\);]+)/i,
+                /\b(joli|palm)\b ?(?:os)?\/?([\w\.]*)/i,
+                /(mint)[\/\(\) ]?(\w*)/i,
+                /(mageia|vectorlinux)[; ]/i,
+                /([kxln]?ubuntu|debian|suse|opensuse|gentoo|arch(?= linux)|slackware|fedora|mandriva|centos|pclinuxos|red ?hat|zenwalk|linpus|raspbian|plan 9|minix|risc os|contiki|deepin|manjaro|elementary os|sabayon|linspire)(?: gnu\/linux)?(?: enterprise)?(?:[- ]linux)?(?:-gnu)?[-\/ ]?(?!chrom|package)([-\w\.]*)/i,
+                /(hurd|linux) ?([\w\.]*)/i,
+                /(gnu) ?([\w\.]*)/i,
+                /\b([-frentopcghs]{0,5}bsd|dragonfly)[\/ ]?(?!amd|[ix346]{1,2}86)([\w\.]*)/i,
+                /(haiku) (\w+)/i
+            ],
+            [
+                NAME,
+                VERSION
+            ],
+            [
+                /(sunos) ?([\w\.\d]*)/i
+            ],
+            [
+                [
+                    NAME,
+                    "Solaris"
+                ],
+                VERSION
+            ],
+            [
+                /((?:open)?solaris)[-\/ ]?([\w\.]*)/i,
+                /(aix) ((\d)(?=\.|\)| )[\w\.])*/i,
+                /\b(beos|os\/2|amigaos|morphos|openvms|fuchsia|hp-ux)/i,
+                /(unix) ?([\w\.]*)/i
+            ],
+            [
+                NAME,
+                VERSION
+            ]
+        ]
+    };
+    var UAParser = function(ua1, extensions) {
+        if (typeof ua1 === OBJ_TYPE) {
+            extensions = ua1;
+            ua1 = undefined;
+        }
+        if (!(this instanceof UAParser)) return new UAParser(ua1, extensions).getResult();
+        var _ua = ua1 || (typeof window !== UNDEF_TYPE && window.navigator && window.navigator.userAgent ? window.navigator.userAgent : EMPTY);
+        var _rgxmap = extensions ? extend(regexes1, extensions) : regexes1;
+        this.getBrowser = function() {
+            var _browser = {};
+            _browser[NAME] = undefined;
+            _browser[VERSION] = undefined;
+            rgxMapper.call(_browser, _ua, _rgxmap.browser);
+            _browser.major = majorize(_browser.version);
+            return _browser;
+        };
+        this.getCPU = function() {
+            var _cpu = {};
+            _cpu[ARCHITECTURE] = undefined;
+            rgxMapper.call(_cpu, _ua, _rgxmap.cpu);
+            return _cpu;
+        };
+        this.getDevice = function() {
+            var _device = {};
+            _device[VENDOR] = undefined;
+            _device[MODEL] = undefined;
+            _device[TYPE] = undefined;
+            rgxMapper.call(_device, _ua, _rgxmap.device);
+            return _device;
+        };
+        this.getEngine = function() {
+            var _engine = {};
+            _engine[NAME] = undefined;
+            _engine[VERSION] = undefined;
+            rgxMapper.call(_engine, _ua, _rgxmap.engine);
+            return _engine;
+        };
+        this.getOS = function() {
+            var _os = {};
+            _os[NAME] = undefined;
+            _os[VERSION] = undefined;
+            rgxMapper.call(_os, _ua, _rgxmap.os);
+            return _os;
+        };
+        this.getResult = function() {
+            return {
+                ua: this.getUA(),
+                browser: this.getBrowser(),
+                engine: this.getEngine(),
+                os: this.getOS(),
+                device: this.getDevice(),
+                cpu: this.getCPU()
+            };
+        };
+        this.getUA = function() {
+            return _ua;
+        };
+        this.setUA = function(ua) {
+            _ua = typeof ua === STR_TYPE && ua.length > UA_MAX_LENGTH ? trim(ua, UA_MAX_LENGTH) : ua;
+            return this;
+        };
+        this.setUA(_ua);
+        return this;
+    };
+    UAParser.VERSION = LIBVERSION;
+    UAParser.BROWSER = enumerize([
+        NAME,
+        VERSION,
+        MAJOR
+    ]);
+    UAParser.CPU = enumerize([
+        ARCHITECTURE
+    ]);
+    UAParser.DEVICE = enumerize([
+        MODEL,
+        VENDOR,
+        TYPE,
+        CONSOLE,
+        MOBILE,
+        SMARTTV,
+        TABLET,
+        WEARABLE,
+        EMBEDDED
+    ]);
+    UAParser.ENGINE = UAParser.OS = enumerize([
+        NAME,
+        VERSION
+    ]);
+    if ("object" !== UNDEF_TYPE) {
+        if ("object" !== UNDEF_TYPE && module.exports) exports = module.exports = UAParser;
+        exports.UAParser = UAParser;
+    } else {
+        if (typeof define === FUNC_TYPE && define.amd) define(function() {
+            return UAParser;
+        });
+        else if (typeof window !== UNDEF_TYPE) window.UAParser = UAParser;
+    }
+    var $ = typeof window !== UNDEF_TYPE && (window.jQuery || window.Zepto);
+    if ($ && !$.ua) {
+        var parser = new UAParser;
+        $.ua = parser.getResult();
+        $.ua.get = function() {
+            return parser.getUA();
+        };
+        $.ua.set = function(ua) {
+            parser.setUA(ua);
+            var result = parser.getResult();
+            for(var prop in result)$.ua[prop] = result[prop];
+        };
+    }
+})(typeof window === "object" ? window : this);
+
+},{}]},["1xC6H","ShInH","8lqZg"], "8lqZg", "parcelRequire3545")
 
 //# sourceMappingURL=index.975ef6c8.js.map
