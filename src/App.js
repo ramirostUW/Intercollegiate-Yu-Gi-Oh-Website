@@ -119,10 +119,10 @@ export function App() {
               style={{transform: `translateX(${touchDistance}px)`}} >
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="Tournament2019" element={<Tournament2019 />} />
-            <Route path="Tournament2021" element={<Tournament2021 />} />
-            <Route path="Competitors" element={<Competitors />} />
-            <Route path="*"
+            <Route path="/tournament2019" element={<Tournament2019 />} />
+            <Route path="/tournament2021" element={<Tournament2021 />} />
+            <Route path="/Competitors" element={<Competitors />} />
+            <Route path="/*"
                    element={
                      <main>
                        <h1>404 Error</h1>
