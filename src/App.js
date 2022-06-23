@@ -92,6 +92,7 @@ export function App() {
         (navigator.msMaxTouchPoints > 0));
   }
 
+  // Browser/Mobile Differentiation: https://stackoverflow.com/questions/39435395/reactjs-how-to-determine-if-the-application-is-being-viewed-on-mobile-or-deskto
   return (
     <div>
       <BrowserView>
@@ -128,12 +129,10 @@ export function App() {
             </LinkContainer>
           </Navbar>
         </div>
+        <div id="header-offset" style={{paddingTop: `4em`}}></div>
       </BrowserView>
       <div id="current-page" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleMoveEnd}
             style={{transform: `translateX(${touchDistance}px)`}} >
-        <BrowserView>
-          <h1>This is rendered only in browser</h1>
-        </BrowserView>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="tournament2019" element={<Tournament2019 />} />
