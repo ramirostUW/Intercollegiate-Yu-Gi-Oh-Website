@@ -12257,6 +12257,7 @@ function App() {
     const [swiping, setSwiping] = _react.useState(false);
     const [touchStart, setTouchStart] = _react.useState(0);
     const [touchDistance, setTouchDistance] = _react.useState(0);
+    const MIN_TOUCH_DISTANCE = 75;
     const [currentPage, setCurrentPage] = _react.useState(0);
     const pages = [
         "/",
@@ -12279,17 +12280,18 @@ function App() {
         setSwiping(true);
     }
     function handleTouchMove(e) {
-        if (swiping) setTouchDistance(e.targetTouches[0].clientX - touchStart);
+        const currentTouchDistance = e.targetTouches[0].clientX - touchStart;
+        if (swiping && currentTouchDistance > 15) setTouchDistance(currentTouchDistance);
     }
     function handleMoveEnd() {
         setSwiping(false);
         setTouchDistance(0);
         // If user swiped
-        if (Math.abs(touchDistance) > 50) {
+        if (Math.abs(touchDistance) > MIN_TOUCH_DISTANCE) {
             let nextPage = currentPage;
             // right swipe
-            if (touchDistance > 50) nextPage = (nextPage + 1) % pages.length;
-            else if (touchDistance < -50) nextPage = (nextPage - 1) % pages.length;
+            if (touchDistance > MIN_TOUCH_DISTANCE) nextPage = (nextPage + 1) % pages.length;
+            else if (touchDistance < -MIN_TOUCH_DISTANCE) nextPage = (nextPage - 1) % pages.length;
             if (nextPage !== currentPage) {
                 navigate(pages.at(nextPage), {
                     state: true
@@ -12318,157 +12320,145 @@ function App() {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactDeviceDetect.BrowserView), {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        id: "header",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {
-                            className: "navbar",
-                            fixed: "top",
-                            expand: "lg",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default).Toggle, {
-                                    "aria-controls": "basic-navbar-nav",
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactFontawesome.FontAwesomeIcon), {
-                                        icon: (0, _freeSolidSvgIcons.faBars)
-                                    }, void 0, false, {
-                                        fileName: "src/App.js",
-                                        lineNumber: 101,
-                                        columnNumber: 61
-                                    }, this)
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    id: "header",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {
+                        className: "navbar",
+                        fixed: "top",
+                        expand: "lg",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default).Toggle, {
+                                "aria-controls": "basic-navbar-nav",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactFontawesome.FontAwesomeIcon), {
+                                    icon: (0, _freeSolidSvgIcons.faBars)
                                 }, void 0, false, {
                                     fileName: "src/App.js",
-                                    lineNumber: 101,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default).Collapse, {
-                                    id: "basic-navbar-nav",
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default), {
-                                        id: "links",
-                                        children: [
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterBootstrap.LinkContainer), {
-                                                activeClassName: "active-page",
-                                                to: "/",
-                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavLink), {
-                                                    bsPrefix: "link",
-                                                    children: "Home "
-                                                }, void 0, false, {
-                                                    fileName: "src/App.js",
-                                                    lineNumber: 105,
-                                                    columnNumber: 19
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "src/App.js",
-                                                lineNumber: 104,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterBootstrap.LinkContainer), {
-                                                activeClassName: "active-page",
-                                                to: "/tournament2019",
-                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavLink), {
-                                                    bsPrefix: "link",
-                                                    children: "2019 Intercollegiate Tournament"
-                                                }, void 0, false, {
-                                                    fileName: "src/App.js",
-                                                    lineNumber: 108,
-                                                    columnNumber: 19
-                                                }, this)
+                                    lineNumber: 103,
+                                    columnNumber: 61
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "src/App.js",
+                                lineNumber: 103,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default).Collapse, {
+                                id: "basic-navbar-nav",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default), {
+                                    id: "links",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterBootstrap.LinkContainer), {
+                                            activeClassName: "active-page",
+                                            to: "/",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavLink), {
+                                                bsPrefix: "link",
+                                                children: "Home "
                                             }, void 0, false, {
                                                 fileName: "src/App.js",
                                                 lineNumber: 107,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterBootstrap.LinkContainer), {
-                                                activeClassName: "active-page",
-                                                to: "/tournament2021",
-                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavLink), {
-                                                    bsPrefix: "link",
-                                                    children: "2021 Intercollegiate Tournament"
-                                                }, void 0, false, {
-                                                    fileName: "src/App.js",
-                                                    lineNumber: 111,
-                                                    columnNumber: 19
-                                                }, this)
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/App.js",
+                                            lineNumber: 106,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterBootstrap.LinkContainer), {
+                                            activeClassName: "active-page",
+                                            to: "/tournament2019",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavLink), {
+                                                bsPrefix: "link",
+                                                children: "2019 Intercollegiate Tournament"
                                             }, void 0, false, {
                                                 fileName: "src/App.js",
                                                 lineNumber: 110,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterBootstrap.LinkContainer), {
-                                                activeClassName: "active-page",
-                                                to: "/Competitors",
-                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavLink), {
-                                                    bsPrefix: "link",
-                                                    children: "Competitors"
-                                                }, void 0, false, {
-                                                    fileName: "src/App.js",
-                                                    lineNumber: 114,
-                                                    columnNumber: 19
-                                                }, this)
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/App.js",
+                                            lineNumber: 109,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterBootstrap.LinkContainer), {
+                                            activeClassName: "active-page",
+                                            to: "/tournament2021",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavLink), {
+                                                bsPrefix: "link",
+                                                children: "2021 Intercollegiate Tournament"
                                             }, void 0, false, {
                                                 fileName: "src/App.js",
                                                 lineNumber: 113,
-                                                columnNumber: 17
+                                                columnNumber: 19
                                             }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "src/App.js",
-                                        lineNumber: 103,
-                                        columnNumber: 15
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "src/App.js",
-                                    lineNumber: 102,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterBootstrap.LinkContainer), {
-                                    to: "/",
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default).Brand, {
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                            src: (0, _logoPngDefault.default),
-                                            width: "30",
-                                            height: "30",
-                                            className: "d-inline-block align-top",
-                                            alt: "Intercollegiate Yugioh logo"
                                         }, void 0, false, {
                                             fileName: "src/App.js",
-                                            lineNumber: 121,
+                                            lineNumber: 112,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterBootstrap.LinkContainer), {
+                                            activeClassName: "active-page",
+                                            to: "/Competitors",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.NavLink), {
+                                                bsPrefix: "link",
+                                                children: "Competitors"
+                                            }, void 0, false, {
+                                                fileName: "src/App.js",
+                                                lineNumber: 116,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/App.js",
+                                            lineNumber: 115,
                                             columnNumber: 17
                                         }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/App.js",
+                                    lineNumber: 105,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "src/App.js",
+                                lineNumber: 104,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterBootstrap.LinkContainer), {
+                                to: "/",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default).Brand, {
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                        src: (0, _logoPngDefault.default),
+                                        width: "30",
+                                        height: "30",
+                                        className: "d-inline-block align-top",
+                                        alt: "Intercollegiate Yugioh logo"
                                     }, void 0, false, {
                                         fileName: "src/App.js",
-                                        lineNumber: 120,
-                                        columnNumber: 15
+                                        lineNumber: 123,
+                                        columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "src/App.js",
-                                    lineNumber: 119,
-                                    columnNumber: 13
+                                    lineNumber: 122,
+                                    columnNumber: 15
                                 }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/App.js",
-                            lineNumber: 100,
-                            columnNumber: 11
-                        }, this)
-                    }, void 0, false, {
+                            }, void 0, false, {
+                                fileName: "src/App.js",
+                                lineNumber: 121,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "src/App.js",
-                        lineNumber: 99,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        id: "header-offset",
-                        style: {
-                            paddingTop: `4em`
-                        }
-                    }, void 0, false, {
-                        fileName: "src/App.js",
-                        lineNumber: 132,
-                        columnNumber: 9
+                        lineNumber: 102,
+                        columnNumber: 11
                     }, this)
-                ]
-            }, void 0, true, {
+                }, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 101,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 98,
+                lineNumber: 100,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -12486,7 +12476,7 @@ function App() {
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _home.Home), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 137,
+                            lineNumber: 138,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -12494,7 +12484,7 @@ function App() {
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _tournament2019.Tournament2019), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 138,
+                            lineNumber: 139,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -12504,7 +12494,7 @@ function App() {
                             }, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 139,
+                            lineNumber: 140,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -12512,7 +12502,7 @@ function App() {
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _tournament2021.Tournament2021), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 140,
+                            lineNumber: 141,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -12520,7 +12510,7 @@ function App() {
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _competitors.Competitors), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 141,
+                            lineNumber: 142,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -12541,24 +12531,24 @@ function App() {
                             }, void 0, true, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/App.js",
-                            lineNumber: 142,
+                            lineNumber: 143,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/App.js",
-                    lineNumber: 136,
+                    lineNumber: 137,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 134,
+                lineNumber: 135,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/App.js",
-        lineNumber: 97,
+        lineNumber: 99,
         columnNumber: 5
     }, this);
 }

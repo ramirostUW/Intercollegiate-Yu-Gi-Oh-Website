@@ -9743,6 +9743,11 @@ a.text-dark:focus, a.text-dark:hover {
   display: flex;
 }
 
+#current-page {
+  padding-top: 4em;
+  padding-left: 10px;
+}
+
 .active-page {
   color: #eee;
   background-color: #1e2022;

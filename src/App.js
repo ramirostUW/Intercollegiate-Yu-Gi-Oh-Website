@@ -21,6 +21,7 @@ export function App() {
   const [swiping, setSwiping] = React.useState(false);
   const [touchStart, setTouchStart] = React.useState(0);
   const [touchDistance, setTouchDistance] = React.useState(0);
+  const MIN_TOUCH_DISTANCE = 75;
   const [currentPage, setCurrentPage] = React.useState(0);
   const pages = ["/", "/tournament2019", "/tournament2021", "/Competitors"];
   // useNavigate code: https://stackoverflow.com/questions/68613526/react-router-dom-usehistory-not-working
@@ -41,8 +42,9 @@ export function App() {
 
 
   function handleTouchMove(e) {
-    if (swiping) {
-      setTouchDistance(e.targetTouches[0].clientX - touchStart);
+    const currentTouchDistance = e.targetTouches[0].clientX - touchStart;
+    if (swiping && currentTouchDistance > 15) {
+      setTouchDistance(currentTouchDistance);
     }
   }
 
@@ -51,15 +53,15 @@ export function App() {
     setSwiping(false);
     setTouchDistance(0);
     // If user swiped
-    if (Math.abs(touchDistance) > 50) {
+    if (Math.abs(touchDistance) > MIN_TOUCH_DISTANCE) {
       let nextPage = currentPage;
 
       // right swipe
-      if (touchDistance > 50) {
+      if (touchDistance > MIN_TOUCH_DISTANCE) {
         nextPage = (nextPage + 1) % pages.length;
 
       // left swipe
-      } else if (touchDistance < -50) {
+      } else if (touchDistance < -MIN_TOUCH_DISTANCE) {
         nextPage = (nextPage - 1) % pages.length;
       }
 
@@ -129,7 +131,6 @@ export function App() {
             </LinkContainer>
           </Navbar>
         </div>
-        <div id="header-offset" style={{paddingTop: `4em`}}></div>
       </BrowserView>
       <div id="current-page" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleMoveEnd}
             style={{transform: `translateX(${touchDistance}px)`}} >
