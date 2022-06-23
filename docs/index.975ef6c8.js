@@ -2909,24 +2909,25 @@ var _clientDefault = parcelHelpers.interopDefault(_client);
 var _reactRouterDom = require("react-router-dom");
 var _bootstrapMinCss = require("./bootstrap.min.css");
 var _app = require("./App");
-// HashRouter for github page compatibility
-// https://stackoverflow.com/questions/58228017/react-router-v4-cant-load-page-on-github-pages
+// BrowserRouter must be implemented with 404.html
+// https://stackoverflow.com/questions/50058820/components-not-re-rendering-on-route-change-react-hashrouter
+// https://stackoverflow.com/questions/36296012/is-there-a-configuration-in-github-pages-that-allows-you-to-redirect-everything
 const root = (0, _clientDefault.default).createRoot(document.getElementById("app"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactDefault.default).StrictMode, {
     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _app.App), {}, void 0, false, {
             fileName: "src/index.js",
-            lineNumber: 15,
+            lineNumber: 16,
             columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "src/index.js",
-        lineNumber: 14,
+        lineNumber: 15,
         columnNumber: 9
     }, undefined)
 }, void 0, false, {
     fileName: "src/index.js",
-    lineNumber: 13,
+    lineNumber: 14,
     columnNumber: 5
 }, undefined));
 
