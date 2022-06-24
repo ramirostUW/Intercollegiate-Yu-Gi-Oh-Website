@@ -132,6 +132,41 @@ export function App() {
           </Navbar>
         </div>
       </BrowserView>
+      <MobileView>
+        <div id="header">
+          <Navbar className="navbar" fixed="top" expand="lg">
+            <Navbar.Toggle aria-controls="basic-navbar-nav"><FontAwesomeIcon icon={faBars} /></Navbar.Toggle>
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav id="links">
+                <LinkContainer activeClassName="active-page" to="/">
+                  <NavLink  bsPrefix="link" >Home </NavLink>
+                </LinkContainer>
+                <LinkContainer activeClassName="active-page" to="/tournament2019">
+                  <NavLink bsPrefix="link">2019 Intercollegiate Tournament</NavLink>
+                </LinkContainer>
+                <LinkContainer activeClassName="active-page" to="/tournament2021">
+                  <NavLink bsPrefix="link">2021 Intercollegiate Tournament</NavLink>
+                </LinkContainer>
+                <LinkContainer activeClassName="active-page" to="/Competitors">
+                  <NavLink bsPrefix="link">Competitors</NavLink>
+                </LinkContainer>
+              </Nav>
+            </Navbar.Collapse>
+
+            <LinkContainer to="/">
+              <Navbar.Brand>
+                <img
+                    src={logo}
+                    width="30"
+                    height="30"
+                    className="d-inline-block align-top"
+                    alt="Intercollegiate Yugioh logo"
+                />
+              </Navbar.Brand>
+            </LinkContainer>
+          </Navbar>
+        </div>
+      </MobileView>
       <div id="current-page" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleMoveEnd}
             style={{transform: `translateX(${touchDistance}px)`}} >
         <Routes>
