@@ -30,7 +30,7 @@
   },
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --public-url https://intercollegiateyugioh.com && rm -rf docs && mv dist docs && echo intercollegiateyugioh.com >> docs/CNAME && shx cp docs/index.html docs/404.html",
+    "build": "parcel build index.html --public-url https://intercollegiateyugioh.com && shx rm -rf docs && shx mv dist docs && shx echo intercollegiateyugioh.com >> docs/CNAME && shx cp docs/index.html docs/404.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
