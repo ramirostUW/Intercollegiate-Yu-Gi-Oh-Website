@@ -4,10 +4,10 @@ import {Routes, Route, Link, useLocation, useNavigate, Navigate} from "react-rou
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import './css/Header.css';
-import { Home } from "./Home";
-import { Tournament2019 } from "./tournament2019";
-import { Tournament2021 } from "./tournament2021";
-import { Competitors } from "./Competitors";
+import { Home } from "./components/Home";
+import { Tournament2019 } from "./components/tournaments/tournament2019";
+import { Tournament2021 } from "./components/tournaments/tournament2021";
+import { Competitors } from "./components/Competitors";
 import Navbar from "react-bootstrap/Navbar";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
