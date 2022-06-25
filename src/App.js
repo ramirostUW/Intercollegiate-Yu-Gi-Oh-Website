@@ -5,6 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import './css/Header.css';
 import { Home } from "./components/Home";
+import { Tournaments } from "./components/Tournaments";
 import { Tournament2019 } from "./components/tournaments/tournament2019";
 import { Tournament2021 } from "./components/tournaments/tournament2021";
 import { Competitors } from "./components/Competitors";
@@ -106,14 +107,11 @@ export function App() {
                 <LinkContainer activeClassName="active-page" to="/">
                   <NavLink  bsPrefix="link" >Home </NavLink>
                 </LinkContainer>
-                <LinkContainer activeClassName="active-page" to="/tournament2019">
-                  <NavLink bsPrefix="link">2019 Intercollegiate Tournament</NavLink>
-                </LinkContainer>
-                <LinkContainer activeClassName="active-page" to="/tournament2021">
-                  <NavLink bsPrefix="link">2021 Intercollegiate Tournament</NavLink>
-                </LinkContainer>
-                <LinkContainer activeClassName="active-page" to="/Competitors">
+                <LinkContainer activeClassName="active-page" to="/competitors">
                   <NavLink bsPrefix="link">Competitors</NavLink>
+                </LinkContainer>
+                <LinkContainer activeClassName="active-page" to="/tournaments">
+                  <NavLink bsPrefix="link">Past Tournaments</NavLink>
                 </LinkContainer>
               </Nav>
             </Navbar.Collapse>
@@ -141,14 +139,11 @@ export function App() {
                 <LinkContainer activeClassName="active-page" to="/">
                   <NavLink  bsPrefix="link" >Home </NavLink>
                 </LinkContainer>
-                <LinkContainer activeClassName="active-page" to="/tournament2019">
-                  <NavLink bsPrefix="link">2019 Intercollegiate Tournament</NavLink>
-                </LinkContainer>
-                <LinkContainer activeClassName="active-page" to="/tournament2021">
-                  <NavLink bsPrefix="link">2021 Intercollegiate Tournament</NavLink>
-                </LinkContainer>
-                <LinkContainer activeClassName="active-page" to="/Competitors">
+                <LinkContainer activeClassName="active-page" to="/competitors">
                   <NavLink bsPrefix="link">Competitors</NavLink>
+                </LinkContainer>
+                <LinkContainer activeClassName="active-page" to="/tournaments">
+                  <NavLink bsPrefix="link">Past Tournaments</NavLink>
                 </LinkContainer>
               </Nav>
             </Navbar.Collapse>
@@ -171,10 +166,8 @@ export function App() {
             style={{transform: `translateX(${touchDistance}px)`}} >
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="tournament2019" element={<Tournament2019 />} />
-          <Route path="/tournament2019" element={<Navigate to="tournament2019" />} />
-          <Route path="tournament2021" element={<Tournament2021 />} />
-          <Route path="Competitors" element={<Competitors />} />
+          <Route path="/competitors" element={<Competitors />} />
+          <Route path="/tournaments" element={<Tournaments />} />
           <Route path="*"
                  element={
                    <main>

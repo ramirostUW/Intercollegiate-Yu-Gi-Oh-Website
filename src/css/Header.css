@@ -9,6 +9,7 @@
 #current-page {
     padding-top: 4em;
     padding-left: 10px;
+    padding-right: 10px;
 }
 /*
 CSS Overriding of react-boostrap nav from
@@ -17,7 +18,7 @@ change color based on active: https://stackoverflow.com/questions/66298345/not-a
 */
 
 .active-page {
-    background-color: #1E2022;
+    background-color: #1E2022 !important;
     color: #EEEEEE;
 }
 
@@ -29,7 +30,9 @@ change color based on active: https://stackoverflow.com/questions/66298345/not-a
 }
 
 .link:hover {
-    color: #EEEEEE;
+    background-color: #05939A;
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 

@@ -1,0 +1,10 @@
+.tournament button {
+    background-color: #00ADB5;
+    color: #EEEEEE;
+    min-height: 48px;
+    width:70%;
+}
+
+.tournament button:hover {
+    background-color: #05939A;
+}
