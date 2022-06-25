@@ -3,12 +3,50 @@
 }
 
 .tournament button {
-    background-color: #00ADB5;
+    background-color: #65808A;
     color: #EEEEEE;
     min-height: 48px;
-    width:70%;
+    width:90%;
 }
 
 .tournament button:hover {
-    background-color: #05939A;
+    background-color: #789099;
 }
+
+.accordion-button {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.accordion-label {
+    display: inline;
+    font-size: 30px;
+    vertical-align: middle;
+    line-height: 60px;
+}
+
+.accordion-arrow {
+    display: inline;
+    font-size: 30px;
+    float: right;
+    vertical-align: middle;
+    line-height: 60px;
+}
+
+/* Visibility content override hack: https://www.geeksforgeeks.org/how-to-replace-text-with-css/*/
+.collapsed > .accordion-arrow:after {
+    content: "\23f5" !important;
+    visibility: visible !important;
+}
+
+.accordion-button > .accordion-arrow {
+    visibility: hidden;
+
+}
+
+.accordion-button > .accordion-arrow:after {
+    content:"\23f7";
+    visibility: visible;
+}
+

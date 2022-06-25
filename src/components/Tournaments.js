@@ -9,13 +9,19 @@ export const Tournaments = () => {
     <div id="tournaments">
         <Accordion>
             <Accordion.Item eventKey="0">
-                <Accordion.Header className="tournament">2019</Accordion.Header>
+                <Accordion.Header className="tournament">
+                    <text className="accordion-label">2019</text>
+                    <text className="accordion-arrow">{"\u203A"}</text>
+                </Accordion.Header>
                 <Accordion.Body>
                     <Tournament2019/>
                 </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="1">
-                <Accordion.Header className="tournament">2021</Accordion.Header>
+                <Accordion.Header className="tournament">
+                    <text className="accordion-label">2021</text>
+                    <text className="accordion-arrow">{"\u203A"}</text>
+                </Accordion.Header>
                 <Accordion.Body>
                     <Tournament2021/>
                 </Accordion.Body>

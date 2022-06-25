@@ -9805,12 +9805,47 @@ ul {
 .tournament button {
   color: #eee;
   min-height: 48px;
-  width: 70%;
-  background-color: #00adb5;
+  width: 90%;
+  background-color: #65808a;
 }
 
 .tournament button:hover {
-  background-color: #05939a;
+  background-color: #789099;
+}
+
+.accordion-button {
+  vertical-align: middle;
+  text-align: center;
+  display: table-cell;
+}
+
+.accordion-label {
+  vertical-align: middle;
+  font-size: 30px;
+  line-height: 60px;
+  display: inline;
+}
+
+.accordion-arrow {
+  float: right;
+  vertical-align: middle;
+  font-size: 30px;
+  line-height: 60px;
+  display: inline;
+}
+
+.collapsed > .accordion-arrow:after {
+  content: "⏵" !important;
+  visibility: visible !important;
+}
+
+.accordion-button > .accordion-arrow {
+  visibility: hidden;
+}
+
+.accordion-button > .accordion-arrow:after {
+  content: "⏷";
+  visibility: visible;
 }
 
 /*# sourceMappingURL=index.e39911ef.css.map */
