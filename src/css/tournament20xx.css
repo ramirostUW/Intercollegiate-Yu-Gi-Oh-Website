@@ -8,7 +8,7 @@
 .carousels > div {
     display: flex;
     flex-direction: column;
-    margin: 7px 8.3vw 5px 8.3vw;
+    margin: 7px max(8.3vw, 10px) 5px max(8.3vw, 10px);
     justify-content: center;
     align-items: center;
 }
