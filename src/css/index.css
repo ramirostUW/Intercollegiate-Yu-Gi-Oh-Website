@@ -16,7 +16,7 @@ h2 {
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 600 !important;
   text-align: center;
-  font-size:3vw;
+  font-size:max(1.7vw, 20px);
 }
 
 .logoPic {

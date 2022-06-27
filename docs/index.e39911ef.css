@@ -9735,6 +9735,197 @@ a.text-dark:focus, a.text-dark:hover {
   }
 }
 
+body {
+  font-family: Helvetica-Black-SemiBold, sans-serif;
+  color: #eee !important;
+  background-color: #1e2022 !important;
+}
+
+h1 {
+  text-align: center;
+  font-family: IBM Plex Mono, monospace;
+  font-size: 5vw !important;
+  font-weight: 600 !important;
+}
+
+h2 {
+  text-align: center;
+  font-family: IBM Plex Mono, monospace;
+  font-size: max(1.7vw, 20px);
+  font-weight: 600 !important;
+}
+
+.logoPic {
+  width: 70%;
+  margin: auto;
+  display: block;
+}
+
+ul {
+  margin: 0 auto;
+  display: table;
+}
+
+.carousels {
+  flex-wrap: wrap;
+  justify-content: center;
+  display: flex;
+}
+
+.carousels > div {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 7px 8.3vw 5px;
+  display: flex;
+}
+
+.carousel {
+  width: 400px;
+  height: 300px;
+  justify-content: center;
+  display: flex;
+}
+
+.carousel-item > img {
+  object-fit: fill;
+  width: 400px;
+  height: 300px;
+}
+
+.carousel-caption {
+  padding-bottom: 7px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.carousel-caption > p {
+  background: #1e202266;
+}
+
+.carousel-label {
+  margin-top: 5px;
+  font-size: max(.9rem, 12px);
+}
+
+.carousel-item {
+  transition: transform .2s ease-in-out;
+}
+
+.carousel-fade .active.carousel-item-start, .carousel-fade .active.carousel-item-end {
+  transition: opacity 0s .2s;
+}
+
+.carousel-indicators > button {
+  border: none;
+  border-radius: 100%;
+  margin-bottom: 5px;
+  margin-left: 1px;
+  margin-right: 1px;
+  padding: 6px;
+}
+
+.carousel-indicators > .active {
+  background-color: #1b1e21;
+}
+
+.tiles {
+  flex-flow: wrap;
+  justify-content: center;
+  display: flex;
+}
+
+.tile {
+  text-align: center;
+  white-space: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 4vw;
+  display: flex;
+}
+
+.tile-value {
+  color: #fa61c3;
+  font-size: max(2.9vw, 16px);
+}
+
+.tile-label {
+  font-size: max(1vw, 16px);
+}
+
+.text-information {
+  flex-flow: wrap;
+  justify-content: center;
+  display: flex;
+}
+
+.text-information > div {
+  width: 40%;
+  min-width: 400px;
+  height: auto;
+  flex-direction: column;
+  margin: 10px;
+  display: flex;
+}
+
+#tournaments {
+  justify-content: center;
+  display: flex;
+}
+
+.accordion {
+  width: 90%;
+}
+
+.tournament button {
+  color: #eee;
+  min-height: 48px;
+  width: 100%;
+  background-color: #65808a;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  display: flex;
+}
+
+.tournament button:hover {
+  background-color: #789099;
+}
+
+.accordion-button {
+  display: flex;
+}
+
+.accordion-label {
+  margin: auto;
+  font-size: 30px;
+  display: flex;
+}
+
+.accordion-arrow {
+  font-size: 30px;
+  position: absolute;
+  right: 3%;
+  transform: translateX(-100%);
+}
+
+.collapsed > .accordion-arrow:after {
+  content: "⏵" !important;
+  visibility: visible !important;
+}
+
+.accordion-button > .accordion-arrow {
+  visibility: hidden;
+}
+
+.accordion-button > .accordion-arrow:after {
+  content: "⏷";
+  visibility: visible;
+}
+
 .navbar {
   background-color: #00adb5;
   padding-top: 0;
@@ -9765,87 +9956,6 @@ a.text-dark:focus, a.text-dark:hover {
   color: #fff;
   background-color: #05939a;
   text-decoration: none;
-}
-
-body {
-  font-family: Helvetica-Black-SemiBold, sans-serif;
-  color: #eee !important;
-  background-color: #1e2022 !important;
-}
-
-h1 {
-  text-align: center;
-  font-family: IBM Plex Mono, monospace;
-  font-size: 5vw !important;
-  font-weight: 600 !important;
-}
-
-h2 {
-  text-align: center;
-  font-family: IBM Plex Mono, monospace;
-  font-size: 3vw;
-  font-weight: 600 !important;
-}
-
-.logoPic {
-  width: 70%;
-  margin: auto;
-  display: block;
-}
-
-ul {
-  margin: 0 auto;
-  display: table;
-}
-
-#tournaments {
-  padding-top: 20px;
-}
-
-.tournament button {
-  color: #eee;
-  min-height: 48px;
-  width: 90%;
-  background-color: #65808a;
-}
-
-.tournament button:hover {
-  background-color: #789099;
-}
-
-.accordion-button {
-  vertical-align: middle;
-  text-align: center;
-  display: table-cell;
-}
-
-.accordion-label {
-  vertical-align: middle;
-  font-size: 30px;
-  line-height: 60px;
-  display: inline;
-}
-
-.accordion-arrow {
-  float: right;
-  vertical-align: middle;
-  font-size: 30px;
-  line-height: 60px;
-  display: inline;
-}
-
-.collapsed > .accordion-arrow:after {
-  content: "⏵" !important;
-  visibility: visible !important;
-}
-
-.accordion-button > .accordion-arrow {
-  visibility: hidden;
-}
-
-.accordion-button > .accordion-arrow:after {
-  content: "⏷";
-  visibility: visible;
 }
 
 /*# sourceMappingURL=index.e39911ef.css.map */

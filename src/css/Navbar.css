@@ -1,0 +1,39 @@
+.navbar {
+    background-color: #00ADB5;
+    display: flex;
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+}
+
+#current-page {
+    padding-top: 4em;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/*
+CSS Overriding of react-boostrap nav from
+change active class: https://stackoverflow.com/questions/61314053/react-bootstrap-custom-nav-link-active-style-is-not-working
+change color based on active: https://stackoverflow.com/questions/66298345/not-able-to-change-color-of-navlink-react-bootstrap
+*/
+
+.active-page {
+    background-color: #1E2022 !important;
+    color: #EEEEEE;
+}
+
+.link {
+    color: #FFFFFF;
+    display: block;
+    font-family: 'Helvetica-Black-SemiBold', sans-serif;
+    padding: 0.8rem;
+}
+
+.link:hover {
+    background-color: #05939A;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+
+

@@ -1,0 +1,112 @@
+/* Carousel styling */
+.carousels {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.carousels > div {
+    display: flex;
+    flex-direction: column;
+    margin: 7px 8.3vw 5px 8.3vw;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Carousel fixed dimension to address resizing mid-transition bug: https://stackoverflow.com/questions/17357306/bootstrap-carousel-resizing-image*/
+.carousel {
+    display: flex;
+    width: 400px;
+    height: 300px;
+    justify-content: center;
+}
+
+.carousel-item > img {
+    object-fit: fill;
+    width: 400px;
+    height: 300px;
+}
+
+.carousel-caption {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 7px;
+}
+
+/* Background opacity hack: https://www.geeksforgeeks.org/set-the-opacity-only-to-background-color-not-on-the-text-in-css/*/
+.carousel-caption > p {
+    background: rgba(30, 32, 34, 0.4);
+}
+
+.carousel-label {
+    margin-top: 5px;
+    font-size: max(0.9rem, 12px);
+}
+
+/* Carousel transition speed: https://stackoverflow.com/questions/48665392/change-bootstrap-carousel-fade-transition */
+.carousel-item {
+    transition: transform 0.2s ease-in-out;
+}
+
+.carousel-fade .active.carousel-item-start,
+.carousel-fade .active.carousel-item-end {
+    transition: opacity 0s 0.2s;
+}
+
+/* Carousel indicator styling */
+.carousel-indicators > button {
+    border: none;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-bottom: 5px;
+    border-radius: 100%;
+    padding: 6px 6px;
+}
+
+.carousel-indicators > .active {
+    background-color: #1b1e21;
+}
+
+/* Tile Styling */
+.tiles {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+    margin: 10px 4vw;
+}
+
+.tile-value {
+    color: #fa61c3;
+    font-size: max(2.9vw, 16px);
+}
+
+.tile-label {
+    font-size: max(1vw, 16px);
+}
+
+/* Description/Sponsors Styling */
+.text-information {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.text-information > div {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    min-width: 400px;
+    height: auto;
+    margin: 10px;
+}

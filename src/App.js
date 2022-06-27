@@ -3,7 +3,7 @@ import * as React from "react";
 import {Routes, Route, Link, useLocation, useNavigate, Navigate} from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import './css/Header.css';
+import './css/Navbar.css';
 import { Home } from "./components/Home";
 import { Tournaments } from "./components/Tournaments";
 import { Tournament2019 } from "./components/tournaments/tournament2019";
@@ -19,6 +19,12 @@ import logo from "./media/logo.png";
 import {BrowserView, MobileView} from 'react-device-detect';
 
 export function App() {
+  /**
+   * Contains:
+   *  NAVBAR
+   *  PAGE ROUTING
+   */
+
   const [swiping, setSwiping] = React.useState(false);
   const [touchStart, setTouchStart] = React.useState(0);
   const [touchDistance, setTouchDistance] = React.useState(0);
@@ -32,10 +38,14 @@ export function App() {
   let location = useLocation();
 
 
+  // Track current page when user changes currently viewed page
   React.useEffect(() => {
     setCurrentPage(pages.findIndex((e) => e === location.pathname));
   }, [location])
 
+  /**
+   * MOBILE SWIPE NAVIGATION TOUCH HANDLERS
+   */
   function handleTouchStart(e) {
     setTouchStart(e.targetTouches[0].clientX);
     setSwiping(true);
