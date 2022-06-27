@@ -40,7 +40,7 @@ export const Current = () => {
     return (
     <div id="current">
         <div className="banner">
-            <img src={images2022.Banner}/>
+            <img src={images2022.Banner} alt="Intercollegiate 2022 Banner"/>
         </div>
         <Carousels venues={venueCarousel} venueLabel={venueLabel}
             winners={personalityCarousel} winnerLabel={personalityLabel}

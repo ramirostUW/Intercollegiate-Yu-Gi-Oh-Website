@@ -45,12 +45,12 @@
 /* Image url reference: https://stackoverflow.com/questions/20047364/how-to-give-the-background-image-path-in-css*/
 /* Div instead of img to display carat: https://stackoverflow.com/questions/2182716/is-it-possible-to-set-the-equivalent-of-a-src-attribute-of-an-img-tag-in-css */
 .collapsed > .accordion-arrow {
-    content:url("../media/CaratUp.png") !important;
+    content:url("../media/tournaments/CaratUp.png") !important;
     visibility: visible !important;
 }
 
 .accordion-button > .accordion-arrow {
-    content:url("../media/CaratDown.png");
+    content:url("../media/tournaments/CaratDown.png");
     visibility: visible;
 }
 

@@ -3,8 +3,8 @@ import {Accordion} from "react-bootstrap";
 import '../css/tournaments.css';
 import { Tournament2019 } from "./tournaments/tournament2019";
 import { Tournament2021 } from "./tournaments/tournament2021";
-import CaratUp from "../media/CaratUp.png";
-import CaratDown from "../media/CaratDown.png";
+import CaratUp from "../media/tournaments/CaratUp.png";
+import CaratDown from "../media/tournaments/CaratDown.png";
 
 export const Tournaments = () => {
   return (

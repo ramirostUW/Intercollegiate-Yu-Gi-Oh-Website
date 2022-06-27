@@ -2,12 +2,12 @@ import Venue1 from "./2019Venue1.jpg"
 import Venue2 from "./2019Venue2.jpg"
 import Venue3 from "./2019Venue3.jpg"
 import Venue4 from "./2019Venue4.jpg"
-import Venue5 from "./2019Venue5.png"
+import Venue5 from "./2019Venue5.jpg"
 
-import Winner1 from "./2019Winner1.png"
-import Winner2 from "./2019Winner2.png"
-import Winner3 from "./2019Winner3.png"
-import Winner4 from "./2019Winner4.png"
+import Winner1 from "./2019Winner1.jpg"
+import Winner2 from "./2019Winner2.jpg"
+import Winner3 from "./2019Winner3.jpg"
+import Winner4 from "./2019Winner4.jpg"
 
 const images2019 = {
     Venue1,
