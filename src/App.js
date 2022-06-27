@@ -26,6 +26,7 @@ export function App() {
   const [swiping, setSwiping] = React.useState(false);
   const [touchStart, setTouchStart] = React.useState(0);
   const [touchDistance, setTouchDistance] = React.useState(0);
+  const TOUCH_SENSITIVITY_DISTANCE = 40;
   const MIN_TOUCH_DISTANCE = 100;
   const [currentPage, setCurrentPage] = React.useState(0);
   const pages = ["/", "/Competitors", "/tournaments", ];
@@ -52,7 +53,7 @@ export function App() {
 
   function handleTouchMove(e) {
     const currentTouchDistance = e.targetTouches[0].clientX - touchStart;
-    if (swiping && Math.abs(currentTouchDistance) > 25) {
+    if (swiping && Math.abs(currentTouchDistance) > TOUCH_SENSITIVITY_DISTANCE) {
       setTouchDistance(currentTouchDistance);
     }
   }

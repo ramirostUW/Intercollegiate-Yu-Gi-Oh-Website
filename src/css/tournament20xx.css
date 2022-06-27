@@ -16,15 +16,15 @@
 /* Carousel fixed dimension to address resizing mid-transition bug: https://stackoverflow.com/questions/17357306/bootstrap-carousel-resizing-image*/
 .carousel {
     display: flex;
-    width: 400px;
-    height: 300px;
+    width: 380px;
+    height: 290px;
     justify-content: center;
 }
 
 .carousel-item > img {
     object-fit: fill;
-    width: 400px;
-    height: 300px;
+    width: 380px;
+    height: 290px;
 }
 
 .carousel-caption {
