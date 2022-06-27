@@ -3,6 +3,8 @@ import {Accordion} from "react-bootstrap";
 import '../css/Tournaments.css';
 import { Tournament2019 } from "./tournaments/tournament2019";
 import { Tournament2021 } from "./tournaments/tournament2021";
+import CaratUp from "../media/CaratUp.png";
+import CaratDown from "../media/CaratDown.png";
 
 export const Tournaments = () => {
   return (
@@ -11,7 +13,7 @@ export const Tournaments = () => {
             <Accordion.Item eventKey="0">
                 <Accordion.Header className="tournament">
                     <text className="accordion-label">2019</text>
-                    <text className="accordion-arrow">{"\u203A"}</text>
+                    <div className="accordion-arrow"/>
                 </Accordion.Header>
                 <Accordion.Body>
                     <Tournament2019/>
@@ -20,7 +22,7 @@ export const Tournaments = () => {
             <Accordion.Item eventKey="1">
                 <Accordion.Header className="tournament">
                     <text className="accordion-label">2021</text>
-                    <text className="accordion-arrow">{"\u203A"}</text>
+                    <img className="accordion-arrow" src={CaratUp}/>
                 </Accordion.Header>
                 <Accordion.Body>
                     <Tournament2021/>

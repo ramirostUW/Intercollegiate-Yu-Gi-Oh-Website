@@ -6,8 +6,6 @@ import Nav from "react-bootstrap/Nav";
 import './css/Navbar.css';
 import { Home } from "./components/Home";
 import { Tournaments } from "./components/Tournaments";
-import { Tournament2019 } from "./components/tournaments/tournament2019";
-import { Tournament2021 } from "./components/tournaments/tournament2021";
 import { Competitors } from "./components/Competitors";
 import Navbar from "react-bootstrap/Navbar";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -30,7 +28,7 @@ export function App() {
   const [touchDistance, setTouchDistance] = React.useState(0);
   const MIN_TOUCH_DISTANCE = 100;
   const [currentPage, setCurrentPage] = React.useState(0);
-  const pages = ["/", "/tournament2019", "/tournament2021", "/Competitors"];
+  const pages = ["/", "/Competitors", "/tournaments", ];
   // useNavigate code: https://stackoverflow.com/questions/68613526/react-router-dom-usehistory-not-working
   // useLocation code: https://stackoverflow.com/questions/45373742/detect-route-change-with-react-router
   // Translate code: https://javascript.plainenglish.io/how-to-make-a-simple-custom-drag-to-move-component-in-react-f67d5c99f925
@@ -54,7 +52,7 @@ export function App() {
 
   function handleTouchMove(e) {
     const currentTouchDistance = e.targetTouches[0].clientX - touchStart;
-    if (swiping && Math.abs(currentTouchDistance) > 15) {
+    if (swiping && Math.abs(currentTouchDistance) > 25) {
       setTouchDistance(currentTouchDistance);
     }
   }

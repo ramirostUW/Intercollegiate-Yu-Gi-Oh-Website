@@ -35,24 +35,22 @@
 
 .accordion-arrow {
     position: absolute;
-    font-size: 30px;
-    right: 3%;
+    width:40px;
+    height:40px;
+    right: min(4%, 50px);
     transform: translateX(-100%);
 }
 
 /* Accordion arrow change visibility content override hack: https://www.geeksforgeeks.org/how-to-replace-text-with-css/*/
-.collapsed > .accordion-arrow:after {
-    content: "\23f5" !important;
+/* Image url reference: https://stackoverflow.com/questions/20047364/how-to-give-the-background-image-path-in-css*/
+/* Div instead of img to display carat: https://stackoverflow.com/questions/2182716/is-it-possible-to-set-the-equivalent-of-a-src-attribute-of-an-img-tag-in-css */
+.collapsed > .accordion-arrow {
+    content:url("../media/CaratUp.png") !important;
     visibility: visible !important;
 }
 
 .accordion-button > .accordion-arrow {
-    visibility: hidden;
-
-}
-
-.accordion-button > .accordion-arrow:after {
-    content:"\23f7";
+    content:url("../media/CaratDown.png");
     visibility: visible;
 }
 
