@@ -11,7 +11,9 @@ export const Home = () => {
     // <h1 className="home-text">Intercollegiate Yu&#8209;Gi&#8209;Oh!</h1>
     return (
     <div id="home">
-        <img id="home-background" src={logo} alt="Intercollegiate Logo" />
+        <div id="home-background-container">
+            <img id="home-background" src={logo} alt="Intercollegiate Logo" />
+        </div>
         <img id="home-title" src={imagesHome.title} alt="Intercollegiate Tournament Series"/>
         <img id="home-cover-image" src={imagesHome.coverImage} alt="Intercollegiate Students Dueling"/>
         <h2 className="home-text" id="home-h2">What is Intercollegiate Yu-Gi-Oh?</h2>

@@ -9774,12 +9774,12 @@ ul {
 }
 
 #home-title {
-  width: max(95%, 460px);
+  width: max(95%, 440px);
   height: auto;
 }
 
 #home-cover-image {
-  width: 40%;
+  width: max(50%, 440px);
   height: auto;
   border: solid #eee;
   border-radius: 15px;
@@ -9787,11 +9787,16 @@ ul {
   margin-bottom: 10px;
 }
 
+#home-background-container {
+  width: 480px;
+  height: auto;
+  overflow: hidden;
+}
+
 #home-background {
   z-index: -1;
   opacity: .8;
-  width: max(100%, 1200px);
-  height: auto;
+  height: 100%;
   position: fixed;
   top: max(10vw, 85px);
   right: 50%;
@@ -9803,7 +9808,7 @@ ul {
 }
 
 #home-h2 {
-  width: 70%;
+  width: max(70%, 440px);
   border: thin solid #eee;
   border-bottom: 0 solid #0000;
   border-radius: 15px 15px 0 0;
@@ -9813,7 +9818,7 @@ ul {
 }
 
 #home-description {
-  width: 70%;
+  width: max(70%, 440px);
   border: thin solid #eee;
   border-top: 0 solid #0000;
   border-radius: 0 0 15px 15px;
@@ -9844,6 +9849,11 @@ ul {
   margin-top: 10px;
   padding: 5px 9px 0;
   font-weight: 600;
+}
+
+#home-invite-QR {
+  width: max(15%, 180px);
+  height: auto;
 }
 
 .carousels-past {
@@ -10043,7 +10053,7 @@ ul {
 }
 
 .banner > img {
-  width: 60vw;
+  width: max(60vw, 440px);
   height: auto;
   display: flex;
 }
@@ -10062,6 +10072,13 @@ ul {
   display: flex;
 }
 
+@media only screen and (max-device-width: 480px) {
+  .venue-current > .venue-carousel, .venue-carousel-current-item {
+    width: 400px !important;
+    height: 300px !important;
+  }
+}
+
 .venue-current > .venue-carousel {
   width: 700px;
   height: 400px;
@@ -10070,9 +10087,9 @@ ul {
 }
 
 .venue-carousel-current-item {
-  object-fit: fill !important;
-  width: 700px !important;
-  height: 400px !important;
+  object-fit: fill;
+  width: 700px;
+  height: 400px;
 }
 
 .other-current > .venue-carousel {

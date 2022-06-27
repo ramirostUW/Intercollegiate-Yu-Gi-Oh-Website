@@ -7,7 +7,7 @@
 
 .banner > img {
     display: flex;
-    width: 60vw;
+    width: max(60vw, 440px);
     height: auto;
 }
 
@@ -27,6 +27,19 @@
 }
 
 /* Carousel fixed dimension to address resizing mid-transition bug: https://stackoverflow.com/questions/17357306/bootstrap-carousel-resizing-image*/
+/* Phone-only custom css: https://www.smashingmagazine.com/2010/07/how-to-use-css3-media-queries-to-create-a-mobile-version-of-your-website/*/
+@media only screen and (max-device-width: 480px) {
+    .venue-current > .venue-carousel {
+        width: 400px !important;
+        height: 300px !important;
+    }
+
+    .venue-carousel-current-item {
+        width: 400px !important;
+        height: 300px !important;
+    }
+}
+
 .venue-current > .venue-carousel {
     display: flex;
     width: 700px;
@@ -35,9 +48,9 @@
 }
 
 .venue-carousel-current-item {
-    object-fit: fill !important;
-    width: 700px !important;
-    height: 400px !important;
+    object-fit: fill;
+    width: 700px;
+    height: 400px;
 }
 
 .other-current > .venue-carousel {

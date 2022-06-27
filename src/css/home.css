@@ -6,13 +6,13 @@
 }
 
 #home-title {
-    width: max(95%, 460px);
+    width: max(95%, 440px);
     height: auto;
 
 }
 
 #home-cover-image {
-    width: 40%;
+    width: max(50%, 440px);
     height: auto;
     border-radius: 15px;
     border-style: solid;
@@ -22,12 +22,16 @@
     margin-bottom: 10px;
 }
 
+#home-background-container {
+    width: 480px;
+    height: auto;
+    overflow: hidden;
+}
 #home-background {
     z-index: -1;
     opacity: 80%;
     position: fixed;
-    width: max(100%, 1200px);
-    height: auto;
+    height: 100%;
     top: max(10vw, 85px);
     right: 50%;
     transform: translateX(50%);
@@ -40,10 +44,11 @@
 
 /* What is Intercollegiate Yu-Gi-Oh?*/
 #home-h2 {
-    padding: 3px 7px 3px 7px;
     text-decoration: underline;
-    width: 70%;
+    width: max(70%, 440px);
+    padding: 3px 7px 3px 7px;
     margin-bottom: 0;
+
     border-radius: 15px 15px 0 0;
     border-style: solid;
     border-width: thin thin 0 thin;
@@ -52,12 +57,14 @@
 
 /* Description for "What is Intercollegiate Yu-Gi-Oh?" */
 #home-description {
+    width: max(70%, 440px);
+    padding: 7px;
+
     border-radius: 0 0 15px 15px;
     border-style: solid;
     border-width: 0 thin thin thin;
     border-color: transparent #EEEEEE #EEEEEE #EEEEEE;
-    width: 70%;
-    padding: 7px;
+
 }
 
 /* Interactive Map*/
@@ -82,8 +89,15 @@
 /* Discord Invite Link */
 #home-invite-link {
     background: black;
-    border-radius: 15px 15px 0 0;
     font-weight: 600;
     padding: 5px 9px 0 9px;
     margin-top: 10px;
+
+    border-radius: 15px 15px 0 0;
+}
+
+/* Discord Invite QRCode */
+#home-invite-QR {
+    width: max(15%, 180px);
+    height: auto;
 }

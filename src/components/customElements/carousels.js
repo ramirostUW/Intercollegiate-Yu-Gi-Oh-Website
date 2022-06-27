@@ -2,6 +2,7 @@ import '../../css/tournament20xx.css';
 import {Carousel} from "react-bootstrap";
 import Placeholder from "../../media/Placeholder.png";
 
+
 /**
  * Contains:
  *  VENUE CAROUSEL
