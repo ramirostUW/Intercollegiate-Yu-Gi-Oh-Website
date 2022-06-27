@@ -1,0 +1,112 @@
+/* Banner styling */
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner > img {
+    display: flex;
+    width: 60vw;
+    height: auto;
+}
+
+/* Carousel styling */
+.carousels-current {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.carousels-current > div {
+    display: flex;
+    flex-direction: column;
+    margin: 7px max(8.3vw, 10px) 5px max(8.3vw, 10px);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Carousel fixed dimension to address resizing mid-transition bug: https://stackoverflow.com/questions/17357306/bootstrap-carousel-resizing-image*/
+.venue-current > .venue-carousel {
+    display: flex;
+    width: 700px;
+    height: 400px;
+    justify-content: center;
+}
+
+.venue-carousel-current-item {
+    object-fit: fill !important;
+    width: 700px !important;
+    height: 400px !important;
+}
+
+.other-current > .venue-carousel {
+    display: flex;
+    width: 400px;
+    height: 400px;
+    justify-content: center;
+}
+
+.other-carousel-current-item {
+    object-fit: fill !important;
+    width: 400px !important;
+    height: 400px !important;
+}
+
+.caption-current {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 7px;
+}
+
+/* Background opacity hack: https://www.geeksforgeeks.org/set-the-opacity-only-to-background-color-not-on-the-text-in-css/*/
+.caption-current > p {
+    background: rgba(30, 32, 34, 0.4);
+}
+
+.carousel-label-current {
+    margin-top: 5px;
+    font-size: max(0.9rem, 12px);
+}
+
+/* Carousel transition speed: https://stackoverflow.com/questions/48665392/change-bootstrap-carousel-fade-transition */
+.current > .carousel-inner > .carousel-item {
+    transition: transform 0.2s ease-in-out;
+}
+
+.current > .carousel-inner > .carousel-fade .active.carousel-item-start,
+.current > .carousel-inner > .carousel-fade .active.carousel-item-end {
+    transition: opacity 0s 0.2s;
+}
+
+/* Carousel indicator styling */
+.current > .carousel-indicators > button {
+    border: none;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-bottom: 5px;
+    border-radius: 100%;
+    padding: 6px 6px;
+}
+
+.current > .carousel-indicators > .active {
+    background-color: #1b1e21;
+}
+
+/* Description/Sponsors Styling */
+.text-information {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.text-information > div {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    min-width: 400px;
+    height: auto;
+    margin: 10px;
+}

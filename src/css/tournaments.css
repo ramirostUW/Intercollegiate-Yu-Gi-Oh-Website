@@ -1,0 +1,56 @@
+/* Accordion styling */
+#tournaments {
+    display: flex;
+    justify-content: center;
+}
+
+.accordion {
+    width: 90%;
+}
+.tournament button {
+    background-color: #65808A;
+    color: #EEEEEE;
+    min-height: 48px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.tournament button:hover {
+    background-color: #789099;
+}
+
+.accordion-button {
+    display: flex;
+}
+
+.accordion-label {
+    display: flex;
+    font-size: 30px;
+    margin: auto;
+}
+
+.accordion-arrow {
+    position: absolute;
+    width:40px;
+    height:40px;
+    right: min(4%, 50px);
+    transform: translateX(-100%);
+}
+
+/* Accordion arrow change visibility content override hack: https://www.geeksforgeeks.org/how-to-replace-text-with-css/*/
+/* Image url reference: https://stackoverflow.com/questions/20047364/how-to-give-the-background-image-path-in-css*/
+/* Div instead of img to display carat: https://stackoverflow.com/questions/2182716/is-it-possible-to-set-the-equivalent-of-a-src-attribute-of-an-img-tag-in-css */
+.collapsed > .accordion-arrow {
+    content:url("../media/CaratUp.png") !important;
+    visibility: visible !important;
+}
+
+.accordion-button > .accordion-arrow {
+    content:url("../media/CaratDown.png");
+    visibility: visible;
+}
+

@@ -1,6 +1,6 @@
 import React from "react";
 import {Accordion} from "react-bootstrap";
-import '../css/Tournaments.css';
+import '../css/tournaments.css';
 import { Tournament2019 } from "./tournaments/tournament2019";
 import { Tournament2021 } from "./tournaments/tournament2021";
 import CaratUp from "../media/CaratUp.png";

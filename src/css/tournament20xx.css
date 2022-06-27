@@ -1,11 +1,11 @@
 /* Carousel styling */
-.carousels {
+.carousels-past {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.carousels > div {
+.carousels-past > div {
     display: flex;
     flex-direction: column;
     margin: 7px max(8.3vw, 10px) 5px max(8.3vw, 10px);
@@ -14,20 +14,23 @@
 }
 
 /* Carousel fixed dimension to address resizing mid-transition bug: https://stackoverflow.com/questions/17357306/bootstrap-carousel-resizing-image*/
-.carousel {
+.past {
     display: flex;
     width: 380px;
     height: 290px;
     justify-content: center;
+    border-style: solid;
+    border-width: thick;
+    border-color: #EEEEEE;
 }
 
-.carousel-item > img {
-    object-fit: fill;
-    width: 380px;
-    height: 290px;
+.past-item {
+    object-fit: fill !important;
+    width: 380px !important;
+    height: 290px !important;
 }
 
-.carousel-caption {
+.caption-past {
     left: 0;
     right: 0;
     bottom: 0;
@@ -35,27 +38,27 @@
 }
 
 /* Background opacity hack: https://www.geeksforgeeks.org/set-the-opacity-only-to-background-color-not-on-the-text-in-css/*/
-.carousel-caption > p {
+.caption-past > p {
     background: rgba(30, 32, 34, 0.4);
 }
 
-.carousel-label {
+.carousel-label-past {
     margin-top: 5px;
     font-size: max(0.9rem, 12px);
 }
 
 /* Carousel transition speed: https://stackoverflow.com/questions/48665392/change-bootstrap-carousel-fade-transition */
-.carousel-item {
+.past > .carousel-inner > .carousel-item {
     transition: transform 0.2s ease-in-out;
 }
 
-.carousel-fade .active.carousel-item-start,
-.carousel-fade .active.carousel-item-end {
+.past > .carousel-inner > .carousel-fade .active.carousel-item-start,
+.past > .carousel-inner > .carousel-fade .active.carousel-item-end {
     transition: opacity 0s 0.2s;
 }
 
 /* Carousel indicator styling */
-.carousel-indicators > button {
+.past > .carousel-indicators > button {
     border: none;
     margin-left: 1px;
     margin-right: 1px;
@@ -64,7 +67,7 @@
     padding: 6px 6px;
 }
 
-.carousel-indicators > .active {
+.past > .carousel-indicators > .active {
     background-color: #1b1e21;
 }
 

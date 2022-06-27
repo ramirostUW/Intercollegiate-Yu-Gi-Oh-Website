@@ -3,10 +3,10 @@ import * as React from "react";
 import {Routes, Route, Link, useLocation, useNavigate, Navigate} from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import './css/Navbar.css';
+import './css/navbar.css';
 import { Home } from "./components/Home";
 import { Tournaments } from "./components/Tournaments";
-import { Competitors } from "./components/Competitors";
+import { Current } from "./components/Current";
 import Navbar from "react-bootstrap/Navbar";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
@@ -29,7 +29,7 @@ export function App() {
   const TOUCH_SENSITIVITY_DISTANCE = 40;
   const MIN_TOUCH_DISTANCE = 100;
   const [currentPage, setCurrentPage] = React.useState(0);
-  const pages = ["/", "/Competitors", "/tournaments", ];
+  const pages = ["/", "/current", "/tournaments", ];
   // useNavigate code: https://stackoverflow.com/questions/68613526/react-router-dom-usehistory-not-working
   // useLocation code: https://stackoverflow.com/questions/45373742/detect-route-change-with-react-router
   // Translate code: https://javascript.plainenglish.io/how-to-make-a-simple-custom-drag-to-move-component-in-react-f67d5c99f925
@@ -116,8 +116,8 @@ export function App() {
                 <LinkContainer activeClassName="active-page" to="/">
                   <NavLink  bsPrefix="link" >Home </NavLink>
                 </LinkContainer>
-                <LinkContainer activeClassName="active-page" to="/competitors">
-                  <NavLink bsPrefix="link">Competitors</NavLink>
+                <LinkContainer activeClassName="active-page" to="/current">
+                  <NavLink bsPrefix="link">Current Tournament</NavLink>
                 </LinkContainer>
                 <LinkContainer activeClassName="active-page" to="/tournaments">
                   <NavLink bsPrefix="link">Past Tournaments</NavLink>
@@ -148,8 +148,8 @@ export function App() {
                 <LinkContainer activeClassName="active-page" to="/">
                   <NavLink  bsPrefix="link" >Home </NavLink>
                 </LinkContainer>
-                <LinkContainer activeClassName="active-page" to="/competitors">
-                  <NavLink bsPrefix="link">Competitors</NavLink>
+                <LinkContainer activeClassName="active-page" to="/current">
+                  <NavLink bsPrefix="link">Current Tournament</NavLink>
                 </LinkContainer>
                 <LinkContainer activeClassName="active-page" to="/tournaments">
                   <NavLink bsPrefix="link">Past Tournaments</NavLink>
@@ -175,7 +175,7 @@ export function App() {
             style={{transform: `translateX(${touchDistance}px)`}} >
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/competitors" element={<Competitors />} />
+          <Route path="/current" element={<Current />} />
           <Route path="/tournaments" element={<Tournaments />} />
           <Route path="*"
                  element={

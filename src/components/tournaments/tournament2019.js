@@ -1,8 +1,8 @@
 import React from "react";
 import '../../css/index.css';
 import '../../css/tournament20xx.css';
-import { Tiles } from "./fastFactTiles";
-import {Carousels} from "./carousels";
+import { Tiles } from "../customElements/fastFactTiles";
+import {Carousels} from "../customElements/carousels";
 import images2019 from "../../media/tournaments/2019";
 
 export const Tournament2019 = () => {
@@ -85,7 +85,7 @@ export const Tournament2019 = () => {
                 <div className="sponsors">
                     <h2>List of Sponsors</h2>
                     <ul>
-                        <li>No Limit Gaming </li>
+                        <li>No Limit Gaming</li>
                         <li>Pixel Palace Games</li>
                         <li>Heroes and Games</li>
                         <li>Worthy Financial</li>

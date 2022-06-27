@@ -1,8 +1,8 @@
 import React from "react";
 import '../../css/index.css';
 import '../../css/tournament20xx.css';
-import {Carousels} from "./carousels";
-import { Tiles } from "./fastFactTiles";
+import {Carousels} from "../customElements/carousels";
+import { Tiles } from "../customElements/fastFactTiles";
 import images2021 from "../../media/tournaments/2021";
 
 export const Tournament2021 = () => {
