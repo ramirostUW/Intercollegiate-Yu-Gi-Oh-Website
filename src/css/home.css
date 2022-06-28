@@ -1,18 +1,39 @@
+/* Background image code: https://stackoverflow.com/questions/2662039/keep-background-image-fixed-during-scroll-using-css*/
+/* Background image opacity hack: https://coder-coder.com/background-image-opacity/ */
+/* Could not make background sticky */
 #home {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+#home:before {
+    content: "";
+    position: absolute;
+    opacity: 60%;
+    background-image: url("../media/logo.png");
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
 
 #home-title {
+    position: relative;
     width: max(95%, 440px);
     height: auto;
-
 }
 
 #home-cover-image {
-    width: max(50%, 440px);
+    position: relative;
+    width: max(50%, 400px);
     height: auto;
     border-radius: 15px;
     border-style: solid;
@@ -22,30 +43,17 @@
     margin-bottom: 10px;
 }
 
-#home-background-container {
-    width: 480px;
-    height: auto;
-    overflow: hidden;
-}
-#home-background {
-    z-index: -1;
-    opacity: 80%;
-    position: fixed;
-    height: 100%;
-    top: max(10vw, 85px);
-    right: 50%;
-    transform: translateX(50%);
-}
 
 /* Styling for all text elements */
 .home-text {
+    position: relative;
     background: rgba(30, 32, 34, 0.85);
 }
 
 /* What is Intercollegiate Yu-Gi-Oh?*/
 #home-h2 {
     text-decoration: underline;
-    width: max(70%, 440px);
+    width: max(70%, 400px);
     padding: 3px 7px 3px 7px;
     margin-bottom: 0;
 
@@ -57,7 +65,7 @@
 
 /* Description for "What is Intercollegiate Yu-Gi-Oh?" */
 #home-description {
-    width: max(70%, 440px);
+    width: max(70%, 400px);
     padding: 7px;
 
     border-radius: 0 0 15px 15px;
@@ -69,6 +77,7 @@
 
 /* Interactive Map*/
 #map {
+    position: relative;
     display: flex;
     width: min(80%, 800px);
     height: auto;
@@ -89,6 +98,7 @@
 /* Discord Invite Link */
 #home-invite-link {
     background: black;
+    font-size: 1rem;
     font-weight: 600;
     padding: 5px 9px 0 9px;
     margin-top: 10px;
@@ -98,6 +108,7 @@
 
 /* Discord Invite QRCode */
 #home-invite-QR {
-    width: max(15%, 180px);
+    position: relative;
+    width: max(25%, 220px);
     height: auto;
 }

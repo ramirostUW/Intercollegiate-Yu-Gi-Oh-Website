@@ -7,7 +7,7 @@
 
 .banner > img {
     display: flex;
-    width: max(60vw, 440px);
+    width: max(60vw, 420px);
     height: auto;
 }
 

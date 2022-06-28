@@ -9,14 +9,14 @@ h1 {
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 600 !important;
   text-align: center;
-  font-size:5vw !important;
+  font-size:6rem !important;
 }
 
 h2 {
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 600 !important;
   text-align: center;
-  font-size:max(1.7vw, 20px);
+  font-size:max(3rem, 20px);
 }
 
 .logoPic {

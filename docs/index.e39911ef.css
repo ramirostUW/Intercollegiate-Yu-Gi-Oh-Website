@@ -9744,14 +9744,14 @@ body {
 h1 {
   text-align: center;
   font-family: IBM Plex Mono, monospace;
-  font-size: 5vw !important;
+  font-size: 6rem !important;
   font-weight: 600 !important;
 }
 
 h2 {
   text-align: center;
   font-family: IBM Plex Mono, monospace;
-  font-size: max(1.7vw, 20px);
+  font-size: max(3rem, 20px);
   font-weight: 600 !important;
 }
 
@@ -9771,44 +9771,45 @@ ul {
   justify-content: center;
   align-items: center;
   display: flex;
+  position: relative;
+}
+
+#home:before {
+  content: "";
+  opacity: .6;
+  min-height: 100%;
+  background-image: url("logo.fb9d11c5.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  inset: 0;
 }
 
 #home-title {
   width: max(95%, 440px);
   height: auto;
+  position: relative;
 }
 
 #home-cover-image {
-  width: max(50%, 440px);
+  width: max(50%, 400px);
   height: auto;
   border: solid #eee;
   border-radius: 15px;
   margin-top: 10px;
   margin-bottom: 10px;
-}
-
-#home-background-container {
-  width: 480px;
-  height: auto;
-  overflow: hidden;
-}
-
-#home-background {
-  z-index: -1;
-  opacity: .8;
-  height: 100%;
-  position: fixed;
-  top: max(10vw, 85px);
-  right: 50%;
-  transform: translateX(50%);
+  position: relative;
 }
 
 .home-text {
   background: #1e2022d9;
+  position: relative;
 }
 
 #home-h2 {
-  width: max(70%, 440px);
+  width: max(70%, 400px);
   border: thin solid #eee;
   border-bottom: 0 solid #0000;
   border-radius: 15px 15px 0 0;
@@ -9818,7 +9819,7 @@ ul {
 }
 
 #home-description {
-  width: max(70%, 440px);
+  width: max(70%, 400px);
   border: thin solid #eee;
   border-top: 0 solid #0000;
   border-radius: 0 0 15px 15px;
@@ -9829,6 +9830,7 @@ ul {
   width: min(80%, 800px);
   height: auto;
   display: flex;
+  position: relative;
 }
 
 #map > svg {
@@ -9848,12 +9850,14 @@ ul {
   border-radius: 15px 15px 0 0;
   margin-top: 10px;
   padding: 5px 9px 0;
+  font-size: 1rem;
   font-weight: 600;
 }
 
 #home-invite-QR {
-  width: max(15%, 180px);
+  width: max(25%, 220px);
   height: auto;
+  position: relative;
 }
 
 .carousels-past {
@@ -9939,11 +9943,11 @@ ul {
 
 .tile-value {
   color: #fa61c3;
-  font-size: max(2.9vw, 16px);
+  font-size: max(2.7rem, 16px);
 }
 
 .tile-label {
-  font-size: max(1vw, 16px);
+  font-size: max(1.25rem, 16px);
 }
 
 .text-information {
@@ -10053,7 +10057,7 @@ ul {
 }
 
 .banner > img {
-  width: max(60vw, 440px);
+  width: max(60vw, 420px);
   height: auto;
   display: flex;
 }

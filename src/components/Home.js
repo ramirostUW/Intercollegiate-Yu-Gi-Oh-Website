@@ -9,11 +9,9 @@ export const Home = () => {
 
     //&#8209; is a non-line-breaking dash
     // <h1 className="home-text">Intercollegiate Yu&#8209;Gi&#8209;Oh!</h1>
+    // <img id="home-background" src={logo} alt="Intercollegiate Logo" />
     return (
     <div id="home">
-        <div id="home-background-container">
-            <img id="home-background" src={logo} alt="Intercollegiate Logo" />
-        </div>
         <img id="home-title" src={imagesHome.title} alt="Intercollegiate Tournament Series"/>
         <img id="home-cover-image" src={imagesHome.coverImage} alt="Intercollegiate Students Dueling"/>
         <h2 className="home-text" id="home-h2">What is Intercollegiate Yu-Gi-Oh?</h2>
