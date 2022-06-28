@@ -109,6 +109,6 @@
 /* Discord Invite QRCode */
 #home-invite-QR {
     position: relative;
-    width: max(25%, 220px);
+    width: max(18%, 225px);
     height: auto;
 }

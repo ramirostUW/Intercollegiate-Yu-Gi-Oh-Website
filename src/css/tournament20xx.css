@@ -80,12 +80,17 @@
 
 .tile {
     display: flex;
+    background-color: #789099;
+    border-style: solid;
+    border-width: thin;
+    border-color: #EEEEEE;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     white-space: nowrap;
-    margin: 10px 4vw;
+    padding: 1vw;
+    width: 11vw;
 }
 
 .tile-value {

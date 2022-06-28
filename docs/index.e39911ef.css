@@ -9855,7 +9855,7 @@ ul {
 }
 
 #home-invite-QR {
-  width: max(25%, 220px);
+  width: max(18%, 225px);
   height: auto;
   position: relative;
 }
@@ -9934,10 +9934,13 @@ ul {
 .tile {
   text-align: center;
   white-space: nowrap;
+  width: 11vw;
+  background-color: #789099;
+  border: thin solid #eee;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 10px 4vw;
+  padding: 1vw;
   display: flex;
 }
 
