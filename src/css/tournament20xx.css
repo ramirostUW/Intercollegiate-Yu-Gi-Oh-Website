@@ -1,11 +1,12 @@
 /* Carousel styling */
-.carousels-past {
+
+.carouselsPast {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.carousels-past > div {
+.carouselsPast > div {
     display: flex;
     flex-direction: column;
     margin: 7px max(8.3vw, 10px) 5px max(8.3vw, 10px);
@@ -14,7 +15,7 @@
 }
 
 /* Carousel fixed dimension to address resizing mid-transition bug: https://stackoverflow.com/questions/17357306/bootstrap-carousel-resizing-image*/
-.past {
+.carousel.past {
     display: flex;
     width: 380px;
     height: 290px;
@@ -24,13 +25,13 @@
     border-color: #EEEEEE;
 }
 
-.past-item {
+.carousel-item.past > img {
     object-fit: fill !important;
     width: 380px !important;
     height: 290px !important;
 }
 
-.caption-past {
+.carousel-caption.past {
     left: 0;
     right: 0;
     bottom: 0;
@@ -38,27 +39,36 @@
 }
 
 /* Background opacity hack: https://www.geeksforgeeks.org/set-the-opacity-only-to-background-color-not-on-the-text-in-css/*/
-.caption-past > p {
+.carousel-caption.past > p {
     background: rgba(30, 32, 34, 0.4);
 }
 
-.carousel-label-past {
+.carousel-label.past {
     margin-top: 5px;
     font-size: max(0.9rem, 12px);
 }
 
 /* Carousel transition speed: https://stackoverflow.com/questions/48665392/change-bootstrap-carousel-fade-transition */
-.past > .carousel-inner > .carousel-item {
-    transition: transform 0.2s ease-in-out;
-}
+/* Above doesn't work, but was basis for solution*/
 
-.past > .carousel-inner > .carousel-fade .active.carousel-item-start,
-.past > .carousel-inner > .carousel-fade .active.carousel-item-end {
-    transition: opacity 0s 0.2s;
+.carousel.past > .carousel-inner > .carousel-item {
+    transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+    transition-property: opacity;
 }
 
 /* Carousel indicator styling */
-.past > .carousel-indicators > button {
+/* Max-width based on children: https://stackoverflow.com/questions/27382777/set-parent-width-equal-to-children-total-width-using-only-css*/
+.carousel.past > .carousel-indicators {
+    border-style: solid;
+    border-width: thin;
+    border-color: #EEEEEE;
+    max-width: fit-content;
+    padding-top: 4px;
+    left: unset;
+    right: unset;
+}
+
+.carousel.past > .carousel-indicators > button {
     border: none;
     margin-left: 1px;
     margin-right: 1px;
@@ -67,7 +77,7 @@
     padding: 6px 6px;
 }
 
-.past > .carousel-indicators > .active {
+.carousel.past > .carousel-indicators > .active {
     background-color: #1b1e21;
 }
 

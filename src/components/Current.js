@@ -1,8 +1,8 @@
 import React from "react";
 import '../css/index.css';
 import '../css/current.css';
-import {Carousels} from "./customElements/carousels";
 import images2022 from "../media/tournaments/2022";
+import {CustomCarousel} from "./customElements/carousel";
 
 export const Current = () => {
     let venueCarousel = [
@@ -42,9 +42,11 @@ export const Current = () => {
         <div className="banner">
             <img src={images2022.Banner} alt="Intercollegiate 2022 Banner"/>
         </div>
-        <Carousels venues={venueCarousel} venueLabel={venueLabel}
-            winners={personalityCarousel} winnerLabel={personalityLabel}
-            current={true}/>
+        <div className={`carouselsCurrent`}>
+            <CustomCarousel carouselType="venue" genre="current" data={venueCarousel} carouselLabel={venueLabel}/>
+            <CustomCarousel carouselType="personality" genre="current"
+                            data={personalityCarousel} carouselLabel={personalityLabel}/>
+        </div>
         <div className="text-information">
             <div className="description">
                 <h2>Description:</h2>

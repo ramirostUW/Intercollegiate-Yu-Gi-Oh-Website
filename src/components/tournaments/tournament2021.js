@@ -1,9 +1,9 @@
 import React from "react";
 import '../../css/index.css';
 import '../../css/tournament20xx.css';
-import {Carousels} from "../customElements/carousels";
 import { Tiles } from "../customElements/fastFactTiles";
 import images2021 from "../../media/tournaments/2021";
+import {CustomCarousel} from "../customElements/carousel";
 
 export const Tournament2021 = () => {
     let tiles =  [
@@ -59,7 +59,10 @@ export const Tournament2021 = () => {
 
     return (
         <div className="tournament-20xx" id="tournament2021">
-            <Carousels venues={venueCarousel} venueLabel={venueLabel} winners={winnerCarousel} winnerLabel={winnerLabel}/>
+            <div className={`carouselsPast`}>
+                <CustomCarousel carouselType="venue" genre="past" data={venueCarousel} carouselLabel={venueLabel}/>
+                <CustomCarousel carouselType="winner" genre="past" data={winnerCarousel} carouselLabel={winnerLabel}/>
+            </div>
             <Tiles data={tiles} />
             <div className="text-information">
                 <div className="description">

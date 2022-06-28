@@ -1,7 +1,11 @@
 import '../../css/tournament20xx.css';
 
 /**
- * IMPORTANT METRICS TILES
+ * Contains:
+ *  Important Metric Tiles Generator
+ *  Prop Arguments (from caller):
+ *     data: an object containing the items to be displayed in a tile, which each have
+ *                          "title" (metric displayed) and "text" (label for metric) fields
  */
 export const Tiles = (props) => {
   return (

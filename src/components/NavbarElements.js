@@ -3,7 +3,7 @@ import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 /**
- * CURRENTLY NOT IN USE
+ * Bootstrap.css styler
  */
 
 export const Nav = styled.nav`
