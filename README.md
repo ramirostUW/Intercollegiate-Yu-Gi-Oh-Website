@@ -11,6 +11,7 @@ To deploy the website, first make sure that the URL in `package.json` matches th
 
 ## Bugs
 - Mobile swiping lag depending on which elements move. Fix or find alternate visual cue for swipe transition
+- Laggy initial render
 - POTENTIAL BUG: Past tournament accordions still render when collapsed. Could lead to bug with bunch of tournaments
 
 ## To-Do

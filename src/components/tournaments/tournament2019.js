@@ -32,8 +32,8 @@ export const Tournament2019 = () => {
 				"text": "Participants"
 			},
 			{
-				"title": "1500",
-				"text": "Twitch Viewers"
+				"title": "3000",
+				"text": "Youtube Viewers"
 			},
 			{
 				"title": "$2000",
@@ -105,9 +105,9 @@ export const Tournament2019 = () => {
 							<div className="sponsors">
 									<h2>List of Sponsors</h2>
 									<ul>
+											<li>Heroes and Games</li>
 											<li>No Limit Gaming</li>
 											<li>Pixel Palace Games</li>
-											<li>Heroes and Games</li>
 											<li>Worthy Financial</li>
 									</ul>
 							</div>
