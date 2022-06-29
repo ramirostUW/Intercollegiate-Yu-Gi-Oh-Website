@@ -29,13 +29,21 @@ export function App() {
   const TOUCH_SENSITIVITY_DISTANCE = 40;
   const MIN_TOUCH_DISTANCE = 100;
   const [currentPage, setCurrentPage] = React.useState(0);
-  const pages = ["/", "/current", "/tournaments", ];
+  const pages = ["/home", "/current", "/tournaments"];
+	const pageTitles = ["Home", "Current Tournament", "Past Tournaments"];
   // useNavigate code: https://stackoverflow.com/questions/68613526/react-router-dom-usehistory-not-working
   // useLocation code: https://stackoverflow.com/questions/45373742/detect-route-change-with-react-router
   // Translate code: https://javascript.plainenglish.io/how-to-make-a-simple-custom-drag-to-move-component-in-react-f67d5c99f925
   let navigate = useNavigate();
   let location = useLocation();
 
+	function prevPageIndex(currPageIndex) {
+		return (currPageIndex - 1) % pages.length;
+	}
+
+	function nextPageIndex(currPageIndex) {
+		return (currPageIndex + 1) % pages.length;
+	}
 
   // Track current page when user changes currently viewed page
   React.useEffect(() => {
@@ -68,11 +76,11 @@ export function App() {
 
       // right swipe
       if (touchDistance > MIN_TOUCH_DISTANCE) {
-        nextPage = (nextPage + 1) % pages.length;
+        nextPage = nextPageIndex(nextPage);
 
       // left swipe
       } else if (touchDistance < -MIN_TOUCH_DISTANCE) {
-        nextPage = (nextPage - 1) % pages.length;
+        nextPage = prevPageIndex(nextPage);
       }
 
       if (nextPage !== currentPage) {
@@ -98,12 +106,6 @@ export function App() {
     }
   }*/
 
-  function isTouchDevice() {
-    return (('ontouchstart' in window) ||
-        (navigator.maxTouchPoints > 0) ||
-        (navigator.msMaxTouchPoints > 0));
-  }
-
   // Browser/Mobile Differentiation: https://stackoverflow.com/questions/39435395/reactjs-how-to-determine-if-the-application-is-being-viewed-on-mobile-or-deskto
   // Navbar collapse disable: https://stackoverflow.com/questions/42012446/bootstrap-4-disable-navbar-collapse-in-container
 	return (
@@ -112,17 +114,32 @@ export function App() {
           <Navbar className="navbar navbar-expand" fixed="top">
             <Navbar.Toggle aria-controls="basic-navbar-nav"><FontAwesomeIcon icon={faBars} /></Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav id="links">
-                <LinkContainer activeClassName="active-page" to="/">
-                  <NavLink  bsPrefix="link" >Home </NavLink>
-                </LinkContainer>
-                <LinkContainer activeClassName="active-page" to="/current">
-                  <NavLink bsPrefix="link">Current Tournament</NavLink>
-                </LinkContainer>
-                <LinkContainer activeClassName="active-page" to="/tournaments">
-                  <NavLink bsPrefix="link">Past Tournaments</NavLink>
-                </LinkContainer>
-              </Nav>
+							<BrowserView>
+								<Nav id="links">
+									<LinkContainer activeClassName="active-page" to="/home">
+										<NavLink  bsPrefix="link" >Home</NavLink>
+									</LinkContainer>
+									<LinkContainer activeClassName="active-page" to="/current">
+										<NavLink bsPrefix="link">Current Tournament</NavLink>
+									</LinkContainer>
+									<LinkContainer activeClassName="active-page" to="/tournaments">
+										<NavLink bsPrefix="link">Past Tournaments</NavLink>
+									</LinkContainer>
+								</Nav>
+							</BrowserView>
+							<MobileView>
+								<Nav id="links">
+									<LinkContainer activeClassName="active-page" to={pages.at(prevPageIndex(currentPage))}>
+										<NavLink  bsPrefix="link" >{pageTitles.at(prevPageIndex(currentPage))}</NavLink>
+									</LinkContainer>
+									<LinkContainer activeClassName="active-page" to={pages.at(currentPage)}>
+										<NavLink bsPrefix="link">{pageTitles.at(currentPage)}</NavLink>
+									</LinkContainer>
+									<LinkContainer activeClassName="active-page" to={pages.at(nextPageIndex(currentPage))}>
+										<NavLink bsPrefix="link">{pageTitles.at(nextPageIndex(currentPage))}</NavLink>
+									</LinkContainer>
+								</Nav>
+							</MobileView>
             </Navbar.Collapse>
 
             <LinkContainer to="/">
@@ -139,7 +156,8 @@ export function App() {
       <div id="current-page" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleMoveEnd}
             style={{transform: `translateX(${touchDistance}px)`}} >
         <Routes>
-          <Route path="/" element={<Home />} />
+					<Route path="/" element={ <Navigate to="/home" /> } />
+					<Route path="/home" element={<Home />} />
           <Route path="/current" element={<Current />} />
           <Route path="/tournaments" element={<Tournaments />} />
           <Route path="*"

@@ -10145,9 +10145,15 @@ ul {
 
 @media (pointer: coarse) {
   .navbar-nav > .link {
+    width: max(10vw, 80px) !important;
+    opacity: .8 !important;
     border: thin solid #eee !important;
     border-radius: 15px !important;
-    padding: max(.8vw, 7px) max(.8vw, 7px) max(.8vw, 5px) !important;
+  }
+
+  .active-page {
+    width: max(13vw, 120px) !important;
+    opacity: 1 !important;
   }
 }
 
@@ -10156,7 +10162,7 @@ ul {
   background-color: #1e2022 !important;
 }
 
-.navbar-nav > .link {
+.navbar-nav .link {
   color: #fff;
   width: max(13vw, 120px);
   border: thin solid #05939af2;
@@ -10167,7 +10173,7 @@ ul {
   display: block;
 }
 
-.navbar-nav > .link:hover {
+.navbar-nav .link:hover {
   color: #fff;
   background-color: #05939a;
   text-decoration: none;
