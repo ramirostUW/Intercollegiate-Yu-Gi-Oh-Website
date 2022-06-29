@@ -143,16 +143,18 @@ export function App() {
 							</MobileView>
             </Navbar.Collapse>
 
-            <LinkContainer to="/">
-              <Navbar.Brand>
-                <img
-                    src={logo}
-                    className="d-inline-block align-top"
-                    alt="Intercollegiate Yugioh logo"
-                />
-              </Navbar.Brand>
-            </LinkContainer>
-          </Navbar>
+						<BrowserView>
+							<LinkContainer to="/">
+								<Navbar.Brand>
+									<img
+										src={logo}
+										className="d-inline-block align-top"
+										alt="Intercollegiate Yugioh logo"
+									/>
+								</Navbar.Brand>
+							</LinkContainer>
+						</BrowserView>
+					</Navbar>
         </div>
       <div id="current-page" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleMoveEnd}
             style={{transform: `translateX(${touchDistance}px)`}} >

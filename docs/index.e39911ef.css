@@ -10133,7 +10133,7 @@ ul {
   display: flex;
 }
 
-@media (pointer: coarse) {
+@media (min-width: 20px) {
   .navbar-collapse {
     justify-content: center;
   }
@@ -10153,24 +10153,26 @@ ul {
   padding-right: 10px;
 }
 
-@media (pointer: coarse) {
-  .navbar-nav > .link.prev-page, .navbar-nav > .link.next-page {
+@media (min-width: 20px) {
+  #basic-navbar-nav .navbar-nav > .link.prev-page, #basic-navbar-nav .navbar-nav > .link.next-page {
+    align-self: center;
     width: max(10vw, 110px) !important;
     opacity: .7 !important;
-    padding: max(.8vw, 2px) !important;
-    font-size: max(.8vw, 8px) !important;
+    padding: max(.9vw, 4px) !important;
+    font-size: max(1vw, 10px) !important;
   }
 
-  .navbar-nav > .link.active-page {
+  #basic-navbar-nav .navbar-nav > .link.active-page {
+    align-self: center;
+    margin: 5px;
     padding: max(1.3vw, 5px);
     width: max(14vw, 140px) !important;
     opacity: 1 !important;
+    border: thin solid #eee !important;
     font-size: max(1.4vw, 14px) !important;
   }
 
-  .navbar-nav > .link {
-    margin: 5px;
-    border: thin solid #eee !important;
+  #basic-navbar-nav .navbar-nav > .link {
     border-radius: 15px !important;
   }
 }
@@ -10180,7 +10182,7 @@ ul {
   background-color: #1e2022 !important;
 }
 
-.navbar-nav .link {
+.navbar-nav > .link {
   color: #fff;
   width: max(13vw, 120px);
   border: thin solid #05939af2;
@@ -10191,7 +10193,7 @@ ul {
   display: block;
 }
 
-.navbar-nav .link:hover {
+.navbar-nav > .link:hover {
   color: #fff;
   background-color: #05939a;
   text-decoration: none;
@@ -10200,13 +10202,6 @@ ul {
 @media (max-width: 600px) {
   .navbar-brand {
     margin-right: 0 !important;
-  }
-}
-
-@media (pointer: coarse) and (max-width: 600px) {
-  .navbar-brand {
-    width: 0 !important;
-    height: 0 !important;
   }
 }
 

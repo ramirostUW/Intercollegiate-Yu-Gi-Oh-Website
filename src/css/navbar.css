@@ -7,7 +7,7 @@
     font-size: max(1.2vw, 12px);
     text-align: center;
 }
-@media (pointer: coarse) {
+@media (min-width: 20px) {
     .navbar-collapse {
         justify-content: center;
     }
@@ -32,27 +32,29 @@ change color based on active: https://stackoverflow.com/questions/66298345/not-a
 Touchscreen detection: https://ferie.medium.com/detect-a-touch-device-with-only-css-9f8e30fa1134
 */
 
-@media (pointer: coarse) {
-    .navbar-nav >.link.prev-page,
-    .navbar-nav >.link.next-page {
-        font-size: max(0.8vw, 8px) !important;
-        padding: max(0.8vw, 2px) max(0.8vw, 2px) max(0.8vw, 2px) max(0.8vw, 2px) !important;
+@media (min-width: 20px) {
+    #basic-navbar-nav .navbar-nav >.link.prev-page,
+    #basic-navbar-nav .navbar-nav >.link.next-page {
+        font-size: max(1vw, 10px) !important;
+        padding: max(0.9vw, 4px) !important;
         width: max(10vw, 110px) !important;
         opacity: 70% !important;
+        align-self: center;
     }
 
-    .navbar-nav >.link.active-page {
+    #basic-navbar-nav .navbar-nav >.link.active-page {
         font-size: max(1.4vw, 14px) !important;
-        padding: max(1.3vw, 5px) max(1.3vw, 5px) max(1.3vw, 5px) max(1.3vw, 5px);
+        padding: max(1.3vw, 5px);
         width: max(14vw, 140px) !important;
         opacity: 100% !important;
-    }
-    .navbar-nav >.link {
-        border-radius: 15px 15px !important;
+        align-self: center;
         border-style: solid solid solid solid !important;
         border-width: thin !important;
         border-color: #EEEEEE !important;
         margin: 5px;
+    }
+    #basic-navbar-nav .navbar-nav >.link {
+        border-radius: 15px 15px !important;
     }
 
 }
@@ -62,7 +64,7 @@ Touchscreen detection: https://ferie.medium.com/detect-a-touch-device-with-only-
     color: #EEEEEE;
 }
 
-.navbar-nav .link {
+.navbar-nav > .link {
     color: #FFFFFF;
     display: block;
     font-family: 'Helvetica-Black-SemiBold', sans-serif;
@@ -76,7 +78,7 @@ Touchscreen detection: https://ferie.medium.com/detect-a-touch-device-with-only-
     border-color: rgba(5, 147, 154, 0.95);
 }
 
-.navbar-nav .link:hover {
+.navbar-nav > .link:hover {
     background-color: #05939A;
     color: #FFFFFF;
     text-decoration: none;
@@ -86,13 +88,6 @@ Touchscreen detection: https://ferie.medium.com/detect-a-touch-device-with-only-
 @media (max-width: 600px) {
     .navbar-brand {
         margin-right: 0 !important;
-    }
-}
-
-@media (pointer:coarse) and (max-width: 600px) {
-    .navbar-brand {
-        width: 0 !important;
-        height: 0 !important;
     }
 }
 
