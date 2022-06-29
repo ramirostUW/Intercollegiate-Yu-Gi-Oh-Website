@@ -3,11 +3,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url("../media/tournaments/logoBackground.png");
-    padding-top: 40px;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size:570px 460px;
+}
+
+@media (min-width: 968px) {
+    .tournament-20xx {
+        background-image: url("../media/tournaments/logoBackground.png");
+        padding-top: 40px;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size:570px 460px;
+    }
 }
 /* Carousel styling */
 .tournament-20xx .carousels {
@@ -167,6 +172,10 @@
     min-width: 400px;
     height: auto;
     margin: 10px;
+}
+
+.tournament-20xx .sponsors > ul {
+    padding-right: 25px;
 }
 
 @media (min-width: 1320px) {

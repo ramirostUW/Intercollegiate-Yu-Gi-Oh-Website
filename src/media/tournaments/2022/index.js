@@ -7,15 +7,17 @@ import Venue5 from "./2022Venue5.jpg"
 import Personality1 from "./2022Personality1.jpg";
 
 import Banner from "./2022Banner.png"
+import UWLogo from "./UWLogo.png";
 
 const images2022 = {
-    Venue1,
-    Venue2,
-    Venue3,
-    Venue4,
-    Venue5,
-    Personality1,
-    Banner
+	Venue1,
+	Venue2,
+	Venue3,
+	Venue4,
+	Venue5,
+	Personality1,
+	Banner,
+	UWLogo
 };
 
 export default images2022;

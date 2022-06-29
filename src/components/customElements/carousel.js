@@ -8,7 +8,9 @@ import Placeholder from "../../media/Placeholder.png";
  *      carouselType (optional): a field specifying the user-specified type of carousel, for more specific css access
  *      data: an object containing the items to be displayed in the carousel, which each have
  *                          "source" (image url) and "caption" (image caption) fields
- *      carouselLabel: a caption for the carousel
+ *      carouselLabel (optional): a caption for the carousel
+ *      labelPosition (optional): whether the label's position should be "above" or "below" the carousel. Default is
+ *      													"below"
  *
  *			! Be careful when just identifying elements with attributes like .carousel, as the styling could !
  *			! apply across all carousels. Instead, specify both the element and its "defining class/parent", !
@@ -18,9 +20,14 @@ import Placeholder from "../../media/Placeholder.png";
 // Carousel genre/multiple class selectors: https://css-tricks.com/multiple-class-id-selectors/
 export const CustomCarousel = (props) => {
 	const carouselType = props.carouselType ? props.carouselType + "-" : "";
+	const labelPosition = props.labelPosition === "above" ? "above" : "below";
+
 	// Carousel variables: https://www.tutsmake.com/react-bootstrap-carousel-slider-tutorial/
 	return (
 	<div className={`${carouselType}carousel-wrapper carousel-wrapper ${props.genre}`}>
+		{labelPosition === "above" && props.carouselLabel ?
+			<text className={`${carouselType}carousel-label carousel-label ${props.genre}`}>{props.carouselLabel}</text>
+			: null}
 		<Carousel className={`${carouselType}carousel ${props.genre}`} fade prevLabel={null} nextLabel={null}
 							keyboard={false} interval={2000}>
 			{props.data ?
@@ -34,13 +41,15 @@ export const CustomCarousel = (props) => {
 							"Placeholder" : `${carouselType} carousel image ${index}`}
 					/>
 					<Carousel.Caption className={`${carouselType}caption ${props.genre}`}>
-						<p>{item.caption}</p>
+						{item.caption ? <p>{item.caption}</p> : null}
 					</Carousel.Caption>
 				</Carousel.Item>
 				))
 			: 'Loading...'}
 		</Carousel>
-		<text className={`${carouselType}carousel-label carousel-label ${props.genre}`}>{props.carouselLabel}</text>
+		{labelPosition === "below" && props.carouselLabel ?
+			<text className={`${carouselType}carousel-label carousel-label ${props.genre}`}>{props.carouselLabel}</text>
+			: null}
 	</div>
     )
 }
