@@ -24,31 +24,32 @@ export const CustomCarousel = (props) => {
 
 	// Carousel variables: https://www.tutsmake.com/react-bootstrap-carousel-slider-tutorial/
 	return (
-	<div className={`${carouselType}carousel-wrapper carousel-wrapper ${props.genre}`}>
+	<div className={`${carouselType}carousel-wrapper carousel-wrapper`}>
 		{labelPosition === "above" && props.carouselLabel ?
-			<text className={`${carouselType}carousel-label carousel-label ${props.genre}`}>{props.carouselLabel}</text>
+			<text className={`${carouselType}carousel-label carousel-label`}>{props.carouselLabel}</text>
 			: null}
-		<Carousel className={`${carouselType}carousel ${props.genre}`} fade prevLabel={null} nextLabel={null}
+		<Carousel className={`${carouselType}carousel`} fade prevLabel={null} nextLabel={null}
 							keyboard={false} interval={2000}>
 			{props.data ?
 				props.data.map((item, index)=> (
-				<Carousel.Item className={`${props.genre}`}>
+				<Carousel.Item>
 					<img
-						className={`${carouselType}item ${props.genre} d-block w-100`}
+						className={`${carouselType}item d-block w-100`}
 						src={Object.keys(item.source).length === 0 || item.source === "" ?
 							Placeholder : item.source}
 						alt={Object.keys(item.source).length === 0 || item.source === "" ?
 							"Placeholder" : `${carouselType} carousel image ${index}`}
 					/>
-					<Carousel.Caption className={`${carouselType}caption ${props.genre}`}>
-						{item.caption ? <p>{item.caption}</p> : null}
-					</Carousel.Caption>
+					{item.caption ?
+					<Carousel.Caption className={`${carouselType}caption`}>
+						 <p>{item.caption}</p>
+					</Carousel.Caption> : null}
 				</Carousel.Item>
 				))
 			: 'Loading...'}
 		</Carousel>
 		{labelPosition === "below" && props.carouselLabel ?
-			<text className={`${carouselType}carousel-label carousel-label ${props.genre}`}>{props.carouselLabel}</text>
+			<text className={`${carouselType}carousel-label carousel-label`}>{props.carouselLabel}</text>
 			: null}
 	</div>
     )

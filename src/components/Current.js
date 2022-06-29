@@ -5,22 +5,6 @@ import images2022 from "../media/tournaments/2022";
 import {CustomCarousel} from "./customElements/carousel";
 
 export const Current = () => {
-	/*
-	// Resize code: https://stackoverflow.com/questions/36862334/get-viewport-window-height-in-reactjs
-	const [fitCarousels, setFitCarousels] = useState(!(window.innerWidth < 1154))
-
-	const handleResize = () => {
-		if (window.innerWidth < 1154) {
-			setFitCarousels(false)
-		} else {
-			setFitCarousels(true)
-		}
-	}
-
-	useEffect(() => {
-		window.addEventListener("resize", handleResize)
-	})*/
-
 	let venueCarousel = [
 		{
 			"source": images2022.Venue1,

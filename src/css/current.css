@@ -20,12 +20,17 @@
     margin-top: 10px;
 }
 
+@media (min-width: 989px) {
+    #current .carousel-column {
+        margin-right: 20px;
+    }
+}
+
 #current .carousel-column {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-right: 20px;
 }
 
 #current .carousel-wrapper {
@@ -193,10 +198,11 @@
     height: auto;
     margin: 10px;
     background: rgba(30, 32, 34, 0.87);
+    border-radius: 15px;
 }
 #current h2 {
     font-size: max(1.8rem, 14px);
 }
-.current .sponsors > ul {
+#current .sponsors > ul {
     padding-right: 25px;
 }
