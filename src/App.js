@@ -109,6 +109,19 @@ export function App() {
   // Browser/Mobile Differentiation: https://stackoverflow.com/questions/39435395/reactjs-how-to-determine-if-the-application-is-being-viewed-on-mobile-or-deskto
   // Navbar collapse disable: https://stackoverflow.com/questions/42012446/bootstrap-4-disable-navbar-collapse-in-container
 	// Redirect: https://stackabuse.com/redirects-in-react-router/
+	/*
+							<BrowserView>
+							<LinkContainer to="/">
+								<Navbar.Brand>
+									<img
+										src={logo}
+										className="d-inline-block align-top"
+										alt="Intercollegiate Yugioh logo"
+									/>
+								</Navbar.Brand>
+							</LinkContainer>
+						</BrowserView>
+	 */
 	return (
     <div>
         <div id="header">
@@ -142,18 +155,6 @@ export function App() {
 								</Nav>
 							</MobileView>
             </Navbar.Collapse>
-
-						<BrowserView>
-							<LinkContainer to="/">
-								<Navbar.Brand>
-									<img
-										src={logo}
-										className="d-inline-block align-top"
-										alt="Intercollegiate Yugioh logo"
-									/>
-								</Navbar.Brand>
-							</LinkContainer>
-						</BrowserView>
 					</Navbar>
         </div>
       <div id="current-page" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleMoveEnd}
