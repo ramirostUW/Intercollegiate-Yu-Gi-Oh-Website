@@ -13,6 +13,7 @@
     }
     .navbar-nav {
         margin-top: 3px;
+        margin-bottom: 3px;
     }
 }
 .navbar-nav {
@@ -36,25 +37,28 @@ Touchscreen detection: https://ferie.medium.com/detect-a-touch-device-with-only-
     .navbar-nav >.link.prev-page,
     .navbar-nav >.link.next-page {
         font-size: max(0.8vw, 8px) !important;
+        padding: max(0.8vw, 2px) 0.1vw max(0.8vw, 2px) 0.1vw !important;
         width: max(10vw, 120px) !important;
         opacity: 70% !important;
     }
 
-    .navbar-nav >.link {
+    .navbar-nav >.link.active-page {
         font-size: max(1.4vw, 14px) !important;
+        padding: max(1.3vw, 9px) max(1.3vw, 5px) max(1.3vw, 9px) max(1.3vw, 5px);
+        width: max(15vw, 150px) !important;
+        opacity: 100% !important;
+    }
+    .navbar-nav >.link {
         border-radius: 15px 15px !important;
         border-style: solid solid solid solid !important;
         border-width: thin !important;
         border-color: #EEEEEE !important;
+        margin: 0 5px;
     }
 
-    .active-page {
-        width: max(15vw, 150px) !important;
-        opacity: 100% !important;
-    }
 }
 
-.active-page {
+.navbar-nav >.link.active-page {
     background-color: #1E2022 !important;
     color: #EEEEEE;
 }
