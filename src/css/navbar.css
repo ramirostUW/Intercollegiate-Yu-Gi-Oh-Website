@@ -14,7 +14,7 @@
 
 
 #current-page {
-    padding-top: max(5.8vw, 78px);
+    padding-top: max(5.8vw, 84px);
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -26,9 +26,13 @@ Touchscreen detection: https://ferie.medium.com/detect-a-touch-device-with-only-
 */
 
 @media (pointer: coarse) {
-    .navbar-nav >.link {
+    .navbar-nav >.link.prev-page,
+    .navbar-nav >.link.next-page{
         width: max(10vw, 80px) !important;
         opacity: 80% !important;
+    }
+
+    .navbar-nav >.link {
         border-radius: 15px 15px !important;
         border-style: solid solid solid solid !important;
         border-width: thin !important;

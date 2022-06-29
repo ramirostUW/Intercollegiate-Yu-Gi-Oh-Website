@@ -129,13 +129,13 @@ export function App() {
 							</BrowserView>
 							<MobileView>
 								<Nav id="links">
-									<LinkContainer activeClassName="active-page" to={pages.at(prevPageIndex(currentPage))}>
+									<LinkContainer className="prev-page" activeClassName="active-page" to={pages.at(prevPageIndex(currentPage))}>
 										<NavLink  bsPrefix="link" >{pageTitles.at(prevPageIndex(currentPage))}</NavLink>
 									</LinkContainer>
 									<LinkContainer activeClassName="active-page" to={pages.at(currentPage)}>
 										<NavLink bsPrefix="link">{pageTitles.at(currentPage)}</NavLink>
 									</LinkContainer>
-									<LinkContainer activeClassName="active-page" to={pages.at(nextPageIndex(currentPage))}>
+									<LinkContainer className="next-page" activeClassName="active-page" to={pages.at(nextPageIndex(currentPage))}>
 										<NavLink bsPrefix="link">{pageTitles.at(nextPageIndex(currentPage))}</NavLink>
 									</LinkContainer>
 								</Nav>
