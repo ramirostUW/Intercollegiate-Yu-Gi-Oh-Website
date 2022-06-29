@@ -10069,7 +10069,7 @@ ul {
 }
 
 #tournaments {
-  min-height: 100vh;
+  min-height: 87vh;
   justify-content: center;
   display: flex;
 }
@@ -10133,6 +10133,16 @@ ul {
   display: flex;
 }
 
+@media (pointer: coarse) {
+  .navbar-collapse {
+    justify-content: center;
+  }
+
+  .navbar-nav {
+    margin-top: 3px;
+  }
+}
+
 .navbar-nav {
   margin-top: 15px;
 }
@@ -10145,17 +10155,19 @@ ul {
 
 @media (pointer: coarse) {
   .navbar-nav > .link.prev-page, .navbar-nav > .link.next-page {
-    width: max(10vw, 80px) !important;
-    opacity: .8 !important;
+    width: max(10vw, 120px) !important;
+    opacity: .7 !important;
+    font-size: max(.8vw, 8px) !important;
   }
 
   .navbar-nav > .link {
     border: thin solid #eee !important;
     border-radius: 15px !important;
+    font-size: max(1.4vw, 14px) !important;
   }
 
   .active-page {
-    width: max(13vw, 120px) !important;
+    width: max(15vw, 150px) !important;
     opacity: 1 !important;
   }
 }
