@@ -105,11 +105,11 @@ export function App() {
   }
 
   // Browser/Mobile Differentiation: https://stackoverflow.com/questions/39435395/reactjs-how-to-determine-if-the-application-is-being-viewed-on-mobile-or-deskto
-  return (
+  // Navbar collapse disable: https://stackoverflow.com/questions/42012446/bootstrap-4-disable-navbar-collapse-in-container
+	return (
     <div>
-      <BrowserView>
         <div id="header">
-          <Navbar className="navbar" fixed="top" expand="lg">
+          <Navbar className="navbar navbar-expand" fixed="top">
             <Navbar.Toggle aria-controls="basic-navbar-nav"><FontAwesomeIcon icon={faBars} /></Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav id="links">
@@ -129,8 +129,6 @@ export function App() {
               <Navbar.Brand>
                 <img
                     src={logo}
-                    width="30"
-                    height="30"
                     className="d-inline-block align-top"
                     alt="Intercollegiate Yugioh logo"
                 />
@@ -138,39 +136,6 @@ export function App() {
             </LinkContainer>
           </Navbar>
         </div>
-      </BrowserView>
-      <MobileView>
-        <div id="header">
-          <Navbar className="navbar" fixed="top" expand="lg">
-            <Navbar.Toggle aria-controls="basic-navbar-nav"><FontAwesomeIcon icon={faBars} /></Navbar.Toggle>
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav id="links">
-                <LinkContainer activeClassName="active-page" to="/">
-                  <NavLink  bsPrefix="link" >Home </NavLink>
-                </LinkContainer>
-                <LinkContainer activeClassName="active-page" to="/current">
-                  <NavLink bsPrefix="link">Current Tournament</NavLink>
-                </LinkContainer>
-                <LinkContainer activeClassName="active-page" to="/tournaments">
-                  <NavLink bsPrefix="link">Past Tournaments</NavLink>
-                </LinkContainer>
-              </Nav>
-            </Navbar.Collapse>
-
-            <LinkContainer to="/">
-              <Navbar.Brand>
-                <img
-                    src={logo}
-                    width="30"
-                    height="30"
-                    className="d-inline-block align-top"
-                    alt="Intercollegiate Yugioh logo"
-                />
-              </Navbar.Brand>
-            </LinkContainer>
-          </Navbar>
-        </div>
-      </MobileView>
       <div id="current-page" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleMoveEnd}
             style={{transform: `translateX(${touchDistance}px)`}} >
         <Routes>

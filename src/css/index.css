@@ -19,13 +19,6 @@ h2 {
   font-size:max(3rem, 20px);
 }
 
-.logoPic {
-  width: 70%;
-  margin: auto;
-  display: block;
-}
-
-
 ul {
   display: table;
   margin: 0 auto;

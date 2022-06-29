@@ -9755,12 +9755,6 @@ h2 {
   font-weight: 600 !important;
 }
 
-.logoPic {
-  width: 70%;
-  margin: auto;
-  display: block;
-}
-
 ul {
   margin: 0 auto;
   display: table;
@@ -10075,6 +10069,7 @@ ul {
 }
 
 #tournaments {
+  min-height: 1400px;
   justify-content: center;
   display: flex;
 }
@@ -10129,17 +10124,31 @@ ul {
 }
 
 .navbar {
+  text-align: center;
   background-color: #00adb5;
   padding-top: 0;
   padding-bottom: 0;
   padding-left: 0;
+  font-size: min(1.1rem, 3.25vw);
   display: flex;
 }
 
+.navbar-nav {
+  margin-top: 15px;
+}
+
 #current-page {
-  padding-top: 4em;
+  padding-top: 5em;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .navbar-nav > .link {
+    border: thin solid #eee !important;
+    border-radius: 15px !important;
+    padding: max(.8vw, 7px) max(.8vw, 7px) max(.8vw, 5px) !important;
+  }
 }
 
 .active-page {
@@ -10147,17 +10156,25 @@ ul {
   background-color: #1e2022 !important;
 }
 
-.link {
+.navbar-nav > .link {
   color: #fff;
-  padding: .8rem;
+  border: thin solid #05939af2;
+  border-bottom-style: none;
+  border-radius: 15px 15px 0 0;
+  padding: 15px max(.8vw, 7px) 17px;
   font-family: Helvetica-Black-SemiBold, sans-serif;
   display: block;
 }
 
-.link:hover {
+.navbar-nav > .link:hover {
   color: #fff;
   background-color: #05939a;
   text-decoration: none;
+}
+
+.navbar-brand > img {
+  width: 60px;
+  height: 60px;
 }
 
 #current .banner {

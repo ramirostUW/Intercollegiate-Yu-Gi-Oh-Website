@@ -1,13 +1,20 @@
 .navbar {
     background-color: #00ADB5;
     display: flex;
-    padding-top: 0;
     padding-left: 0;
+    padding-top: 0;
     padding-bottom: 0;
+    font-size: min(1.1rem, 3.25vw);
+    text-align: center;
 }
 
+.navbar-nav {
+    margin-top: 15px;
+}
+
+
 #current-page {
-    padding-top: 4em;
+    padding-top: 5em;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -15,25 +22,46 @@
 CSS Overriding of react-boostrap nav from
 change active class: https://stackoverflow.com/questions/61314053/react-bootstrap-custom-nav-link-active-style-is-not-working
 change color based on active: https://stackoverflow.com/questions/66298345/not-able-to-change-color-of-navlink-react-bootstrap
+Touchscreen detection: https://ferie.medium.com/detect-a-touch-device-with-only-css-9f8e30fa1134
 */
+
+@media (hover: none) and (pointer: coarse) {
+    .navbar-nav >.link {
+        padding: max(0.8vw, 7px) max(0.8vw, 7px) max(0.8vw, 5px) max(0.8vw, 7px) !important;
+        border-radius: 15px 15px !important;
+        border-style: solid solid solid solid !important;
+        border-width: thin !important;
+        border-color: #EEEEEE !important;
+    }
+}
 
 .active-page {
     background-color: #1E2022 !important;
     color: #EEEEEE;
 }
 
-.link {
+.navbar-nav >.link {
     color: #FFFFFF;
     display: block;
     font-family: 'Helvetica-Black-SemiBold', sans-serif;
-    padding: 0.8rem;
+    padding: 15px max(0.8vw, 7px) 17px max(0.8vw, 7px);
+
+    border-radius: 15px 15px 0 0;
+    border-style: solid solid none solid;
+    border-width: thin;
+    border-color: rgba(5, 147, 154, 0.95);
 }
 
-.link:hover {
+.navbar-nav > .link:hover {
     background-color: #05939A;
     color: #FFFFFF;
     text-decoration: none;
 }
 
+/* Navbar logo styling*/
+.navbar-brand > img{
+    width: 60px;
+    height: 60px;
+}
 
 
