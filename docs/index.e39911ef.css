@@ -10129,7 +10129,7 @@ ul {
   padding-top: 0;
   padding-bottom: 0;
   padding-left: 0;
-  font-size: min(1.1rem, 3.25vw);
+  font-size: max(1.2vw, 12px);
   display: flex;
 }
 
@@ -10138,12 +10138,12 @@ ul {
 }
 
 #current-page {
-  padding-top: 5em;
+  padding-top: max(5.8vw, 78px);
   padding-left: 10px;
   padding-right: 10px;
 }
 
-@media (hover: none) and (pointer: coarse) {
+@media (pointer: coarse) {
   .navbar-nav > .link {
     border: thin solid #eee !important;
     border-radius: 15px !important;
@@ -10158,10 +10158,11 @@ ul {
 
 .navbar-nav > .link {
   color: #fff;
+  width: max(13vw, 120px);
   border: thin solid #05939af2;
   border-bottom-style: none;
   border-radius: 15px 15px 0 0;
-  padding: 15px max(.8vw, 7px) 17px;
+  padding: 15px .5vw max(1.3vw, 9px);
   font-family: Helvetica-Black-SemiBold, sans-serif;
   display: block;
 }
@@ -10172,9 +10173,15 @@ ul {
   text-decoration: none;
 }
 
+@media (max-width: 600px) {
+  .navbar-brand {
+    margin-right: 0 !important;
+  }
+}
+
 .navbar-brand > img {
-  width: 60px;
-  height: 60px;
+  width: max(4.35vw, 48px);
+  height: max(4.35vw, 48px);
 }
 
 #current .banner {
