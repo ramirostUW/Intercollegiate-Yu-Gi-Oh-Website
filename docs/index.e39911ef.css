@@ -9860,60 +9860,86 @@ ul {
   position: relative;
 }
 
-.carousels-past {
+.tournament-20xx {
+  background-image: url("logoBackground.2305465e.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 570px 460px;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 40px;
+  display: flex;
+}
+
+.tournament-20xx .carousels {
   flex-wrap: wrap;
   justify-content: center;
   display: flex;
 }
 
-.carousels-past > div {
+.tournament-20xx .carousels > div {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.tournament-20xx .carousel-wrapper {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 7px max(8.3vw, 10px) 5px;
   display: flex;
 }
 
-.past {
+.tournament-20xx .carousel {
   width: 380px;
-  height: 290px;
-  border: thick solid #eee;
+  height: 270px;
+  border: thick solid #eeeeeee6;
   justify-content: center;
+  margin: 25px 20px 0;
   display: flex;
 }
 
-.past-item {
+.tournament-20xx .carousel-item > img {
   object-fit: fill !important;
   width: 380px !important;
-  height: 290px !important;
+  height: 270px !important;
 }
 
-.caption-past {
-  padding-bottom: 7px;
+.tournament-20xx .carousel-caption {
+  padding-bottom: 25px;
+  font-size: max(.9rem, 12px);
   bottom: 0;
   left: 0;
   right: 0;
 }
 
-.caption-past > p {
-  background: #1e202266;
+.tournament-20xx .carousel-caption > p {
+  background: #1e2022a6;
 }
 
-.carousel-label-past {
+.tournament-20xx .carousel-label {
+  width: 380px;
+  text-align: center;
   margin-top: 5px;
-  font-size: max(.9rem, 12px);
+  font-size: max(.7rem, 12px);
 }
 
-.past > .carousel-inner > .carousel-item {
-  transition: transform .2s ease-in-out;
+.tournament-20xx .carousel > .carousel-inner > .carousel-item {
+  transition: opacity .2s ease-in-out;
 }
 
-.past > .carousel-inner > .carousel-fade .active.carousel-item-start, .past > .carousel-inner > .carousel-fade .active.carousel-item-end {
-  transition: opacity 0s .2s;
+.tournament-20xx .carousel > .carousel-indicators {
+  max-width: fit-content;
+  left: unset;
+  right: unset;
+  background-color: #1e202266;
+  padding: 4px 4px 0;
 }
 
-.past > .carousel-indicators > button {
-  border: none;
+.tournament-20xx .carousel > .carousel-indicators > button {
+  background-color: #eeeeee80;
+  border: inset #1e20224d;
+  border-style: none inset inset none;
   border-radius: 100%;
   margin-bottom: 5px;
   margin-left: 1px;
@@ -9921,51 +9947,82 @@ ul {
   padding: 6px;
 }
 
-.past > .carousel-indicators > .active {
-  background-color: #1b1e21;
+.tournament-20xx .carousel > .carousel-indicators > .active {
+  background-color: #eeeeeee6;
 }
 
-.tiles {
+@media (min-width: 1320px) {
+  .tournament-20xx .tiles {
+    width: max(21vw, 150px) !important;
+    height: max(10vw, 70px) !important;
+  }
+}
+
+.tournament-20xx .tiles {
   flex-flow: wrap;
   justify-content: center;
+  align-self: center;
   display: flex;
 }
 
-.tile {
+@media (min-width: 1320px) {
+  .tournament-20xx .tile {
+    border: inset #1e2022cc !important;
+    border-style: none inset inset none !important;
+  }
+}
+
+.tournament-20xx .tile {
   text-align: center;
   white-space: nowrap;
-  width: 11vw;
-  background-color: #789099;
+  min-width: max(9vw, 120px);
+  background-color: #1e202299;
   border: thin solid #eee;
+  border-radius: 5%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1vw;
+  margin: 8px;
   display: flex;
 }
 
-.tile-value {
+.tournament-20xx .tile-value {
   color: #fa61c3;
-  font-size: max(2.7rem, 16px);
+  font-size: max(2.2rem, 12px);
 }
 
-.tile-label {
-  font-size: max(1.25rem, 16px);
+.tournament-20xx .tile-label {
+  font-size: max(1rem, 10px);
 }
 
-.text-information {
+.tournament-20xx h2 {
+  font-size: max(1.5rem, 14px);
+}
+
+.tournament-20xx .text-information {
   flex-flow: wrap;
   justify-content: center;
+  margin-top: 10px;
   display: flex;
 }
 
-.text-information > div {
-  width: 40%;
+.tournament-20xx .text-information > div {
+  width: 35%;
   min-width: 400px;
   height: auto;
   flex-direction: column;
   margin: 10px;
   display: flex;
+}
+
+@media (min-width: 1320px) {
+  .tournament-20xx .description {
+    margin-right: max(9vw, 75px) !important;
+  }
+
+  .tournament-20xx .sponsors {
+    margin-left: max(9vw, 75px) !important;
+  }
 }
 
 #tournaments {
@@ -10007,8 +10064,8 @@ ul {
   width: 40px;
   height: 40px;
   position: absolute;
-  right: min(4%, 50px);
-  transform: translateX(-100%);
+  left: max(8%, 120px);
+  transform: translateX(-50%);
 }
 
 .collapsed > .accordion-arrow {
@@ -10053,25 +10110,25 @@ ul {
   text-decoration: none;
 }
 
-.banner {
+#current .banner {
   justify-content: center;
   align-items: center;
   display: flex;
 }
 
-.banner > img {
+#current .banner > img {
   width: max(60vw, 420px);
   height: auto;
   display: flex;
 }
 
-.carousels-current {
+#current .carousels {
   flex-wrap: wrap;
   justify-content: center;
   display: flex;
 }
 
-.carousels-current > div {
+#current .carousels > div {
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -10080,64 +10137,70 @@ ul {
 }
 
 @media only screen and (max-device-width: 480px) {
-  .venue-current > .venue-carousel, .venue-carousel-current-item {
+  #current .venue-carousel, #current .venue-item {
     width: 400px !important;
     height: 300px !important;
   }
 }
 
-.venue-current > .venue-carousel {
-  width: 700px;
-  height: 400px;
+#current .venue-carousel {
   justify-content: center;
   display: flex;
+  width: 700px !important;
+  height: 400px !important;
 }
 
-.venue-carousel-current-item {
+#current .venue-item {
   object-fit: fill;
-  width: 700px;
-  height: 400px;
+  width: 700px !important;
+  height: 400px !important;
 }
 
-.other-current > .venue-carousel {
+#current .personality-carousel {
   width: 400px;
   height: 400px;
   justify-content: center;
   display: flex;
 }
 
-.other-carousel-current-item {
+#current .personality-item {
   object-fit: fill !important;
   width: 400px !important;
   height: 400px !important;
 }
 
-.caption-current {
-  padding-bottom: 7px;
+#current .carousel-caption {
+  padding-bottom: 12px;
   bottom: 0;
   left: 0;
   right: 0;
 }
 
-.caption-current > p {
-  background: #1e202266;
+#current .carousel-caption > p {
+  background: #1e2022a6;
 }
 
-.carousel-label-current {
+#current .carousel-label {
   margin-top: 5px;
   font-size: max(.9rem, 12px);
 }
 
-.current > .carousel-inner > .carousel-item {
-  transition: transform .2s ease-in-out;
+#current .carousel > .carousel-inner > .carousel-item {
+  transition: opacity .2s ease-in-out;
 }
 
-.current > .carousel-inner > .carousel-fade .active.carousel-item-start, .current > .carousel-inner > .carousel-fade .active.carousel-item-end {
-  transition: opacity 0s .2s;
+#current .carousel > .carousel-indicators {
+  max-width: fit-content;
+  left: unset;
+  right: unset;
+  background-color: #1e202266;
+  padding: 6px 4px 0;
 }
 
-.current > .carousel-indicators > button {
-  border: none;
+#current .carousel > .carousel-indicators > button {
+  background-color: #592573;
+  border: inset #1e20224d;
+  border-style: none inset inset none;
   border-radius: 100%;
   margin-bottom: 5px;
   margin-left: 1px;
@@ -10145,17 +10208,17 @@ ul {
   padding: 6px;
 }
 
-.current > .carousel-indicators > .active {
-  background-color: #1b1e21;
+#current .carousel > .carousel-indicators > .active {
+  background-color: #98875c;
 }
 
-.text-information {
+#current .text-information {
   flex-flow: wrap;
   justify-content: center;
   display: flex;
 }
 
-.text-information > div {
+#current .text-information > div {
   width: 40%;
   min-width: 400px;
   height: auto;

@@ -6,14 +6,13 @@ import Placeholder from "../../media/Placeholder.png";
  *  Carousel Generator
  *  Prop Arguments (from caller):
  *      carouselType (optional): a field specifying the user-specified type of carousel, for more specific css access
- *      genre: a field specifying the user-specified category of carousel, for easier css grouping
- *              ex. "past" or "current"
- *           ! Be careful when just identifying elements with attributes like .carousel, as the styling could !
- *           ! apply across all carousels. Instead, specify both the element and its genre, ex .carousel.past !
- *
  *      data: an object containing the items to be displayed in the carousel, which each have
  *                          "source" (image url) and "caption" (image caption) fields
  *      carouselLabel: a caption for the carousel
+ *
+ *			! Be careful when just identifying elements with attributes like .carousel, as the styling could !
+ *			! apply across all carousels. Instead, specify both the element and its "defining class/parent", !
+ *			! ex #current .carousel !
  */
 
 // Carousel genre/multiple class selectors: https://css-tricks.com/multiple-class-id-selectors/

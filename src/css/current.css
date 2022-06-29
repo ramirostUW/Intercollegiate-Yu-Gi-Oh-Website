@@ -1,24 +1,24 @@
 /* Banner styling */
-.banner {
+#current .banner {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.banner > img {
+#current .banner > img {
     display: flex;
     width: max(60vw, 420px);
     height: auto;
 }
 
 /* Carousel styling */
-.carouselsCurrent {
+#current .carousels {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.carouselsCurrent > div {
+#current .carousels > div {
     display: flex;
     flex-direction: column;
     margin: 7px max(8.3vw, 10px) 5px max(8.3vw, 10px);
@@ -29,56 +29,56 @@
 /* Carousel fixed dimension to address resizing mid-transition bug: https://stackoverflow.com/questions/17357306/bootstrap-carousel-resizing-image*/
 /* Phone-only custom css: https://www.smashingmagazine.com/2010/07/how-to-use-css3-media-queries-to-create-a-mobile-version-of-your-website/*/
 @media only screen and (max-device-width: 480px) {
-    .venue-carousel.current {
+    #current .venue-carousel {
         width: 400px !important;
         height: 300px !important;
     }
 
-    .venue-item.current {
+    #current .venue-item {
         width: 400px !important;
         height: 300px !important;
     }
 }
 
-.venue-carousel.current {
+#current .venue-carousel {
     display: flex;
     width: 700px !important;
     height: 400px !important;
     justify-content: center;
 }
 
-.venue-item.current {
+#current .venue-item {
     object-fit: fill;
     width: 700px !important;
     height: 400px !important;
 }
 
-.personality-carousel.current {
+#current .personality-carousel {
     display: flex;
     width: 400px;
     height: 400px;
     justify-content: center;
 }
 
-.personality-item.current {
+#current .personality-item {
     object-fit: fill !important;
     width: 400px !important;
     height: 400px !important;
 }
 
-.carousel-caption.current {
+#current .carousel-caption {
     left: 0;
     right: 0;
     bottom: 0;
-    padding-bottom: 7px;
+    padding-bottom: 12px;
 }
 
 /* Background opacity hack: https://www.geeksforgeeks.org/set-the-opacity-only-to-background-color-not-on-the-text-in-css/*/
-.carousel-caption.current > p {
-    background: rgba(30, 32, 34, 0.4);
+#current .carousel-caption > p {
+    background: rgba(30, 32, 34, 0.65);
 }
 
-.carousel-label.current {
+#current .carousel-label {
     margin-top: 5px;
     font-size: max(0.9rem, 12px);
 }
@@ -86,23 +86,23 @@
 /* Carousel transition speed: https://stackoverflow.com/questions/48665392/change-bootstrap-carousel-fade-transition */
 /* Above doesn't work, but was basis for solution*/
 
-.carousel.current > .carousel-inner > .carousel-item {
+#current .carousel > .carousel-inner > .carousel-item {
     transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
     transition-property: opacity;
 }
 
 /* Carousel indicator styling */
 /* Max-width based on children: https://stackoverflow.com/questions/27382777/set-parent-width-equal-to-children-total-width-using-only-css*/
-.carousel.current > .carousel-indicators {
-    background-color: rgba(30, 32, 34, 0.2);
+#current .carousel > .carousel-indicators {
+    background-color: rgba(30, 32, 34, 0.4);
     max-width: fit-content;
-    padding-top: 4px;
+    padding: 6px 4px 0 4px;
     left: unset;
     right: unset;
 }
 
 
-.carousel.current > .carousel-indicators > button {
+#current .carousel > .carousel-indicators > button {
     background-color: #592573;
     margin-left: 1px;
     margin-right: 1px;
@@ -114,19 +114,19 @@
     padding: 6px 6px;
 }
 
-.carousel.current > .carousel-indicators > .active {
+#current .carousel > .carousel-indicators > .active {
     background-color: #98875c;
 }
 
 /* Description/Sponsors Styling */
-.text-information {
+#current .text-information {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.text-information > div {
+#current .text-information > div {
     display: flex;
     flex-direction: column;
     width: 40%;

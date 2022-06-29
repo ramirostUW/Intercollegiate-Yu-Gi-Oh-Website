@@ -37,8 +37,8 @@
     position: absolute;
     width:40px;
     height:40px;
-    right: min(4%, 50px);
-    transform: translateX(-100%);
+    left: max(8%, 120px);
+    transform: translateX(-50%);
 }
 
 /* Accordion arrow change visibility content override hack: https://www.geeksforgeeks.org/how-to-replace-text-with-css/*/

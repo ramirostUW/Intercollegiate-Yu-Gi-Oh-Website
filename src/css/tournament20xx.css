@@ -1,130 +1,180 @@
+/* Logo Background Styling */
+.tournament-20xx {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("../media/tournaments/logoBackground.png");
+    padding-top: 40px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size:570px 460px;
+}
 /* Carousel styling */
-
-.carouselsPast {
+.tournament-20xx .carousels {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.carouselsPast > div {
+/*margin: 7px max(8.3vw, 10px) 5px max(8.3vw, 10px);*/
+.tournament-20xx .carousels > div {
     display: flex;
-    flex-direction: column;
-    margin: 7px max(8.3vw, 10px) 5px max(8.3vw, 10px);
     justify-content: center;
     align-items: center;
 }
 
 /* Carousel fixed dimension to address resizing mid-transition bug: https://stackoverflow.com/questions/17357306/bootstrap-carousel-resizing-image*/
-.carousel.past {
+.tournament-20xx .carousel-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tournament-20xx .carousel {
+    margin: 25px 20px 0 20px;
     display: flex;
     width: 380px;
-    height: 290px;
+    height: 270px;
     justify-content: center;
     border-style: solid;
     border-width: thick;
-    border-color: #EEEEEE;
+    border-color: rgba(238, 238, 238, 0.9);
 }
 
-.carousel-item.past > img {
+.tournament-20xx .carousel-item > img {
     object-fit: fill !important;
     width: 380px !important;
-    height: 290px !important;
+    height: 270px !important;
 }
 
-.carousel-caption.past {
+.tournament-20xx .carousel-caption {
+    font-size: max(0.9rem, 12px);
     left: 0;
     right: 0;
     bottom: 0;
-    padding-bottom: 7px;
+    padding-bottom: 25px;
 }
 
 /* Background opacity hack: https://www.geeksforgeeks.org/set-the-opacity-only-to-background-color-not-on-the-text-in-css/*/
-.carousel-caption.past > p {
-    background: rgba(30, 32, 34, 0.4);
+.tournament-20xx .carousel-caption > p {
+    background: rgba(30, 32, 34, 0.65);
 }
 
-.carousel-label.past {
+.tournament-20xx .carousel-label {
+    width: 380px;
+    text-align: center;
     margin-top: 5px;
-    font-size: max(0.9rem, 12px);
+    font-size: max(0.7rem, 12px);
 }
 
 /* Carousel transition speed: https://stackoverflow.com/questions/48665392/change-bootstrap-carousel-fade-transition */
 /* Above doesn't work, but was basis for solution*/
 
-.carousel.past > .carousel-inner > .carousel-item {
+.tournament-20xx .carousel > .carousel-inner > .carousel-item {
     transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
     transition-property: opacity;
 }
 
 /* Carousel indicator styling */
 /* Max-width based on children: https://stackoverflow.com/questions/27382777/set-parent-width-equal-to-children-total-width-using-only-css*/
-.carousel.past > .carousel-indicators {
-    border-style: solid;
-    border-width: thin;
-    border-color: #EEEEEE;
+.tournament-20xx .carousel > .carousel-indicators {
+    background-color: rgba(30, 32, 34, 0.4);
     max-width: fit-content;
-    padding-top: 4px;
+    padding: 4px 4px 0 4px;
     left: unset;
     right: unset;
 }
 
-.carousel.past > .carousel-indicators > button {
-    border: none;
+.tournament-20xx .carousel > .carousel-indicators > button {
     margin-left: 1px;
     margin-right: 1px;
     margin-bottom: 5px;
     border-radius: 100%;
+    border-style: none inset inset none;
+    border-width: medium;
+    border-color: rgba(30, 32, 34, 0.3);
+    background-color: rgba(238, 238, 238, 0.5);
     padding: 6px 6px;
 }
 
-.carousel.past > .carousel-indicators > .active {
-    background-color: #1b1e21;
+.tournament-20xx .carousel > .carousel-indicators > .active {
+    background-color: rgba(238, 238, 238, 0.9);
 }
 
 /* Tile Styling */
-.tiles {
+@media (min-width: 1320px) {
+    .tournament-20xx .tiles {
+        width: max(21vw, 150px) !important;
+        height: max(10vw, 70px) !important;
+    }
+}
+.tournament-20xx .tiles {
+    align-self: center;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
 }
 
-.tile {
-    display: flex;
-    background-color: #789099;
-    border-style: solid;
+@media (min-width: 1320px) {
+    .tournament-20xx .tile {
+        border-style: none inset inset none !important;
+        border-width: medium !important;
+        border-color: rgba(30, 32, 34, 0.8) !important;
+    }
+}
+.tournament-20xx .tile {
+    background-color: rgba(30, 32, 34, 0.6);
     border-width: thin;
+    border-radius: 5%;
+    border-style: solid;
     border-color: #EEEEEE;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     white-space: nowrap;
-    padding: 1vw;
-    width: 11vw;
+    margin: 8px 8px;
+    min-width: max(9vw, 120px);
 }
 
-.tile-value {
+.tournament-20xx .tile-value {
     color: #fa61c3;
-    font-size: max(2.7rem, 16px);
+    font-size: max(2.2rem, 12px);
 }
 
-.tile-label {
-    font-size: max(1.25rem, 16px);
+.tournament-20xx .tile-label {
+    font-size: max(1rem, 10px);
 }
 
 /* Description/Sponsors Styling */
-.text-information {
+.tournament-20xx h2 {
+    font-size: max(1.5rem, 14px);
+}
+
+.tournament-20xx .text-information {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 10px;
 }
 
-.text-information > div {
+.tournament-20xx .text-information > div {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 35%;
     min-width: 400px;
     height: auto;
     margin: 10px;
+}
+
+@media (min-width: 1320px) {
+    .tournament-20xx .description {
+        margin-right: max(9vw, 75px) !important;
+    }
+
+    .tournament-20xx .sponsors {
+        margin-left: max(9vw, 75px) !important;
+    }
 }

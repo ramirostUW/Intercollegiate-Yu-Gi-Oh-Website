@@ -42,9 +42,9 @@ export const Current = () => {
         <div className="banner">
             <img src={images2022.Banner} alt="Intercollegiate 2022 Banner"/>
         </div>
-        <div className={`carouselsCurrent`}>
-            <CustomCarousel carouselType="venue" genre="current" data={venueCarousel} carouselLabel={venueLabel}/>
-            <CustomCarousel carouselType="personality" genre="current"
+        <div className={`carousels`}>
+            <CustomCarousel carouselType="venue" data={venueCarousel} carouselLabel={venueLabel}/>
+            <CustomCarousel carouselType="personality"
                             data={personalityCarousel} carouselLabel={personalityLabel}/>
         </div>
         <div className="text-information">
