@@ -10139,8 +10139,7 @@ ul {
   }
 
   .navbar-nav {
-    margin-top: 3px;
-    margin-bottom: 3px;
+    margin-top: 0 !important;
   }
 }
 
@@ -10156,21 +10155,21 @@ ul {
 
 @media (pointer: coarse) {
   .navbar-nav > .link.prev-page, .navbar-nav > .link.next-page {
-    width: max(10vw, 120px) !important;
+    width: max(10vw, 110px) !important;
     opacity: .7 !important;
-    padding: max(.8vw, 2px) .1vw !important;
+    padding: max(.8vw, 2px) !important;
     font-size: max(.8vw, 8px) !important;
   }
 
   .navbar-nav > .link.active-page {
-    padding: max(1.3vw, 9px) max(1.3vw, 5px);
-    width: max(15vw, 150px) !important;
+    padding: max(1.3vw, 5px);
+    width: max(14vw, 140px) !important;
     opacity: 1 !important;
     font-size: max(1.4vw, 14px) !important;
   }
 
   .navbar-nav > .link {
-    margin: 0 5px;
+    margin: 5px;
     border: thin solid #eee !important;
     border-radius: 15px !important;
   }
@@ -10201,6 +10200,13 @@ ul {
 @media (max-width: 600px) {
   .navbar-brand {
     margin-right: 0 !important;
+  }
+}
+
+@media (pointer: coarse) and (max-width: 600px) {
+  .navbar-brand {
+    width: 0 !important;
+    height: 0 !important;
   }
 }
 
