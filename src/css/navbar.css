@@ -7,7 +7,7 @@
     font-size: max(1.2vw, 12px);
     text-align: center;
 }
-@media (min-width: 20px) {
+@media (pointer: coarse) {
     .navbar-collapse {
         justify-content: center;
     }
@@ -32,13 +32,14 @@ change color based on active: https://stackoverflow.com/questions/66298345/not-a
 Touchscreen detection: https://ferie.medium.com/detect-a-touch-device-with-only-css-9f8e30fa1134
 */
 
-@media (min-width: 20px) {
+@media (pointer: coarse) {
     #basic-navbar-nav .navbar-nav >.link.prev-page,
     #basic-navbar-nav .navbar-nav >.link.next-page {
+        background-color: #05939A;
         font-size: max(1vw, 10px) !important;
         padding: max(0.9vw, 4px) !important;
         width: max(10vw, 110px) !important;
-        opacity: 70% !important;
+        opacity: 80% !important;
         align-self: center;
     }
 

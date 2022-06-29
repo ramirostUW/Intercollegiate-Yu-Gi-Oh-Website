@@ -140,7 +140,7 @@
     text-align: center;
     white-space: nowrap;
     margin: 8px 8px;
-    min-width: max(9vw, 120px);
+    min-width: max(9vw, 130px);
 }
 
 .tournament-20xx .tile-value {

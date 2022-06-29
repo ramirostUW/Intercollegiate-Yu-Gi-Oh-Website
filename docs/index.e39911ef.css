@@ -9830,7 +9830,7 @@ ul {
   background: #1e2022d9;
   border: thin solid #eee;
   border-radius: 15px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   position: relative;
 }
 
@@ -10014,7 +10014,7 @@ ul {
 .tournament-20xx .tile {
   text-align: center;
   white-space: nowrap;
-  min-width: max(9vw, 120px);
+  min-width: max(9vw, 130px);
   background-color: #1e202299;
   border: thin solid #eee;
   border-radius: 5%;
@@ -10133,7 +10133,7 @@ ul {
   display: flex;
 }
 
-@media (min-width: 20px) {
+@media (pointer: coarse) {
   .navbar-collapse {
     justify-content: center;
   }
@@ -10153,11 +10153,12 @@ ul {
   padding-right: 10px;
 }
 
-@media (min-width: 20px) {
+@media (pointer: coarse) {
   #basic-navbar-nav .navbar-nav > .link.prev-page, #basic-navbar-nav .navbar-nav > .link.next-page {
+    background-color: #05939a;
     align-self: center;
     width: max(10vw, 110px) !important;
-    opacity: .7 !important;
+    opacity: .8 !important;
     padding: max(.9vw, 4px) !important;
     font-size: max(1vw, 10px) !important;
   }
