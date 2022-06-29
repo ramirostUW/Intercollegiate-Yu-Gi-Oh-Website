@@ -25,7 +25,7 @@ export const Tournament2021 = () => {
 	let tiles =  [
 			{
 				"title": "15",
-				"text": "Total teams"
+				"text": "Teams"
 			},
 			{
 				"title": "45",
@@ -33,11 +33,11 @@ export const Tournament2021 = () => {
 			},
 			{
 				"title": "2000",
-				"text": "Viewers on Twitch"
+				"text": "Twitch Viewers"
 			},
 			{
 				"title": "$1050",
-				"text": "In Prize Support"
+				"text": "Prize Support"
 			}
 	]
 
