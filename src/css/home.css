@@ -88,6 +88,7 @@
 @media (min-width: 800px) {
     #home h2 {
         font-size: max(1rem, 14px) !important;
+        padding: 3px 0 3px 0 !important;
     }
 }
 #home h2 {
@@ -96,7 +97,7 @@
     width: 100%;
     top: 0;
     font-size: max(1.2rem, 14px);
-    padding: 3px 0 3px 0;
+    padding: 3px 5px 3px 0;
     margin-bottom: 0;
 }
 

@@ -9842,6 +9842,7 @@ ul {
 
 @media (min-width: 800px) {
   #home h2 {
+    padding: 3px 0 !important;
     font-size: max(1rem, 14px) !important;
   }
 }
@@ -9849,7 +9850,7 @@ ul {
 #home h2 {
   width: 100%;
   margin-bottom: 0;
-  padding: 3px 0;
+  padding: 3px 5px 3px 0;
   font-size: max(1.2rem, 14px);
   text-decoration: underline;
   position: relative;
