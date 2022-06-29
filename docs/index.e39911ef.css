@@ -9992,7 +9992,7 @@ ul {
 
 @media (min-width: 1320px) {
   .tournament-20xx .tiles {
-    width: max(21vw, 150px) !important;
+    width: max(23vw, 150px) !important;
     height: max(10vw, 70px) !important;
   }
 }
@@ -10014,7 +10014,7 @@ ul {
 .tournament-20xx .tile {
   text-align: center;
   white-space: nowrap;
-  min-width: max(9vw, 130px);
+  min-width: max(10vw, 130px);
   background-color: #1e202299;
   border: thin solid #eee;
   border-radius: 5%;
