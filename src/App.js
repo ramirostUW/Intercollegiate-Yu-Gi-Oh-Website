@@ -76,11 +76,11 @@ export function App() {
 
       // right swipe
       if (touchDistance > MIN_TOUCH_DISTANCE) {
-        nextPage = nextPageIndex(nextPage);
+				nextPage = prevPageIndex(nextPage);
 
       // left swipe
       } else if (touchDistance < -MIN_TOUCH_DISTANCE) {
-        nextPage = prevPageIndex(nextPage);
+				nextPage = nextPageIndex(nextPage);
       }
 
       if (nextPage !== currentPage) {

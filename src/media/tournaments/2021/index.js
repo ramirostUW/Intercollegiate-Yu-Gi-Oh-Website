@@ -1,4 +1,4 @@
-import Venue1 from "./2021Venue1.webp"
+import Venue1 from "./2021Venue1.jpg"
 import Venue2 from "./2021Venue2.png"
 
 import Winner1 from "./2021Winner1.jpg"
