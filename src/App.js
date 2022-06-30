@@ -124,6 +124,18 @@ export function App() {
 	 */
 	/* Redirect route
 	<Route path="/" element={ <Navigate to="/home" /> } />
+						<Route path="/home" element={<Home />} />
+          <Route path="/current" element={<Current />} />
+          <Route path="/tournaments" element={<Tournaments />} />
+          <Route path="*"
+                 element={
+                   <main>
+                     <h1>404 Error</h1>
+                     <p>There's nothing here!</p>
+                     <Link to="/">Return to home page</Link>
+                   </main>
+                 }
+          />
 	 */
 	return (
     <div>
@@ -163,18 +175,6 @@ export function App() {
       <div id="current-page" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleMoveEnd}
             style={{transform: `translateX(${touchDistance}px)`}} >
         <Routes>
-					<Route path="/home" element={<Home />} />
-          <Route path="/current" element={<Current />} />
-          <Route path="/tournaments" element={<Tournaments />} />
-          <Route path="*"
-                 element={
-                   <main>
-                     <h1>404 Error</h1>
-                     <p>There's nothing here!</p>
-                     <Link to="/">Return to home page</Link>
-                   </main>
-                 }
-          />
         </Routes>
       </div>
     </div>
