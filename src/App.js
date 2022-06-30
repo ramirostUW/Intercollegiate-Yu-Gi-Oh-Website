@@ -109,7 +109,7 @@ export function App() {
   // Browser/Mobile Differentiation: https://stackoverflow.com/questions/39435395/reactjs-how-to-determine-if-the-application-is-being-viewed-on-mobile-or-deskto
   // Navbar collapse disable: https://stackoverflow.com/questions/42012446/bootstrap-4-disable-navbar-collapse-in-container
 	// Redirect: https://stackabuse.com/redirects-in-react-router/
-	/*
+	/* Corner Logo
 							<BrowserView>
 							<LinkContainer to="/">
 								<Navbar.Brand>
@@ -121,6 +121,9 @@ export function App() {
 								</Navbar.Brand>
 							</LinkContainer>
 						</BrowserView>
+	 */
+	/* Redirect route
+	<Route path="/" element={ <Navigate to="/home" /> } />
 	 */
 	return (
     <div>
@@ -160,7 +163,6 @@ export function App() {
       <div id="current-page" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleMoveEnd}
             style={{transform: `translateX(${touchDistance}px)`}} >
         <Routes>
-					<Route path="/" element={ <Navigate to="/home" /> } />
 					<Route path="/home" element={<Home />} />
           <Route path="/current" element={<Current />} />
           <Route path="/tournaments" element={<Tournaments />} />
