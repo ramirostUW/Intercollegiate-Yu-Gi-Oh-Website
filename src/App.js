@@ -110,32 +110,7 @@ export function App() {
   // Navbar collapse disable: https://stackoverflow.com/questions/42012446/bootstrap-4-disable-navbar-collapse-in-container
 	// Redirect: https://stackabuse.com/redirects-in-react-router/
 	/* Corner Logo
-							<BrowserView>
-							<LinkContainer to="/">
-								<Navbar.Brand>
-									<img
-										src={logo}
-										className="d-inline-block align-top"
-										alt="Intercollegiate Yugioh logo"
-									/>
-								</Navbar.Brand>
-							</LinkContainer>
-						</BrowserView>
-	 */
-	/* Redirect route
-	<Route path="/" element={ <Navigate to="/home" /> } />
-						<Route path="/home" element={<Home />} />
-          <Route path="/current" element={<Current />} />
-          <Route path="/tournaments" element={<Tournaments />} />
-          <Route path="*"
-                 element={
-                   <main>
-                     <h1>404 Error</h1>
-                     <p>There's nothing here!</p>
-                     <Link to="/">Return to home page</Link>
-                   </main>
-                 }
-          />
+
 	 */
 	return (
     <div>
@@ -170,15 +145,26 @@ export function App() {
 								</Nav>
 							</MobileView>
             </Navbar.Collapse>
+						<BrowserView>
+							<LinkContainer to="/">
+								<Navbar.Brand>
+									<img
+										src={logo}
+										className="d-inline-block align-top"
+										alt="Intercollegiate Yugioh logo"
+									/>
+								</Navbar.Brand>
+							</LinkContainer>
+						</BrowserView>
 					</Navbar>
         </div>
       <div id="current-page" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleMoveEnd}
             style={{transform: `translateX(${touchDistance}px)`}} >
         <Routes>
-					<Route path="/" element={<h1>/</h1>} />
-					<Route path="/home" element={<h1>/home</h1>} />
-					<Route path="/current" element={<h1>/current</h1>} />
-					<Route path="/tournaments" element={<h1>/tournaments</h1>} />
+					<Route path="/" element={ <Navigate to="/home" /> } />
+					<Route path="/home" element={<Home />} />
+					<Route path="/current" element={<Current />} />
+					<Route path="/tournaments" element={<Tournaments />} />
 					<Route path="*"
 								 element={
 									 <main>
