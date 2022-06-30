@@ -175,6 +175,19 @@ export function App() {
       <div id="current-page" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleMoveEnd}
             style={{transform: `translateX(${touchDistance}px)`}} >
         <Routes>
+					<Route path="/" element={<h1>/</h1>} />
+					<Route path="/home" element={<h1>/home</h1>} />
+					<Route path="/current" element={<h1>/current</h1>} />
+					<Route path="/tournaments" element={<h1>/tournaments</h1>} />
+					<Route path="*"
+								 element={
+									 <main>
+										 <h1>404 Error</h1>
+										 <p>There's nothing here!</p>
+										 <Link to="/">Return to home page</Link>
+									 </main>
+								 }
+					/>
         </Routes>
       </div>
     </div>
