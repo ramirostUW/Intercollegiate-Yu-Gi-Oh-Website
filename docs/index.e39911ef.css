@@ -9735,6 +9735,472 @@ a.text-dark:focus, a.text-dark:hover {
   }
 }
 
+body {
+  font-family: Helvetica-Black-SemiBold, sans-serif;
+  color: #eee !important;
+  background-color: #1e2022 !important;
+}
+
+h1 {
+  text-align: center;
+  font-family: IBM Plex Mono, monospace;
+  font-size: 6rem !important;
+  font-weight: 600 !important;
+}
+
+h2 {
+  text-align: center;
+  font-family: IBM Plex Mono, monospace;
+  font-size: max(3rem, 20px);
+  font-weight: 600 !important;
+}
+
+ul {
+  margin: 0 auto;
+  display: table;
+}
+
+#home {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+#home:before {
+  content: "";
+  opacity: .6;
+  min-height: 100%;
+  background-image: url("logo.fb9d11c5.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  inset: 0;
+}
+
+#home .title {
+  width: max(95%, 260px);
+  height: auto;
+  position: relative;
+}
+
+@media (min-width: 800px) {
+  #home .cover {
+    width: 750px !important;
+    height: 500px !important;
+    min-height: 500px !important;
+  }
+}
+
+#home .cover {
+  width: 90%;
+  min-width: 280px;
+  min-height: max(48vw, 220px);
+  border: thick solid #eee;
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  position: relative;
+}
+
+#home .cover-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  position: absolute;
+}
+
+@media (min-width: 800px) {
+  #home .cover-description {
+    width: 100% !important;
+    height: 150px !important;
+    border-style: unset !important;
+    border-radius: 0 0 15px 15px !important;
+    margin-bottom: 0 !important;
+    position: absolute !important;
+    bottom: 0 !important;
+  }
+}
+
+#home .cover-description {
+  width: 90%;
+  min-width: 260px;
+  background: #1e2022d9;
+  border: thin solid #eee;
+  border-radius: 15px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+@media (min-width: 800px) {
+  #home h2 {
+    margin-top: 0;
+    font-size: 20px !important;
+  }
+}
+
+#home h2 {
+  width: 90%;
+  min-width: 260px;
+  margin-top: 3px;
+  margin-bottom: 0;
+  padding: 3px 0;
+  font-size: 14px;
+  text-decoration: underline;
+  position: relative;
+  top: 0;
+}
+
+@media (min-width: 800px) {
+  #home .description {
+    font-size: 16px !important;
+  }
+}
+
+#home .description {
+  width: 100%;
+  min-width: 260px;
+  height: 25%;
+  padding: 7px;
+  font-size: 12px;
+  position: relative;
+}
+
+#map {
+  width: min(80%, 800px);
+  height: auto;
+  display: flex;
+  position: relative;
+}
+
+#map > svg {
+  width: auto;
+  height: auto;
+  background: #1e2022d9;
+  padding-top: 1.5vw;
+  padding-left: 1.5vw;
+}
+
+@media (min-width: 800px) {
+  #home .invite-link {
+    font-size: 16px !important;
+  }
+}
+
+#home .invite-link {
+  background: #000;
+  border-radius: 15px 15px 0 0;
+  margin-top: 10px;
+  padding: 5px 9px 0;
+  font-size: 12px;
+  font-weight: 600;
+  position: relative;
+}
+
+@media (min-width: 800px) {
+  #home .invite-QR {
+    width: 18% !important;
+  }
+}
+
+#home .invite-QR {
+  width: max(40vw, 160px);
+  height: auto;
+  position: relative;
+}
+
+.tournament-20xx {
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+}
+
+@media (min-width: 968px) {
+  .tournament-20xx {
+    background-image: url("logoBackground.2305465e.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 570px 460px;
+    padding-top: 40px;
+  }
+}
+
+.tournament-20xx .carousels {
+  flex-wrap: wrap;
+  justify-content: center;
+  display: flex;
+}
+
+.tournament-20xx .carousels > div {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.tournament-20xx .carousel-wrapper {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+@media (min-width: 600px) {
+  .tournament-20xx .carousel, .tournament-20xx .carousel-item > img {
+    width: 380px !important;
+    height: 270px !important;
+  }
+}
+
+.tournament-20xx .carousel {
+  width: 280px;
+  height: 200px;
+  border: thick solid #eeeeeee6;
+  justify-content: center;
+  margin: 25px 20px 0;
+  display: flex;
+}
+
+.tournament-20xx .carousel-item > img {
+  width: 280px;
+  height: 200px;
+  object-fit: fill !important;
+}
+
+@media (min-width: 600px) {
+  .tournament-20xx .carousel-caption {
+    font-size: 13px !important;
+  }
+}
+
+.tournament-20xx .carousel-caption {
+  padding-bottom: 25px;
+  font-size: 12px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.tournament-20xx .carousel-caption > p {
+  background: #1e2022a6;
+}
+
+@media (min-width: 600px) {
+  .tournament-20xx .carousel-label {
+    width: 380px !important;
+    font-size: 13px !important;
+  }
+}
+
+.tournament-20xx .carousel-label {
+  width: 280px;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.tournament-20xx .carousel > .carousel-inner > .carousel-item {
+  transition: opacity .2s ease-in-out;
+}
+
+.tournament-20xx .carousel > .carousel-indicators {
+  max-width: fit-content;
+  left: unset;
+  right: unset;
+  background-color: #1e202266;
+  padding: 4px 4px 0;
+}
+
+@media (min-width: 600px) {
+  .tournament-20xx .carousel > .carousel-indicators > button {
+    padding: 6px !important;
+  }
+}
+
+.tournament-20xx .carousel > .carousel-indicators > button {
+  background-color: #eeeeee80;
+  border: inset #1e20224d;
+  border-style: none inset inset none;
+  border-radius: 100%;
+  margin-bottom: 5px;
+  margin-left: 1px;
+  margin-right: 1px;
+  padding: 4px;
+}
+
+.tournament-20xx .carousel > .carousel-indicators > .active {
+  background-color: #eeeeeee6;
+}
+
+@media (min-width: 1320px) {
+  .tournament-20xx .tiles {
+    width: max(23vw, 150px) !important;
+    height: max(10vw, 70px) !important;
+  }
+}
+
+.tournament-20xx .tiles {
+  flex-flow: wrap;
+  justify-content: center;
+  align-self: center;
+  display: flex;
+}
+
+@media (min-width: 1320px) {
+  .tournament-20xx .tile {
+    border: inset #1e2022cc !important;
+    border-style: none inset inset none !important;
+  }
+}
+
+.tournament-20xx .tile {
+  text-align: center;
+  white-space: nowrap;
+  min-width: max(10vw, 130px);
+  background-color: #1e202299;
+  border: thin solid #eee;
+  border-radius: 5%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 8px;
+  display: flex;
+}
+
+@media (min-width: 600px) {
+  .tournament-20xx .tile-value {
+    font-size: 34px !important;
+  }
+
+  .tournament-20xx .tile-label {
+    font-size: 16px !important;
+  }
+
+  .tournament-20xx h2 {
+    font-size: 20px !important;
+  }
+
+  .tournament-20xx p, .tournament-20xx li {
+    font-size: 16px !important;
+  }
+}
+
+.tournament-20xx .tile-value {
+  color: #fa61c3;
+  font-size: 20px;
+}
+
+.tournament-20xx .tile-label {
+  font-size: 12px;
+}
+
+.tournament-20xx h2 {
+  font-size: 14px;
+}
+
+.tournament-20xx p, .tournament-20xx li {
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .tournament-20xx .text-information {
+    margin-bottom: 15px;
+  }
+}
+
+.tournament-20xx .text-information {
+  flex-flow: wrap;
+  justify-content: center;
+  margin-top: 10px;
+  display: flex;
+}
+
+@media (min-width: 600px) {
+  .tournament-20xx .text-information > div {
+    margin: 10px;
+    width: 35% !important;
+  }
+}
+
+.tournament-20xx .text-information > div {
+  min-width: 260px;
+  height: auto;
+  flex-direction: column;
+  display: flex;
+}
+
+.tournament-20xx .sponsors > ul {
+  padding-right: 25px;
+}
+
+@media (min-width: 1320px) {
+  .tournament-20xx .description {
+    margin-right: max(9vw, 75px) !important;
+  }
+
+  .tournament-20xx .sponsors {
+    margin-left: max(9vw, 75px) !important;
+  }
+}
+
+#tournaments {
+  min-height: 87vh;
+  justify-content: center;
+  display: flex;
+}
+
+.accordion {
+  width: 90%;
+}
+
+.tournament button {
+  color: #eee;
+  min-height: 48px;
+  height: 4.25vw;
+  width: 100%;
+  background-color: #65808a;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  display: flex;
+}
+
+.tournament button:hover {
+  background-color: #789099;
+}
+
+.accordion-button {
+  display: flex;
+}
+
+.accordion-label {
+  margin: auto;
+  font-size: 30px;
+  display: flex;
+}
+
+.accordion-arrow {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: max(8%, 120px);
+  transform: translateX(-50%);
+}
+
+.collapsed > .accordion-arrow {
+  content: url("CaratUp.9e5ac8e5.png") !important;
+  visibility: visible !important;
+}
+
+.accordion-button > .accordion-arrow {
+  content: url("CaratDown.bec1acf1.png");
+  visibility: visible;
+}
+
 .navbar {
   text-align: center;
   background-color: #00adb5;
@@ -9823,400 +10289,28 @@ a.text-dark:focus, a.text-dark:hover {
   height: max(4.35vw, 48px);
 }
 
-body {
-  font-family: Helvetica-Black-SemiBold, sans-serif;
-  color: #eee !important;
-  background-color: #1e2022 !important;
-}
-
-h1 {
-  text-align: center;
-  font-family: IBM Plex Mono, monospace;
-  font-size: 6rem !important;
-  font-weight: 600 !important;
-}
-
-h2 {
-  text-align: center;
-  font-family: IBM Plex Mono, monospace;
-  font-size: max(3rem, 20px);
-  font-weight: 600 !important;
-}
-
-ul {
-  margin: 0 auto;
-  display: table;
-}
-
-#home {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  position: relative;
-}
-
-#home:before {
-  content: "";
-  opacity: .6;
-  min-height: 100%;
-  background-image: url("logo.fb9d11c5.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  position: absolute;
-  inset: 0;
-}
-
-#home .title {
-  width: max(95%, 440px);
-  height: auto;
-  position: relative;
-}
-
-@media (min-width: 800px) {
-  #home .cover {
-    width: 750px !important;
-    height: 500px !important;
-  }
-}
-
-#home .cover {
-  width: 390px;
-  height: 260px;
-  border: thick solid #eee;
-  border-radius: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  position: relative;
-}
-
-#home .cover-image {
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-  position: absolute;
-}
-
-@media (min-width: 800px) {
-  #home .cover-description {
-    width: 100% !important;
-    height: 150px !important;
-    border-style: unset !important;
-    border-radius: 0 0 15px 15px !important;
-    margin-bottom: 0 !important;
-    position: absolute !important;
-    bottom: 0 !important;
-  }
-}
-
-#home .cover-description {
-  width: 390px;
-  height: min-content;
-  background: #1e2022d9;
-  border: thin solid #eee;
-  border-radius: 15px;
-  margin-bottom: 8px;
-  position: relative;
-}
-
-@media (min-width: 800px) {
-  #home h2 {
-    margin-top: 0;
-    font-size: max(1rem, 14px) !important;
-  }
-}
-
-#home h2 {
-  width: 100%;
-  margin-top: 3px;
-  margin-bottom: 0;
-  padding: 3px 0;
-  font-size: max(1.2rem, 14px);
-  text-decoration: underline;
-  position: relative;
-  top: 0;
-}
-
-#home .description {
-  width: 100%;
-  height: 25%;
-  padding: 7px;
-  position: relative;
-}
-
-#map {
-  width: min(80%, 800px);
-  height: auto;
-  display: flex;
-  position: relative;
-}
-
-#map > svg {
-  width: auto;
-  height: auto;
-  background: #1e2022d9;
-  padding-top: 1.5vw;
-  padding-left: 1.5vw;
-}
-
-#home .invite-link {
-  background: #000;
-  border-radius: 15px 15px 0 0;
-  margin-top: 10px;
-  padding: 5px 9px 0;
-  font-size: 1rem;
-  font-weight: 600;
-  position: relative;
-}
-
-#home .invite-QR {
-  width: max(18%, 225px);
-  height: auto;
-  position: relative;
-}
-
-#tournaments {
-  min-height: 87vh;
-  justify-content: center;
-  display: flex;
-}
-
-.accordion {
-  width: 90%;
-}
-
-.tournament button {
-  color: #eee;
-  min-height: 48px;
-  height: 4.25vw;
-  width: 100%;
-  background-color: #65808a;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  display: flex;
-}
-
-.tournament button:hover {
-  background-color: #789099;
-}
-
-.accordion-button {
-  display: flex;
-}
-
-.accordion-label {
-  margin: auto;
-  font-size: 30px;
-  display: flex;
-}
-
-.accordion-arrow {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  left: max(8%, 120px);
-  transform: translateX(-50%);
-}
-
-.collapsed > .accordion-arrow {
-  content: url("CaratUp.9e5ac8e5.png") !important;
-  visibility: visible !important;
-}
-
-.accordion-button > .accordion-arrow {
-  content: url("CaratDown.bec1acf1.png");
-  visibility: visible;
-}
-
-.tournament-20xx {
-  flex-direction: column;
-  justify-content: center;
-  display: flex;
-}
-
-@media (min-width: 968px) {
-  .tournament-20xx {
-    background-image: url("logoBackground.2305465e.png");
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: 570px 460px;
-    padding-top: 40px;
-  }
-}
-
-.tournament-20xx .carousels {
-  flex-wrap: wrap;
-  justify-content: center;
-  display: flex;
-}
-
-.tournament-20xx .carousels > div {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-.tournament-20xx .carousel-wrapper {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-.tournament-20xx .carousel {
-  width: 380px;
-  height: 270px;
-  border: thick solid #eeeeeee6;
-  justify-content: center;
-  margin: 25px 20px 0;
-  display: flex;
-}
-
-.tournament-20xx .carousel-item > img {
-  object-fit: fill !important;
-  width: 380px !important;
-  height: 270px !important;
-}
-
-.tournament-20xx .carousel-caption {
-  padding-bottom: 25px;
-  font-size: max(.9rem, 12px);
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.tournament-20xx .carousel-caption > p {
-  background: #1e2022a6;
-}
-
-.tournament-20xx .carousel-label {
-  width: 380px;
-  text-align: center;
-  margin-top: 5px;
-  font-size: max(.7rem, 12px);
-}
-
-.tournament-20xx .carousel > .carousel-inner > .carousel-item {
-  transition: opacity .2s ease-in-out;
-}
-
-.tournament-20xx .carousel > .carousel-indicators {
-  max-width: fit-content;
-  left: unset;
-  right: unset;
-  background-color: #1e202266;
-  padding: 4px 4px 0;
-}
-
-.tournament-20xx .carousel > .carousel-indicators > button {
-  background-color: #eeeeee80;
-  border: inset #1e20224d;
-  border-style: none inset inset none;
-  border-radius: 100%;
-  margin-bottom: 5px;
-  margin-left: 1px;
-  margin-right: 1px;
-  padding: 6px;
-}
-
-.tournament-20xx .carousel > .carousel-indicators > .active {
-  background-color: #eeeeeee6;
-}
-
-@media (min-width: 1320px) {
-  .tournament-20xx .tiles {
-    width: max(23vw, 150px) !important;
-    height: max(10vw, 70px) !important;
-  }
-}
-
-.tournament-20xx .tiles {
-  flex-flow: wrap;
-  justify-content: center;
-  align-self: center;
-  display: flex;
-}
-
-@media (min-width: 1320px) {
-  .tournament-20xx .tile {
-    border: inset #1e2022cc !important;
-    border-style: none inset inset none !important;
-  }
-}
-
-.tournament-20xx .tile {
-  text-align: center;
-  white-space: nowrap;
-  min-width: max(10vw, 130px);
-  background-color: #1e202299;
-  border: thin solid #eee;
-  border-radius: 5%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 8px;
-  display: flex;
-}
-
-.tournament-20xx .tile-value {
-  color: #fa61c3;
-  font-size: max(2.2rem, 12px);
-}
-
-.tournament-20xx .tile-label {
-  font-size: max(1rem, 10px);
-}
-
-.tournament-20xx h2 {
-  font-size: max(1.5rem, 14px);
-}
-
-.tournament-20xx .text-information {
-  flex-flow: wrap;
-  justify-content: center;
-  margin-top: 10px;
-  display: flex;
-}
-
-.tournament-20xx .text-information > div {
-  width: 35%;
-  min-width: 400px;
-  height: auto;
-  flex-direction: column;
-  margin: 10px;
-  display: flex;
-}
-
-.tournament-20xx .sponsors > ul {
-  padding-right: 25px;
-}
-
-@media (min-width: 1320px) {
-  .tournament-20xx .description {
-    margin-right: max(9vw, 75px) !important;
-  }
-
-  .tournament-20xx .sponsors {
-    margin-left: max(9vw, 75px) !important;
-  }
-}
-
 #current .banner {
   justify-content: center;
   align-items: center;
   display: flex;
 }
 
+@media (min-width: 800px) {
+  #current .banner > img {
+    width: 60vw !important;
+  }
+}
+
 #current .banner > img {
-  width: max(60vw, 410px);
+  width: 80vw;
   height: auto;
   display: flex;
+}
+
+@media (max-width: 600px) {
+  #current .carousels {
+    margin-bottom: 10px;
+  }
 }
 
 #current .carousels {
@@ -10240,7 +10334,7 @@ ul {
   display: flex;
 }
 
-@media (min-width: 1154px) {
+@media (min-width: 600px) {
   #current .venue-carousel {
     width: 550px !important;
     height: 300px !important;
@@ -10259,25 +10353,25 @@ ul {
 }
 
 #current .venue-carousel {
-  width: 400px;
-  height: 250px;
+  width: 280px;
+  height: 180px;
   border-style: solid;
   border-width: thick;
   border-image: linear-gradient(45deg, #453085, #582573) 1;
   justify-content: center;
-  margin-bottom: 45px;
+  margin-bottom: 15px;
   display: flex;
 }
 
 #current .venue-item {
   object-fit: fill;
-  width: 400px;
-  height: 250px;
+  width: 280px;
+  height: 180px;
 }
 
 #current .personality-carousel {
-  width: 400px;
-  height: 500px;
+  width: 280px;
+  height: 300px;
   border-style: solid;
   border-width: thick;
   border-image: linear-gradient(45deg, #453085, #582573) 1;
@@ -10287,8 +10381,8 @@ ul {
 
 #current .personality-item {
   object-fit: fill;
-  width: 400px;
-  height: 500px;
+  width: 280px;
+  height: 300px;
 }
 
 #current .carousel-caption {
@@ -10308,10 +10402,16 @@ ul {
   }
 }
 
+@media (min-width: 600px) {
+  #current .carousel-label {
+    font-size: 20px !important;
+  }
+}
+
 #current .carousel-label {
   text-align: center;
   margin-bottom: 5px;
-  font-size: max(1.4rem, 16px);
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -10327,6 +10427,12 @@ ul {
   padding: 6px 4px 0;
 }
 
+@media (min-width: 600px) {
+  #current .carousel > .carousel-indicators > button {
+    padding: 6px !important;
+  }
+}
+
 #current .carousel > .carousel-indicators > button {
   background-color: #98875c;
   border: inset #1e20224d;
@@ -10335,14 +10441,14 @@ ul {
   margin-bottom: 5px;
   margin-left: 1px;
   margin-right: 1px;
-  padding: 6px;
+  padding: 4px;
 }
 
 #current .carousel > .carousel-indicators > .active {
   background-color: #592573;
 }
 
-@media (min-width: 1154px) {
+@media (min-width: 600px) {
   #current .trailer {
     width: 550px !important;
     height: 300px !important;
@@ -10350,14 +10456,14 @@ ul {
 }
 
 #current .trailer {
-  width: 400px;
-  height: 250px;
+  width: 280px;
+  height: 200px;
   border-style: solid;
   border-width: thick;
   border-image: linear-gradient(45deg, #453085, #582573) 1;
 }
 
-@media (min-width: 874px) {
+@media (min-width: 800px) {
   #current .text-information {
     background-image: url("UWLogo.bda1725c.png");
     background-position: center;
@@ -10368,25 +10474,55 @@ ul {
   }
 }
 
+@media (max-width: 600px) {
+  #current .text-information {
+    margin-bottom: 15px;
+  }
+}
+
 #current .text-information {
   flex-flow: wrap;
   justify-content: center;
   display: flex;
 }
 
+@media (min-width: 600px) {
+  #current .text-information > div {
+    text-align: left !important;
+    width: 40% !important;
+    margin: 10px !important;
+  }
+}
+
 #current .text-information > div {
-  width: 40%;
-  min-width: 400px;
+  text-align: center;
+  width: 85%;
+  min-width: 260px;
   height: auto;
   background: #1e2022de;
   border-radius: 15px;
   flex-direction: column;
-  margin: 10px;
   display: flex;
 }
 
+@media (min-width: 600px) {
+  #current h2 {
+    font-size: 23px !important;
+  }
+}
+
 #current h2 {
-  font-size: max(1.8rem, 14px);
+  font-size: 16px;
+}
+
+@media (min-width: 600px) {
+  #current p, #current li {
+    font-size: 16px !important;
+  }
+}
+
+#current p, #current li {
+  font-size: 12px;
 }
 
 #current .sponsors > ul {
