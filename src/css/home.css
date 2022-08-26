@@ -137,7 +137,7 @@
 }
 
 #map > svg > g {
-    transform: translateX(-25%);
+    /*transform: translateX(-25%);*/
 }
 
 /* Discord Invite Link */
