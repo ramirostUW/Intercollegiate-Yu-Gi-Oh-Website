@@ -5,13 +5,23 @@
     align-items: center;
 }
 
+@media (min-width: 800px ) {
+    #current .banner > img {
+        width: 60vw !important;
+    }
+}
 #current .banner > img {
     display: flex;
-    width: max(60vw, 410px);
+    width: 80vw;
     height: auto;
 }
 
 /* Carousel styling */
+@media (max-width: 600px) {
+    #current .carousels {
+        margin-bottom: 10px;
+    }
+}
 #current .carousels {
     display: flex;
     flex-wrap: wrap;
@@ -44,7 +54,7 @@
 /* Phone-only custom css: https://www.smashingmagazine.com/2010/07/how-to-use-css3-media-queries-to-create-a-mobile-version-of-your-website/*/
 
 /* Border Gradient: https://www.digitalocean.com/community/tutorials/css-gradient-borders-pure-css */
-@media (min-width: 1154px) {
+@media (min-width: 600px) {
     #current .venue-carousel {
         width: 550px !important;
         height: 300px !important;
@@ -68,25 +78,25 @@
 }
 #current .venue-carousel {
     display: flex;
-    width: 400px;
-    height: 250px;
+    width: 280px;
+    height: 180px;
     justify-content: center;
     border-style: solid;
     border-width: thick;
     border-image: linear-gradient(45deg, rgb(69,48,133), rgb(88,37,115)) 1;
-    margin-bottom: 45px;
+    margin-bottom: 15px;
 }
 
 #current .venue-item {
     object-fit: fill;
-    width: 400px;
-    height: 250px;
+    width: 280px;
+    height: 180px;
 }
 
 #current .personality-carousel {
     display: flex;
-    width: 400px;
-    height: 500px;
+    width: 280px;
+    height: 300px;
     justify-content: center;
     border-style: solid;
     border-width: thick;
@@ -95,8 +105,8 @@
 
 #current .personality-item {
     object-fit: fill;
-    width: 400px;
-    height: 500px;
+    width: 280px;
+    height: 300px;
 }
 
 #current .carousel-caption {
@@ -116,9 +126,15 @@
         margin-top: 10px;
     }
 }
+
+@media (min-width: 600px) {
+    #current .carousel-label {
+        font-size: 20px !important;
+    }
+}
 #current .carousel-label {
     margin-bottom: 5px;
-    font-size: max(1.4rem, 16px);
+    font-size: 14px;
     text-align: center;
     font-weight: 600;
 }
@@ -141,7 +157,11 @@
     right: unset;
 }
 
-
+@media (min-width: 600px) {
+    #current .carousel > .carousel-indicators  > button{
+        padding: 6px 6px !important;
+    }
+}
 #current .carousel > .carousel-indicators > button {
     background-color: #98875c;
     margin-left: 1px;
@@ -151,7 +171,7 @@
     border-width: medium;
     border-color: rgba(30, 32, 34, 0.3);
     border-radius: 100%;
-    padding: 6px 6px;
+    padding: 4px 4px;
 }
 
 #current .carousel > .carousel-indicators > .active {
@@ -159,21 +179,21 @@
 }
 
 /* Youtube embed styling */
-@media (min-width: 1154px) {
+@media (min-width: 600px) {
     #current .trailer {
         width: 550px !important;
         height: 300px !important;
     }
 }
 #current .trailer {
-    width: 400px;
-    height: 250px;
+    width: 280px;
+    height: 200px;
     border-style: solid;
     border-width: thick;
     border-image: linear-gradient(45deg, rgb(69,48,133), rgb(88,37,115)) 1;
 }
 /* Description/Sponsors Styling */
-@media (min-width: 874px) {
+@media (min-width: 800px) {
     #current .text-information {
         background-image: url("../media/tournaments/2022/UWLogo.png");
         background-position: center;
@@ -183,6 +203,12 @@
         padding-bottom: 40px;
     }
 }
+
+@media (max-width: 600px) {
+    #current .text-information {
+        margin-bottom: 15px;
+    }
+}
 #current .text-information {
     display: flex;
     flex-direction: row;
@@ -190,19 +216,48 @@
     justify-content: center;
 }
 
+@media (min-width: 600px) {
+    #current .text-information > div {
+        text-align: left !important;
+        width: 40% !important;
+        margin: 10px !important;
+    }
+}
 #current .text-information > div {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    width: 40%;
-    min-width: 400px;
+    width: 85%;
+    min-width: 260px;
     height: auto;
-    margin: 10px;
     background: rgba(30, 32, 34, 0.87);
     border-radius: 15px;
 }
-#current h2 {
-    font-size: max(1.8rem, 14px);
+
+@media (min-width: 600px) {
+    #current h2 {
+        font-size: 23px !important;
+    }
 }
+#current h2 {
+    font-size: 16px;
+}
+
+@media (min-width: 600px) {
+    #current p {
+        font-size: 16px !important;
+    }
+    #current li {
+        font-size: 16px !important;
+    }
+}
+#current p {
+    font-size: 12px;
+}
+#current li {
+    font-size: 12px;
+}
+
 #current .sponsors > ul {
     padding-right: 25px;
 }

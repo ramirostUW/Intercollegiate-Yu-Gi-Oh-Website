@@ -35,11 +35,23 @@
     justify-content: center;
     align-items: center;
 }
+
+@media (min-width: 600px) {
+    .tournament-20xx .carousel {
+        width: 380px !important;
+        height: 270px !important;
+    }
+
+    .tournament-20xx .carousel-item > img {
+        width: 380px !important;
+        height: 270px !important;
+    }
+}
 .tournament-20xx .carousel {
     margin: 25px 20px 0 20px;
     display: flex;
-    width: 380px;
-    height: 270px;
+    width: 280px;
+    height: 200px;
     justify-content: center;
     border-style: solid;
     border-width: thick;
@@ -48,12 +60,18 @@
 
 .tournament-20xx .carousel-item > img {
     object-fit: fill !important;
-    width: 380px !important;
-    height: 270px !important;
+    width: 280px;
+    height: 200px;
+}
+
+@media (min-width: 600px) {
+    .tournament-20xx .carousel-caption {
+        font-size: 13px !important;
+    }
 }
 
 .tournament-20xx .carousel-caption {
-    font-size: max(0.9rem, 12px);
+    font-size: 12px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -65,11 +83,18 @@
     background: rgba(30, 32, 34, 0.65);
 }
 
+@media (min-width: 600px) {
+    .tournament-20xx .carousel-label {
+        width: 380px !important;
+        font-size: 13px !important;
+    }
+}
+
 .tournament-20xx .carousel-label {
-    width: 380px;
+    width: 280px;
     text-align: center;
     margin-top: 5px;
-    font-size: max(0.7rem, 12px);
+    font-size: 12px;
 }
 
 /* Carousel transition speed: https://stackoverflow.com/questions/48665392/change-bootstrap-carousel-fade-transition */
@@ -90,6 +115,11 @@
     right: unset;
 }
 
+@media (min-width: 600px) {
+    .tournament-20xx .carousel > .carousel-indicators > button {
+        padding: 6px 6px !important;
+    }
+}
 .tournament-20xx .carousel > .carousel-indicators > button {
     margin-left: 1px;
     margin-right: 1px;
@@ -99,7 +129,7 @@
     border-width: medium;
     border-color: rgba(30, 32, 34, 0.3);
     background-color: rgba(238, 238, 238, 0.5);
-    padding: 6px 6px;
+    padding: 4px 4px;
 }
 
 .tournament-20xx .carousel > .carousel-indicators > .active {
@@ -143,20 +173,55 @@
     min-width: max(10vw, 130px);
 }
 
+@media (min-width: 600px) {
+    .tournament-20xx .tile-value {
+        font-size: 34px !important;
+    }
+
+    .tournament-20xx .tile-label {
+        font-size: 16px !important;
+    }
+
+    .tournament-20xx h2 {
+        font-size: 20px !important;
+    }
+
+    .tournament-20xx p {
+        font-size: 16px !important;
+    }
+
+    .tournament-20xx li {
+        font-size: 16px !important;
+    }
+}
+
 .tournament-20xx .tile-value {
     color: #fa61c3;
-    font-size: max(2.2rem, 12px);
+    font-size: 20px;
 }
 
 .tournament-20xx .tile-label {
-    font-size: max(1rem, 10px);
+    font-size: 12px;
 }
 
 /* Description/Sponsors Styling */
 .tournament-20xx h2 {
-    font-size: max(1.5rem, 14px);
+    font-size: 14px;
 }
 
+.tournament-20xx p {
+    font-size: 12px;
+}
+
+.tournament-20xx li {
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    .tournament-20xx .text-information {
+        margin-bottom: 15px;
+    }
+}
 .tournament-20xx .text-information {
     display: flex;
     flex-direction: row;
@@ -165,13 +230,17 @@
     margin-top: 10px;
 }
 
+@media (min-width: 600px) {
+    .tournament-20xx .text-information > div {
+        width: 35% !important;
+        margin: 10px;
+    }
+}
 .tournament-20xx .text-information > div {
     display: flex;
     flex-direction: column;
-    width: 35%;
-    min-width: 400px;
+    min-width: 260px;
     height: auto;
-    margin: 10px;
 }
 
 .tournament-20xx .sponsors > ul {

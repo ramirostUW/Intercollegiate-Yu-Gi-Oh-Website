@@ -27,7 +27,7 @@
 
 #home .title {
     position: relative;
-    width: max(95%, 440px);
+    width: max(95%, 260px);
     height: auto;
 }
 
@@ -36,14 +36,16 @@
     #home .cover {
         width: 750px !important;
         height: 500px !important;
+        min-height: 500px !important;
     }
 }
 
 #home .cover {
     display: flex;
     position: relative;
-    width: 390px;
-    height: 260px;
+    width: 90%;
+    min-width: 280px;
+    min-height: max(48vw, 220px);
     border-radius: 15px;
     border-style: solid;
     border-width: thick;
@@ -73,8 +75,8 @@
     }
 }
 #home .cover-description {
-    width: 390px;
-    height: min-content;
+    width: 90%;
+    min-width: 260px;
     position: relative;
     background: rgba(30, 32, 34, 0.85);
     margin-bottom: 8px;
@@ -87,25 +89,33 @@
 /* What is Intercollegiate Yu-Gi-Oh?*/
 @media (min-width: 800px) {
     #home h2 {
-        font-size: max(1rem, 14px) !important;
+        font-size: 20px !important;
         margin-top: 0;
     }
 }
 #home h2 {
     position: relative;
     text-decoration: underline;
-    width: 100%;
+    width: 90%;
+    min-width: 260px;
     top: 0;
-    font-size: max(1.2rem, 14px);
+    font-size: 14px;
     padding: 3px 0 3px 0;
     margin-top: 3px;
     margin-bottom: 0;
 }
 
 /* Description for "What is Intercollegiate Yu-Gi-Oh?" */
+@media (min-width: 800px) {
+    #home .description {
+        font-size: 16px !important;
+    }
+}
 #home .description {
     position: relative;
+    font-size: 12px;
     width: 100%;
+    min-width: 260px;
     height: 25%;
     padding: 7px;
 }
@@ -131,10 +141,15 @@
 }
 
 /* Discord Invite Link */
+@media (min-width: 800px) {
+    #home .invite-link {
+        font-size: 16px !important;
+    }
+}
 #home .invite-link {
     position: relative;
     background: black;
-    font-size: 1rem;
+    font-size: 12px;
     font-weight: 600;
     padding: 5px 9px 0 9px;
     margin-top: 10px;
@@ -143,8 +158,13 @@
 }
 
 /* Discord Invite QRCode */
+@media (min-width: 800px) {
+    #home .invite-QR {
+        width: 18% !important;
+    }
+}
 #home .invite-QR {
     position: relative;
-    width: max(18%, 225px);
+    width: max(40vw, 160px);
     height: auto;
 }
