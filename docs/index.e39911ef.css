@@ -10305,7 +10305,7 @@ ul {
   padding-right: 10px;
 }
 
-@media (hover: none) and (pointer: coarse) {
+@media (any-hover: none) and (pointer: coarse) {
   #basic-navbar-nav .navbar-nav > .link.prev-page, #basic-navbar-nav .navbar-nav > .link.next-page {
     background-color: #05939a;
     align-self: center;
