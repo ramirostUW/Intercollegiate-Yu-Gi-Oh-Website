@@ -10285,7 +10285,7 @@ ul {
   display: flex;
 }
 
-@media (pointer: coarse) {
+@media (pointer: coarse) and (max-width: 500px) {
   .navbar-collapse {
     justify-content: center;
   }
@@ -10296,7 +10296,7 @@ ul {
 }
 
 .navbar-nav {
-  margin-top: 15px;
+  margin-top: max(1vw, 15px);
 }
 
 #current-page {
@@ -10305,7 +10305,7 @@ ul {
   padding-right: 10px;
 }
 
-@media (any-hover: none) and (pointer: coarse) {
+@media (pointer: coarse) and (max-width: 500px) {
   #basic-navbar-nav .navbar-nav > .link.prev-page, #basic-navbar-nav .navbar-nav > .link.next-page {
     background-color: #05939a;
     align-self: center;
