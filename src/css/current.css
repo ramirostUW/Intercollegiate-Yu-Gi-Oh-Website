@@ -12,7 +12,7 @@
 }
 #current .banner > img {
     display: flex;
-    width: 80vw;
+    width: 90vw;
     height: auto;
 }
 
@@ -54,6 +54,52 @@
 /* Phone-only custom css: https://www.smashingmagazine.com/2010/07/how-to-use-css3-media-queries-to-create-a-mobile-version-of-your-website/*/
 
 /* Border Gradient: https://www.digitalocean.com/community/tutorials/css-gradient-borders-pure-css */
+@media (max-width: 340px) {
+    #current .venue-carousel {
+        width: 280px !important;
+        height: 180px !important;
+        margin-bottom: 15px !important;
+    }
+
+    #current .venue-item {
+        width: 280px !important;
+        height: 180px !important;
+    }
+
+    #current .personality-carousel {
+        width: 280px !important;
+        height: 300px !important;
+    }
+
+    #current .personality-item {
+        width: 280px !important;
+        height: 300px !important;
+    }
+}
+
+@media (min-width: 340px) and (max-width: 470px) {
+    #current .venue-carousel {
+        width: 330px !important;
+        height: 210px !important;
+        margin-bottom: 15px !important;
+    }
+
+    #current .venue-item {
+        width: 330px !important;
+        height: 210px !important;
+    }
+
+    #current .personality-carousel {
+        width: 330px !important;
+        height: 350px !important;
+    }
+
+    #current .personality-item {
+        width: 330px !important;
+        height: 350px !important;
+    }
+}
+
 @media (min-width: 600px) {
     #current .venue-carousel {
         width: 550px !important;
@@ -76,27 +122,30 @@
         height: 600px !important;
     }
 }
+
+
+
 #current .venue-carousel {
     display: flex;
-    width: 280px;
-    height: 180px;
+    width: 440px;
+    height: 330px;
     justify-content: center;
     border-style: solid;
     border-width: thick;
     border-image: linear-gradient(45deg, rgb(69,48,133), rgb(88,37,115)) 1;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 #current .venue-item {
     object-fit: fill;
-    width: 280px;
-    height: 180px;
+    width: 440px;
+    height: 330px;
 }
 
 #current .personality-carousel {
     display: flex;
-    width: 280px;
-    height: 300px;
+    width: 440px;
+    height: 460px;
     justify-content: center;
     border-style: solid;
     border-width: thick;
@@ -105,8 +154,8 @@
 
 #current .personality-item {
     object-fit: fill;
-    width: 280px;
-    height: 300px;
+    width: 440px;
+    height: 460px;
 }
 
 #current .carousel-caption {
@@ -179,6 +228,20 @@
 }
 
 /* Youtube embed styling */
+@media (max-width: 340px) {
+    #current .trailer {
+        width: 280px !important;
+        height: 180px !important;
+    }
+}
+
+@media (min-width: 340px) and (max-width: 470px) {
+    #current .trailer {
+        width: 330px !important;
+        height: 220px !important;
+    }
+}
+
 @media (min-width: 600px) {
     #current .trailer {
         width: 550px !important;
@@ -186,8 +249,8 @@
     }
 }
 #current .trailer {
-    width: 280px;
-    height: 200px;
+    width: 440px;
+    height: 310px;
     border-style: solid;
     border-width: thick;
     border-image: linear-gradient(45deg, rgb(69,48,133), rgb(88,37,115)) 1;
@@ -216,34 +279,44 @@
     justify-content: center;
 }
 
+@media (max-width: 340px) {
+    #current .text-information > div {
+        min-width: 260px !important;
+    }
+
+    #current h2 {
+        font-size: 16px !important;
+    }
+
+    #current p {
+        font-size: 12px !important;
+    }
+    #current li {
+        font-size: 12px !important;
+    }
+}
+
+@media (min-width: 340px) and (max-width: 470px) {
+    #current .text-information > div {
+        min-width: 330px !important;
+    }
+
+    #current h2 {
+        font-size: 18px !important;
+    }
+}
+
 @media (min-width: 600px) {
     #current .text-information > div {
         text-align: left !important;
         width: 40% !important;
         margin: 10px !important;
     }
-}
-#current .text-information > div {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    width: 85%;
-    min-width: 260px;
-    height: auto;
-    background: rgba(30, 32, 34, 0.87);
-    border-radius: 15px;
-}
 
-@media (min-width: 600px) {
     #current h2 {
         font-size: 23px !important;
     }
-}
-#current h2 {
-    font-size: 16px;
-}
 
-@media (min-width: 600px) {
     #current p {
         font-size: 16px !important;
     }
@@ -251,11 +324,26 @@
         font-size: 16px !important;
     }
 }
+#current .text-information > div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    min-width: 440px;
+    height: auto;
+    background: rgba(30, 32, 34, 0.87);
+    border-radius: 15px;
+}
+
+#current h2 {
+    font-size: 20px;
+}
+
 #current p {
-    font-size: 12px;
+    font-size: 14px;
 }
 #current li {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 #current .sponsors > ul {

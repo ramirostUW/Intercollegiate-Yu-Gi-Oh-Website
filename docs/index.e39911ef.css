@@ -9787,11 +9787,18 @@ ul {
   position: relative;
 }
 
-@media (min-width: 800px) {
+@media (max-width: 320px) {
   #home .cover {
-    width: 750px !important;
-    height: 500px !important;
-    min-height: 500px !important;
+    width: 280px !important;
+    height: 220px !important;
+  }
+}
+
+@media (min-width: 820px) {
+  #home .cover {
+    width: 800px !important;
+    height: 600px !important;
+    min-height: 600px !important;
   }
 }
 
@@ -9827,8 +9834,7 @@ ul {
 }
 
 #home .cover-description {
-  width: 90%;
-  min-width: 260px;
+  min-width: max(90%, 260px);
   background: #1e2022d9;
   border: thin solid #eee;
   border-radius: 15px;
@@ -9948,6 +9954,20 @@ ul {
   display: flex;
 }
 
+@media (max-width: 340px) {
+  .tournament-20xx .carousel, .tournament-20xx .carousel-item > img {
+    width: 280px !important;
+    height: 200px !important;
+  }
+}
+
+@media (min-width: 340px) and (max-width: 470px) {
+  .tournament-20xx .carousel, .tournament-20xx .carousel-item > img {
+    width: 330px !important;
+    height: 270px !important;
+  }
+}
+
 @media (min-width: 600px) {
   .tournament-20xx .carousel, .tournament-20xx .carousel-item > img {
     width: 380px !important;
@@ -9956,8 +9976,8 @@ ul {
 }
 
 .tournament-20xx .carousel {
-  width: 280px;
-  height: 200px;
+  width: 440px;
+  height: 335px;
   border: thick solid #eeeeeee6;
   justify-content: center;
   margin: 25px 20px 0;
@@ -9965,8 +9985,8 @@ ul {
 }
 
 .tournament-20xx .carousel-item > img {
-  width: 280px;
-  height: 200px;
+  width: 440px;
+  height: 335px;
   object-fit: fill !important;
 }
 
@@ -9988,6 +10008,18 @@ ul {
   background: #1e2022a6;
 }
 
+@media (max-width: 340px) {
+  .tournament-20xx .carousel-label {
+    width: 280px !important;
+  }
+}
+
+@media (min-width: 340px) and (max-width: 470px) {
+  .tournament-20xx .carousel-label {
+    width: 330px !important;
+  }
+}
+
 @media (min-width: 600px) {
   .tournament-20xx .carousel-label {
     width: 380px !important;
@@ -9996,7 +10028,7 @@ ul {
 }
 
 .tournament-20xx .carousel-label {
-  width: 280px;
+  width: 440px;
   text-align: center;
   margin-top: 5px;
   font-size: 12px;
@@ -10070,6 +10102,42 @@ ul {
   display: flex;
 }
 
+@media (max-width: 340px) {
+  .tournament-20xx .tile-value {
+    font-size: 20px !important;
+  }
+
+  .tournament-20xx .tile-label {
+    font-size: 12px !important;
+  }
+
+  .tournament-20xx h2 {
+    font-size: 14px !important;
+  }
+
+  .tournament-20xx p, .tournament-20xx li {
+    font-size: 12px !important;
+  }
+}
+
+@media (min-width: 340px) and (max-width: 470px) {
+  .tournament-20xx .tile-value {
+    font-size: 27px !important;
+  }
+
+  .tournament-20xx .tile-label {
+    font-size: 14px !important;
+  }
+
+  .tournament-20xx h2 {
+    font-size: 17px !important;
+  }
+
+  .tournament-20xx p, .tournament-20xx li {
+    font-size: 14px !important;
+  }
+}
+
 @media (min-width: 600px) {
   .tournament-20xx .tile-value {
     font-size: 34px !important;
@@ -10090,19 +10158,19 @@ ul {
 
 .tournament-20xx .tile-value {
   color: #fa61c3;
-  font-size: 20px;
+  font-size: 34px;
 }
 
 .tournament-20xx .tile-label {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .tournament-20xx h2 {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .tournament-20xx p, .tournament-20xx li {
-  font-size: 12px;
+  font-size: 15px;
 }
 
 @media (max-width: 600px) {
@@ -10125,8 +10193,14 @@ ul {
   }
 }
 
+@media (max-width: 340px) {
+  .tournament-20xx .text-information > div {
+    min-width: 260px !important;
+  }
+}
+
 .tournament-20xx .text-information > div {
-  min-width: 260px;
+  min-width: 330px;
   height: auto;
   flex-direction: column;
   display: flex;
@@ -10226,7 +10300,7 @@ ul {
 }
 
 #current-page {
-  padding-top: max(5.8vw, 84px);
+  padding-top: max(5.8vw, 66px);
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -10302,7 +10376,7 @@ ul {
 }
 
 #current .banner > img {
-  width: 80vw;
+  width: 90vw;
   height: auto;
   display: flex;
 }
@@ -10334,6 +10408,42 @@ ul {
   display: flex;
 }
 
+@media (max-width: 340px) {
+  #current .venue-carousel {
+    width: 280px !important;
+    height: 180px !important;
+    margin-bottom: 15px !important;
+  }
+
+  #current .venue-item {
+    width: 280px !important;
+    height: 180px !important;
+  }
+
+  #current .personality-carousel, #current .personality-item {
+    width: 280px !important;
+    height: 300px !important;
+  }
+}
+
+@media (min-width: 340px) and (max-width: 470px) {
+  #current .venue-carousel {
+    width: 330px !important;
+    height: 210px !important;
+    margin-bottom: 15px !important;
+  }
+
+  #current .venue-item {
+    width: 330px !important;
+    height: 210px !important;
+  }
+
+  #current .personality-carousel, #current .personality-item {
+    width: 330px !important;
+    height: 350px !important;
+  }
+}
+
 @media (min-width: 600px) {
   #current .venue-carousel {
     width: 550px !important;
@@ -10353,25 +10463,25 @@ ul {
 }
 
 #current .venue-carousel {
-  width: 280px;
-  height: 180px;
+  width: 440px;
+  height: 330px;
   border-style: solid;
   border-width: thick;
   border-image: linear-gradient(45deg, #453085, #582573) 1;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   display: flex;
 }
 
 #current .venue-item {
   object-fit: fill;
-  width: 280px;
-  height: 180px;
+  width: 440px;
+  height: 330px;
 }
 
 #current .personality-carousel {
-  width: 280px;
-  height: 300px;
+  width: 440px;
+  height: 460px;
   border-style: solid;
   border-width: thick;
   border-image: linear-gradient(45deg, #453085, #582573) 1;
@@ -10381,8 +10491,8 @@ ul {
 
 #current .personality-item {
   object-fit: fill;
-  width: 280px;
-  height: 300px;
+  width: 440px;
+  height: 460px;
 }
 
 #current .carousel-caption {
@@ -10448,6 +10558,20 @@ ul {
   background-color: #592573;
 }
 
+@media (max-width: 340px) {
+  #current .trailer {
+    width: 280px !important;
+    height: 180px !important;
+  }
+}
+
+@media (min-width: 340px) and (max-width: 470px) {
+  #current .trailer {
+    width: 330px !important;
+    height: 220px !important;
+  }
+}
+
 @media (min-width: 600px) {
   #current .trailer {
     width: 550px !important;
@@ -10456,8 +10580,8 @@ ul {
 }
 
 #current .trailer {
-  width: 280px;
-  height: 200px;
+  width: 440px;
+  height: 310px;
   border-style: solid;
   border-width: thick;
   border-image: linear-gradient(45deg, #453085, #582573) 1;
@@ -10486,18 +10610,50 @@ ul {
   display: flex;
 }
 
+@media (max-width: 340px) {
+  #current .text-information > div {
+    min-width: 260px !important;
+  }
+
+  #current h2 {
+    font-size: 16px !important;
+  }
+
+  #current p, #current li {
+    font-size: 12px !important;
+  }
+}
+
+@media (min-width: 340px) and (max-width: 470px) {
+  #current .text-information > div {
+    min-width: 330px !important;
+  }
+
+  #current h2 {
+    font-size: 18px !important;
+  }
+}
+
 @media (min-width: 600px) {
   #current .text-information > div {
     text-align: left !important;
     width: 40% !important;
     margin: 10px !important;
   }
+
+  #current h2 {
+    font-size: 23px !important;
+  }
+
+  #current p, #current li {
+    font-size: 16px !important;
+  }
 }
 
 #current .text-information > div {
   text-align: center;
   width: 85%;
-  min-width: 260px;
+  min-width: 440px;
   height: auto;
   background: #1e2022de;
   border-radius: 15px;
@@ -10505,24 +10661,12 @@ ul {
   display: flex;
 }
 
-@media (min-width: 600px) {
-  #current h2 {
-    font-size: 23px !important;
-  }
-}
-
 #current h2 {
-  font-size: 16px;
-}
-
-@media (min-width: 600px) {
-  #current p, #current li {
-    font-size: 16px !important;
-  }
+  font-size: 20px;
 }
 
 #current p, #current li {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 #current .sponsors > ul {

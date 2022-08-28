@@ -32,11 +32,18 @@
 }
 
 /* Facilitate positioning of text over cover image*/
-@media (min-width: 800px ) {
+@media (max-width: 320px) {
     #home .cover {
-        width: 750px !important;
-        height: 500px !important;
-        min-height: 500px !important;
+        width: 280px !important;
+        height: 220px !important;
+    }
+}
+
+@media (min-width: 820px) {
+    #home .cover {
+        width: 800px !important;
+        height: 600px !important;
+        min-height: 600px !important;
     }
 }
 
@@ -75,8 +82,7 @@
     }
 }
 #home .cover-description {
-    width: 90%;
-    min-width: 260px;
+    min-width: max(90%, 260px);
     position: relative;
     background: rgba(30, 32, 34, 0.85);
     margin-bottom: 8px;
