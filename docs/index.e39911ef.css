@@ -10295,8 +10295,14 @@ ul {
   }
 }
 
+@media (min-width: 1500px) {
+  .navbar-nav {
+    margin-top: 1.2vw !important;
+  }
+}
+
 .navbar-nav {
-  margin-top: max(1vw, 15px);
+  margin-top: 15px;
 }
 
 #current-page {
