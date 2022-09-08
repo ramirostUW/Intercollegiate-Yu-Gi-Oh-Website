@@ -9735,6 +9735,100 @@ a.text-dark:focus, a.text-dark:hover {
   }
 }
 
+.navbar {
+  text-align: center;
+  background-color: #00adb5;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  font-size: max(1.2vw, 12px);
+  display: flex;
+}
+
+@media (pointer: coarse) and (max-width: 500px) {
+  .navbar-collapse {
+    justify-content: center;
+  }
+
+  .navbar-nav {
+    margin-top: 0 !important;
+  }
+}
+
+@media (min-width: 1500px) {
+  .navbar-nav {
+    margin-top: 1.2vw !important;
+  }
+}
+
+.navbar-nav {
+  margin-top: 15px;
+}
+
+#current-page {
+  padding-top: max(5.8vw, 66px);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media (pointer: coarse) and (max-width: 500px) {
+  #basic-navbar-nav .navbar-nav > .link.prev-page, #basic-navbar-nav .navbar-nav > .link.next-page {
+    background-color: #05939a;
+    align-self: center;
+    width: max(10vw, 110px) !important;
+    opacity: .8 !important;
+    padding: max(.9vw, 4px) !important;
+    font-size: max(1vw, 10px) !important;
+  }
+
+  #basic-navbar-nav .navbar-nav > .link.active-page {
+    align-self: center;
+    margin: 5px;
+    padding: max(1.3vw, 5px);
+    width: max(14vw, 140px) !important;
+    opacity: 1 !important;
+    border: thin solid #eee !important;
+    font-size: max(1.4vw, 14px) !important;
+  }
+
+  #basic-navbar-nav .navbar-nav > .link {
+    border-radius: 15px !important;
+  }
+}
+
+.navbar-nav > .link.active-page {
+  color: #eee;
+  background-color: #1e2022 !important;
+}
+
+.navbar-nav > .link {
+  color: #fff;
+  width: max(13vw, 120px);
+  border: thin solid #05939af2;
+  border-bottom-style: none;
+  border-radius: 15px 15px 0 0;
+  padding: 15px .5vw max(1.3vw, 9px);
+  font-family: Helvetica-Black-SemiBold, sans-serif;
+  display: block;
+}
+
+.navbar-nav > .link:hover {
+  color: #fff;
+  background-color: #05939a;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .navbar-brand {
+    margin-right: 0 !important;
+  }
+}
+
+.navbar-brand > img {
+  width: max(4.35vw, 48px);
+  height: max(4.35vw, 48px);
+}
+
 body {
   font-family: Helvetica-Black-SemiBold, sans-serif;
   color: #eee !important;
@@ -9917,6 +10011,61 @@ ul {
   width: max(40vw, 160px);
   height: auto;
   position: relative;
+}
+
+#tournaments {
+  min-height: 87vh;
+  justify-content: center;
+  display: flex;
+}
+
+.accordion {
+  width: 90%;
+}
+
+.tournament button {
+  color: #eee;
+  min-height: 48px;
+  height: 4.25vw;
+  width: 100%;
+  background-color: #65808a;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  display: flex;
+}
+
+.tournament button:hover {
+  background-color: #789099;
+}
+
+.accordion-button {
+  display: flex;
+}
+
+.accordion-label {
+  margin: auto;
+  font-size: 30px;
+  display: flex;
+}
+
+.accordion-arrow {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: max(8%, 120px);
+  transform: translateX(-50%);
+}
+
+.collapsed > .accordion-arrow {
+  content: url("CaratUp.9e5ac8e5.png") !important;
+  visibility: visible !important;
+}
+
+.accordion-button > .accordion-arrow {
+  content: url("CaratDown.bec1acf1.png");
+  visibility: visible;
 }
 
 .tournament-20xx {
@@ -10218,155 +10367,6 @@ ul {
   .tournament-20xx .sponsors {
     margin-left: max(9vw, 75px) !important;
   }
-}
-
-#tournaments {
-  min-height: 87vh;
-  justify-content: center;
-  display: flex;
-}
-
-.accordion {
-  width: 90%;
-}
-
-.tournament button {
-  color: #eee;
-  min-height: 48px;
-  height: 4.25vw;
-  width: 100%;
-  background-color: #65808a;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  display: flex;
-}
-
-.tournament button:hover {
-  background-color: #789099;
-}
-
-.accordion-button {
-  display: flex;
-}
-
-.accordion-label {
-  margin: auto;
-  font-size: 30px;
-  display: flex;
-}
-
-.accordion-arrow {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  left: max(8%, 120px);
-  transform: translateX(-50%);
-}
-
-.collapsed > .accordion-arrow {
-  content: url("CaratUp.9e5ac8e5.png") !important;
-  visibility: visible !important;
-}
-
-.accordion-button > .accordion-arrow {
-  content: url("CaratDown.bec1acf1.png");
-  visibility: visible;
-}
-
-.navbar {
-  text-align: center;
-  background-color: #00adb5;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  font-size: max(1.2vw, 12px);
-  display: flex;
-}
-
-@media (pointer: coarse) and (max-width: 500px) {
-  .navbar-collapse {
-    justify-content: center;
-  }
-
-  .navbar-nav {
-    margin-top: 0 !important;
-  }
-}
-
-@media (min-width: 1500px) {
-  .navbar-nav {
-    margin-top: 1.2vw !important;
-  }
-}
-
-.navbar-nav {
-  margin-top: 15px;
-}
-
-#current-page {
-  padding-top: max(5.8vw, 66px);
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-@media (pointer: coarse) and (max-width: 500px) {
-  #basic-navbar-nav .navbar-nav > .link.prev-page, #basic-navbar-nav .navbar-nav > .link.next-page {
-    background-color: #05939a;
-    align-self: center;
-    width: max(10vw, 110px) !important;
-    opacity: .8 !important;
-    padding: max(.9vw, 4px) !important;
-    font-size: max(1vw, 10px) !important;
-  }
-
-  #basic-navbar-nav .navbar-nav > .link.active-page {
-    align-self: center;
-    margin: 5px;
-    padding: max(1.3vw, 5px);
-    width: max(14vw, 140px) !important;
-    opacity: 1 !important;
-    border: thin solid #eee !important;
-    font-size: max(1.4vw, 14px) !important;
-  }
-
-  #basic-navbar-nav .navbar-nav > .link {
-    border-radius: 15px !important;
-  }
-}
-
-.navbar-nav > .link.active-page {
-  color: #eee;
-  background-color: #1e2022 !important;
-}
-
-.navbar-nav > .link {
-  color: #fff;
-  width: max(13vw, 120px);
-  border: thin solid #05939af2;
-  border-bottom-style: none;
-  border-radius: 15px 15px 0 0;
-  padding: 15px .5vw max(1.3vw, 9px);
-  font-family: Helvetica-Black-SemiBold, sans-serif;
-  display: block;
-}
-
-.navbar-nav > .link:hover {
-  color: #fff;
-  background-color: #05939a;
-  text-decoration: none;
-}
-
-@media (max-width: 600px) {
-  .navbar-brand {
-    margin-right: 0 !important;
-  }
-}
-
-.navbar-brand > img {
-  width: max(4.35vw, 48px);
-  height: max(4.35vw, 48px);
 }
 
 #current .banner {

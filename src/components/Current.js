@@ -47,7 +47,7 @@ export const Current = () => {
 		<div className="carousels">
 			<div className="carousel-column">
 				<CustomCarousel carouselType="venue" data={venueCarousel} carouselLabel={venueLabel} labelPosition="above"/>
-				<iframe src="https://www.youtube.com/embed/Sqh4I_3kqFk" title="YouTube video player"
+				<iframe src="https://www.youtube.com/embed/7OHdORA-OWw" title="YouTube video player"
 								frameBorder="0"
 								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 								allowFullScreen

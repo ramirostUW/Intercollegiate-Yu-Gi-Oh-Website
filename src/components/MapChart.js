@@ -30,7 +30,7 @@ const MapChart = (props) => {
           <p>Competed in:</p>
           <ul>
             <li>2019 Intercollegiate Championship</li>
-            <li>2021 InterCollegiate Championship</li>
+            <li>2021 Intercollegiate Championship</li>
           </ul>
           <p>Description:</p>
           <p>The Dueling Dawgz are the University of Washington's resident Yu-Gi-Oh! Club.
@@ -49,15 +49,15 @@ const MapChart = (props) => {
       popoverContent: (<div>Popover Content Placeholder</div>)
     },
     {
-      markerOffset: -17, xmarkerOffSet: -20, name: "UCR", fullname: "University of California - Riverside", coordinates: [-117.3281, 33.9737],
+      markerOffset: 5, xmarkerOffSet: 23, name: "UCR", fullname: "University of California - Riverside", coordinates: [-117.3281, 33.9737],
       popoverContent: (<div>Popover Content Placeholder</div>)
     },
     {
-      markerOffset: 32, xmarkerOffSet: 40, name: "UCLA", fullname: "University of California - Los Angeles", coordinates: [-118.4452, 34.0689],
+      markerOffset: -10, xmarkerOffSet: 0, name: "UCLA", fullname: "University of California - Los Angeles", coordinates: [-118.4452, 34.0689],
       popoverContent: (<div>Popover Content Placeholder</div>)
     },
     {
-      markerOffset: -15, xmarkerOffSet: 30, name: "UCSD", fullname: "University of California - San Diego", coordinates: [-117.2340, 32.8801],
+      markerOffset: 5, xmarkerOffSet: 26, name: "UCSD", fullname: "University of California - San Diego", coordinates: [-117.2340, 32.8801],
       popoverContent: (<div>Popover Content Placeholder</div>)
     },
     {
@@ -202,8 +202,11 @@ const MapChart = (props) => {
             }}>
             <circle r={7.5} fill="#F00" stroke="#fff" strokeWidth={2}
               onClick={function () {
-                setPopoverContent(popoverContent)
-                setPopoverDisplayed(true)
+                if(name == "UW"){
+                  setPopoverContent(popoverContent)
+                  setPopoverDisplayed(true)
+                }
+                
               }} />
             <text
               textAnchor="middle"
