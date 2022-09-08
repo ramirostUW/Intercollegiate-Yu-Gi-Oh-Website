@@ -42,9 +42,9 @@ Touchscreen detection: https://ferie.medium.com/detect-a-touch-device-with-only-
     #basic-navbar-nav .navbar-nav >.link.prev-page,
     #basic-navbar-nav .navbar-nav >.link.next-page {
         background-color: #05939A;
-        font-size: max(1vw, 10px) !important;
-        padding: max(0.9vw, 4px) !important;
-        width: max(10vw, 110px) !important;
+        font-size: max(1.4vw, 14px) !important;
+        padding: max(1.3vw, 5px);
+        width: max(14vw, 140px) !important;
         opacity: 80% !important;
         align-self: center;
     }

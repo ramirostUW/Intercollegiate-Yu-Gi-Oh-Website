@@ -53,6 +53,8 @@ export function App() {
   /**
    * MOBILE SWIPE NAVIGATION TOUCH HANDLERS
    */
+
+	/*
   function handleTouchStart(e) {
     setTouchStart(e.targetTouches[0].clientX);
     setSwiping(true);
@@ -89,6 +91,10 @@ export function App() {
       }
     }
   }
+
+        <div id="current-page" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleMoveEnd}
+            style={{transform: `translateX(${touchDistance}px)`}} >
+  */
 
 
   /*
@@ -158,8 +164,7 @@ export function App() {
 						</BrowserView>
 					</Navbar>
         </div>
-      <div id="current-page" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleMoveEnd}
-            style={{transform: `translateX(${touchDistance}px)`}} >
+      <div id="current-page">
         <Routes>
 					<Route path="/" element={ <Navigate to="/home" /> } />
 					<Route path="/home" element={<Home />} />
