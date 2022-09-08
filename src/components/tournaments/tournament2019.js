@@ -89,10 +89,10 @@ export const Tournament2019 = () => {
 			<div className="tournament-20xx" id="tournament2019">
 					<div className={`carousels`}>
 						<CustomCarousel carouselType="venue" data={venueCarousel} carouselLabel={venueLabel}/>
-						{fitTiles ? <Tiles data={tiles} /> : null}
+						{fitTiles && <Tiles data={tiles} />}
 						<CustomCarousel carouselType="winner" data={winnerCarousel} carouselLabel={winnerLabel}/>
 					</div>
-				  {fitTiles ? null : <Tiles data={tiles} />}
+				  {!fitTiles && <Tiles data={tiles} />}
 					<div className="text-information">
 							<div className="description">
 									<h2>Description:</h2>
