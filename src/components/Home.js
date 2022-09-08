@@ -27,8 +27,8 @@ export const Home = () => {
 	<div id="home">
 		<img className="title" src={imagesHome.title} alt="Intercollegiate Tournament Series"/>
 		<div className="cover">
-			<img className="cover-image" src={imagesHome.coverImage} alt="Intercollegiate Students Dueling"/> : null}
-			{fitDescription ?
+			<img className="cover-image" src={imagesHome.coverImage} alt="Intercollegiate Students Dueling"/>
+			{fitDescription &&
 			<div className="cover-description">
 				<h2>What is Intercollegiate Yu-Gi-Oh?</h2>
 				<p className="description">
@@ -36,9 +36,9 @@ export const Home = () => {
 					various colleges, created by Brendan Outlaw of Ohio State University in 2019. Tournaments follow the
 					latest TCG banlist and are typically played in multiple rounds of Swiss followed by a Top 4 Top-Cut.
 				</p>
-			</div> : null}
+			</div>}
 		</div>
-		{fitDescription ? null :
+		{!fitDescription &&
 		<div className="cover-description">
 			<h2>What is Intercollegiate Yu-Gi-Oh?</h2>
 			<p className="description">
