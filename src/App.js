@@ -175,7 +175,7 @@ export function App() {
 									 <main>
 										 <h1>404 Error</h1>
 										 <p>There's nothing here!</p>
-										 <Link to="/">Return to home page</Link>
+                    
 									 </main>
 								 }
 					/>
