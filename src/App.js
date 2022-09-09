@@ -92,6 +92,17 @@ export function App() {
     }
   }
 
+   // NextPage/PrevPage tracker with swipe
+   // 									<LinkContainer className="prev-page" activeClassName="active-page" to={pages.at(prevPageIndex(currentPage))}>
+   // 										<NavLink  bsPrefix="link" >{pageTitles.at(prevPageIndex(currentPage))}</NavLink>
+   // 									</LinkContainer>
+   // 									<LinkContainer activeClassName="active-page" to={pages.at(currentPage)}>
+   // 										<NavLink bsPrefix="link">{pageTitles.at(currentPage)}</NavLink>
+   // 									</LinkContainer>
+   // 									<LinkContainer className="next-page" activeClassName="active-page" to={pages.at(nextPageIndex(currentPage))}>
+   // 										<NavLink bsPrefix="link">{pageTitles.at(nextPageIndex(currentPage))}</NavLink>
+   // 									</LinkContainer>
+   // Current page touch handler
         <div id="current-page" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleMoveEnd}
             style={{transform: `translateX(${touchDistance}px)`}} >
   */
@@ -151,14 +162,14 @@ export function App() {
 							</BrowserView>
 							<MobileView>
 								<Nav id="links">
-									<LinkContainer className="prev-page" activeClassName="active-page" to={pages.at(prevPageIndex(currentPage))}>
-										<NavLink  bsPrefix="link" >{pageTitles.at(prevPageIndex(currentPage))}</NavLink>
+									<LinkContainer activeClassName="active-page" to="/home">
+										<NavLink  bsPrefix="link" >Home</NavLink>
 									</LinkContainer>
-									<LinkContainer activeClassName="active-page" to={pages.at(currentPage)}>
-										<NavLink bsPrefix="link">{pageTitles.at(currentPage)}</NavLink>
+									<LinkContainer activeClassName="active-page" to="/current">
+										<NavLink bsPrefix="link">Current Tournament</NavLink>
 									</LinkContainer>
-									<LinkContainer className="next-page" activeClassName="active-page" to={pages.at(nextPageIndex(currentPage))}>
-										<NavLink bsPrefix="link">{pageTitles.at(nextPageIndex(currentPage))}</NavLink>
+									<LinkContainer activeClassName="active-page" to="/tournaments">
+										<NavLink bsPrefix="link">Past Tournaments</NavLink>
 									</LinkContainer>
 								</Nav>
 							</MobileView>

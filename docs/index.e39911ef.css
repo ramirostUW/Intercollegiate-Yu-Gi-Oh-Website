@@ -10312,13 +10312,13 @@ ul {
 }
 
 @media (pointer: coarse) and (max-width: 500px) {
-  #basic-navbar-nav .navbar-nav > .link.prev-page, #basic-navbar-nav .navbar-nav > .link.next-page {
+  #basic-navbar-nav .navbar-nav > .link {
+    width: max(13vw, 130px);
+    opacity: .8;
     background-color: #05939a;
     align-self: center;
-    padding: max(1.3vw, 5px);
-    width: max(14vw, 140px) !important;
-    opacity: .8 !important;
-    font-size: max(1.4vw, 14px) !important;
+    padding: max(1.2vw, 4px);
+    font-size: max(1.2vw, 12px);
   }
 
   #basic-navbar-nav .navbar-nav > .link.active-page {

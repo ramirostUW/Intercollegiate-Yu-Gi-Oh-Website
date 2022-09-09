@@ -39,13 +39,17 @@ Touchscreen detection: https://ferie.medium.com/detect-a-touch-device-with-only-
 */
 
 @media (pointer: coarse) and (max-width: 500px) {
+    /*
+    For different stylings for prev/next page if swipe is enabled
     #basic-navbar-nav .navbar-nav >.link.prev-page,
     #basic-navbar-nav .navbar-nav >.link.next-page {
+     */
+    #basic-navbar-nav .navbar-nav >.link{
         background-color: #05939A;
-        font-size: max(1.4vw, 14px) !important;
-        padding: max(1.3vw, 5px);
-        width: max(14vw, 140px) !important;
-        opacity: 80% !important;
+        font-size: max(1.2vw, 12px);
+        padding: max(1.2vw, 4px);
+        width: max(13vw, 130px);
+        opacity: 80%;
         align-self: center;
     }
 
