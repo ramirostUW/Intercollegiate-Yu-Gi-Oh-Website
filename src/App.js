@@ -129,18 +129,6 @@ export function App() {
 	/* Corner Logo
 
 	 */
-	/*
-	Removed Route:
-						<Route path="*"
-								 element={
-									 <main>
-										 <h1>404 Error</h1>
-										 <p>There's nothing here!</p>
-
-									 </main>
-								 }
-					/>
-	 */
 	return (
     <div>
         <div id="header">
@@ -193,6 +181,15 @@ export function App() {
 					<Route path="/home" element={<Home />} />
 					<Route path="/current" element={<Current />} />
 					<Route path="/tournaments" element={<Tournaments />} />
+					<Route path="*"
+								 element={
+									 <main>
+										 <h1>404 Error</h1>
+										 <p>There's nothing here!</p>
+
+									 </main>
+								 }
+					/>
         </Routes>
       </div>
     </div>
