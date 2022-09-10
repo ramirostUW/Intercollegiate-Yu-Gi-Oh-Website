@@ -1,12 +1,12 @@
 {
   "name": "Intercollegiateyugioh",
   "version": "1.0.0",
-  "homepage": "https://ramirostuw.github.io/Intercollegiate-yugioh-Test-Site/",
+  "homepage": "https://intercollegiateyugioh.com/",
   "description": "The website for Intercollegiate Yu-Gi-Oh!",
   "main": "index.js",
   "scripts": {
     "start": "PORT=1234 react-scripts start",
-    "build": "react-scripts build && rm -rf docs && mv build docs"
+    "build": "react-scripts build && rm -rf docs && mv build docs && echo intercollegiateyugioh.com >> docs/CNAME "
   },
   "keywords": [],
   "author": "",
