@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "PORT=1234 react-scripts start",
-    "build": "react-scripts build && rm -rf docs && mv build docs && echo intercollegiateyugioh.com >> docs/CNAME "
+    "build": "react-scripts build && rm -rf docs && mv build docs && echo intercollegiateyugioh.com >> docs/CNAME && cp docs/index.html docs/404.html"
   },
   "keywords": [],
   "author": "",
