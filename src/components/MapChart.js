@@ -38,11 +38,25 @@ const MapChart = (props) => {
             can be found on their <a href="https://discord.gg/aMzMMt2nS7">Discord Server</a>.
           </p>
         </div>
-      )
+      ),
+      cardEnabled: true
     },
     {
       markerOffset: 20, xmarkerOffSet: 38, name: "Ohio State", fullname: "Ohio State Unversity", coordinates: [-83.0305, 40.0067],
-      popoverContent: (<div>Popover Content Placeholder</div>)
+      popoverContent: (
+        <div>
+          <h1>Club Yu-Gi-Ohio</h1>
+          <p>Competed in:</p>
+          <ul>
+            <li>2019 Intercollegiate Championship</li>
+            <li>2021 Intercollegiate Championship</li>
+          </ul>
+          <p>Description:</p>
+          <p>Yu-Gi-Ohio is Ohio State University’s resident Yugioh club and one of the largest collegiate 
+             TCG communities in the country. They meet Fridays at 5:30 in the Enarson Building Basement.</p>
+        </div>
+      ),
+      cardEnabled: true
     },
     {
       markerOffset: 25, xmarkerOffSet: 0, name: "UNT", fullname: "University of North Texas", coordinates: [-97.1526, 33.2075],
@@ -192,7 +206,7 @@ const MapChart = (props) => {
             })
           }
         </Geographies>
-        {markers.map(({ name, fullname, coordinates, markerOffset, xmarkerOffSet, popoverContent }) => (
+        {markers.map(({ name, fullname, coordinates, markerOffset, xmarkerOffSet, popoverContent, cardEnabled }) => (
           <Marker key={name} coordinates={coordinates}
             onMouseEnter={() => {
               setTooltipContent(fullname);
@@ -202,7 +216,7 @@ const MapChart = (props) => {
             }}>
             <circle r={7.5} fill="#F00" stroke="#fff" strokeWidth={2}
               onClick={function () {
-                if(name == "UW"){
+                if(cardEnabled){
                   setPopoverContent(popoverContent)
                   setPopoverDisplayed(true)
                 }
