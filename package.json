@@ -6,9 +6,9 @@
   "main": "index.js",
   "scripts": {
     "start": "PORT=1234 react-scripts start",
-	"build": "react-scripts build && rm -rf docs && mv build docs && echo github.io/Intercollegiate-yugioh-Test-Site >> docs/CNAME && cp docs/index.html docs/404.html",
-	"switch-to-test": "sed -i 's/BrowserRouter/HashRouter/g' src/index.js && sed -i '4s/intercollegiateyugioh.com/github.io\\/Intercollegiate-yugioh-Test-Site/g' ./package.json",
-	"switch-to-production": "sed -i 's/HashRouter/BrowserRouter/g' src/index.js && sed -i '4s/github.io\\/Intercollegiate-yugioh-Test-Site/intercollegiateyugioh.com/g' ./package.json"
+    "build": "react-scripts build && rm -rf docs && mv build docs && echo github.io/Intercollegiate-yugioh-Test-Site >> docs/CNAME && cp docs/index.html docs/404.html",
+    "switch-to-test": "sed -i 's/BrowserRouter/HashRouter/g' src/index.js && sed -i '4s/intercollegiateyugioh.com/github.io\\/Intercollegiate-yugioh-Test-Site/g' ./package.json",
+    "switch-to-production": "sed -i 's/HashRouter/BrowserRouter/g' src/index.js && sed -i '4s/github.io\\/Intercollegiate-yugioh-Test-Site/intercollegiateyugioh.com/g' ./package.json"
   },
   "keywords": [],
   "author": "",
