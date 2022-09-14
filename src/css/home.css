@@ -129,7 +129,7 @@
 /* Interactive Map*/
 #map {
     position: relative;
-    display: flex;
+    /*display: flex;*/
     width: min(80%, 800px);
     height: auto;
 }
@@ -149,7 +149,7 @@
 /* Copy of Interactive Map*/
 #mapCopy {
     position: relative;
-    /*display: flex;*/
+    display: flex;
     width: min(80%, 800px);
     height: auto;
 }
