@@ -13,6 +13,7 @@ import {LinkContainer} from "react-router-bootstrap";
 import {NavLink} from "react-bootstrap";
 import logo from "./media/logo.png";
 import {BrowserView, MobileView} from 'react-device-detect';
+import MapChart from "./components/MapChart";
 
 export function App() {
   /**
@@ -179,6 +180,7 @@ export function App() {
 					<Route path="/home" element={<Home />} />
 					<Route path="/current" element={<Current />} />
 					<Route path="/tournaments" element={<Tournaments />} />
+          <Route path="/testingMap" element={<div id="home"><MapChart /></div>} />
 					<Route path="*"
 								 element={
 									 <main>
