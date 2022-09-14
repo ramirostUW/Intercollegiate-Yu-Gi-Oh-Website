@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Intercollegiate-yugioh-Test-Site/static/css/main.1692aba5.css",
+    "main.css": "/Intercollegiate-yugioh-Test-Site/static/css/main.ab240b3c.css",
     "main.js": "/Intercollegiate-yugioh-Test-Site/static/js/main.b2a1a4b5.js",
     "static/media/logo.png": "/Intercollegiate-yugioh-Test-Site/static/media/logo.2628123b1b9c0430cdcb.png",
     "static/media/2021Venue2.png": "/Intercollegiate-yugioh-Test-Site/static/media/2021Venue2.a4fe80d59ac7945f10a3.png",
@@ -31,11 +31,11 @@
     "static/media/logoBackground.png": "/Intercollegiate-yugioh-Test-Site/static/media/logoBackground.2dbe22ef95241e8bfc8a.png",
     "static/media/QR_Invite.png": "/Intercollegiate-yugioh-Test-Site/static/media/QR_Invite.84aa15c1980ac9fe47a9.png",
     "index.html": "/Intercollegiate-yugioh-Test-Site/index.html",
-    "main.1692aba5.css.map": "/Intercollegiate-yugioh-Test-Site/static/css/main.1692aba5.css.map",
+    "main.ab240b3c.css.map": "/Intercollegiate-yugioh-Test-Site/static/css/main.ab240b3c.css.map",
     "main.b2a1a4b5.js.map": "/Intercollegiate-yugioh-Test-Site/static/js/main.b2a1a4b5.js.map"
   },
   "entrypoints": [
-    "static/css/main.1692aba5.css",
+    "static/css/main.ab240b3c.css",
     "static/js/main.b2a1a4b5.js"
   ]
 }
