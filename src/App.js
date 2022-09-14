@@ -180,7 +180,7 @@ export function App() {
 					<Route path="/home" element={<Home />} />
 					<Route path="/current" element={<Current />} />
 					<Route path="/tournaments" element={<Tournaments />} />
-          <Route path="/testingMap" element={<div id="home"><MapChart /></div>} />
+          <Route path="/testingMap" element={<MapChart />} />
 					<Route path="*"
 								 element={
 									 <main>
