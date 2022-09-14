@@ -13,7 +13,7 @@ import {LinkContainer} from "react-router-bootstrap";
 import {NavLink} from "react-bootstrap";
 import logo from "./media/logo.png";
 import {BrowserView, MobileView} from 'react-device-detect';
-import MapChart from "./components/MapChart";
+import MapChart from "./components/MapChartCopy";
 
 export function App() {
   /**

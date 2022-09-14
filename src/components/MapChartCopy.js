@@ -88,7 +88,7 @@ const MapChart = (props) => {
   //yeah i made a separate func for the popover stuff
   //so i didnt fuck up the map code
   return (
-    <div>
+    <div id="mapCopy">
       <MoreDetailsPopover />
       <ReactTooltip>{content}</ReactTooltip>
       <ComposableMap data-tip=""
