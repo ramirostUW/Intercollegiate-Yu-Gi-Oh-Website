@@ -148,10 +148,10 @@
 
 /* Copy of Interactive Map*/
 #mapCopy {
-    position: relative;
-    display: flex;
-    /*width: min(80%, 800px);
-    height: auto;*/
+    /*position: relative;
+    display: flex;*/
+    width: min(80%, 800px);
+    height: auto;
 }
 
 #mapCopy > svg {
