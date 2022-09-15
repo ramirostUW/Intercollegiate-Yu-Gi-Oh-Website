@@ -93,6 +93,7 @@ const MapChart = (props) => {
       <ReactTooltip>{content}</ReactTooltip>
       <ComposableMap data-tip=""
         projection={projection} >
+          <ZoomableGroup>
         <Geographies geography={geoUrl}>
           {({ geographies }) =>
             geographies.map(geo => {
@@ -163,6 +164,7 @@ const MapChart = (props) => {
             </text>
           </Marker>
         ))}
+        </ZoomableGroup>
       </ComposableMap>
     </div>
   );
