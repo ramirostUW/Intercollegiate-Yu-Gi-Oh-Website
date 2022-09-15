@@ -5,7 +5,7 @@
   "description": "The website for Intercollegiate Yu-Gi-Oh!",
   "main": "index.js",
   "scripts": {
-    "start": "PORT=1234 react-scripts start",
+    "start": "cross-env BROWSER=none PORT=1234 react-scripts start",
     "build": "react-scripts build && rm -rf docs && mv build docs && echo github.io/Intercollegiate-yugioh-Test-Site >> docs/CNAME && cp docs/index.html docs/404.html",
     "switch-to-test": "sed -i 's/BrowserRouter/HashRouter/g' src/index.js && sed -i '4,9s/intercollegiateyugioh.com/github.io\\/Intercollegiate-yugioh-Test-Site/g' ./package.json",
     "switch-to-production": "sed -i 's/HashRouter/BrowserRouter/g' src/index.js && sed -i '4,9s/github.io\\/Intercollegiate-yugioh-Test-Site/intercollegiateyugioh.com/g' ./package.json"
@@ -42,6 +42,7 @@
     "@babel/preset-env": "^7.19.0",
     "@babel/preset-react": "^7.18.6",
     "babel-loader": "^8.2.5",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",
     "gh-pages": "^4.0.0",
