@@ -11,6 +11,7 @@ const MapMarkers = () => {
                 <li>2019 Intercollegiate Championship</li>
                 <li>2021 Intercollegiate Championship (2nd Place)</li>
               </ul>
+              <br />
               <p>Description:</p>
               <p>The Dueling Dawgz are the University of Washington's resident Yu-Gi-Oh! Club.
                 They meet regularly on Fridays at UW's Husky Union Building. Meeting room announcements, 
@@ -31,6 +32,7 @@ const MapMarkers = () => {
                 <li>2019 Intercollegiate Championship (1st Place)</li>
                 <li>2021 Intercollegiate Championship (1st Place)</li>
               </ul>
+              <br />
               <p>Description:</p>
               <p>Yu-Gi-Ohio is Ohio State University’s resident Yugioh club and one of the largest collegiate 
                  TCG communities in the country. They meet Fridays at 5:30 in the Enarson Building Basement. 

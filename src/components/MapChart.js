@@ -36,6 +36,9 @@ const MapChart = (props) => {
       minHeight: "100px",
       "& a": {
         color: "#00ADB5"
+      },
+      "& h1": {
+        fontSize: "15vmin"
       }
     },
     backDrop: {
