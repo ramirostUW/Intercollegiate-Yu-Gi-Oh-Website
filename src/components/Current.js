@@ -2,40 +2,25 @@ import React, {useEffect, useState} from "react";
 import '../css/index.css';
 import '../css/current.css';
 import images2022 from "../media/tournaments/2022";
+import images2024 from "../media/tournaments/2024";
 import {CustomCarousel} from "./customElements/carousel";
 
 export const Current = () => {
 	let venueCarousel = [
 		{
-			"source": images2022.Venue1,
-			"caption":""
-		},
-		{
-			"source": images2022.Venue2,
-			"caption":""
-		},
-		{
-			"source": images2022.Venue3,
-			"caption":""
-		},
-		{
-			"source": images2022.Venue4,
-			"caption":""
-		},
-		{
-			"source": images2022.Venue5,
+			"source": images2024.FillerWide,
 			"caption":""
 		}
 	];
-	const venueLabel = "Venue: Husky Union Building — Lyceum Ballroom";
+	const venueLabel = "Venue: ???";
 
 	let personalityCarousel = [
-			{
-				"source":images2022.Personality1,
-				"caption":"TheRJB0"
-			}
+		{
+			"source": images2024.Filler,
+			"caption":""
+		}
 	];
-	const personalityLabel= "Personalities";
+	const personalityLabel= "Personalities: ???";
 
 	// Youtube embed code: https://dev.to/bravemaster619/simplest-way-to-embed-a-youtube-video-in-your-react-app-3bk2
 // 											 https://support.google.com/youtube/answer/171780?hl=en
@@ -60,8 +45,8 @@ export const Current = () => {
 			<div className="description">
 				<h2>Description:</h2>
 				<p>
-					The 2022 Intercollegiate Championship will be held by UW Dueling Dawgz from University of Washington
-					on October 29, 2022, 11:00 AM PST. This Event will follow the latest TCG Banlist at the time of the
+					The 2024 Intercollegiate Championship will be held by ??? from University of California - Riverside
+					in 2024. This Event will follow the latest TCG Banlist at the time of the
 					event, and will played with teams of 3 (up to three teams per school). The tournament structure will
 					be Swiss, followed by a Top 4 Single-Elimination Top Cut.
 				</p>

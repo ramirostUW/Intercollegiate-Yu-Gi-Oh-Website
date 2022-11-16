@@ -3,6 +3,7 @@ import '../css/index.css';
 import '../css/home.css'
 import imagesHome from "../media/home";
 import MapChart from "./MapChart";
+import images2022 from "../media/tournaments/2022";
 
 export const Home = () => {
 	// Resize code: https://stackoverflow.com/questions/36862334/get-viewport-window-height-in-reactjs
@@ -52,6 +53,10 @@ export const Home = () => {
 			Click to join our Discord!
 		</a>
 		<img className="invite-QR" src={imagesHome.QRInvite}/>
+		<div className="millenium">
+			<img className="milleniumLogo" src={imagesHome.MilleniumLogo}/>
+			<p className="milleniumLabel">Presented by Millenium Threads</p>
+		</div>
 	</div>
 	);
 };
