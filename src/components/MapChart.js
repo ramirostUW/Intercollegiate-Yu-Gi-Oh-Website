@@ -12,6 +12,7 @@ import { geoAlbersUsa } from "d3-composite-projections";
 import ReactTooltip from "react-tooltip";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json"
+const canadageoURL = "https://gist.githubusercontent.com/Saw-mon-and-Natalie/a11f058fc0dcce9343b02498a46b3d44/raw/e8afc74f791169a64d6e8df033d7e88ff85ba673/canada.json"
 //const geoUrl = "https://raw.githubusercontent.com/deldersveld/topojson/master/continents/north-america.json";
 
 
@@ -68,14 +69,62 @@ const MapChart = (props) => {
       markerOffset: -10, xmarkerOffSet: 0, name: "UF", fullname: "University of Florida", coordinates: [-82.3549, 29.6436],
       popoverContent: (<div>Popover Content Placeholder</div>)
     },
+    //University of Illinois Urbana-Champaign/Coordinates40.1020° N, 88.2272° W
+    {
+      markerOffset: -10, xmarkerOffSet: 0, name: "UIUC", fullname: "University of Illinois Urbana-Champaign", coordinates: [-88.2272, 40.1020],
+      popoverContent: (<div>Popover Content Placeholder</div>)
+    },
+    //Georgia Institute of Technology 33.7756° N, 84.3963° W
+    {
+      markerOffset: -10, xmarkerOffSet: 0, name: "Georgia Tech", fullname: "Georgia Institute of Technology", coordinates: [-84.3963, 33.7756],
+      popoverContent: (<div>Popover Content Placeholder</div>)
+    },
+    //Mount St. Mary's University/Coordinates 39.6800° N, 77.3487° W
+    {
+      markerOffset: -10, xmarkerOffSet: -30, name: "M. Saint Mary", fullname: "Mount St. Mary's University", coordinates: [-77.3487, 39.6800],
+      popoverContent: (<div>Popover Content Placeholder</div>)
+    },
+    //University of South Florida/Coordinates 28.0587° N, 82.4139° W
+    {
+      markerOffset: 8, xmarkerOffSet: 20, name: "USF", fullname: "University of South Florida", coordinates: [-82.4139, 28.0587],
+      popoverContent: (<div>Popover Content Placeholder</div>)
+    },
+    //Florida International University/Coordinates 25.7562° N, 80.3755° W
+    {
+      markerOffset: -10, xmarkerOffSet: -10, name: "FIU", fullname: "Florida International University", coordinates: [-80.3755, 25.7562],
+      popoverContent: (<div>Popover Content Placeholder</div>)
+    },
     {
       markerOffset: 20, xmarkerOffSet: -30, name: "MUOH", fullname: "Miami University of Ohio", coordinates: [-84.7345, 39.5087],
       popoverContent: (<div>Popover Content Placeholder</div>)
     },
+    //44.3148° N, 85.6024
     {
-      markerOffset: 0, xmarkerOffSet: 46, name: "Kent State", fullname: "Kent State University", coordinates: [-81.3433, 41.1498],
+      markerOffset: 20, xmarkerOffSet: 16, name: "Mich St", fullname: "Michigan State University", coordinates: [-85.6024, 44.3148],
       popoverContent: (<div>Popover Content Placeholder</div>)
-    }
+    },
+    //University of Pennsylvania/Coordinates 39.9522° N, 75.1932
+    {
+      markerOffset: 20, xmarkerOffSet: -00, name: "UPenn", fullname: "University of Pennsylvania", coordinates: [-75.1932, 43.4738],
+      popoverContent: (<div>Popover Content Placeholder</div>)
+    },
+    //43.4738° N, 80.5275° W
+    {
+      markerOffset: -15, xmarkerOffSet: 20, name: "WLU", fullname: "Wilfrid Laurier University", coordinates: [-80.5275, 43.4738],
+      popoverContent: (<div>Popover Content Placeholder</div>)
+    },
+    {
+      markerOffset: 20, xmarkerOffSet: -30, name: "MS&T", fullname: "Missouri University of Science and Technology", coordinates: [-91.7756, 37.9537],
+      popoverContent: (<div>Popover Content Placeholder</div>)
+    },
+    {
+      markerOffset:-10, xmarkerOffSet: 35, name: "Cal Poly", fullname: "California Polytechnic State University", coordinates: [-120.6625, 35.3050],
+      popoverContent: (<div>Popover Content Placeholder</div>)
+    }//,
+    //{
+     // markerOffset: 0, xmarkerOffSet: 46, name: "Kent State", fullname: "Kent State University", coordinates: [-81.3433, 41.1498],
+     // popoverContent: (<div>Popover Content Placeholder</div>)
+    //},
   ];
 
 
@@ -149,6 +198,50 @@ const MapChart = (props) => {
       <ComposableMap data-tip=""
         projection={projection} >
         <Geographies geography={geoUrl}>
+          {({ geographies }) =>
+            geographies.map(geo => {
+
+              const { NAME, POP_EST } = geo.properties;
+              let restingColor = "#E2EDEA";
+              let style = {
+                default: {
+                  fill: restingColor,
+                  stroke: "#005B67",
+                  outline: "none",
+                  strokeWidth: "0.4"
+                },
+                hover: {
+                  //fill: "#005B67",
+                  fill: restingColor,
+                  outline: "none",
+                  stroke: "#005B67",
+                  strokeWidth: "0.4"
+                },
+                pressed: {
+                  /*
+                  fill: "#005B67",
+                  outline: "none"
+                  */
+                  fill: restingColor,
+                  outline: "none",
+                  stroke: "#005B67",
+                  strokeWidth: "0.4"
+                }
+              }
+              return (
+                <Geography
+                  key={geo.rsmKey}
+                  geography={geo}
+                  onClick={() => { }}
+                  onMouseEnter={() => { }}
+                  onMouseLeave={() => { }}
+                  style={style}
+                />
+              )
+            })
+          }
+        </Geographies>
+        <Geographies geography={canadageoURL}>
           {({ geographies }) =>
             geographies.map(geo => {
 
