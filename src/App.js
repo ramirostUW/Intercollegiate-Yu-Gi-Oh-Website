@@ -3,7 +3,7 @@ import * as React from "react";
 import {Routes, Route, Link, useLocation, useNavigate, Navigate} from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import './css/navbar.css';
+//import './css/navbar.css';
 import { Home } from "./components/Home";
 import { Tournaments } from "./components/Tournaments";
 import { Current } from "./components/Current";
@@ -129,56 +129,11 @@ export function App() {
 	 */
 	return (
     <div>
-        <div id="header">
-          <Navbar className="navbar navbar-expand" fixed="top">
-            <Navbar.Toggle aria-controls="basic-navbar-nav"><FontAwesomeIcon icon={faBars} /></Navbar.Toggle>
-            <Navbar.Collapse id="basic-navbar-nav">
-							<BrowserView>
-								<Nav id="links">
-									<LinkContainer activeClassName="active-page" to="/home">
-										<NavLink  bsPrefix="link" >Home</NavLink>
-									</LinkContainer>
-									<LinkContainer activeClassName="active-page" to="/current">
-										<NavLink bsPrefix="link">Current Tournament</NavLink>
-									</LinkContainer>
-									<LinkContainer activeClassName="active-page" to="/tournaments">
-										<NavLink bsPrefix="link">Past Tournaments</NavLink>
-									</LinkContainer>
-								</Nav>
-							</BrowserView>
-							<MobileView>
-								<Nav id="links">
-									<LinkContainer activeClassName="active-page" to="/home">
-										<NavLink  bsPrefix="link" >Home</NavLink>
-									</LinkContainer>
-									<LinkContainer activeClassName="active-page" to="/current">
-										<NavLink bsPrefix="link">Current Tournament</NavLink>
-									</LinkContainer>
-									<LinkContainer activeClassName="active-page" to="/tournaments">
-										<NavLink bsPrefix="link">Past Tournaments</NavLink>
-									</LinkContainer>
-								</Nav>
-							</MobileView>
-            </Navbar.Collapse>
-						<BrowserView>
-							<LinkContainer to="/">
-								<Navbar.Brand>
-									<img
-										src={logo}
-										className="d-inline-block align-top"
-										alt="Intercollegiate Yugioh logo"
-									/>
-								</Navbar.Brand>
-							</LinkContainer>
-						</BrowserView>
-					</Navbar>
-        </div>
+        <div id="header"></div> 
       <div id="current-page">
         <Routes>
 					<Route path="/" element={ <Navigate to="/home" /> } />
 					<Route path="/home" element={<Home />} />
-					<Route path="/current" element={<Current />} />
-					<Route path="/tournaments" element={<Tournaments />} />
 					<Route path="*"
 								 element={
 									 <main>

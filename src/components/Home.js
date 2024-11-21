@@ -42,12 +42,11 @@ export const Home = () => {
 		<div className="cover-description">
 			<h2>What is Intercollegiate Yu-Gi-Oh?</h2>
 			<p className="description">
-				Intercollegiate Yu-Gi-Oh is an annual team-based Yu-Gi-Oh! competition between representatives from
+				The Intercollegiate Yu-Gi-Oh Championship is an annual team-based Yu-Gi-Oh! competition between representatives from
 				various colleges, created by Brendan Outlaw of Ohio State University in 2019. Tournaments follow the
-				latest TCG banlist and are typically played in multiple rounds of Swiss followed by a Top 4 Top-Cut.
+				latest TCG banlist and are typically played in multiple rounds of Swiss followed by a Top 4 Top Cut.
 			</p>
 		</div>}
-		<MapChart/>
 		<a className="invite-link" href={"https://discord.gg/M3KMYppbRm"}>
 			Click to join our Discord!
 		</a>
