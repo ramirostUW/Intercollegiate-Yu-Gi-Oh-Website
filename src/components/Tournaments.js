@@ -29,15 +29,15 @@ export const Tournaments = () => {
                     <Tournament2021/>
                 </Accordion.Body>
             </Accordion.Item>
-						<Accordion.Item eventKey="2">
-							<Accordion.Header className="tournament">
-								<text className="accordion-label">2022</text>
-								<img className="accordion-arrow" src={CaratUp}/>
-							</Accordion.Header>
-							<Accordion.Body>
-								<Tournament2022/>
-							</Accordion.Body>
-						</Accordion.Item>
+            <Accordion.Item eventKey="2">
+				<Accordion.Header className="tournament">
+					<text className="accordion-label">2022</text>
+						<img className="accordion-arrow" src={CaratUp}/>
+				</Accordion.Header>
+				<Accordion.Body>
+					<Tournament2022/>
+				</Accordion.Body>
+			</Accordion.Item>
         </Accordion>
     </div>
   );

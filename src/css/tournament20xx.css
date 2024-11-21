@@ -286,7 +286,7 @@
     font-size: 16px;
 }
 
-/* Description/SponsorLogo/Sponsors Styling */
+/* Description/Sponsors Styling */
 .tournament-20xx h2 {
     font-size: 18px;
 }
@@ -308,25 +308,13 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 10px;
 }
 
 @media (min-width: 600px) {
-    .tournament-20xx .text-information .description {
+    .tournament-20xx .text-information > div {
         width: 35% !important;
-        margin: 10px;
-    }
-
-    .tournament-20xx .text-information .sponsors {
-        width: 35% !important;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    .tournament-20xx .sponsorLogos{
-        width: 10% !important;
-        justify-content: center;
         margin: 10px;
     }
 }
@@ -339,21 +327,20 @@
 .tournament-20xx .text-information > div {
     display: flex;
     flex-direction: column;
+    min-width: 330px;
     height: auto;
-}
-
-.tournament-20xx .text-information .description {
-    min-width: 330px;
-}
-
-.tournament-20xx .text-information .sponsors {
-    min-width: 330px;
-}
-
-.tournament-20xx .text-information .sponsorLogos {
-    min-width: 100px;
 }
 
 .tournament-20xx .sponsors > ul {
     padding-right: 25px;
+}
+
+@media (min-width: 1320px) {
+    .tournament-20xx .description {
+        margin-right: max(9vw, 75px) !important;
+    }
+
+    .tournament-20xx .sponsors {
+        margin-left: max(9vw, 75px) !important;
+    }
 }

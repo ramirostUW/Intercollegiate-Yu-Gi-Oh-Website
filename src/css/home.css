@@ -129,7 +129,7 @@
 /* Interactive Map*/
 #map {
     position: relative;
-    display: flex;
+    /*display: flex;*/
     width: min(80%, 800px);
     height: auto;
 }
@@ -162,6 +162,7 @@
 
     border-radius: 15px 15px 0 0;
 }
+
 /* Discord Invite QRCode */
 @media (min-width: 800px) {
     #home .invite-QR {
@@ -173,29 +174,3 @@
     width: max(40vw, 160px);
     height: auto;
 }
-
-/* Millenium image/label*/
-#home .millenium {
-    position: relative;
-    background-color: black;
-    text-align: center;
-}
-
-@media (min-width: 800px) {
-    #home .milleniumLogo {
-        width: 55% !important;
-    }
-}
-#home .milleniumLogo {
-    position:relative;
-    width: max(20vw, 180px);
-    height: auto;
-    margin: 10px;
-}
-
-#home .milleniumLabel {
-    position: relative;
-    font-weight: bolder;
-    margin: 10px;
-}
-
